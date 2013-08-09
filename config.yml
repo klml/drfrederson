@@ -1,0 +1,12 @@
+siteName: Blog
+description: this is a blog
+url: http://lonescript.github.com/php-site-maker
+#url: http://localhost/github/php-site-maker
+indexPostsNum: 5
+disqusId:
+path:
+	page: /page/
+	post: /post/
+	layout: /_layout/
+	blog: /blog/
+	olderPage: /blog/page/
