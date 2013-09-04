@@ -27,7 +27,7 @@ class MakeSite {
 			$fp = '.' . $fp;
 		}
 		foreach ($this->wwwPath as &$wp) {
-			$wp = $this->config['url'] . $wp; // TODO rena baseurl
+			$wp = $this->config['baseurl'] . $wp;
 		}
 		
 		$this->clearBlog();
@@ -107,7 +107,7 @@ class MakeSite {
 				if (preg_match('/\.md$/', $file)) {
 					if (is_file($filePath = $this->filePath['page'] . $file)) {
 						$page = array();
-						$page['url'] = $this->config['url'] . '/' . preg_replace('/.md$/', '', $file);
+						$page['url'] = $this->config['baseurl'] . '/' . preg_replace('/.md$/', '', $file);
 						$page['filePath'] = $this->config['htmldir'] . preg_replace('/.md$/', '', $file);
 
 						$tmpInfo = getYamlObj($filePath);
@@ -193,7 +193,7 @@ class MakeSite {
 				mkdir($newFolder);
 
 				$newerPage = $currentPage - 1;
-				$this->tmplData['newerUrl'] = $newerPage === 1 ? $this->config['url'] : $this->wwwPath['olderPage'] . $newerPage;
+				$this->tmplData['newerUrl'] = $newerPage === 1 ? $this->config['baseurl'] : $this->wwwPath['olderPage'] . $newerPage;
 				$this->tmplData['olderUrl'] = ($key === $totalPostsNum - 1) ? '' : $this->wwwPath['olderPage'] . ($currentPage + 1);
 				$target = $newFolder . '/index.html';
 				$layout = $this->filePath['layout'] . 'index.php';
