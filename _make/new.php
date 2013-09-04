@@ -7,8 +7,8 @@
  * @auther 2dkun
  */
 
-require_once '_src/Spyc.php';
-require_once '_src/Tools.php';
+require_once 'lib/Spyc.php';
+require_once 'lib/Tools.php';
 
 class NewPage {
 

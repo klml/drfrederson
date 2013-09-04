@@ -6,9 +6,9 @@
  * @author 2dkun
  */
 
-require_once '_src/Markdown.php';
-require_once '_src/Spyc.php';
-require_once '_src/Tools.php';
+require_once 'lib/Markdown.php';
+require_once 'lib/Spyc.php';
+require_once 'lib/Tools.php';
 
 class MakeSite {
 	protected $config;
@@ -22,12 +22,12 @@ class MakeSite {
 		$this->config = spyc_load_file('config.yml');
 		$this->wwwPath = $this->config['path'];
 		$this->filePath = $this->wwwPath;
-		
+
 		foreach ($this->filePath as &$fp) {
 			$fp = '.' . $fp;
 		}
 		foreach ($this->wwwPath as &$wp) {
-			$wp = $this->config['url'] . $wp;
+			$wp = $this->config['url'] . $wp; // TODO rena baseurl
 		}
 		
 		$this->clearBlog();
@@ -108,7 +108,7 @@ class MakeSite {
 					if (is_file($filePath = $this->filePath['page'] . $file)) {
 						$page = array();
 						$page['url'] = $this->config['url'] . '/' . preg_replace('/.md$/', '', $file);
-						$page['filePath'] = './' . preg_replace('/.md$/', '', $file);
+						$page['filePath'] = $this->config['htmldir'] . preg_replace('/.md$/', '', $file);
 
 						$tmpInfo = getYamlObj($filePath);
 						$page['layout'] = $this->filePath['layout'] . $tmpInfo['layout'] . '.php';
@@ -177,7 +177,7 @@ class MakeSite {
 			if ($currentPage === 1 && $key === $totalPostsNum - 1 || $key === $indexPostsNum - 1) {
 				$this->tmplData['olderUrl'] = ($totalPostsNum > $indexPostsNum) ? $this->wwwPath['olderPage'] . '2' : '';
 				$this->tmplData['newerUrl'] = '';
-				$target = 'index.html';
+				$target = $this->config['htmldir'] . 'index.html';
 				$layout = $this->filePath['layout'] . 'index.php';
 				$this->tmplData['posts'] = $tmpPosts;
 				
