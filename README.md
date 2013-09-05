@@ -1,9 +1,37 @@
 php-site-maker
 =====
 
-A simple static site generator powered by PHP & Markdown
+A simple static site generator powered by PHP & Markdown. Based on [github.com/lonescript/php-site-maker](http://github.com/lonescript/php-site-maker)
 
-Usage:
+## Directories
+
+_make/
+: all server sourcecode to create html files from ''_source/'' 'compiled' with all ''_template/''
+
+_source/
+: content source written in Markdown
+
+_template/
+: some html skeletons wrapping in persisting areas like ''header.php'', ''footer.php'' and ''sidebar.php''. 
+
+theme/
+: clientsite assets like css and js.
+
+## config.yml
+
+''config.yml''
+
+baseurl
+: root url ''http://example.com'' or ''http://example.com/mypage'' for absolute URL inside the html.
+
+sourcedir
+: content source
+
+htmldir
+: directory for generated html-output
+
+
+### Usage
 
 ```
 edit `config.yml` first.
@@ -21,5 +49,9 @@ $ php make.php
 
 <!--more--> is avaliable
 ```
+## TODO
 
-Online demo: [http://lonescript.github.io/php-site-maker](http://lonescript.github.io/php-site-maker)
+
+* web make
+* webeditor
+* dir lorem/index.html or lorem.html or lorem
