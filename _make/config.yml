@@ -1,7 +1,7 @@
 siteName: Blog
 description: this is a blog
-baseurl: http://lonescript.github.com/php-site-maker
-#~ baseurl: http://localhost/php-site-maker
+#~ baseurl: http://lonescript.github.com/php-site-maker
+baseurl: http://localhost/php-site-maker
 #baseurl: http://localhost/github/php-site-maker
 sourcedir: _source
 indexPostsNum: 5

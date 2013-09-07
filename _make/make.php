@@ -21,10 +21,10 @@ class MakeSite {
 	public function __construct() {
 		$this->config = spyc_load_file('config.yml');
 		$this->wwwPath = $this->config['path'];
-		$this->filePath = $this->wwwPath;
+		$this->filePath = $this->wwwPath; // ?
 
 		foreach ($this->filePath as &$fp) {
-			$fp = '.' . $fp;
+			$fp = '.' . $fp; // used ?
 		}
 		foreach ($this->wwwPath as &$wp) {
 			$wp = $this->config['baseurl'] . $wp;

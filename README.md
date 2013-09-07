@@ -51,7 +51,11 @@ $ php make.php
 ```
 ## TODO
 
-
+* config.yml to source?
+* config.yml per dir
 * web make
 * webeditor
 * dir lorem/index.html or lorem.html or lorem
+* normalize page and blog
+* include
+* data2css
