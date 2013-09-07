@@ -3,7 +3,7 @@
  * @name new.php
  * @class NewPage
  * @param $args = array('0' => type, '2' => name);
- * @description create a post markdown page or a page markdown page
+ * @description create a page markdown page
  * @auther 2dkun
  */
 
@@ -17,7 +17,7 @@ class NewPage {
 	
 	public function __construct($args) {
 		if (!isset($args) || count($args) < 3) {
-			err("two parameters are required, like\n- php new.php post hello-world\n- php new.php page about");
+			err("two parameters are required, like\n- php new.php page about");
 			return;
 		}
 		
@@ -30,24 +30,7 @@ class NewPage {
 	}
 
 	protected function create($type, $title) {
-		$date = date('Y-m-d');
 		switch ($type) {
-			case 'post':
-				$filename = "{$this->filePath['post']}/$date-$title.md";
-				if (file_exists($filename)) {
-					err('post is exists.');
-					exit(0);
-				}
-				$fp = fopen($filename,"w+");
-				fputs($fp, "---\n");
-				fwrite($fp, "layout: $type\n");
-				fwrite($fp, "title: \n");
-				fwrite($fp, "category: \n");
-				fwrite($fp, "comment: true\n");
-				fwrite($fp, "---\n");
-				fclose($fp);
-				break;
-
 			case 'page':
 				$filename = "{$this->filePath['page']}/$title.md";
 				if (file_exists($filename)) {
