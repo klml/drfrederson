@@ -149,7 +149,7 @@ class MakeSite {
 			if (!is_dir($filePath)) {
 				mkdir($filePath);
 			}
-			$target = $filePath . '/index.html';
+			$target = $filePath . '/index.html'; // TODO dir lorem/index.html or lorem.html or lorem
 			$layout = $item['layout'];
 			$this->tmplData['page'] = $item;
 			$this->tmplData['config']['siteTitle'] = $item['name'] . ' | ' .$this->tmplData['config']['siteName'];
