@@ -48,6 +48,7 @@ $ php make.php
 ## TODO
 
 * remove post
+* define title as var
 * sidebar as page
 * config.yml to source?
 * config.yml per dir
