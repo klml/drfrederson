@@ -41,11 +41,13 @@ class MakeSite {
 		$this->pages = array();
 		$index = array();
 
-		$handle = opendir($this->filePath['page']);
+		$handle = opendir($this->config['sourcedir']);
 		if ($handle) {
-			while (($file = readdir($handle)) !== false) {
+			while (($file = readdir($handle) ) !== false) { // TODO recursive // TODO also as arg and GET
+
+                
 				if (preg_match('/\.md$/', $file)) {
-					if (is_file($filePath = $this->filePath['page'] . $file)) {
+					if (is_file($filePath = $this->config['sourcedir'] . $file)) {
 						$page = array();
 						$page['url'] = $this->config['baseurl'] . '/' . preg_replace('/.md$/', '', $file);
 						$page['filePath'] = $this->config['htmldir'] . preg_replace('/.md$/', '', $file);

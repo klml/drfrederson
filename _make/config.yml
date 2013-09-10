@@ -5,6 +5,7 @@ sourcedir: _source
 indexPostsNum: 5
 disqusId:
 htmldir: ../
+sourcedir: ../_source/
 path:
 	page: ./_source/page/
 	make: ./_make/

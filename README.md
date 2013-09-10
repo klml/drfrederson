@@ -47,11 +47,12 @@ $ php make.php
 ```
 ## TODO
 
-* remove post
+* sidebar as page
 * config.yml to source?
 * config.yml per dir
 * web make
 * webeditor
+  * bloggish posttemplate (date, archivcat) for webedit
 * dir lorem/index.html or lorem.html or lorem
 * normalize page and blog
 * include
