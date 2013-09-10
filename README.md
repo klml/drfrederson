@@ -47,6 +47,7 @@ $ php make.php
 ```
 ## TODO
 
+* define title as var
 * sidebar as page
 * config.yml to source?
 * config.yml per dir
