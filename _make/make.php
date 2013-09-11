@@ -37,44 +37,47 @@ class MakeSite {
 	}
 
 	// init pages data
-	protected function initPage() {
+	protected function initPage() { // TODO also as arg and GET
 		$this->pages = array();
 		$index = array();
+     
+        $sourcedirrecursive = new RecursiveDirectoryIterator( $this->config['sourcedir'] );
+        foreach (new RecursiveIteratorIterator($sourcedirrecursive) as $filenamepath => $file) { // ? diffrenc $file  vs $filenamepath
 
-		$handle = opendir($this->config['sourcedir']);
-		if ($handle) {
-			while (($file = readdir($handle) ) !== false) { // TODO recursive // TODO also as arg and GET
+            $directoriesName = explode('/', $filenamepath ) ;
+            $filename = array_pop($directoriesName) ;               // e.g. my.page.md
+            $directoriesName = implode('/', $directoriesName) ;     // e.g ../_source/mysubdir/
 
-                
-				if (preg_match('/\.md$/', $file)) {
-					if (is_file($filePath = $this->config['sourcedir'] . $file)) {
-						$page = array();
-						$page['url'] = $this->config['baseurl'] . '/' . preg_replace('/.md$/', '', $file);
-						$page['filePath'] = $this->config['htmldir'] . preg_replace('/.md$/', '', $file);
+            $filenameExtension = explode('.', $filename ) ;
+            array_pop( $filenameExtension ) ;                       // remove fileextension
+            $lemma = implode('.', $filenameExtension ) ;            // e.g. my.page
 
-						$tmpInfo = getYamlObj($filePath);
-						$page['layout'] = $this->filePath['layout'] . $tmpInfo['layout'] . '.php';
-						$page['name'] = $tmpInfo['name'];
-						$page['index'] = $tmpInfo['index'];
-						$page['comment'] = $tmpInfo['comment'];
-						
-						$page['content'] = getMdHtml($filePath);
 
-//~ more functionality 
-//~ TODO move to outermarkdown
-						//~ $more = explode('<!--more-->', $item['content']);
-						//~ if (count($more) >= 2) {
-							//~ $item['more'] = $more[0];
-						//~ } else {
-							//~ $item['more'] = false;
-						//~ }
 
-						$this->pages[] = $page;
-						$index[] = $page['index'];
-					}
-				}
-			}
-			closedir($handle);
+            $page = array();
+            $page['url'] = $this->config['baseurl'] . $lemma ;
+            $page['filePath'] = $this->config['htmldir'] . $lemma ; // TODO fill inn $directoriesName
+
+            $tmpInfo = getYamlObj( $filenamepath );
+            $page['layout'] = $this->filePath['layout'] . $tmpInfo['layout'] . '.php';
+            $page['name'] = $tmpInfo['name'];
+            $page['index'] = $tmpInfo['index'];
+            $page['comment'] = $tmpInfo['comment'];
+            
+            $page['content'] = getMdHtml( $filenamepath );
+
+            // <!-- more --> cutter //~ TODO move to outermarkdown
+            //~ $more = explode('<!--more-->', $item['content']);
+            //~ if (count($more) >= 2) {
+                //~ $item['more'] = $more[0];
+            //~ } else {
+                //~ $item['more'] = false;
+            //~ }
+
+            $this->pages[] = $page;
+            $index[] = $page['index'];
+
+
 		}
 		// sort pages by index
 		//print_r($index);

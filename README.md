@@ -49,7 +49,7 @@ $ php make.php
 
 * define title as var
 * sidebar as page
-* config.yml to source?
+* config.yml to source? prevent if config area
 * config.yml per dir
 * web make
 * webeditor
