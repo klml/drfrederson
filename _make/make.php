@@ -55,6 +55,7 @@ class MakeSite {
             $tmpInfo = getYamlObj( $filenamepath );
             $page['layout'] = $this->filePath['layout'] . $tmpInfo['layout'] . '.php';
             $page['name'] = $tmpInfo['name'];
+            $page['lemma'] = $lemma ;
             $page['index'] = $tmpInfo['index'];
             $page['comment'] = $tmpInfo['comment'];
 
