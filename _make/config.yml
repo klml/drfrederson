@@ -1,6 +1,7 @@
 siteName: Blog
 description: this is a website
 baseurl: http://localhost/php-site-maker
+baseurl: http://klml.lynx.uberspace.de/dev/php-site-maker
 sourcedir: _source
 indexPostsNum: 5
 disqusId:
