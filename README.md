@@ -47,8 +47,8 @@ $ php make.php
 ```
 ## TODO
 
-* define title as var
 * sidebar as page
+* config as explode
 * config.yml to source? prevent if config area
 * config.yml per dir
 * web make
