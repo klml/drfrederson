@@ -44,7 +44,9 @@ class MakeSite {
             array_pop( $filenameExtension ) ;                       // remove fileextension
             $lemma = implode('.', $filenameExtension ) ;            // e.g. my.page
 
-
+            if ( $this->config['pagedurable'] == $filenamepath ) {  // the sidebar etc is not a html page
+                 continue;
+            }
 
             $page = array();
             $page['url'] = $this->config['baseurl'] . $lemma ;
