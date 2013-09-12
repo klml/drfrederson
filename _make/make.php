@@ -55,7 +55,7 @@ class MakeSite {
 
 
             $page = array();
-            $page['url'] = $this->config['baseurl'] . '/' . $lemma ;
+            $page['url'] = $this->config['baseurl'] . $lemma ;
             $page['filePath'] = $this->config['htmldir'] . $lemma ; // TODO fill inn $directoriesName
 
             $tmpInfo = getYamlObj( $filenamepath );
