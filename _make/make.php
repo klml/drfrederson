@@ -55,7 +55,8 @@ class MakeSite {
             $page['name'] = $tmpInfo['name'];
             $page['index'] = $tmpInfo['index'];
             $page['comment'] = $tmpInfo['comment'];
-            
+
+            $page['pagedurable'] = getMdHtml( $this->config['pagedurable'] );
             $page['content'] = getMdHtml( $filenamepath );
 
             // <!-- more --> cutter //~ TODO move to outermarkdown

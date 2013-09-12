@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 	<meta http-quive="content-type" content="text/html; charset=utf-8" />
@@ -13,11 +13,7 @@
 	<header id="header">
 		<h1 id="logo"><a href="<?=$data['config']['baseurl']?>"><?=$data['config']['siteName']?></a></h1>
 		<nav id="nav">
-			<a href="<?=$data['config']['baseurl']?>">Blog</a>
-			<?php foreach ($data['pages'] as $item) { ?>
-			<a href="<?=$item['url']?>"><?=$item['name']?></a>
-			<?php } ?>
-		</nav>
+            <article><?=$data['page']['pagedurable']?></article>
+        </nav>
 	</header>
 
-	<?php require 'sidebar.php'; ?>

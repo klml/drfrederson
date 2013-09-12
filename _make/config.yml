@@ -1,4 +1,4 @@
-siteName: Blog
+siteName: psm
 description: this is a website
 baseurl: http://localhost/php-site-maker/
 baseurl: http://klml.lynx.uberspace.de/dev/php-site-maker/
@@ -7,6 +7,7 @@ indexPostsNum: 5
 disqusId:
 htmldir: ../
 sourcedir: ../_source/
+pagedurable: ../_source/_pagedurable.md
 path:
 	page: ../_source/page/
 	make: ../_make/
