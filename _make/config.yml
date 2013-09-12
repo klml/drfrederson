@@ -8,6 +8,6 @@ disqusId:
 htmldir: ../
 sourcedir: ../_source/
 path:
-	page: ./_source/page/
-	make: ./_make/
-	layout: ./_template/
+	page: ../_source/page/
+	make: ../_make/
+	layout: ../_template/
