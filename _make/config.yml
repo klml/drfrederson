@@ -6,6 +6,8 @@ sourcedir: _source
 indexPostsNum: 5
 disqusId:
 htmldir: ../
+htmlextension: .html
+htmlextension: 
 sourcedir: ../_source/
 pagedurable: ../_source/_pagedurable.md
 path:

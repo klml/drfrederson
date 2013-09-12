@@ -47,7 +47,6 @@ $ php make.php
 ```
 ## TODO
 
-* dir lorem/index.html or lorem.html or lorem
 * config as explode
 * config.yml to source? prevent if config area
 * config.yml per dir

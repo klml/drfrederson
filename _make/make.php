@@ -2,7 +2,7 @@
 /*
  * @name make.php
  * @class MakeSite
- * @description ganerate a static site
+ * @description generate a static site
  * @author 2dkun
  */
 
@@ -48,7 +48,7 @@ class MakeSite {
 
             $page = array();
             $page['url'] = $this->config['baseurl'] . $lemma ;
-            $page['filePath'] = $this->config['htmldir'] . $lemma ; // TODO fill inn $directoriesName
+            $page['filePath'] = $this->config['htmldir'] . $lemma . $this->config['htmlextension']; // TODO fill inn $directoriesName
 
             $tmpInfo = getYamlObj( $filenamepath );
             $page['layout'] = $this->filePath['layout'] . $tmpInfo['layout'] . '.php';
@@ -87,14 +87,15 @@ class MakeSite {
 		$this->tmplData['config']['siteTitle'] = $this->config['siteName'];
 	}
 
-	// create somepage/index.html
+	// create page
 	protected function createPages() {
 		foreach ($this->pages as $item) {
 			$filePath = $item['filePath'];
-			if (!is_dir($filePath)) {
-				mkdir($filePath);
-			}
-			$target = $filePath . '/index.html'; // TODO dir lorem/index.html or lorem.html or lorem
+			//~ if (!is_dir($filePath)) {
+				//~ mkdir($filePath);
+			//~ } // TODO 
+
+			$target = $filePath ; // TODO rm
 			$layout = $item['layout'];
 			$this->tmplData['page'] = $item;
 			$this->tmplData['config']['siteTitle'] = $item['name'] . ' | ' .$this->tmplData['config']['siteName'];

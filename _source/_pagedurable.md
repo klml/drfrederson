@@ -1,6 +1,6 @@
 ---
 layout: page
-name: What?
+name: placeholder durabel
 comment: true
 index: 1
 ---
