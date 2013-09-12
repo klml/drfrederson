@@ -47,14 +47,13 @@ $ php make.php
 ```
 ## TODO
 
-* sidebar as page
+* dir lorem/index.html or lorem.html or lorem
 * config as explode
 * config.yml to source? prevent if config area
 * config.yml per dir
 * web make
 * webeditor
   * bloggish posttemplate (date, archivcat) for webedit
-* dir lorem/index.html or lorem.html or lorem
 * normalize page and blog
 * include
 * data2css
