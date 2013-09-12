@@ -55,4 +55,3 @@ $ php make.php
   * bloggish posttemplate (date, archivcat) for webedit
 * normalize page and blog
 * include
-* data2css
