@@ -41,7 +41,7 @@ class MakeSite {
             $directoriesName = implode('/', $directoriesName) ;     // e.g ../_source/mysubdir/
 
             $filenamewithExtension = explode('.', $filename ) ;
-            $filenameExtension = end($filenamewithExtension);
+            $filenameExtension = end($filenamewithExtension);           //  fileextension e.g. md
             array_pop( $filenamewithExtension ) ;                       // remove fileextension
 
             $lemma = implode('.', $filenamewithExtension ) ;            // e.g. my.page
