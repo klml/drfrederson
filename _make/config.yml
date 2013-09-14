@@ -9,6 +9,7 @@ htmldir: ../
 htmlextension: .html
 htmlextension: 
 sourcedir: ../_source/
+sourceextension: md
 pagedurable: ../_source/_pagedurable.md
 path:
 	page: ../_source/page/

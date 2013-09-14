@@ -40,11 +40,13 @@ class MakeSite {
             $filename = array_pop($directoriesName) ;               // e.g. my.page.md
             $directoriesName = implode('/', $directoriesName) ;     // e.g ../_source/mysubdir/
 
-            $filenameExtension = explode('.', $filename ) ;
-            array_pop( $filenameExtension ) ;                       // remove fileextension
-            $lemma = implode('.', $filenameExtension ) ;            // e.g. my.page
+            $filenamewithExtension = explode('.', $filename ) ;
+            $filenameExtension = end($filenamewithExtension);
+            array_pop( $filenamewithExtension ) ;                       // remove fileextension
 
-            if ( $this->config['pagedurable'] == $filenamepath ) {  // the sidebar etc is not a html page
+            $lemma = implode('.', $filenamewithExtension ) ;            // e.g. my.page
+
+            if ( $this->config['pagedurable'] == $filenamepath || $filenameExtension != $this->config['sourceextension'] ) {  // exceptions: sidebar, config 
                  continue;
             }
 
