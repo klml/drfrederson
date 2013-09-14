@@ -52,7 +52,7 @@ class MakeSite {
             $page['url'] = $this->config['baseurl'] . $lemma ;
             $page['filePath'] = $this->config['htmldir'] . $lemma . $this->config['htmlextension']; // TODO fill inn $directoriesName
 
-            $tmpInfo = splitYamlMD( $filenamepath );
+            $tmpInfo = splitYamlMD( $filenamepath, '1' );
             $page['layout'] = $this->filePath['layout'] . $tmpInfo['layout'] . '.php';
             $page['name'] = $tmpInfo['name'];
             $page['lemma'] = $lemma ;

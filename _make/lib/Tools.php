@@ -25,10 +25,10 @@ function getMdHtml($filePath) {
 
 
 // return yaml conf and md
-function splitYamlMD($filePath) {
+function splitYamlMD($filePath, $index) {
 	$ymlMD = array();
     $ymlMD = explode('---', file_get_contents($filePath) ) ; // no get
-    return spyc_load_file($ymlMD[1]); // TODO test is config
+    return spyc_load_file($ymlMD[$index]); // TODO test is config
 }
 
 
