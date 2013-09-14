@@ -55,8 +55,6 @@ $ php make.php
 
 * call single page
 * test if yml exists from func
-* config.yml to source? prevent if config area
-* config.yml per dir
 * web make
 * webeditor
   * bloggish posttemplate (date, archivcat) for webedit

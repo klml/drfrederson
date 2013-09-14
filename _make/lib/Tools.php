@@ -20,7 +20,7 @@ function suc($value='') {
 // return yaml conf and md seperated from source
 function splitYamlMD($filePath) {
     $ymlMD = array();
-    $ymlMD = explode('---', file_get_contents($filePath) ) ; // no get
+    $ymlMD = explode('---', file_get_contents($filePath) ) ;
     return $ymlMD ; 
 }
 

@@ -52,10 +52,22 @@ class MakeSite {
 
             $ymlMD = splitYamlMD( $filenamepath ) ;
 
+            // read page config (template, meta, etc) from file, directory or mainconf
+            $directoriesConf = $directoriesName . '/config.yml' ;
+            if ( isset($ymlMD[1]) ) {
+                $tmpInfo = spyc_load_file( $ymlMD[1] ) ;
+            } else if ( file_exists($directoriesConf) ) {
+                $tmpInfo = spyc_load_file( file_get_contents($directoriesConf) );
+                // TODO dir climb up
+            } else {
+                $tmpInfo = $this->config ;
+            }
+
+
             $page = array();
             $page['url'] = $this->config['baseurl'] . $lemma ;
             $page['filePath'] = $this->config['htmldir'] . $lemma . $this->config['htmlextension']; // TODO fill inn $directoriesName
-            $tmpInfo = spyc_load_file( $ymlMD[1] ) ; // TODO use no index but idetifiers
+
             $page['layout'] = $this->filePath['layout'] . $tmpInfo['layout'] . '.php';
             $page['name'] = $tmpInfo['name'];
             $page['lemma'] = $lemma ;

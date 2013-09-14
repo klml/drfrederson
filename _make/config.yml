@@ -15,3 +15,12 @@ path:
 	page: ../_source/page/
 	make: ../_make/
 	layout: ../_template/
+
+---
+layout: page
+name: Title from root-config 
+comment: true
+index: 1
+---
+
+
