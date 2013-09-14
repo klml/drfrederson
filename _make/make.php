@@ -52,7 +52,7 @@ class MakeSite {
             $page['url'] = $this->config['baseurl'] . $lemma ;
             $page['filePath'] = $this->config['htmldir'] . $lemma . $this->config['htmlextension']; // TODO fill inn $directoriesName
 
-            $tmpInfo = getYamlObj( $filenamepath );
+            $tmpInfo = splitYamlMD( $filenamepath );
             $page['layout'] = $this->filePath['layout'] . $tmpInfo['layout'] . '.php';
             $page['name'] = $tmpInfo['name'];
             $page['lemma'] = $lemma ;
@@ -79,6 +79,8 @@ class MakeSite {
 		//print_r($index);
 		array_multisort($index, SORT_ASC, $this->pages);
 	}
+
+
 
 	// init data for tmpl
 	protected function initTmplData() {

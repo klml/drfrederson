@@ -55,3 +55,4 @@ $ php make.php
   * bloggish posttemplate (date, archivcat) for webedit
 * normalize page and blog
 * include
+* index: dir as link include (for pix)
