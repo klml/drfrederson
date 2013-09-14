@@ -47,20 +47,22 @@ class MakeSite {
             if ( $this->config['pagedurable'] == $filenamepath ) {  // the sidebar etc is not a html page
                  continue;
             }
+            $ymlMD = splitYamlMD( $filenamepath ) ;
+
+
 
             $page = array();
             $page['url'] = $this->config['baseurl'] . $lemma ;
             $page['filePath'] = $this->config['htmldir'] . $lemma . $this->config['htmlextension']; // TODO fill inn $directoriesName
-
-            $tmpInfo = splitYamlMD( $filenamepath, '1' );
+            $tmpInfo = spyc_load_file( $ymlMD[1] ) ; // TODO use no index but idetifiers
             $page['layout'] = $this->filePath['layout'] . $tmpInfo['layout'] . '.php';
             $page['name'] = $tmpInfo['name'];
             $page['lemma'] = $lemma ;
             $page['index'] = $tmpInfo['index'];
             $page['comment'] = $tmpInfo['comment'];
 
-            $page['pagedurable'] = getMdHtml( $this->config['pagedurable'] );
-            $page['content'] = getMdHtml( $filenamepath );
+            $page['pagedurable'] = Markdown( file_get_contents($this->config['pagedurable']) );
+            $page['content'] = Markdown( $ymlMD[2] ) ;
 
             // <!-- more --> cutter //~ TODO move to outermarkdown
             //~ $more = explode('<!--more-->', $item['content']);

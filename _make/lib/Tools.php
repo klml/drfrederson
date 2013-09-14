@@ -17,18 +17,11 @@ function suc($value='') {
 	echo "[SUCCESS] $value\n";
 }
 
-// return article content in html.
-function getMdHtml($filePath) {
-	return trim(Markdown(preg_replace('/^---.*?---/s', '', file_get_contents($filePath))));
-	// return preg_replace('/[\-]+\s+.*\s+[\-]+/i', '', file_get_contents($filePath));
-}
-
-
-// return yaml conf and md
-function splitYamlMD($filePath, $index) {
-	$ymlMD = array();
+// return yaml conf and md seperated from source
+function splitYamlMD($filePath) {
+    $ymlMD = array();
     $ymlMD = explode('---', file_get_contents($filePath) ) ; // no get
-    return spyc_load_file($ymlMD[$index]); // TODO test is config
+    return $ymlMD ; 
 }
 
 

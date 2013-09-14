@@ -1,9 +1,3 @@
----
-layout: page
-name: placeholder durabel
-comment: true
-index: 1
----
 * [klml](klml)
 * [What?](what)
 
