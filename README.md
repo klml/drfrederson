@@ -7,7 +7,10 @@ A simple static site generator powered by PHP & Markdown. Based on [github.com/l
 
 Write files in [markdown](http://michelf.com/projects/php-markdown/).
 
-Metainformation can be defined for each page at the bottom after `---`
+Metainformation can be defined in [yaml](http://www.yaml.org/spec/1.2/spec.html)
+* for each page at the bottom after `---`
+* or for each directory in ''config.yml'' 
+* or in the site-config ''_make/config.yml'' 
 
 ## Directories
 
@@ -25,7 +28,6 @@ theme/
 
 ## config.yml
 
-''config.yml''
 
 baseurl
 : root url ''http://example.com'' or ''http://example.com/mypage'' for absolute URL inside the html.
