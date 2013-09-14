@@ -53,7 +53,7 @@ class MakeSite {
             $page = array();
             $page['url'] = $this->config['baseurl'] . $lemma ;
             $page['filePath'] = $this->config['htmldir'] . $lemma . $this->config['htmlextension']; // TODO fill inn $directoriesName
-            echo $tmpInfo = spyc_load_file( $ymlMD[1] ) ; // TODO use no index but idetifiers
+            $tmpInfo = spyc_load_file( $ymlMD[1] ) ; // TODO use no index but idetifiers
             $page['layout'] = $this->filePath['layout'] . $tmpInfo['layout'] . '.php';
             $page['name'] = $tmpInfo['name'];
             $page['lemma'] = $lemma ;

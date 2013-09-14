@@ -47,6 +47,8 @@ $ php make.php
 ```
 ## TODO
 
+* call single page
+* test if yml exists from func
 * config.yml to source? prevent if config area
 * config.yml per dir
 * web make
