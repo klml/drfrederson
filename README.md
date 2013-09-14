@@ -3,6 +3,12 @@ php-site-maker
 
 A simple static site generator powered by PHP & Markdown. Based on [github.com/lonescript/php-site-maker](http://github.com/lonescript/php-site-maker)
 
+## Format
+
+Write files in [markdown](http://michelf.com/projects/php-markdown/).
+
+Metainformation can be defined for each page at the bottom after `---`
+
 ## Directories
 
 _make/

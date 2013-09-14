@@ -63,7 +63,7 @@ class MakeSite {
             $page['comment'] = $tmpInfo['comment'];
 
             $page['pagedurable'] = Markdown( file_get_contents($this->config['pagedurable']) );
-            $page['content'] = Markdown( $ymlMD[2] ) ;
+            $page['content'] = Markdown( $ymlMD[0] ) ;
 
             // <!-- more --> cutter //~ TODO move to outermarkdown
             //~ $more = explode('<!--more-->', $item['content']);
