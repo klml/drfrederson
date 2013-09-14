@@ -28,6 +28,26 @@ theme/
 
 ## config.yml
 
+### page
+
+For every single page
+
+layout
+: template
+
+name
+: name for index or title
+
+comment
+: allow comments
+
+index
+: 1
+
+
+### site
+
+For the whole site
 
 baseurl
 : root url ''http://example.com'' or ''http://example.com/mypage'' for absolute URL inside the html.
@@ -37,6 +57,8 @@ sourcedir
 
 htmldir
 : directory for generated html-output
+
+
 
 
 ### Usage
