@@ -82,6 +82,7 @@ $ php make.php
 * web make
 * webeditor
   * bloggish posttemplate (date, archivcat) for webedit
+* pagedurable by directory
 * normalize page and blog
 * include
 * index: dir as link include (for pix)
