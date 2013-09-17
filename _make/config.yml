@@ -20,7 +20,6 @@ path:
 layout: page
 name: Title from root-config 
 comment: true
-index: 1
 ---
 
 

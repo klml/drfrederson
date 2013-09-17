@@ -77,8 +77,6 @@ $ php make.php
 ```
 ## TODO
 
-
-* remove index
 * merge init create
 * call single page
 * test if yml exists from func

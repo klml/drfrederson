@@ -72,7 +72,6 @@ class MakeSite {
             $page['layout'] = $this->filePath['layout'] . $tmpInfo['layout'] . '.php';
             $page['name'] = $tmpInfo['name'];
             $page['lemma'] = $lemma ;
-            $page['index'] = $tmpInfo['index'];
             $page['comment'] = $tmpInfo['comment'];
 
             $page['pagedurable'] = Markdown( file_get_contents($this->config['pagedurable']) );
@@ -86,22 +85,17 @@ class MakeSite {
                 //~ $item['more'] = false;
             //~ }
             $this->pages[] = $page;
-            $index[] = $page['index'];
     }
 
 
 
 	protected function readSourceDir() { // TODO also as arg and GET // ganz raus
 		$this->pages = array();
-		$index = array();
      
         $sourcedirrecursive = new RecursiveDirectoryIterator( $this->config['sourcedir'] );
         foreach (new RecursiveIteratorIterator($sourcedirrecursive) as $filenamepath => $file) { // ? diffrenc $file  vs $filenamepath
             $this->preparePage($filenamepath);
 		}
-		// sort pages by index
-		//print_r($index);
-		array_multisort($index, SORT_ASC, $this->pages);
 	}
 
 
