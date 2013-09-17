@@ -21,21 +21,22 @@ class MakeSite {
 		$this->config = spyc_load_file('config.yml');
 		$this->wwwPath = $this->config['path'];
 		$this->filePath = $this->wwwPath; // ?
-		$this->initPage();
-		$this->initTmplData();
-
-        $this->createPages();
+        $this->process() ;
 		//$this->createArchives();
 	}
 
+    public function process() {
+        $this->readSourceDir();
+        $this->initTmplData();
+        $this->createPages();
+    }
 	// init pages data
-	protected function initPage() { // TODO also as arg and GET
-		$this->pages = array();
-		$index = array();
-     
-        $sourcedirrecursive = new RecursiveDirectoryIterator( $this->config['sourcedir'] );
-        foreach (new RecursiveIteratorIterator($sourcedirrecursive) as $filenamepath => $file) { // ? diffrenc $file  vs $filenamepath
 
+
+
+	public function preparePage($filenamepath) { // TODO also as arg and GET
+            $this->processAllPages = false;
+    
             $directoriesName = explode('/', $filenamepath ) ;
             $filename = array_pop($directoriesName) ;               // e.g. my.page.md
             $directoriesName = implode('/', $directoriesName) ;     // e.g ../_source/mysubdir/
@@ -47,7 +48,7 @@ class MakeSite {
             $lemma = implode('.', $filenamewithExtension ) ;            // e.g. my.page
 
             if ( $this->config['pagedurable'] == $filenamepath || $filenameExtension != $this->config['sourceextension'] ) {  // exceptions: sidebar, config 
-                 continue;
+                 return;
             }
 
             $ymlMD = splitYamlMD( $filenamepath ) ;
@@ -84,11 +85,19 @@ class MakeSite {
             //~ } else {
                 //~ $item['more'] = false;
             //~ }
-
             $this->pages[] = $page;
             $index[] = $page['index'];
+    }
 
 
+
+	protected function readSourceDir() { // TODO also as arg and GET // ganz raus
+		$this->pages = array();
+		$index = array();
+     
+        $sourcedirrecursive = new RecursiveDirectoryIterator( $this->config['sourcedir'] );
+        foreach (new RecursiveIteratorIterator($sourcedirrecursive) as $filenamepath => $file) { // ? diffrenc $file  vs $filenamepath
+            $this->preparePage($filenamepath);
 		}
 		// sort pages by index
 		//print_r($index);
@@ -126,6 +135,7 @@ class MakeSite {
 	}
 }
 
-new MakeSite();
+$site = new MakeSite();
+
 
 ?>
