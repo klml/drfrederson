@@ -13,7 +13,7 @@ function err($value='') {
 }
 
 // success log
-function suc($value='') {
+function success($value='') {
 	echo "[SUCCESS] $value\n";
 }
 

@@ -118,7 +118,7 @@ class MakeSite {
 			$this->tmplData['config']['siteTitle'] = $item['name'] . ' | ' .$this->tmplData['config']['siteName'];
 			makeHtmlFile( $item['filePath'] , $item['layout'] , $this->tmplData);
 			$this->initTmplData();
-			suc('page: ' . $item['name']);
+			success('created page: ' . $item['name']);
 		}
 	}
 }
