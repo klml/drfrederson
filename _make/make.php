@@ -113,16 +113,10 @@ class MakeSite {
 	// create page
 	protected function createPages() {
 		foreach ($this->pages as $item) {
-			$filePath = $item['filePath'];
-			//~ if (!is_dir($filePath)) {
-				//~ mkdir($filePath);
-			//~ } // TODO 
 
-			$target = $filePath ; // TODO rm
-			$layout = $item['layout'];
 			$this->tmplData['page'] = $item;
 			$this->tmplData['config']['siteTitle'] = $item['name'] . ' | ' .$this->tmplData['config']['siteName'];
-			makeHtmlFile($target, $layout, $this->tmplData);
+			makeHtmlFile( $item['filePath'] , $item['layout'] , $this->tmplData);
 			$this->initTmplData();
 			suc('page: ' . $item['name']);
 		}
