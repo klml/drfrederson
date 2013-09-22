@@ -36,17 +36,21 @@ class MakeSite {
         global $argv ;
         $this->pages = array();
 
-        if (  count($argv) > 1  ) { // create single pages from cli input
-            array_shift($argv); // remove script name
+        if ( count($argv) > 1  ) {      // create single pages from cli input
+            array_shift($argv);         // remove script name
             foreach( $argv as $lemma ) {
                 $this->preparePage( $this->config['sourcedir'] . $lemma );
             }
+        } else if ( isset($_GET["lemma"])  ) { // create single pages from cli input
+            // TODO if file exist
+            $this->preparePage( $this->config['sourcedir'] . $_GET["lemma"] . '.' . $this->config['sourceextension'] );
         } else {
             $sourcedirrecursive = new RecursiveDirectoryIterator( $this->config['sourcedir'] );
             foreach (new RecursiveIteratorIterator($sourcedirrecursive) as $filenamepath => $file) { // ? diffrenc $file  vs $filenamepath
                 $this->preparePage($filenamepath);
             }
 		}
+        
 	}
 
 
