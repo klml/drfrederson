@@ -78,9 +78,7 @@ $ php make.php
 ## TODO
 
 * merge init create
-* call single page
 * test if yml exists from func
-* web make
 * webeditor
   * bloggish posttemplate (date, archivcat) for webedit
 * normalize page and blog
