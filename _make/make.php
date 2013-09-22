@@ -22,7 +22,6 @@ class MakeSite {
 		$this->wwwPath = $this->config['path'];
 		$this->filePath = $this->wwwPath; // ?
         $this->process() ;
-		//$this->createArchives();
 	}
 
     public function process() {
@@ -134,6 +133,4 @@ class MakeSite {
 }
 
 $site = new MakeSite();
-
-
 ?>
