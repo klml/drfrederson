@@ -33,15 +33,22 @@ class MakeSite {
 	// init pages data
 
 	protected function readSourceDir() { // rename in whcih page shell created
+        global $argv ;
         $this->pages = array();
 
-        $sourcedirrecursive = new RecursiveDirectoryIterator( $this->config['sourcedir'] );
-        foreach (new RecursiveIteratorIterator($sourcedirrecursive) as $filenamepath => $file) { // ? diffrenc $file  vs $filenamepath
-            $this->preparePage($filenamepath);
+        if (  count($argv) > 1  ) { // create single pages from cli input
+            array_shift($argv); // remove script name
+            foreach( $argv as $lemma ) {
+                $this->preparePage( $this->config['sourcedir'] . $lemma );
+            }
+        } else {
+            $sourcedirrecursive = new RecursiveDirectoryIterator( $this->config['sourcedir'] );
+            foreach (new RecursiveIteratorIterator($sourcedirrecursive) as $filenamepath => $file) { // ? diffrenc $file  vs $filenamepath
+                $this->preparePage($filenamepath);
+                echo $filenamepath ;
+            }
 		}
 	}
-
-
 
 
 	public function preparePage($filenamepath) { // protected
