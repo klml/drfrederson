@@ -38,22 +38,26 @@ class MakeSite {
 
         if ( count($argv) > 1  ) {      // create single pages from cli input
             array_shift($argv);         // remove script name
-            foreach( $argv as $lemma ) {
-                $this->preparePage( $this->config['sourcedir'] . $lemma );
-            }
-        } else if ( isset($_GET["lemma"])  ) { // create single pages from cli input
-            // TODO if file exist
-            $this->preparePage( $this->config['sourcedir'] . $_GET["lemma"] . '.' . $this->config['sourceextension'] );
+            $this->calledPages($argv);
+        } else if ( isset( $_GET["lemma"] ) ) { // create single pages from cli input
+            $this->calledPages( $_GET["lemma"] );
         } else {
             $sourcedirrecursive = new RecursiveDirectoryIterator( $this->config['sourcedir'] );
             foreach (new RecursiveIteratorIterator($sourcedirrecursive) as $filenamepath => $file) { // ? diffrenc $file  vs $filenamepath
                 $this->preparePage($filenamepath);
             }
 		}
-        
 	}
-
-
+	public function calledPages($lemmas) { 
+        foreach( $lemmas as $lemma ) {
+            $filenamepath = $this->config['sourcedir'] . $lemma . '.' . $this->config['sourceextension'];
+            if( file_exists( $filenamepath ) ) {
+                $this->preparePage( $filenamepath );
+            } else {
+            error('no files');
+            }
+        }    
+    }
 	public function preparePage($filenamepath) { // protected
 
             $directoriesName = explode('/', $filenamepath ) ;

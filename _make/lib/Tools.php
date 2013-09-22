@@ -8,7 +8,7 @@
 
 
 // error log
-function err($value='') {
+function error($value='') {
 	echo "[ERROR] $value\n";
 }
 
