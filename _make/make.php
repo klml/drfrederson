@@ -26,13 +26,13 @@ class MakeSite {
 	}
 
     public function process() {
-        $this->readSourceDir();
+        $this->selectPages();
         $this->initTmplData();
         $this->createPages();
     }
 	// init pages data
 
-	protected function readSourceDir() { // rename in whcih page shell created
+	protected function selectPages() {
         global $argv ;
         $this->pages = array();
 
