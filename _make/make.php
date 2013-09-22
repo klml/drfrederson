@@ -32,11 +32,20 @@ class MakeSite {
     }
 	// init pages data
 
+	protected function readSourceDir() { // rename in whcih page shell created
+        $this->pages = array();
+
+        $sourcedirrecursive = new RecursiveDirectoryIterator( $this->config['sourcedir'] );
+        foreach (new RecursiveIteratorIterator($sourcedirrecursive) as $filenamepath => $file) { // ? diffrenc $file  vs $filenamepath
+            $this->preparePage($filenamepath);
+		}
+	}
 
 
-	public function preparePage($filenamepath) { // TODO also as arg and GET
-            $this->processAllPages = false;
-    
+
+
+	public function preparePage($filenamepath) { // protected
+
             $directoriesName = explode('/', $filenamepath ) ;
             $filename = array_pop($directoriesName) ;               // e.g. my.page.md
             $directoriesName = implode('/', $directoriesName) ;     // e.g ../_source/mysubdir/
@@ -86,19 +95,6 @@ class MakeSite {
             //~ }
             $this->pages[] = $page;
     }
-
-
-
-	protected function readSourceDir() { // TODO also as arg and GET // ganz raus
-		$this->pages = array();
-     
-        $sourcedirrecursive = new RecursiveDirectoryIterator( $this->config['sourcedir'] );
-        foreach (new RecursiveIteratorIterator($sourcedirrecursive) as $filenamepath => $file) { // ? diffrenc $file  vs $filenamepath
-            $this->preparePage($filenamepath);
-		}
-	}
-
-
 
 	// init data for tmpl
 	protected function initTmplData() {
