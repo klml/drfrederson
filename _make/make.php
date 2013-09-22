@@ -45,7 +45,6 @@ class MakeSite {
             $sourcedirrecursive = new RecursiveDirectoryIterator( $this->config['sourcedir'] );
             foreach (new RecursiveIteratorIterator($sourcedirrecursive) as $filenamepath => $file) { // ? diffrenc $file  vs $filenamepath
                 $this->preparePage($filenamepath);
-                echo $filenamepath ;
             }
 		}
 	}
