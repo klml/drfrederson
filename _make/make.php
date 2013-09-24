@@ -98,7 +98,7 @@ class MakeSite {
             $page['filenamepath'] = $filenamepath ;
             $page['comment'] = $tmpInfo['comment'];
 
-            $page['pagedurable'] = Markdown( file_get_contents($this->config['pagedurable']) );z
+            $page['pagedurable'] = Markdown( file_get_contents($this->config['pagedurable']) );
             $page['content'] = Markdown( $ymlMD[0] ) ;
 
             // <!-- more --> cutter //~ TODO move to outermarkdown
