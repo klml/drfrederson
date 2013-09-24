@@ -39,6 +39,7 @@ class MakeSite {
             array_shift($argv);         // remove script name
             $this->calledPages($argv);
         } else if ( isset( $_GET["lemma"] ) ) { // create single pages from cli input
+
             $this->calledPages( $_GET["lemma"] );
         } else {
             $sourcedirrecursive = new RecursiveDirectoryIterator( $this->config['sourcedir'] );
@@ -94,6 +95,7 @@ class MakeSite {
             $page['layout'] = $this->filePath['layout'] . $tmpInfo['layout'] . '.php';
             $page['name'] = $tmpInfo['name'];
             $page['lemma'] = $lemma ;
+            $page['filenamepath'] = $filenamepath ;
             $page['comment'] = $tmpInfo['comment'];
 
             $page['pagedurable'] = Markdown( file_get_contents($this->config['pagedurable']) );

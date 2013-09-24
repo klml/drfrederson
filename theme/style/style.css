@@ -373,3 +373,30 @@ img {
 	src: local('Open Sans'), local('OpenSans'), url(http://themes.googleusercontent.com/static/fonts/opensans/v6/cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
 }
 
+
+/* useful class-room phrases */
+/* https://github.com/klml/usefulclassroomphrases */
+.clear,
+.cb { clear:both; }
+.cl { clear:left; }
+.cr { clear:right; }
+.left { float:left;}
+.right { float:right;}
+.none { float: none !important;}
+img[src$='#left'], /* use blind hash as workaround if class can't set, eg markdown etc */
+img.left { float:left;margin:0 5px 5px 0;}
+img[src$='#right'],
+img.right { float:right;margin:0 0 5px 5px;}
+.block { display: block;}
+.depot, /* is for htmlsnippets moved and used by JS */
+.hidden { display: none; }
+.thx, .alerta, .notice { border: 1px solid #8da7cc; border-left-width: 20px;color: green;font-size: 130%;padding: 5px;} 
+.row2 dl dt {clear: both; float: left; font-weight: bold; width: 20%;} /* 2-column for key value lists .row2 is above if you use not changable sections like markdown-lists */
+.row2 dl dd {float: right; width: 78%; margin-left: 0}
+
+/* edit funct */
+form.webedit textarea {
+    background-color: #000000;
+    color: #FFFFFF;
+    height: 400px;
+}

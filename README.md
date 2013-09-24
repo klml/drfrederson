@@ -12,6 +12,23 @@ Metainformation can be defined in [yaml](http://www.yaml.org/spec/1.2/spec.html)
 * or for each directory in ''config.yml'' 
 * or in the site-config ''_make/config.yml'' 
 
+## Write
+
+Edit your website in diffrent ways
+
+* *normal* edit source files on filesystem and text-editor
+* webedit with the edit button on the page
+* receive changes via git (or other DCVS) and update the source
+
+## Setup
+
+The public site needs only html and js files. Only ''_make/''-Directory is needed for updates. Thw ''writer.php'' has **no role or user validation**, Protect this against violaton:
+
+* htaccess with 
+* use ist only on secure machines like Desktops Intranets and publish all without ''_make/'' (e.g. `rsync --exclude=_make/`)
+
+
+
 ## Directories
 
 _make/
@@ -78,9 +95,16 @@ $ php make.php
 ## TODO
 
 * merge init create
+* 404 er
+* remove site title from config
+* meta desc to yaml
 * test if yml exists from func
 * webeditor
   * bloggish posttemplate (date, archivcat) for webedit
+  * create new page
+  * if not loadable
+* global filenamepath
 * normalize page and blog
 * include
 * index: dir as link include (for pix)
+* first H1 as titel
