@@ -104,6 +104,7 @@ $ php make.php
   * create new page
   * if not loadable
 * global filenamepath
+* pagedurable by directory
 * normalize page and blog
 * include
 * index: dir as link include (for pix)
