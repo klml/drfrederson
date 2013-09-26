@@ -1,0 +1,2 @@
+RewriteEngine On
+ErrorDocument 404 /dev/php-site-maker/404error

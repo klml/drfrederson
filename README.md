@@ -8,37 +8,38 @@ A simple static site generator powered by PHP & Markdown. Based on [github.com/l
 Write files in [markdown](http://michelf.com/projects/php-markdown/).
 
 Metainformation can be defined in [yaml](http://www.yaml.org/spec/1.2/spec.html)
-* for each page at the bottom after `---`
-* or for each directory in ''config.yml'' 
-* or in the site-config ''_make/config.yml'' 
+* for __each page__ at the bottom of sourcefile after the `---`
+* or for each __directory__ in *config.yml* 
+* or in the __site__-config *_make/config.yml* 
 
 ## Write
 
 Edit your website in diffrent ways
 
-* *normal* edit source files on filesystem and text-editor
-* webedit with the edit button on the page
-* receive changes via git (or other DCVS) and update the source
+* *normal* edit source files on filesystem and with your favourite text-editor. After editing call make.php in you CLI
+* __webedit__ with the edit button on the page. After 'save' the single page will be created.
+* receive changes via __git__ (or other __DCVS__) and update the source and call make.php manually or with a hook.
 
 ## Setup
 
-The public site needs only html and js files. Only ''_make/''-Directory is needed for updates. Thw ''writer.php'' has **no role or user validation**, Protect this against violaton:
+The public site needs only html and js files. Only *_make/*-directory is needed for updates. The *writer.php* has **no role or user validation**, Protect this against violaton:
 
-* htaccess with 
-* use ist only on secure machines like Desktops Intranets and publish all without ''_make/'' (e.g. `rsync --exclude=_make/`)
+* htaccess for the whole *_make/*-directory
+* use editing only on secure machines like your desktop or intranet and publish all without *_make/* (e.g. `rsync --exclude=_make/`)
 
 
+There is no __automatic URL handling__, config URL manually in the main *config.yml* and *.htaccess*.
 
 ## Directories
 
 _make/
-: all server sourcecode to create html files from ''_source/'' 'compiled' with all ''_template/''
+: all server sourcecode to create html files from *_source/* 'compiled' with all *_template/*
 
 _source/
 : content source written in Markdown
 
 _template/
-: some html skeletons wrapping in persisting areas like ''header.php'', ''footer.php'' and ''sidebar.php''. 
+: some html skeletons wrapping in persisting areas like *header.php*, *footer.php* and *sidebar.php*. 
 
 theme/
 : clientsite assets like css and js.
@@ -67,7 +68,7 @@ index
 For the whole site
 
 baseurl
-: root url ''http://example.com'' or ''http://example.com/mypage'' for absolute URL inside the html.
+: root url *http://example.com* or *http://example.com/mypage* for absolute URL inside the html.
 
 sourcedir
 : content source
@@ -95,8 +96,13 @@ $ php make.php
 ## TODO
 
 * merge init create
-* 404 er
-* remove site title from config
+* 404 er save
+* trailing slash
+* rm new.php
+* demopages
+* URL builing? root dir : absolute relative only one dir
+* remove site title from template
+* first H1 as title
 * meta desc to yaml
 * test if yml exists from func
 * webeditor
@@ -108,4 +114,5 @@ $ php make.php
 * normalize page and blog
 * include
 * index: dir as link include (for pix)
-* first H1 as titel
+* after pagedurabel creat with all pages
+* tags
