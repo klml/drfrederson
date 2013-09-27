@@ -20,6 +20,6 @@ path:
 layout: page
 name: Title from root-config 
 comment: true
----
+description: Some general description
 
 

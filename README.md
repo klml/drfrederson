@@ -93,7 +93,6 @@ edit `config.yml` first.
 * trailing slash
 * URL builing? root dir : absolute relative only one dir
 * first H1 as title
-* meta desc to yaml
 * test if yml exists from func
 * webeditor
   * bloggish posttemplate (date, archivcat) for webedit

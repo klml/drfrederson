@@ -126,6 +126,7 @@ class MakeSite {
 
             $page['pagedurable'] = Markdown( file_get_contents($this->config['pagedurable']) );
             $page['content'] = Markdown( $ymlMD[0] ) ;
+            $page['description'] = $tmpInfo['description'];
 
             // <!-- more --> cutter //~ TODO move to outermarkdown
             //~ $more = explode('<!--more-->', $item['content']);
