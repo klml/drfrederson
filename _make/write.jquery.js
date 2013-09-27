@@ -5,7 +5,7 @@ if ( psmpagelemma == "404error" ) {
      pagesourcepath.pop() ;
      lemma = window.location.pathname.split('/').pop().split('.')[0] ;
 
-     pagesourcepathprefill = pagesourcepath.join('/') + '/psmpagesourceprefill.md'; // TODO var     
+     pagesourcepathprefill = pagesourcepath.join('/') + '/example.md'; // TODO var     
 
      pagesourcepath.push( lemma ) ;
      pagesourcepathwrite = pagesourcepath.join('/') + '.md'; // TODO var

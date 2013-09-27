@@ -105,3 +105,4 @@ edit `config.yml` first.
 * index: dir as link include (for pix)
 * after pagedurabel creat with all pages
 * tags
+* config values single (atm all or nothing)
