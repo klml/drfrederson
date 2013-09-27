@@ -95,7 +95,6 @@ $ php make.php
 ```
 ## TODO
 
-* merge init create
 * 404 er save
 * rename filenamepath sourcepath
 * js var psmpage

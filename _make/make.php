@@ -25,9 +25,8 @@ class MakeSite {
 	}
 
     public function process() {
-        $this->selectPages();
         $this->initTmplData();
-        $this->createPages();
+        $this->selectPages();
     }
 	// init pages data
 
@@ -44,7 +43,7 @@ class MakeSite {
         } else {
             $sourcedirrecursive = new RecursiveDirectoryIterator( $this->config['sourcedir'] );
             foreach (new RecursiveIteratorIterator($sourcedirrecursive) as $filenamepath => $file) { // ? diffrenc $file  vs $filenamepath
-                $this->preparePage($filenamepath);
+                $this->createPages($filenamepath);
             }
 		}
 	}
@@ -52,13 +51,25 @@ class MakeSite {
         foreach( $lemmas as $lemma ) {
             $filenamepath = $this->config['sourcedir'] . $lemma . '.' . $this->config['sourceextension'];
             if( file_exists( $filenamepath ) ) {
-                $this->preparePage( $filenamepath );
+                $this->createPages( $filenamepath );
             } else {
             error('no files');
             }
         }    
     }
-	public function preparePage($filenamepath) { // protected
+    
+    
+	// init data for tmpl
+	protected function initTmplData() {
+		$this->tmplData = array(
+			'config' => $this->config,
+			'page' => null
+		);
+		$this->tmplData['config']['siteTitle'] = $this->config['siteName']; // ??
+	}
+
+	// create page    
+	public function createPages($filenamepath) { // protected
 
             $directoriesName = explode('/', $filenamepath ) ;
             $filename = array_pop($directoriesName) ;               // e.g. my.page.md
@@ -108,30 +119,16 @@ class MakeSite {
             //~ } else {
                 //~ $item['more'] = false;
             //~ }
-            $this->pages[] = $page;
-    }
 
-	// init data for tmpl
-	protected function initTmplData() {
-		$this->tmplData = array(
-			'config' => $this->config,
-			'pages' => $this->pages,
-			'page' => null
-		);
-		$this->tmplData['config']['siteTitle'] = $this->config['siteName'];
-	}
+            //  merge config, template and content
+            $this->tmplData['page'] = $page;
 
-	// create page
-	protected function createPages() {
-		foreach ($this->pages as $item) {
-
-			$this->tmplData['page'] = $item;
-			$this->tmplData['config']['siteTitle'] = $item['name'] . ' | ' .$this->tmplData['config']['siteName'];
-			makeHtmlFile( $item['filePath'] , $item['layout'] , $this->tmplData);
+        
+			$this->tmplData['config']['siteTitle'] = $page['name'] . ' | ' .$this->tmplData['config']['siteName'];
+			makeHtmlFile( $page['filePath'] , $page['layout'] , $this->tmplData);
 			$this->initTmplData();
-			success('created page: ' . $item['name']);
-		}
-	}
+			success('created page: ' . $page['name']);
+    }
 }
 
 $site = new MakeSite();
