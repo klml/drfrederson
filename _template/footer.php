@@ -1,7 +1,5 @@
 	<footer id="footer"></footer>
 </div>
-    <button id="edit" class="hidden">edit</button>
-    
     <script type="text/javascript">
         var psmpagesourcepath = <?php echo json_encode( substr($data['page']['sourcepath'] , 3 ) ) ?> ;
         var psmpagelemma = <?php echo json_encode( $data['page']['lemma'] )?> ;

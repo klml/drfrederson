@@ -88,13 +88,13 @@ edit `config.yml` first.
 ```
 ## TODO
 
-
-* first H1 as title
+* protected mode
 * demo 
 * trailing slash
-* pagedurable by directory
+* config values single (atm all or nothing) template twig
+** pagedurable by directory
+** * first H1 as title
 * after pagedurabel creat with all pages
-* config values single (atm all or nothing)
 * js var psmpage
 * URL builing? root dir : absolute relative only one dir
 * test if yml exists from func
