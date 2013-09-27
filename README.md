@@ -84,13 +84,6 @@ htmldir
 ```
 edit `config.yml` first.
 
-$ php new.php page page-name
-    // Build a markdown file in `_page/page-name.md`.
-    // `make.php` will build a html file in `./page-name/index.html`.
-
-$ php make.php
-    // Build html files. Generate your static site.
-
 <!--more--> is avaliable
 ```
 ## TODO
@@ -98,7 +91,6 @@ $ php make.php
 * 404 er save
 * js var psmpage
 * trailing slash
-* rm new.php
 * demopages
 * URL builing? root dir : absolute relative only one dir
 * remove site title from template
