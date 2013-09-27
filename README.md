@@ -97,6 +97,8 @@ $ php make.php
 
 * merge init create
 * 404 er save
+* rename filenamepath sourcepath
+* js var psmpage
 * trailing slash
 * rm new.php
 * demopages

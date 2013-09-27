@@ -1,4 +1,18 @@
-var psmpagesourcev = psmpagesource + '?v=' + Math.random() ; // force reload
+
+if ( psmpagelemma == "404error" ) {
+    
+     psmpagesourcepath = psmpagesource.split('/') ;
+     psmpagesourcepath.pop() ;
+     lemma = window.location.pathname.split('/').pop().split('.')[0] ;
+
+     psmpagesourceprefill = psmpagesourcepath.join('/') + '/psmpagesourceprefill.md'; // TODO var     
+     psmpagesourcepath.push( lemma ) ;
+     psmpagesource = psmpagesourcepath.join('/') + '.md'; // TODO var
+
+} else {
+    psmpagesourceprefill = psmpagesource + '?v=' + Math.random() ; // force reload
+}
+
 
 var formwebeditsrc = '<form accept-charset="ISO-8859-1" class="webedit" style="width:95%;height:430px;"><textarea name="content" style="width:95%;" ></textarea><br/><button>save</button></form>' ;
 var formwebedit = 'form.webedit'; // redu
@@ -17,11 +31,7 @@ jQuery(document).ready(function() {
         $('#edit').replaceWith( formwebeditsrc ) ;
         
         
-        $(formwebedit).find('textarea').load( psmpagesourcev, function (responseText, textStatus, req) {
-            if (textStatus == "error") {
-              $( formwebedit ).find( psmpagelemma ).val(page.title); // on 404 pages, you will get no source, its not there, try to create it
-            }
-        });
+        $(formwebedit).find('textarea').load( psmpagesourceprefill );
         webeditSend( formwebedit ); // init after replaceWith
      });
 
