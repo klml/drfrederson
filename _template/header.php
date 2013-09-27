@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta http-quive="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="viewport" content="width=device-width, user-scalable=0"/>
 	<title><?=$data['config']['siteTitle']?></title>
   <meta http-quive="description" content="<?=$data['config']['description']?>"/>
