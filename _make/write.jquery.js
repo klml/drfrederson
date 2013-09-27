@@ -1,16 +1,18 @@
 
 if ( psmpagelemma == "404error" ) {
     
-     psmpagesourcepath = psmpagesource.split('/') ;
-     psmpagesourcepath.pop() ;
+     pagesourcepath = psmpagesourcepath.split('/') ;
+     pagesourcepath.pop() ;
      lemma = window.location.pathname.split('/').pop().split('.')[0] ;
 
-     psmpagesourceprefill = psmpagesourcepath.join('/') + '/psmpagesourceprefill.md'; // TODO var     
-     psmpagesourcepath.push( lemma ) ;
-     psmpagesource = psmpagesourcepath.join('/') + '.md'; // TODO var
+     pagesourcepathprefill = pagesourcepath.join('/') + '/psmpagesourceprefill.md'; // TODO var     
+
+     pagesourcepath.push( lemma ) ;
+     pagesourcepathwrite = pagesourcepath.join('/') + '.md'; // TODO var
 
 } else {
-    psmpagesourceprefill = psmpagesource + '?v=' + Math.random() ; // force reload
+    pagesourcepathwrite = psmpagesourcepath ;
+    pagesourcepathprefill = psmpagesourcepath + '?v=' + Math.random() ; // force reload
 }
 
 
@@ -31,7 +33,7 @@ jQuery(document).ready(function() {
         $('#edit').replaceWith( formwebeditsrc ) ;
         
         
-        $(formwebedit).find('textarea').load( psmpagesourceprefill );
+        $(formwebedit).find('textarea').load( pagesourcepathprefill );
         webeditSend( formwebedit ); // init after replaceWith
      });
 
@@ -52,7 +54,7 @@ function webeditSend ( formwebedit ) {
         $.ajax({
             url: '_make/writer.php',
             type: 'POST',
-            data: $(this).serialize() + '&sourcepath=' + psmpagesource ,
+            data: $(this).serialize() + '&sourcepath=' + pagesourcepathwrite ,
             success: function(){
                 $( formwebedit ).html( sucmsg ) ;
                 location.reload();

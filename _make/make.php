@@ -42,16 +42,16 @@ class MakeSite {
             $this->calledPages( $_GET["lemma"] );
         } else {
             $sourcedirrecursive = new RecursiveDirectoryIterator( $this->config['sourcedir'] );
-            foreach (new RecursiveIteratorIterator($sourcedirrecursive) as $filenamepath => $file) { // ? diffrenc $file  vs $filenamepath
-                $this->createPages($filenamepath);
+            foreach (new RecursiveIteratorIterator($sourcedirrecursive) as $sourcepath => $file) { // ? diffrenc $file  vs $sourcepath
+                $this->createPages($sourcepath);
             }
 		}
 	}
 	public function calledPages($lemmas) { 
         foreach( $lemmas as $lemma ) {
-            $filenamepath = $this->config['sourcedir'] . $lemma . '.' . $this->config['sourceextension'];
-            if( file_exists( $filenamepath ) ) {
-                $this->createPages( $filenamepath );
+            $sourcepath = $this->config['sourcedir'] . $lemma . '.' . $this->config['sourceextension'];
+            if( file_exists( $sourcepath ) ) {
+                $this->createPages( $sourcepath );
             } else {
             error('no files');
             }
@@ -69,9 +69,9 @@ class MakeSite {
 	}
 
 	// create page    
-	public function createPages($filenamepath) { // protected
+	public function createPages($sourcepath) { // protected
 
-            $directoriesName = explode('/', $filenamepath ) ;
+            $directoriesName = explode('/', $sourcepath ) ;
             $filename = array_pop($directoriesName) ;               // e.g. my.page.md
             $directoriesName = implode('/', $directoriesName) ;     // e.g ../_source/mysubdir/
 
@@ -81,11 +81,11 @@ class MakeSite {
 
             $lemma = implode('.', $filenamewithExtension ) ;            // e.g. my.page
 
-            if ( $this->config['pagedurable'] == $filenamepath || $filenameExtension != $this->config['sourceextension'] ) {  // exceptions: sidebar, config 
+            if ( $this->config['pagedurable'] == $sourcepath || $filenameExtension != $this->config['sourceextension'] ) {  // exceptions: sidebar, config 
                  return;
             }
 
-            $ymlMD = splitYamlMD( $filenamepath ) ;
+            $ymlMD = splitYamlMD( $sourcepath ) ;
 
             // read page config (template, meta, etc) from file, directory or mainconf
             $directoriesConf = $directoriesName . '/config.yml' ;
@@ -106,7 +106,7 @@ class MakeSite {
             $page['layout'] = $this->filePath['layout'] . $tmpInfo['layout'] . '.php';
             $page['name'] = $tmpInfo['name'];
             $page['lemma'] = $lemma ;
-            $page['filenamepath'] = $filenamepath ;
+            $page['sourcepath'] = $sourcepath ;
             $page['comment'] = $tmpInfo['comment'];
 
             $page['pagedurable'] = Markdown( file_get_contents($this->config['pagedurable']) );
