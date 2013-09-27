@@ -91,7 +91,6 @@ edit `config.yml` first.
 * 404 er save
 * js var psmpage
 * trailing slash
-* demopages
 * URL builing? root dir : absolute relative only one dir
 * remove site title from template
 * first H1 as title

@@ -1,3 +1,3 @@
-* [klml](klml)
+* [Example](example)
 * [What?](what)
 * [about?](about)
