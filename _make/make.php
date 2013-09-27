@@ -3,7 +3,7 @@
  * @name make.php
  * @class MakeSite
  * @description generate a static site
- * @author 2dkun
+ * @author klml based on https://github.com/lonescript/php-site-maker
  */
 
 require_once 'lib/Markdown.php';

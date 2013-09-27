@@ -88,18 +88,23 @@ edit `config.yml` first.
 ```
 ## TODO
 
-* 404 er save
-* js var psmpage
-* trailing slash
-* URL builing? root dir : absolute relative only one dir
+
 * first H1 as title
+* demo 
+* trailing slash
+* pagedurable by directory
+* after pagedurabel creat with all pages
+* config values single (atm all or nothing)
+* js var psmpage
+* URL builing? root dir : absolute relative only one dir
 * test if yml exists from func
 * bloggish posttemplate (date, archivcat) for webedit
 * global filenamepath
-* pagedurable by directory
 * normalize page and blog
 * include
 * index: dir as link include (for pix)
-* after pagedurabel creat with all pages
 * tags
-* config values single (atm all or nothing)
+
+
+### Refactor
+* 404 er save

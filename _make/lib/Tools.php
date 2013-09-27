@@ -2,8 +2,8 @@
 /*
  * @name Tools.php
  * @description some function tools
- * @author yqtaku
- * @date 26 DEC, 2012
+ * @author klml based on https://github.com/lonescript/php-site-maker
+ * @date 2013-09-27
  */
 
 
