@@ -52,7 +52,7 @@ function webeditSend ( formwebedit ) {
     $( formwebedit ).submit( function(event) {
         event.preventDefault();
         $.ajax({
-            url: '_make/writer.php',
+            url: '_make/make.php',
             type: 'POST',
             data: $(this).serialize() + '&sourcepath=' + pagesourcepathwrite ,
             success: function(){

@@ -36,14 +36,29 @@ class MakeSite {
 
         if ( count($argv) > 1  ) {      // create single pages from cli input
             array_shift($argv);         // remove script name
-            $this->calledPages($argv);
-        } else if ( isset( $_GET["lemma"] ) ) { // create single pages from cli input
+            $this->calledPages($argv);  // TODO remove and use full path?
 
+        } else if ( isset( $_GET["lemma"] ) ) { // recreate single pages from web
             $this->calledPages( $_GET["lemma"] );
+
+        } else if ( isset( $_POST["sourcepath"], $_POST["content"] ) ) { // create single pages from webeditor
+
+            if (false === strpos($sourcepath, '..')) {
+                $sourcepath = '../' . $_POST["sourcepath"] ; // TODO URL vs dir 
+
+                echo writeFile( $sourcepath, $_POST["content"]  );
+                $this->createPages( $sourcepath );
+                
+            } else {
+                echo $msg .= ' contains illegal characters';
+                die();
+
+            }
         } else {
             $sourcedirrecursive = new RecursiveDirectoryIterator( $this->config['sourcedir'] );
             foreach (new RecursiveIteratorIterator($sourcedirrecursive) as $sourcepath => $file) { // ? diffrenc $file  vs $sourcepath
                 $this->createPages($sourcepath);
+                
             }
 		}
 	}
@@ -55,10 +70,10 @@ class MakeSite {
             } else {
             error('no files');
             }
-        }    
+        }
     }
-    
-    
+
+
 	// init data for tmpl
 	protected function initTmplData() {
 		$this->tmplData = array(

@@ -38,4 +38,11 @@ function makeHtmlFile($target, $layout, $data) {
 	}
 }
 
+// write source file from webeditor
+function writeFile( $sourcepath, $content ) { 
+    $msg = $sourcepath ;
+    $msg .= file_put_contents( $sourcepath , $content ) ? ' written' : ' not written';
+    return $msg ;
+}
+
 ?>
