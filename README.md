@@ -94,10 +94,7 @@ edit `config.yml` first.
 * URL builing? root dir : absolute relative only one dir
 * first H1 as title
 * test if yml exists from func
-* webeditor
-  * bloggish posttemplate (date, archivcat) for webedit
-  * create new page
-  * if not loadable
+* bloggish posttemplate (date, archivcat) for webedit
 * global filenamepath
 * pagedurable by directory
 * normalize page and blog
