@@ -92,7 +92,6 @@ edit `config.yml` first.
 * js var psmpage
 * trailing slash
 * URL builing? root dir : absolute relative only one dir
-* remove site title from template
 * first H1 as title
 * meta desc to yaml
 * test if yml exists from func

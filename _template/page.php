@@ -4,7 +4,6 @@
 
 <div id="main">
 	<section class="page">
-		<h2 class="name"><?=$data['page']['name']?></h2>
 		<article><?=$data['page']['content']?></article>
 	</section>
 	
