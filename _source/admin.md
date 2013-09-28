@@ -8,6 +8,9 @@ If you use this site in an public area like your webserver and not in secure env
 
 <button id="requestauth">Request Auth</button>
 
+### Sidebar and page-durable content
+
+Editing sidebar and other page-durable content [pagedurable](_pagedurable) like a ''normal'' page (same as [Mediawiki Sidebar](https://www.mediawiki.org/wiki/Manual:Interface/Sidebar)),
 
 ---
 layout: page
