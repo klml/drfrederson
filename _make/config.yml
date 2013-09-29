@@ -19,7 +19,5 @@ path:
 ---
 layout: page
 name: Title from root-config 
-comment: true
-description: Some general description
-
-
+comment: false
+description: Some general site wide description

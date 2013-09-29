@@ -88,12 +88,13 @@ edit `config.yml` first.
 ```
 ## TODO
 
-* login to admin
+
 * file_put_contents notebook ??
+* trenenung yml not hr
 * protected mode
 * demo 
 * trailing slash
-* config values single (atm all or nothing) array overwrite template twig
+
 ** pagedurable by directory
 ** * first H1 as title
 * edit pagedurabel creat with all pages

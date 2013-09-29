@@ -13,7 +13,6 @@ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod 
 
 
 ---
-layout: page
 name: Example page
-comment: false
+comment: true
 description: Example page, used as template for new pages

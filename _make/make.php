@@ -102,17 +102,15 @@ class MakeSite {
 
             $ymlMD = splitYamlMD( $sourcepath ) ;
 
-            // read page config (template, meta, etc) from file, directory or mainconf
-            $directoriesConf = $directoriesName . '/config.yml' ;
-            if ( isset($ymlMD[1]) ) {
-                $tmpInfo = spyc_load_file( $ymlMD[1] ) ;
-            } else if ( file_exists($directoriesConf) ) {
-                $tmpInfo = spyc_load_file( file_get_contents($directoriesConf) );
-                // TODO dir climb up
-            } else {
-                $tmpInfo = $this->config ;
-            }
 
+            // read page config (template, meta, etc) from file, directory or mainconf
+            $tmpInfo = $this->config ;
+            if ( file_exists($directoriesConf = $directoriesName . '/config.yml' ) ) {
+                $tmpInfo = array_merge( $tmpInfo , spyc_load_file( file_get_contents($directoriesConf) ) ) ;
+            }
+            if ( isset($ymlMD[1]) ) {
+                $tmpInfo = array_merge( $tmpInfo , spyc_load_file( $ymlMD[1] ) ) ;
+            }
 
             $page = array();
             $page['url'] = $this->config['baseurl'] . $lemma ;
