@@ -94,7 +94,7 @@ edit `config.yml` first.
 * protected mode
 * demo 
 * trailing slash
-** * first H1 as title
+* first H1 as title if no ymal in page at all
 * edit pagedurabel creat with all pages
 * after pagedurabel creat with all pages
 * js var psmpage

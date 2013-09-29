@@ -109,7 +109,12 @@ class MakeSite {
                 $tmpInfo = array_merge( $tmpInfo , spyc_load_file( file_get_contents($directoriesConf) ) ) ;
             }
             if ( isset($ymlMD[1]) ) {
-                $tmpInfo = array_merge( $tmpInfo , spyc_load_file( $ymlMD[1] ) ) ;
+                $tmpInfopage = spyc_load_file( $ymlMD[1] ) ;
+                if ( !isset($tmpInfopage['title']) ) {
+                    preg_match('/#*(.*)/', $ymlMD[0], $titelheading)    ;
+                    $tmpInfo['title'] = trim( $titelheading[1] ) ;
+                }
+                $tmpInfo = array_merge( $tmpInfo , $tmpInfopage ) ;
             }
 
             $page = array();
