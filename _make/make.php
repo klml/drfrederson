@@ -122,7 +122,7 @@ class MakeSite {
             $page['sourcepath'] = $sourcepath ;
             $page['comment'] = $tmpInfo['comment'];
 
-            $page['pagedurable'] = Markdown( file_get_contents($this->config['pagedurable']) );
+            $page['pagedurable'] = Markdown( file_get_contents($tmpInfo['pagedurable']) );
             $page['content'] = Markdown( $ymlMD[0] ) ;
             $page['description'] = $tmpInfo['description'];
 
