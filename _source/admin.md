@@ -14,6 +14,6 @@ Editing sidebar and other page-durable content [pagedurable](_pagedurable) like 
 
 ---
 layout: page
-name: Login
+name: Administration
 comment: false
-description: To provide login button
+description: All about editing and admin this site
