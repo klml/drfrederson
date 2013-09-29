@@ -88,12 +88,14 @@ edit `config.yml` first.
 ```
 ## TODO
 
+* login to admin
 * protected mode
 * demo 
 * trailing slash
 * config values single (atm all or nothing) template twig
 ** pagedurable by directory
 ** * first H1 as title
+* edit pagedurabel creat with all pages
 * after pagedurabel creat with all pages
 * js var psmpage
 * URL builing? root dir : absolute relative only one dir
