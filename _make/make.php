@@ -96,7 +96,7 @@ class MakeSite {
 
             $lemma = implode('.', $filenamewithExtension ) ;            // e.g. my.page
 
-            if ( $this->config['pagedurable'] == $sourcepath || $filenameExtension != $this->config['sourceextension'] ) {  // exceptions: sidebar, config 
+            if ( $filenameExtension != $this->config['sourceextension'] ) {  // exceptions: not src files 
                  return;
             }
 

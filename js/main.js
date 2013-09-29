@@ -1,8 +1,8 @@
 jQuery(document).ready(function() {
 
 
-    $('#login').click( function() {
-        document.cookie = 'edit=' + true ;
+    $('#requestauth').click( function() {
+        document.cookie = 'requestauth=' + true ;
     });
     if(document.cookie) {
         $.getScript("_make/write.jquery.js?v=q");
