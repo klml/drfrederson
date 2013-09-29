@@ -3,5 +3,5 @@
 This page is using a alternative sidebar 
 
 ---
-name: Foo
+title: Foo
 pagedurable: ../_source/_pagedurablealter.md

@@ -117,7 +117,7 @@ class MakeSite {
             $page['filePath'] = $this->config['htmldir'] . $lemma . $this->config['htmlextension']; // TODO fill inn $directoriesName
 
             $page['layout'] = $this->filePath['layout'] . $tmpInfo['layout'] . '.php';
-            $page['name'] = $tmpInfo['name'];
+            $page['name'] = $tmpInfo['title'];
             $page['lemma'] = $lemma ;
             $page['sourcepath'] = $sourcepath ;
             $page['comment'] = $tmpInfo['comment'];

@@ -18,6 +18,6 @@ path:
 
 ---
 layout: page
-name: Title from root-config 
+title: Title from root-config 
 comment: false
 description: Some general site wide description

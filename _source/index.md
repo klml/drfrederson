@@ -4,6 +4,6 @@
 [klml/php-site-maker](https://github.com/klml/php-site-maker)
 
 ---
-name: Mainpage
+title: Mainpage
 comment: false
 description: The start and mainpage

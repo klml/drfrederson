@@ -94,8 +94,6 @@ edit `config.yml` first.
 * protected mode
 * demo 
 * trailing slash
-
-** pagedurable by directory
 ** * first H1 as title
 * edit pagedurabel creat with all pages
 * after pagedurabel creat with all pages
