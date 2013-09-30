@@ -98,10 +98,11 @@ edit `config.yml` first.
 * cleanup css
 * 404 if admin create
 * file_put_contents notebook ??
-* trenenung yml not hr
+* trenenung yml not --- (is md hr)
 * protected mode
 * demo 
 * trailing slash
+* php in webroot execute 
 * after pagedurabel creat with all pages
 * js var psmpage
 * URL builing? root dir : absolute relative only one dir
