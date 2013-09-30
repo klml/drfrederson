@@ -1,6 +1,6 @@
 * [Example](example)
 * [Foo](foo)
-* [What?](what)
+* [New!](new)
 * [about?](about)
 
 

@@ -7,18 +7,23 @@ A simple static site generator powered by PHP & Markdown. Based on [github.com/l
 
 Write files in [markdown](http://michelf.com/projects/php-markdown/).
 
-Metainformation can be defined in [yaml](http://www.yaml.org/spec/1.2/spec.html)
+Metainformation (template, comments, meta-description, title etc) can be defined in [yaml](http://www.yaml.org/spec/1.2/spec.html)
 * for __each page__ at the bottom of sourcefile after the `---`
 * or for each __directory__ in *config.yml* 
 * or in the __site__-config *_make/config.yml* 
 
 ## Write
 
-Edit your website in diffrent ways
+Edit your website in different ways
 
 * *normal* edit source files on filesystem and with your favourite text-editor. After editing call make.php in you CLI
 * __webedit__ with the edit button on the page. After 'save' the single page will be created.
 * receive changes via __git__ (or other __DCVS__) and update the source and call make.php manually or with a hook.
+
+## Admin
+
+There is no extra admininterface, edit existing pages with the edit button or create new with calling the page you want. More on [admin.md](blob/master/_source/admin.md)
+
 
 ## Setup
 
@@ -89,16 +94,18 @@ edit `config.yml` first.
 ## TODO
 
 
+* custom css and js
+* cleanup css
+* 404 if admin create
 * file_put_contents notebook ??
 * trenenung yml not hr
 * protected mode
 * demo 
 * trailing slash
-* first H1 as title if no ymal in page at all
-* edit pagedurabel creat with all pages
 * after pagedurabel creat with all pages
 * js var psmpage
 * URL builing? root dir : absolute relative only one dir
+* directory to namespace
 * test if yml exists from func
 * bloggish posttemplate (date, archivcat) for webedit
 * global filenamepath
@@ -106,6 +113,7 @@ edit `config.yml` first.
 * include
 * index: dir as link include (for pix)
 * tags
+* lasttest
 
 
 ### Refactor

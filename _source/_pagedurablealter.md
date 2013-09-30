@@ -1,8 +1,5 @@
 * [Example](example)
 * [Foo](foo)
-* [Bar](bar)
-
 * [Admin](admin)
 
-
-call me at 0815
+And call me at 0815.

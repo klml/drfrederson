@@ -104,17 +104,20 @@ class MakeSite {
 
 
             // read page config (template, meta, etc) from file, directory or mainconf
-            $tmpInfo = $this->config ;
-            if ( file_exists($directoriesConf = $directoriesName . '/config.yml' ) ) {
+            $tmpInfo = $this->config ;      // read general config
+            
+            if ( file_exists($directoriesConf = $directoriesName . '/config.yml' ) ) { // overwrite with directory config if exist
                 $tmpInfo = array_merge( $tmpInfo , spyc_load_file( file_get_contents($directoriesConf) ) ) ;
             }
-            if ( isset($ymlMD[1]) ) {
+            if ( isset($ymlMD[1]) ) {  // overwrite with page config if exist
                 $tmpInfopage = spyc_load_file( $ymlMD[1] ) ;
-                if ( !isset($tmpInfopage['title']) ) {
-                    preg_match('/#*(.*)/', $ymlMD[0], $titelheading)    ;
+                $tmpInfo = array_merge( $tmpInfo , $tmpInfopage ) ;
+            }
+            if ( !isset($ymlMD[1], $tmpInfopage['title']) ) {  // use first markdown heading as title if not in pageconfig
+                preg_match('/(?m)^#+(.*)/', $ymlMD[0], $titelheading) ;
+                if ( isset( $titelheading[1]) ) {
                     $tmpInfo['title'] = trim( $titelheading[1] ) ;
                 }
-                $tmpInfo = array_merge( $tmpInfo , $tmpInfopage ) ;
             }
 
             $page = array();
