@@ -98,11 +98,16 @@ edit `config.yml` first.
 * cleanup css
 * 404 if admin create
 * file_put_contents notebook ??
-* trenenung yml not --- (is md hr)
+* trenenung yml not --- (is md hr) use config
 * protected mode
-* demo 
+* demo
 * trailing slash
 * php in webroot execute 
+* libs
+** https://github.com/michelf/php-markdown extra
+** https://github.com/mustangostang/spyc/
+** http://epiceditor.com/
+** https://github.com/dhg/Skeleton/tree/master/stylesheets
 * after pagedurabel creat with all pages
 * js var psmpage
 * URL builing? root dir : absolute relative only one dir
