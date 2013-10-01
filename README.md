@@ -98,7 +98,6 @@ edit `config.yml` first.
 * cleanup css
 * 404 if admin create
 * file_put_contents notebook ??
-* protected mode
 * demo
 * trailing slash
 * php in webroot execute 

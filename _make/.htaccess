@@ -1,1 +1,5 @@
+AuthType Basic
+AuthName "admin user and password: a"
+AuthUserFile /var/www/virtual/klml/html/dev/php-site-maker/_make/.htuser
+Require valid-user
 
