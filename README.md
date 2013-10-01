@@ -8,7 +8,7 @@ A simple static site generator powered by PHP & Markdown. Based on [github.com/l
 Write files in [markdown](http://michelf.com/projects/php-markdown/).
 
 Metainformation (template, comments, meta-description, title etc) can be defined in [yaml](http://www.yaml.org/spec/1.2/spec.html)
-* for __each page__ at the bottom of sourcefile after the `---`
+* for __each page__ at the bottom of sourcefile after the `#!` [Shebang](https://en.wikipedia.org/wiki/Shebang_%28Unix%29), can be redefined in config 'ymlseparator'.
 * or for each __directory__ in *config.yml* 
 * or in the __site__-config *_make/config.yml* 
 
@@ -98,7 +98,6 @@ edit `config.yml` first.
 * cleanup css
 * 404 if admin create
 * file_put_contents notebook ??
-* trenenung yml not --- (is md hr) use config
 * protected mode
 * demo
 * trailing slash

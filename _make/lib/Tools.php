@@ -18,9 +18,9 @@ function success($value='') {
 }
 
 // return yaml conf and md seperated from source
-function splitYamlMD($filePath) {
+function splitYamlMD($filePath, $separator) {
     $ymlMD = array();
-    $ymlMD = explode('---', file_get_contents($filePath) ) ;
+    $ymlMD = explode( $separator , file_get_contents($filePath) ) ;
     return $ymlMD ; 
 }
 

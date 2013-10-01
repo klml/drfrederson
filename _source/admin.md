@@ -12,7 +12,7 @@ If you use this site in an public area like your webserver and not in secure env
 
 Editing sidebar and other page-durable content [pagedurable](_pagedurable) like a ''normal'' page (same as [Mediawiki Sidebar](https://www.mediawiki.org/wiki/Manual:Interface/Sidebar)),
 
----
+#!
 title: Administration
 description: All about editing and admin this site
 comment: false

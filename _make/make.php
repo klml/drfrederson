@@ -100,8 +100,7 @@ class MakeSite {
                  return;
             }
 
-            $ymlMD = splitYamlMD( $sourcepath ) ;
-
+            $ymlMD = splitYamlMD( $sourcepath, $this->config['ymlseparator'] ) ;
 
             // read page config (template, meta, etc) from file, directory or mainconf
             $tmpInfo = $this->config ;      // read general config

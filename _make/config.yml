@@ -11,6 +11,7 @@ htmlextension:
 sourcedir: ../_source/
 sourceextension: md
 pagedurable: ../_source/_pagedurable.md
+ymlseparator: '#!'
 path:
 	page: ../_source/page/
 	make: ../_make/
