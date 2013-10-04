@@ -144,8 +144,6 @@ class MakeSite {
             //  merge config, template and content
             $this->tmplData['page'] = $page;
 
-        
-			$this->tmplData['config']['siteTitle'] = $page['name'] . ' | ' .$this->tmplData['config']['siteName'];
 			makeHtmlFile( $page['filePath'] , $page['layout'] , $this->tmplData);
 			$this->initTmplData();
 			success('created page: ' . $page['name']);
