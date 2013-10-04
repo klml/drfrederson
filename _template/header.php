@@ -6,6 +6,8 @@
 	<title><?=$data['page']['name']?> | <?=$data['config']['siteName']?></title>
     <meta http-equiv="description" content="<?=$data['page']['description']?>"/>
 	<link rel="stylesheet" type="text/css" href="<?=$data['config']['baseurl']?>/theme/style/style.css">
+	<link rel="stylesheet" type="text/css" href="<?=$data['config']['baseurl']?>/lib/CSS-Mini-Reset/CSS-Mini-Reset-min.css">
+	<link rel="stylesheet" type="text/css" href="<?=$data['config']['baseurl']?>/lib/usefulclassroomphrases/ucp.css">
 	<!--[if gte IE 8]><script type="text/javascript" src="<?=$data['config']['baseurl']?>/theme/js/goodbyeie.js"></script><![endif]-->
 </head>
 <body class="d2c_<?=$data['page']['lemma']?>" >

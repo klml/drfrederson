@@ -3,11 +3,6 @@
  * @date 2013-02-22
  */
 
-/*
-https://github.com/vladocar/CSS-Mini-Reset/blob/master/CSS-Mini-Reset-min.css
-*/
-html,body,div,form,fieldset,legend,label{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}th,td{text-align:left;vertical-align:top;}h1,h2,h3,h4,h5,h6,th,td,caption{font-weight:normal;}img{border:0;}
-
 #nav article ul {
 margin:0;
 padding: 0;
@@ -25,44 +20,6 @@ padding: 0;
     width: 200px;
 }
 
-/* useful class-room phrases */
-/* https://github.com/klml/usefulclassroomphrases */
-
-/* useful css class-room phrases is a small selection for css classes used inside content areas */
-/* more on https://github.com/klml/usefulclassroomphrases */
-
-/* standards needs to changed in 98%, if not delete this section */
-body { font:normal 12px Arial, Helvetica; background: repeat-x top left #F6F6F6 ;margin: 0; padding: 0; outline: none;}
-a { text-decoration: none;
-color: #8da7cc; 
-}
-a:hover { text-decoration: underline; }
-
-img { border: 0; }
-ul { list-style:none; list-style-image: url('data:image/gif;base64,R0lGODlhBQANAIAAAGOMnP///yH5BAEAAAEALAAAAAAFAA0AAAIJjI+pu+APo4SpADs'); }
-h1,h2,h3,h4,h5,h6{padding:0; margin:30px 0 0 0;}
-h1{color:#000; font-size: 130%; }
-h2{color:#000; font-size: 120%; border-bottom: 1px solid gray;}
-h3{color:#000; font-size: 115%; }
-h4{color:#000; font-size: 110%; }
-h5{color:#000; font-size: 105%; }
-h6{color:#000; font-size: 105%; }
-h1+h2 {margin-top: 2px;}
-h2+h3 {margin-top: 2px;}
-h3+h4 {margin-top: 2px;}
-h4+h5 {margin-top: 2px;}
-h5+h6 {margin-top: 2px;}
-
-p {margin: 0 0 10px 0;}
-hr {color:#000;background-color:#000;height:1px;margin: 0 0 2px 0;}
-td{vertical-align: text-top;}
-form input, form textarea { width: 350px; }
-select { width: 356px; }
-textarea { height: 200px; }
-/* proportion */
-#panel,#wrapper {margin: 0 auto;padding: 0 10px;width: 956px;background-color:#fff;} /* middled fixed width */
-.half {width: 49.5%;padding: 0;border-width:0;} /* no border, 49.5% wont work*/
-.lead {font-size: 110%;background-color:#F6F6F6;}
 
 /* edit funct */
 form.webedit textarea {
