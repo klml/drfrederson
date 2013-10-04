@@ -3,396 +3,67 @@
  * @date 2013-02-22
  */
 
-body {
-	padding: 0;
-	margin: 0;
-	background: #FFF;
-	color: #444;
-	font: 15px/1.8em 'Open Sans', 'Helvetica Neue',Helvetica,'Microsoft YaHei',Arial,sans-serif;
-}
-a {
-	color: #000;
-	outline: none;
-}
-a:hover {
-	color: #00ADFF;
-	text-decoration: underline;
-}
-ul {
-	list-style-type: square;
-	padding-left: 2em;
-}
-ul ul {
-	list-style-type: disc;
-}
-ul ul ul{
-	list-style-type: circle;
-}
-ol {
-	list-style-type: upper-roman;
-}
-time {
-	color: #999;
-}
-p img {
-	display: block;
-}
-p {
-	word-wrap: break-word;
-	white-space: normal;
-}
-pre, code {
-	font: 13px "ubuntu mono", Monaco, Consolas, Monospace;
-}
-p code, li code {
-	background: #fafafa;
-	color: #333;
-	border: 1px solid #f4f4f4;
-	border-radius: 3px;
-	padding: 0 2px;
-	margin: 0 3px;
-	text-shadow: none;
-	word-wrap: break-word;
-	white-space: normal;
-}
-pre {
-	padding: 15px;
-	overflow: auto;
-	text-shadow:none;
-	background-color: #fafafa;
-	border: 1px solid #f4f4f4;
-	border-radius: 3px;
-}
-blockquote {
-	position: relative;
-	/*border-left: 6px solid #ccc;*/
-	padding-left: 10px;
-	margin-left: 22px;
-	font-style: italic;
-	color: #444;
-	text-shadow:none;
-}
-blockquote:before {
-	content: "“";
-	display: block;
-	color: #999;
-	position: absolute;
-	left: -25px;
-	top: 0px;
-	font-size: 3em;
-}
-hr {
-	border: 0;
-	border-bottom: 1px dotted #AA9167;
-}
-img {
-	max-width: 80%;
-}
-::selection {
-	background: #ddd;
-	color: #111;
-	text-shadow: 0 1px 0 #f8f8f8;
-}
-/*--scroll--*/
-::-webkit-scrollbar {
-	height: 8px;
-	width: 10px;
-}
-::-webkit-scrollbar-button {
-	width: 0px;
-	height: 0px;
-}
-::-webkit-scrollbar-track {
-	background: #EEE;
-}
-::-webkit-scrollbar-thumb{ 
-	background-color:#888; 
-}
-::-webkit-scrollbar-thumb:hover{ 
-	background-color:#666; 
-}
-/*--style--*/
-#header {
-	position: fixed;
-	left: 0px;
-	top: 0px;
-	overflow: hidden;
-}
-#logo {
-	padding: 20px 0 0 30px;
-}
-#logo a {
-	color: #00ADFF;
-	font-size: 1.2em;
-	text-decoration: none;
-}
-#nav a {
-	display: block;
-	padding: 2px 30px;
-	margin: 5px 0;
-	color: #333;
-	border-left: 5px solid #fff;
-	text-decoration: none;
-}
-#nav a:hover {
-	border-left: 5px solid #00ADFF;
-}
-#main {
-	position: relative;
-	margin: 40px 50px 50px 230px;
-	max-width: 800px;
-}
-.comment .label {
-	text-align: center;
-}
+/*
+https://github.com/vladocar/CSS-Mini-Reset/blob/master/CSS-Mini-Reset-min.css
+*/
+html,body,div,form,fieldset,legend,label{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}th,td{text-align:left;vertical-align:top;}h1,h2,h3,h4,h5,h6,th,td,caption{font-weight:normal;}img{border:0;}
 
-/*--post--*/
-.posts .post {
-	margin-bottom: 70px;
+#nav article ul {
+margin:0;
+padding: 0;
 }
-.post {
-	position: relative;
-	margin-bottom: 20px;
-	padding-bottom: 50px;
-	border-bottom: 1px dotted #ccc;
+#nav article ul li {
+    display: inline-block;
+    font-size: 20px;
+    padding: 5px 10px 0 0;
 }
-.post .title {
-	font-weight: normal;
-	color: #222;
-	font-size: 1.6em;
-	padding: 0 0 10px 0;
-	margin: 0;
+#nav article ul li:first-child a {
+    background: url("htxtp://bit.umija.de/img/umija_logo.png") no-repeat scroll 25px 20px #8DA7CC;
+    display: block;
+    height: 90px;
+    overflow: hidden;
+    width: 200px;
 }
-.post .title a {
-	color: #444;
-	text-decoration: none;
-}
-.post .title a:hover {
-	color: #00ADFF;
-}
-.post .meta {
-	position: absolute;
-	top: 0px;
-	right: 0px;
-	color: #999;
-	font-size: 12px;
-	margin-bottom: 20px;
-}
-.readMoreWrap {
-	text-align: right;
-}
-.readMore {
-	color: #00ADFF;
-	/*display: inline-block;
-	padding: .4em 1em;
-	height: 20px;
-	background: white;
-	color: #777;
-	text-shadow: none;
-	text-decoration: none;
-	border-radius: 20px;
-	border: 1px solid #EEE;*/
-}
-
-.readMore:hover {
-	text-decoration: underline;
-	color: #00ADFF;
-}
-/*postNav*/
-.postNav {
-	position: relative;
-	overflow: hidden;
-}
-.postNav a {
-	display: inline-block;
-	padding: .4em 1em;
-	background: white;
-	color: #777;
-	text-shadow: none;
-	text-decoration: none;
-	border-radius: 20px;
-	border: 1px solid #EEE;
-}
-.postNav a:hover {
-	text-decoration: underline;
-	color: #222;
-}
-.postNav .older {
-	float: left;
-}
-.postNav .newer {
-	float: right;
-}
-/*comment*/
-#disqus_thread {
-	margin-top: 70px;
-}
-/*--page--*/
-.page {
-	padding-bottom: 30px;
-	border-bottom: 1px dotted #ccc;
-}
-.page .name {
-	color: #444;
-	font-size: 1.6em;
-	padding-bottom: 15px;
-	border-bottom: 1px dotted #ccc;
-}
-/*--archives--*/
-.archives .year {
-	height: 0;
-	margin: 3em 0 0 0;
-}
-.archives .item {
-	position: relative;
-	margin: 0px 0px 10px 75px;
-	padding-bottom: 5px;
-	/*border-bottom: 1px dotted #AA9167;	*/
-	overflow: hidden;
-}
-.archives .item .date {
-	float: left;
-}
-.archives .item .title {
-	margin: 0 0 0 4.5em;
-	font-weight: normal;
-}
-
-
-/*--sidebar--*/
-#backToTop {
-	display: none;
-	position: fixed;
-	right: 3em;
-	bottom: 3em;
-	height: 40px;
-	width: 40px;
-	border-radius: 5px;
-	background: rgba(0,0,0,0.1);
-	text-align: center;
-	line-height: 40px;
-	color: #777;
-	text-decoration: none;
-	opacity: 0;
-	cursor: pointer;
-	z-index: 99;
-	-webkit-transition: color .25s, opacity .25s;
-	-moz-transition: color .25s, opacity .25s;
-	-ms-transition: color .25s, opacity .25s;
-	-o-transition: color .25s, opacity .25s;
-	transition: color .25s, opacity .25s;
-}
-#backToTop.show {
-	opacity: 1;
-}
-#backToTop:hover {
-	color: #000;
-}
-/*footer*/
-#footer {
-	position: fixed;
-	left: 30px;
-	bottom: 10px;
-	color: #aaa;
-	font-size: 0.7em;
-}
-#footer a {
-	color: #777;
-	text-decoration: none;
-}
-/*goodbye ie*/
-.goodbye_ie {
-	width:100%;
-	height:25px;
-	background:#FFD600;
-	border-bottom:3px solid #FFB800;
-	text-align:center;
-	color: #AD2A00;
-}
-.goodbye_ie a {
-	color: #000;	
-}
-
-@media screen and (max-width: 720px) {
-
-	#header {
-		position: relative;
-	}
-	#logo {
-		text-align: center;
-	}
-	#nav {
-		text-align: center;
-	}
-	#nav a {
-		display: inline-block;
-		border: none;
-		border-bottom: 5px solid #fff;
-	}
-	#nav a:hover {
-		border: none;
-		border-bottom: 5px solid #00ADFF;
-	}
-	#main {
-		margin: 30px;
-	}
-	.post .meta {
-		position: relative;
-	}
-	.postNav a.newer,
-	.postNav a.older {
-		float: none;
-		margin: 20px auto;
-		display: block;
-		text-align: center;
-	}
-	.archives .year {
-		height: initial;
-		margin: 0;
-	}
-	.archives .item {
-		margin: 0;
-	}
-	#backToTop {
-		display: none;
-	}
-	#footer {
-		position: relative;
-		left: 0;
-		text-align: center;
-	}
-}
-
-
-
-/* font face*/
-@font-face {
-	font-family: 'Open Sans';
-	font-style: normal;
-	font-weight: 400;
-	src: local('Open Sans'), local('OpenSans'), url(http://themes.googleusercontent.com/static/fonts/opensans/v6/cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
-}
-
 
 /* useful class-room phrases */
 /* https://github.com/klml/usefulclassroomphrases */
-.clear,
-.cb { clear:both; }
-.cl { clear:left; }
-.cr { clear:right; }
-.left { float:left;}
-.right { float:right;}
-.none { float: none !important;}
-img[src$='#left'], /* use blind hash as workaround if class can't set, eg markdown etc */
-img.left { float:left;margin:0 5px 5px 0;}
-img[src$='#right'],
-img.right { float:right;margin:0 0 5px 5px;}
-.block { display: block;}
-.depot, /* is for htmlsnippets moved and used by JS */
-.hidden { display: none; }
-.thx, .alerta, .notice { border: 1px solid #8da7cc; border-left-width: 20px;color: green;font-size: 130%;padding: 5px;} 
-.row2 dl dt {clear: both; float: left; font-weight: bold; width: 20%;} /* 2-column for key value lists .row2 is above if you use not changable sections like markdown-lists */
-.row2 dl dd {float: right; width: 78%; margin-left: 0}
+
+/* useful css class-room phrases is a small selection for css classes used inside content areas */
+/* more on https://github.com/klml/usefulclassroomphrases */
+
+/* standards needs to changed in 98%, if not delete this section */
+body { font:normal 12px Arial, Helvetica; background: repeat-x top left #F6F6F6 ;margin: 0; padding: 0; outline: none;}
+a { text-decoration: none;
+color: #8da7cc; 
+}
+a:hover { text-decoration: underline; }
+
+img { border: 0; }
+ul { list-style:none; list-style-image: url('data:image/gif;base64,R0lGODlhBQANAIAAAGOMnP///yH5BAEAAAEALAAAAAAFAA0AAAIJjI+pu+APo4SpADs'); }
+h1,h2,h3,h4,h5,h6{padding:0; margin:30px 0 0 0;}
+h1{color:#000; font-size: 130%; }
+h2{color:#000; font-size: 120%; border-bottom: 1px solid gray;}
+h3{color:#000; font-size: 115%; }
+h4{color:#000; font-size: 110%; }
+h5{color:#000; font-size: 105%; }
+h6{color:#000; font-size: 105%; }
+h1+h2 {margin-top: 2px;}
+h2+h3 {margin-top: 2px;}
+h3+h4 {margin-top: 2px;}
+h4+h5 {margin-top: 2px;}
+h5+h6 {margin-top: 2px;}
+
+p {margin: 0 0 10px 0;}
+hr {color:#000;background-color:#000;height:1px;margin: 0 0 2px 0;}
+td{vertical-align: text-top;}
+form input, form textarea { width: 350px; }
+select { width: 356px; }
+textarea { height: 200px; }
+/* proportion */
+#container,
+#panel,#wrapper {margin: 0 auto;padding: 0 10px;width: 956px;background-color:#fff;} /* middled fixed width */
+.half {width: 49.5%;padding: 0;border-width:0;} /* no border, 49.5% wont work*/
+.lead {font-size: 110%;background-color:#F6F6F6;}
 
 /* edit funct */
 form.webedit textarea {

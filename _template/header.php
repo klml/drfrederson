@@ -11,7 +11,6 @@
 <body class="d2c_<?=$data['page']['lemma']?>" >
 <div id="container">
 	<header id="header">
-		<h1 id="logo"><a href="<?=$data['config']['baseurl']?>"><?=$data['config']['siteName']?></a></h1>
 		<nav id="nav">
             <article><?=$data['page']['pagedurable']?></article>
         </nav>
