@@ -2,7 +2,7 @@
 	require 'header.php';
 ?>
 
-<div id="main">
+<div id="main" class="sixteen columns">
 	<section class="page">
 		<article><?=$data['page']['content']?></article>
 	</section>

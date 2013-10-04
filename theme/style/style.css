@@ -12,12 +12,10 @@ padding: 0;
     font-size: 20px;
     padding: 5px 10px 0 0;
 }
-#nav article ul li:first-child a {
-    background: url("htxtp://bit.umija.de/img/umija_logo.png") no-repeat scroll 25px 20px #8DA7CC;
+#nav .logo a {
+    background-color: #8DA7CC;
     display: block;
     height: 90px;
-    overflow: hidden;
-    width: 200px;
 }
 
 
