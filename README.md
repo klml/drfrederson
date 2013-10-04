@@ -93,7 +93,6 @@ edit `config.yml` first.
 ```
 ## TODO
 
-* edit cookie management?
 * custom css and js
 * cleanup css
 * 404 if admin create

@@ -18,7 +18,8 @@ class MakeSite {
 	protected $tmplData;	// used for tmpl
 
 	public function __construct() {
-		$this->config = spyc_load_file('config.yml');
+		if( !file_exists( 'config.yml' ) ) { die("missing config.yml\n") ; };
+        $this->config = spyc_load_file('config.yml');
 		$this->wwwPath = $this->config['path'];
 		$this->filePath = $this->wwwPath; // ?
         $this->process() ;
