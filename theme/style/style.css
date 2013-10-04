@@ -60,7 +60,6 @@ form input, form textarea { width: 350px; }
 select { width: 356px; }
 textarea { height: 200px; }
 /* proportion */
-#container,
 #panel,#wrapper {margin: 0 auto;padding: 0 10px;width: 956px;background-color:#fff;} /* middled fixed width */
 .half {width: 49.5%;padding: 0;border-width:0;} /* no border, 49.5% wont work*/
 .lead {font-size: 110%;background-color:#F6F6F6;}

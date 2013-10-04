@@ -105,6 +105,7 @@ edit `config.yml` first.
 ** https://github.com/mustangostang/spyc/
 ** http://epiceditor.com/
 ** https://github.com/dhg/Skeleton/tree/master/stylesheets
+* minfy
 * after pagedurabel creat with all pages
 * js var psmpage
 * URL builing? root dir : absolute relative only one dir

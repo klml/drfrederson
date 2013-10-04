@@ -9,7 +9,7 @@
 	<!--[if gte IE 8]><script type="text/javascript" src="<?=$data['config']['baseurl']?>/theme/js/goodbyeie.js"></script><![endif]-->
 </head>
 <body class="d2c_<?=$data['page']['lemma']?>" >
-<div id="container">
+<div id="panel">
 	<header id="header">
 		<nav id="nav">
             <article><?=$data['page']['pagedurable']?></article>
