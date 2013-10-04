@@ -25,11 +25,13 @@ Edit your website in different ways
 There is no extra admininterface, edit existing pages with the edit button or create new with calling the page you want. More on [admin.md](blob/master/_source/admin.md)
 
 
+
+
 ## Setup
 
 The public site needs only html and js files. Only *_make/*-directory is needed for updates. The *writer.php* has **no role or user validation**, Protect this against violaton:
 
-* htaccess for the whole *_make/*-directory
+* .htaccess for the whole *_make/*-directory. (Change existing .htaccess to a suitable [Basic access authentication](http://en.wikipedia.org/wiki/Basic_access_authentication))
 * use editing only on secure machines like your desktop or intranet and publish all without *_make/* (e.g. `rsync --exclude=_make/`)
 
 
@@ -82,8 +84,6 @@ htmldir
 : directory for generated html-output
 
 
-
-
 ### Usage
 
 ```
@@ -93,7 +93,7 @@ edit `config.yml` first.
 ```
 ## TODO
 
-
+* edit cookie management?
 * custom css and js
 * cleanup css
 * 404 if admin create
@@ -110,6 +110,7 @@ edit `config.yml` first.
 * js var psmpage
 * URL builing? root dir : absolute relative only one dir
 * directory to namespace
+** directory doubled
 * test if yml exists from func
 * bloggish posttemplate (date, archivcat) for webedit
 * global filenamepath
