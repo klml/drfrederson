@@ -58,7 +58,7 @@ function webeditSend ( formwebedit ) {
             data: $(this).serialize() + '&sourcepath=' + pagesourcepathwrite ,
             success: function(){
                 $( formwebedit ).html( sucmsg ) ;
-                location.reload();
+                location.reload(true);
             },
             error:function(){
                 $( formwebedit ).append( errmsg );
