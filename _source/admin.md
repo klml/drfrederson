@@ -1,17 +1,20 @@
 # Administration
 
-
 ## Editing
 
 You can edit all pages in the ''_source/'' directory or with this webeditor.
 If you use this site in an public area like your webserver and not in a secure environment on your computer or intranet, you have to get authorizised via htaccess for the JavaScript based edit functionality. After the request for auth you will find on every page an editbutton.
 
-<button id="requestauth">Request Auth</button>
-<button id="preventauth">Prevent Auth</button>
+<input type="checkbox" name="requestauth"  id="requestauth" value="requestauth" > Request Auth 
 
-### Sidebar and page-durable content
+## Create new pages
+
+Call the wished URL, receive the 404 error page and and click edit. Best: create an hyperlink (e.g. in the [menue](_pagedurable)), click and edit.
+
+## Sidebar and page-durable content
 
 Editing sidebar and other page-durable content [pagedurable](_pagedurable) like a ''normal'' page (same as [Mediawiki Sidebar](https://www.mediawiki.org/wiki/Manual:Interface/Sidebar)),
+
 
 #!
 title: Administration
