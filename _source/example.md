@@ -2,7 +2,7 @@
 
 You can use this as template for ne pages
 
-Use [markdown](http://daringfireball.net/projects/markdown/)
+Use [markdown extra](http://michelf.ca/projects/php-markdown/extra/)
 
 * list
 * list and **bold** or *italic*

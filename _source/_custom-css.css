@@ -12,7 +12,7 @@ padding: 0;
     font-size: 20px;
     padding: 5px 10px 0 0;
 }
-#nav .logo a {
+a.logo {
     background-color: #8DA7CC;
     display: block;
     height: 90px;

@@ -104,10 +104,14 @@ htmldir
 
 ## TODO
 
+
+* php in webroot execute 
 * file_put_contents notebook ??
+* include
+** index: dir as link include (for pix)
+
 * demo
 * trailing slash
-* php in webroot execute 
 * libs
 ** https://github.com/michelf/php-markdown extra (needs php 5.3)
 ** http://epiceditor.com/
@@ -115,14 +119,11 @@ htmldir
 * after pagedurabel creat with all pages
 * js var psmpage
 * URL builing? root dir : absolute relative only one dir
-* directory to namespace
+** directory to namespace
 ** directory doubled
+** global filenamepath
 * test if yml exists from func
 * bloggish posttemplate (date, archivcat) for webedit
-* global filenamepath
-* normalize page and blog
-* include
-* index: dir as link include (for pix)
 * tags
 * lasttest
 
