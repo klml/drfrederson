@@ -26,8 +26,7 @@ CSS and Javascript is maintained in `lib/` as [submodule](http://git-scm.com/boo
 
 ### Custom
 
-Edit custom css in [_custom.css](_custom.css)
-
+Edit custom client-sources (css, js) in [_custom-css](_custom-css.md) and [_custom-js](_custom-js.md) as "normal" pages
 (the concept is well adapted in [Mediawiki UseSiteCss](https://www.mediawiki.org/wiki/Manual:$wgUseSiteCss) and [SiteJs](https://www.mediawiki.org/wiki/Manual:%24wgUseSiteJs)).
 
 
