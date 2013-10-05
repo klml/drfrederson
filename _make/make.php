@@ -20,8 +20,7 @@ class MakeSite {
 	public function __construct() {
 		if( !file_exists( 'config.yml' ) ) { die("missing config.yml\n") ; };
         $this->config = spyc_load_file('config.yml');
-		$this->wwwPath = $this->config['path'];
-		$this->filePath = $this->wwwPath; // ?
+		$this->filePath = $this->config['path'];
         $this->process() ;
 	}
 
