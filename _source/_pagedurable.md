@@ -1,5 +1,5 @@
 <div class="three columns logo alpha" markdown="1" ><a href="./">Home</a></div>
-* [Example](examples)
+* [Example](example)
 * [Foo](foo)
 * [New!](new)
 * [about?](about)
