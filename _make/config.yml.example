@@ -1,22 +1,20 @@
+--- site wide
 siteName: psm
 description: this is a website
 baseurl: http://localhost/php-site-maker/
-sourcedir: _source
 disqusId:
-htmldir: ../
-htmlextension: .html
 htmlextension: 
-sourcedir: ../_source/
 sourceextension: md
-pagedurable: ../_source/_pagedurable.md
 ymlseparator: '#!'
-path:
-	page: ../_source/page/
-	make: ../_make/
-	layout: ../_template/
 
----
+path:
+    layout: ../_template/
+    source: ../_source/
+    html: ../
+
+--- page specific, optional overwrite in die or source
 layout: page
+pagedurable: ../_source/_pagedurable.md
 title: Title from root-config 
 comment: false
 description: Some general site wide description

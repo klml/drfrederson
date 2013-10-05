@@ -55,7 +55,7 @@ class MakeSite {
 
             }
         } else {
-            $sourcedirrecursive = new RecursiveDirectoryIterator( $this->config['sourcedir'] );
+            $sourcedirrecursive = new RecursiveDirectoryIterator( $this->filePath['source'] );
             foreach (new RecursiveIteratorIterator($sourcedirrecursive) as $sourcepath => $file) { // ? diffrenc $file  vs $sourcepath
                 $this->createPages($sourcepath);
                 
@@ -64,7 +64,7 @@ class MakeSite {
 	}
 	public function calledPages($lemmas) { 
         foreach( $lemmas as $lemma ) {
-            $sourcepath = $this->config['sourcedir'] . $lemma . '.' . $this->config['sourceextension'];
+            $sourcepath = $this->filePath['source'] . $lemma . '.' . $this->config['sourceextension'];
             if( file_exists( $sourcepath ) ) {
                 $this->createPages( $sourcepath );
             } else {
@@ -121,7 +121,7 @@ class MakeSite {
 
             $page = array();
             $page['url'] = $this->config['baseurl'] . $lemma ;
-            $page['filePath'] = $this->config['htmldir'] . $lemma . $this->config['htmlextension']; // TODO fill inn $directoriesName
+            $page['filePath'] = $this->filePath['html'] . $lemma . $this->config['htmlextension']; // TODO fill inn $directoriesName
 
             $page['layout'] = $this->filePath['layout'] . $tmpInfo['layout'] . '.php';
             $page['name'] = $tmpInfo['title'];
