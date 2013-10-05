@@ -104,14 +104,12 @@ htmldir
 
 ## TODO
 
-* 404 if admin create
 * file_put_contents notebook ??
 * demo
 * trailing slash
 * php in webroot execute 
 * libs
 ** https://github.com/michelf/php-markdown extra (needs php 5.3)
-** https://github.com/mustangostang/spyc/
 ** http://epiceditor.com/
 * minfy
 * after pagedurabel creat with all pages

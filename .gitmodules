@@ -7,3 +7,6 @@
 [submodule "lib/skeleton"]
 	path = lib/skeleton
 	url = git@github.com:dhg/Skeleton.git
+[submodule "_make/lib/spyc"]
+	path = _make/lib/spyc
+	url = https://github.com/mustangostang/spyc/
