@@ -96,7 +96,7 @@ class MakeSite {
 
             $lemma = implode('.', $filenamewithExtension ) ;            // e.g. my.page
 
-            if ( $filenameExtension != $this->config['sourceextension'] ) {  // exceptions: not src files 
+            if ( $filenameExtension != $this->config['sourceextension'] && $filenameExtension != 'css' && $filenameExtension != 'js' ) {  // exceptions: not src files 
                  return;
             }
 

@@ -6,14 +6,14 @@
 	<title><?=$data['page']['name']?> | <?=$data['config']['siteName']?></title>
     <meta http-equiv="description" content="<?=$data['page']['description']?>"/>
 
-	<link rel="stylesheet" type="text/css" href="<?=$data['config']['baseurl']?>lib/CSS-Mini-Reset/CSS-Mini-Reset-min.css">
+    <link rel="stylesheet" type="text/css" href="<?=$data['config']['baseurl']?>lib/CSS-Mini-Reset/CSS-Mini-Reset-min.css">
 
     <link rel="stylesheet" type="text/css" href="<?=$data['config']['baseurl']?>lib/skeleton/stylesheets/base.css">
     <link rel="stylesheet" type="text/css" href="<?=$data['config']['baseurl']?>lib/skeleton/stylesheets/layout.css">
     <link rel="stylesheet" type="text/css" href="<?=$data['config']['baseurl']?>lib/skeleton/stylesheets/skeleton.css">
 
     <link rel="stylesheet" type="text/css" href="<?=$data['config']['baseurl']?>lib/usefulclassroomphrases/ucp.css">
-	<link rel="stylesheet" type="text/css" href="<?=$data['config']['baseurl']?>_source/_custom-css.md">
+    <link rel="stylesheet" type="text/css" href="<?=$data['config']['baseurl']?>_source/_custom-css.css">
 </head>
 <body class="d2c_<?=$data['page']['lemma']?>" >
 
