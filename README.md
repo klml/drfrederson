@@ -94,7 +94,6 @@ edit `config.yml` first.
 ## TODO
 
 * custom css and js
-* cleanup css
 * 404 if admin create
 * file_put_contents notebook ??
 * demo
