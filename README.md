@@ -29,7 +29,25 @@ There is no extra admininterface, edit existing pages with the edit button or cr
 
 ## Setup
 
-The public site needs only html and js files. Only *_make/*-directory is needed for updates. The *writer.php* has **no role or user validation**, Protect this against violaton:
+Clone, create config from .example and create first version of site.
+
+```
+git clone git@github.com:klml/php-site-maker.git
+cd php-site-maker/_make/
+cp config.yml.example config.yml
+php make.php
+```
+
+Used libraries are included as [submodules](http://git-scm.com/book/en/Git-Tools-Submodules).
+
+
+```
+git submodule init
+git submodule update 
+```
+
+
+The public site, where ever it is located (other server, CDN, etc), needs only html and js files. Only *_make/*-directory is needed for updates. The *writer.php* has **no role or user validation**, Protect this against violaton:
 
 * .htaccess for the whole *_make/*-directory. (Change existing .htaccess to a suitable [Basic access authentication](http://en.wikipedia.org/wiki/Basic_access_authentication))
 * use editing only on secure machines like your desktop or intranet and publish all without *_make/* (e.g. `rsync --exclude=_make/`)
@@ -84,13 +102,6 @@ htmldir
 : directory for generated html-output
 
 
-### Usage
-
-```
-edit `config.yml` first.
-
-<!--more--> is avaliable
-```
 ## TODO
 
 * 404 if admin create
@@ -99,7 +110,7 @@ edit `config.yml` first.
 * trailing slash
 * php in webroot execute 
 * libs
-** https://github.com/michelf/php-markdown extra
+** https://github.com/michelf/php-markdown extra (needs php 5.3)
 ** https://github.com/mustangostang/spyc/
 ** http://epiceditor.com/
 * minfy
