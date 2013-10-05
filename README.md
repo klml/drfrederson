@@ -93,7 +93,6 @@ edit `config.yml` first.
 ```
 ## TODO
 
-* custom css and js
 * 404 if admin create
 * file_put_contents notebook ??
 * demo
@@ -103,7 +102,6 @@ edit `config.yml` first.
 ** https://github.com/michelf/php-markdown extra
 ** https://github.com/mustangostang/spyc/
 ** http://epiceditor.com/
-** https://github.com/dhg/Skeleton/tree/master/stylesheets
 * minfy
 * after pagedurabel creat with all pages
 * js var psmpage

@@ -13,7 +13,22 @@ Call the wished URL, receive the 404 error page and and click edit. Best: create
 
 ## Sidebar and page-durable content
 
-Editing sidebar and other page-durable content [pagedurable](_pagedurable) like a ''normal'' page (same as [Mediawiki Sidebar](https://www.mediawiki.org/wiki/Manual:Interface/Sidebar)),
+Editing sidebar and other page-durable content [pagedurable](_pagedurable) like a ''normal'' page (the concept is well adapted in [Mediawiki Sidebar](https://www.mediawiki.org/wiki/Manual:Interface/Sidebar)).
+
+## Style and JS
+
+CSS and Javascript is maintained in `lib/` as [submodule](http://git-scm.com/book/en/Git-Tools-Submodules)
+
+* [CSS-Mini-Reset](https://github.com/vladocar/CSS-Mini-Reset/)
+* [usefulclassroomphrases](https://github.com/klml/usefulclassroomphrases)
+* [skeleton](https://github.com/dhg/Skeleton)
+
+
+### Custom
+
+Edit custom css in [_custom.css](_custom.css)
+
+(the concept is well adapted in [Mediawiki UseSiteCss](https://www.mediawiki.org/wiki/Manual:$wgUseSiteCss) and [SiteJs](https://www.mediawiki.org/wiki/Manual:%24wgUseSiteJs)).
 
 
 #!

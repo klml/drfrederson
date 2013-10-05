@@ -13,7 +13,7 @@
     <link rel="stylesheet" type="text/css" href="<?=$data['config']['baseurl']?>lib/skeleton/stylesheets/skeleton.css">
 
     <link rel="stylesheet" type="text/css" href="<?=$data['config']['baseurl']?>lib/usefulclassroomphrases/ucp.css">
-	<link rel="stylesheet" type="text/css" href="<?=$data['config']['baseurl']?>theme/style/style.css">
+	<link rel="stylesheet" type="text/css" href="<?=$data['config']['baseurl']?>_source/_custom-css.md">
 	<!--[if gte IE 8]><script type="text/javascript" src="<?=$data['config']['baseurl']?>/theme/js/goodbyeie.js"></script><![endif]-->
 </head>
 <body class="d2c_<?=$data['page']['lemma']?>" >

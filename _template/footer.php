@@ -5,7 +5,7 @@
         var psmpagelemma = <?php echo json_encode( $data['page']['lemma'] )?> ;
     </script>
     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-    <script src="js/main.js?v=q" type="text/javascript"></script>
+    <script src="_source/_custom-js.md?v=q" type="text/javascript"></script>
 </body>
 </html>
 
