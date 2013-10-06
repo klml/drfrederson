@@ -1,5 +1,6 @@
-* [Example](example)
+[Home](./) {.three .columns .logo .alpha}
+
 * [Foo](foo)
 * [Admin](admin)
 
-And call me at 0815.
+Other content at all.
