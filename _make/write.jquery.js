@@ -16,7 +16,7 @@ if ( psmpagelemma == "404error" ) {
 }
 
 
-var formwebeditsrc = '<form accept-charset="ISO-8859-1" class="webedit" style="width:95%;height:430px;"><textarea name="content" style="width:95%;" ></textarea><br/><button>save</button></form>' ;
+var formwebeditsrc = '<form accept-charset="ISO-8859-1" class="webedit" ><textarea class="sixteen columns" name="content" ></textarea><br/><button>save</button></form>' ;
 var formwebeditbtn = '<button id="edit" >edit</button>';
 var formwebedit = 'form.webedit'; // redu
 
