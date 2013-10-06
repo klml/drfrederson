@@ -1,6 +1,5 @@
 --- site wide
 siteName: psm
-description: this is a website
 baseurl: http://localhost/php-site-maker/
 disqusId:
 htmlextension: 
@@ -12,7 +11,7 @@ path:
     source: ../_source/
     html: ../
 
---- page specific, optional overwrite in die or source
+--- page specific, optional overwrite in directory or source
 layout: page
 pagedurable: ../_source/_pagedurable.md
 title: Title from root-config 
