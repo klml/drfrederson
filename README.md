@@ -114,7 +114,6 @@ description
 ## TODO
 
 
-* php in webroot execute 
 * file_put_contents notebook ??
 * include
 ** index: dir as link include (for pix)
