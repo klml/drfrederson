@@ -9,7 +9,7 @@ Write files in [markdown extra](http://michelf.ca/projects/php-markdown/extra/).
 
 Edit your website in different ways:
 
-* *normal* edit source files on filesystem and with your favourite text-editor. After editing call make.php in you CLI
+* __normal__ edit source files on filesystem and with your favourite text-editor. After editing call make.php in you CLI
 * __webedit__ with the edit button on the page. After 'save' the single page will be created.
 * receive changes via __git__ (or other __DCVS__) and update the source and call make.php manually or with a hook.
 
@@ -45,7 +45,7 @@ There is no __automatic URL handling__, config URL manually in the main *config.
 
 ## Directories
 
-_make/
+'_make/'
 : all server sourcecode to create html files from *_source/* 'compiled' with all *_template/*
 
 _source/
@@ -114,27 +114,27 @@ description
 ## TODO
 
 
-* file_put_contents notebook ??
-* include
-** index: dir as link include (for pix)
-
-* demo
-* trailing slash
-* libs
-** https://github.com/michelf/php-markdown extra (needs php 5.3)
-** http://epiceditor.com/
-* minfy
-* after pagedurabel creat with all pages
-* js var psmpage
-* URL builing? root dir : absolute relative only one dir
-** directory to namespace
-** directory doubled
-** global filenamepath
-* test if yml exists from func
-* bloggish posttemplate (date, archivcat) for webedit
-* tags
-* lasttest
+- [ ] file_put_contents notebook ??
+- [ ] include
+- [ ]* index: dir as link include (for pix)
+- [ ]
+- [ ] demo
+- [ ] trailing slash
+- [ ] libs
+- [ ]* https://github.com/michelf/php-markdown extra (needs php 5.3)
+- [ ]* http://epiceditor.com/
+- [ ] minfy
+- [ ] after pagedurabel creat with all pages
+- [ ] js var psmpage
+- [ ] URL builing? root dir : absolute relative only one dir
+- [ ]* directory to namespace
+- [ ]* directory doubled
+- [ ]* global filenamepath
+- [ ] test if yml exists from func
+- [ ] bloggish posttemplate (date, archivcat) for webedit
+- [ ] tags
+- [ ] lasttest
 
 
 ### Refactor
-* 404 er save
+- [] 404 er save
