@@ -72,7 +72,7 @@ siteName
 : used after  
 
 baseurl
-: root url *http://example.com* or *http://example.com/mypage* for absolute URL inside the html.
+: root url *http://example.com* or *http://example.com/mypage* for absolute URL inside the html. Works also with relative (leave empty).
 
 disqusId
 : if using [disqus.com](http://disqus.com/) for comments
