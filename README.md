@@ -3,29 +3,17 @@ php-site-maker
 
 A simple static site generator powered by PHP & Markdown. Based on [github.com/lonescript/php-site-maker](http://github.com/lonescript/php-site-maker)
 
-## Format
-
-Write files in [markdown](http://michelf.com/projects/php-markdown/).
-
-Metainformation (template, comments, meta-description, title etc) can be defined in [yaml](http://www.yaml.org/spec/1.2/spec.html)
-* for __each page__ at the bottom of sourcefile after the `#meta#`, can be redefined in config 'ymlseparator'.
-* or for each __directory__ in *config.yml* 
-* or in the __site__-config *_make/config.yml* 
-
 ## Write
 
-Edit your website in different ways
+Write files in [markdown extra](http://michelf.ca/projects/php-markdown/extra/).
+
+Edit your website in different ways:
 
 * *normal* edit source files on filesystem and with your favourite text-editor. After editing call make.php in you CLI
 * __webedit__ with the edit button on the page. After 'save' the single page will be created.
 * receive changes via __git__ (or other __DCVS__) and update the source and call make.php manually or with a hook.
 
-## Admin
-
 There is no extra admininterface, edit existing pages with the edit button or create new with calling the page you want. More on [admin.md](blob/master/_source/admin.md)
-
-
-
 
 ## Setup
 
@@ -66,40 +54,61 @@ _source/
 _template/
 : some html skeletons wrapping in persisting areas like *header.php*, *footer.php* and *sidebar.php*. 
 
-theme/
-: clientsite assets like css and js.
+lib/
+: clientsite used libraries (css, js).
 
 ## config.yml
 
-### page
+Metainformation (template, comments, meta-description, title etc) can be defined in [yaml](http://www.yaml.org/spec/1.2/spec.html)
+* for __each page__ at the bottom of sourcefile after the `#meta#`, can be redefined in config 'ymlseparator'.
+* or for each __directory__ in *config.yml* 
+* or in the __site__-config *_make/config.yml* 
 
-For every single page
+### site wide
 
-layout
-: template
+site-wide configurations, only usable in `_make/config.yml`.
 
-name
-: name for index or title
-
-comment
-: allow comments
-
-index
-: 1
-
-
-### site
-
-For the whole site
+siteName
+: used after  
 
 baseurl
 : root url *http://example.com* or *http://example.com/mypage* for absolute URL inside the html.
 
-sourcedir
-: content source
+disqusId
+: if using [disqus.com](http://disqus.com/) for comments
 
-htmldir
-: directory for generated html-output
+htmlextension
+: filename extension for html output. Mostly '.html' or nothing.
+
+sourceextension
+: filename extension for text sourcefiles
+
+ymlseparator
+: tag in pages to seperate content and config (`#meta#`).
+
+path
+: filepath for templates, text-source and target for html.
+
+### page specific
+
+Are used for every single page, but can get overwritten in directory or _make/config.yml.
+
+layout
+: template
+
+title
+: [HTML Title Element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/title)
+
+comment
+: allow comments
+
+pagedurable
+: parts of the page always appear. 
+
+description
+: Some general site wide description
+
+
 
 
 ## TODO
