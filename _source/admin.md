@@ -30,7 +30,7 @@ Edit custom client-sources (css, js) in [_custom-css](_custom-css) and [_custom-
 (the concept is well adapted in [Mediawiki UseSiteCss](https://www.mediawiki.org/wiki/Manual:$wgUseSiteCss) and [SiteJs](https://www.mediawiki.org/wiki/Manual:%24wgUseSiteJs)).
 
 
-#!
+#meta#
 title: Administration
 description: All about editing and admin this site
 comment: false

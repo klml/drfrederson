@@ -5,7 +5,7 @@ baseurl: http://localhost/php-site-maker/
 disqusId:
 htmlextension: 
 sourceextension: md
-ymlseparator: '#!'
+ymlseparator: '#meta#'
 
 path:
     layout: ../_template/
