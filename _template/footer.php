@@ -1,4 +1,4 @@
-	<footer id="footer">footer</footer>
+	<footer id="footer"  class="sixteen columns"></footer>
 </div>
     <script type="text/javascript">
         var psmpagesourcepath = <?php echo json_encode( substr($data['page']['sourcepath'] , 3 ) ) ?> ;
