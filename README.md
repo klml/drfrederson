@@ -13,7 +13,7 @@ Edit your website in different ways:
 * __webedit__ with the edit button on the page. After 'save' the single page will be created.
 * receive changes via __git__ (or other __DCVS__) and update the source and call make.php manually or with a hook.
 
-There is no extra admininterface, edit existing pages with the edit button or create new with calling the page you want. More on [admin.md](blob/master/_source/admin.md)
+There is no extra admininterface, edit existing pages with the edit button or create new with calling the page you want. More on [admin.md](_source/admin.md)
 
 ## Setup
 
@@ -117,7 +117,6 @@ description
 - [ ] file_put_contents notebook ??
 - [ ] include
 - [ ]* index: dir as link include (for pix)
-- [ ]
 - [ ] demo
 - [ ] trailing slash
 - [ ] libs
@@ -134,6 +133,7 @@ description
 - [ ] bloggish posttemplate (date, archivcat) for webedit
 - [ ] tags
 - [ ] lasttest
+
 
 
 ### Refactor
