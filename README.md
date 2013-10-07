@@ -3,6 +3,15 @@ php-site-maker
 
 A simple static site generator powered by PHP & Markdown. Based on [github.com/lonescript/php-site-maker](http://github.com/lonescript/php-site-maker)
 
+
+There are many other and better [ssg](https://github.com/pinceladasdaweb/Static-Site-Generators), but I searched for this fetaures I did not found so far:
+
+* not-ITcrowds have no favourite texteditor or ssh access. Just hit __webeditbutton__ on your browser and get an textarea to change contents.
+* no indexed, automatic __menu__; just an extra textblob. This is not so IT-sophisticated, but easy to understand. 
+
+Some more small features like titletags from the first heading, etc
+
+
 ## Write
 
 Write files in [markdown extra](http://michelf.ca/projects/php-markdown/extra/).
