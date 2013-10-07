@@ -115,12 +115,13 @@ description
 
 
 - [ ] file_put_contents notebook ??
+- [ ] jquery als lib
+- [ ] onsite preview
 - [ ] include
 - [ ]* index: dir as link include (for pix)
 - [ ] demo
 - [ ] trailing slash
 - [ ] libs
-- [ ]* https://github.com/michelf/php-markdown extra (needs php 5.3)
 - [ ]* http://epiceditor.com/
 - [ ] minfy
 - [ ] after pagedurabel creat with all pages
@@ -137,4 +138,6 @@ description
 
 
 ### Refactor
-- [] 404 er save
+
+- [ ] 404 er save
+- [ ] lib https://github.com/michelf/php-markdown extra (needs php 5.3)
