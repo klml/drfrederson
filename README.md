@@ -128,9 +128,8 @@ description
 - [ ]* index: dir as link include (for pix)
 - [ ] demo
 - [ ] trailing slash
-- [ ] libs
-- [ ]* https://github.com/michelf/php-markdown extra (needs php 5.3)
-- [ ]* http://epiceditor.com/
+- [ ] lib: https://github.com/michelf/php-markdown extra (needs php 5.3)
+- [ ] lib: https://github.com/lepture/editor
 - [ ] minfy
 - [ ] after pagedurabel creat with all pages
 - [ ] js var psmpage
