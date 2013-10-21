@@ -124,15 +124,19 @@ description
 
 
 - [ ] file_put_contents notebook ??
-- [ ] include
+- [ ] include http://www.mediawiki.org/wiki/Transclusion
 - [ ]* index: dir as link include (for pix)
 - [ ] demo
+- [ ] data2css aus meta fill
+- [ ] http://klml.lynx.uberspace.de/dev/php-site-maker/_make/config.yml to js serversite
 - [ ] trailing slash
 - [ ] lib: https://github.com/michelf/php-markdown extra (needs php 5.3)
 - [ ] lib: https://github.com/lepture/editor
+- [ ] redirects
 - [ ] minfy
 - [ ] after pagedurabel creat with all pages
 - [ ] js var psmpage
+- [ ] https://github.com/blueimp/jQuery-File-Upload
 - [ ] URL builing? root dir : absolute relative only one dir
 - [ ]* directory to namespace
 - [ ]* directory doubled
