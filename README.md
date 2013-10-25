@@ -126,7 +126,6 @@ description
 - css clean up: static to template
 - js clean up: _custom-js static to template
 - rename _custom-css etc psm-custom-css
-- formwebedit als template
 - [ ] redirects
 - [ ] file_put_contents notebook ??
 - [ ] include http://www.mediawiki.org/wiki/Transclusion
