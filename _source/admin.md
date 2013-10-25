@@ -29,6 +29,8 @@ CSS and Javascript is maintained in `lib/` as [submodule](http://git-scm.com/boo
 Edit custom client-sources (css, js) in [_custom-css](_custom-css) and [_custom-js](_custom-js) as "normal" pages
 (the concept is well adapted in [Mediawiki UseSiteCss](https://www.mediawiki.org/wiki/Manual:$wgUseSiteCss) and [SiteJs](https://www.mediawiki.org/wiki/Manual:%24wgUseSiteJs)).
 
+## Config
+Edit site wide [config](https://github.com/klml/php-site-maker#configyml) on [config](config).
 
 #meta#
 title: Administration

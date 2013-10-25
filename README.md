@@ -123,7 +123,7 @@ description
 ## TODO
 
 - source config without passwords etc
-- css clean up: resident locals, static to template
+- css clean up: static to template
 - js clean up: _custom-js static to template
 - rename _custom-css etc psm-custom-css
 - formwebedit als template

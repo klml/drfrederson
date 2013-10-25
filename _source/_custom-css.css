@@ -1,8 +1,13 @@
-/*
- * @name style.css
- * @date 2013-02-22
- */
+/* resident overwrites */
+a {
+color: #0645AD;
+}
+a:visited {
+color: #2C49B1;
+}
 
+
+/* navi */
 #nav article ul {
 margin:0;
 padding: 0;
