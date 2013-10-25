@@ -124,7 +124,7 @@ class MakeSite {
             $page['filePath'] = $this->filePath['html'] . $lemma . $this->config['htmlextension']; // TODO fill inn $directoriesName
 
             $page['layout'] = $this->filePath['layout'] . $tmpInfo['layout'] . '.php';
-            $page['name'] = $tmpInfo['title'];
+            $page['name'] = $tmpInfo['title']; // TODO use title in template
             $page['lemma'] = $lemma ;
             $page['sourcepath'] = $sourcepath ;
             $page['comment'] = $tmpInfo['comment'];
@@ -146,7 +146,7 @@ class MakeSite {
 
 			makeHtmlFile( $page['filePath'] , $page['layout'] , $this->tmplData);
 			$this->initTmplData();
-			success('created page: ' . $page['name']);
+			success('created page: ' . $page['filePath']);
     }
 }
 
