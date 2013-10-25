@@ -122,7 +122,12 @@ description
 
 ## TODO
 
-
+- source config without passwords etc
+- css clean up: resident locals, static to template
+- js clean up: _custom-js static to template
+- rename _custom-css etc psm-custom-css
+- formwebedit als template
+- [ ] redirects
 - [ ] file_put_contents notebook ??
 - [ ] include http://www.mediawiki.org/wiki/Transclusion
 - [ ]* index: dir as link include (for pix)
@@ -132,9 +137,8 @@ description
 - [ ] trailing slash
 - [ ] lib: https://github.com/michelf/php-markdown extra (needs php 5.3)
 - [ ] lib: https://github.com/lepture/editor
-- [ ] redirects
 - [ ] minfy
-- [ ] after pagedurabel creat with all pages
+- [ ] after pagedurable creat with all pages
 - [ ] js var psmpage
 - [ ] https://github.com/blueimp/jQuery-File-Upload
 - [ ] URL builing? root dir : absolute relative only one dir
