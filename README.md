@@ -122,9 +122,8 @@ description
 
 ## TODO
 
+- [ ] http://klml.lynx.uberspace.de/dev/php-site-maker/_make/config.yml to js serversite
 - source config without passwords etc
-- css clean up: static to template
-- js clean up: _custom-js static to template
 - rename _custom-css etc psm-custom-css
 - [ ] redirects
 - [ ] file_put_contents notebook ??
@@ -132,7 +131,6 @@ description
 - [ ]* index: dir as link include (for pix)
 - [ ] demo
 - [ ] data2css aus meta fill
-- [ ] http://klml.lynx.uberspace.de/dev/php-site-maker/_make/config.yml to js serversite
 - [ ] trailing slash
 - [ ] lib: https://github.com/michelf/php-markdown extra (needs php 5.3)
 - [ ] lib: https://github.com/lepture/editor
@@ -148,6 +146,7 @@ description
 - [ ] bloggish posttemplate (date, archivcat) for webedit
 - [ ] tags
 - [ ] lasttest
+- [ ] etherpad
 
 
 
