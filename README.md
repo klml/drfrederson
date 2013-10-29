@@ -26,7 +26,7 @@ There is no extra admininterface, edit existing pages with the edit button or cr
 
 ## Setup
 
-Clone, create config from .example and create first version of site.
+Clone or download, create config from .example and create first version of site.
 
 ```
 git clone git@github.com:klml/php-site-maker.git
@@ -49,6 +49,7 @@ The public site, where ever it is located (other server, CDN, etc), needs only h
 * .htaccess for the whole *_make/*-directory. (Change existing .htaccess to a suitable [Basic access authentication](http://en.wikipedia.org/wiki/Basic_access_authentication))
 * use editing only on secure machines like your desktop or intranet and publish all without *_make/* (e.g. `rsync --exclude=_make/`)
 
+Run [_make/make.php](_make/make.php) for the first run. 
 
 There is no __automatic URL handling__, config URL manually in the main *config.yml* and *.htaccess*.
 
@@ -122,10 +123,12 @@ description
 
 ## TODO
 
+- 404 to root
 - [ ] http://klml.lynx.uberspace.de/dev/php-site-maker/_make/config.yml to js serversite
 - source config without passwords etc
 - rename _custom-css etc psm-custom-css
 - [ ] redirects
+- new article field (and include)
 - [ ] file_put_contents notebook ??
 - [ ] include http://www.mediawiki.org/wiki/Transclusion
 - [ ]* index: dir as link include (for pix)
