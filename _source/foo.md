@@ -1,12 +1,9 @@
 
 ## Foo - Bar
-
 This page is using 
 
 * alternative sidebar.
 * first heading as title
-* html 21212
-
 
 
 ### heading
