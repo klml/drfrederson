@@ -117,8 +117,25 @@ class MakeSite {
             $page['sourcepath'] = $sourcepath ;
             $page['comment'] = $tmpInfo['comment'];
 
-            $page['pagedurable'] = Markdown( file_get_contents($tmpInfo['pagedurable']) );
-            $page['content'] = Markdown( $ymlMD[0] ) ;
+            $page['pagedurable'] = Markdown( file_get_contents($tmpInfo['pagedurable']) ); // TODO md switching
+
+            switch ( $filenameExtension ) {                     // file parse handling
+                case ("txt"):
+                case ("css"):
+                case ("js"):
+                    $page['content'] =  nl2br( $ymlMD[0] ) ;
+                    $page['name'] = $lemma ;
+                break;
+
+                case ("md"):
+                    $page['content'] = Markdown( $ymlMD[0] ) ;
+                break;
+                case ("html"):
+                default:
+                    $page['content'] = $ymlMD[0] ;
+                break;
+            }
+
             $page['description'] = $tmpInfo['description'];
 
             // <!-- more --> cutter //~ TODO move to outermarkdown
