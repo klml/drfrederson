@@ -126,15 +126,15 @@ description
 
 ## TODO
 
+- mustache
 - page sourcepath from head link http://de.selfhtml.org/html/kopfdaten/meta.htm#beschreibung
 - 404 to root
-- [ ] http://klml.lynx.uberspace.de/dev/php-site-maker/_make/config.yml to js serversite
+- [ ] _make/config.yml to js serversite
 - source config without passwords etc
 - rename _custom-css etc psm-custom-css
 - [ ] redirects
 - new article field (and include)
 - http://upstatement.com/blog/2013/10/comparing-php-template-languages-for-wordpresss/ but need it JS and 
-- [ ] file_put_contents notebook ??
 - [ ] editor als template
 - [ ] jquery als lib
 - [ ] onsite preview
