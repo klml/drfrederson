@@ -1,0 +1,19 @@
+
+/* navi */
+#nav article ul {
+margin:0;
+padding: 0;
+}
+#nav article ul li {
+    display: inline-block;
+    font-size: 20px;
+    padding: 5px 10px 0 0;
+}
+
+
+/* edit funct */
+form.webedit textarea {
+    background-color: #000000;
+    color: #FFFFFF;
+    height: 400px;
+}

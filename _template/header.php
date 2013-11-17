@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="<?=$data['config']['baseurl']?>lib/skeleton/stylesheets/skeleton.css">
 
     <link rel="stylesheet" type="text/css" href="<?=$data['config']['baseurl']?>lib/usefulclassroomphrases/ucp.css">
+    <link rel="stylesheet" type="text/css" href="<?=$data['config']['baseurl']?>_template/tpl.css">
     <link rel="stylesheet" type="text/css" href="<?=$data['config']['baseurl']?>_source/_custom-css.css">
 </head>
 <body class="d2c_<?=$data['page']['lemma']?>" >

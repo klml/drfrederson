@@ -30,7 +30,7 @@ class MakeSite {
     }
 	// init pages data
 
-	protected function selectPages() {
+	protected function selectPages() { // http and cli routing
         global $argv ;
         $this->pages = array();
 
@@ -62,11 +62,11 @@ class MakeSite {
             }
 		}
 	}
-	public function calledPages($lemmas) { 
+	public function calledPages($lemmas) { // TODO rename 
         foreach( $lemmas as $lemma ) {
             $sourcepath = $this->filePath['source'] . $lemma . '.' . $this->config['sourceextension'];
             if( file_exists( $sourcepath ) ) {
-                $this->createPages( $sourcepath );
+                $this->createPages( $sourcepath ); // TODO rename createPage
             } else {
             error('no files');
             }
@@ -84,7 +84,7 @@ class MakeSite {
 	}
 
 	// create page    
-	public function createPages($sourcepath) { // protected
+	public function createPages($sourcepath) { // protected // e.g. my.page.md
 
             $directoriesName = explode('/', $sourcepath ) ;
             $filename = array_pop($directoriesName) ;               // e.g. my.page.md
@@ -96,7 +96,7 @@ class MakeSite {
 
             $lemma = implode('.', $filenamewithExtension ) ;            // e.g. my.page
 
-            if ( $filenameExtension != $this->config['sourceextension'] && $filenameExtension != 'css' && $filenameExtension != 'js' ) {  // exceptions: not src files 
+            if ( is_dir( $filename) ) {                             // dont parse directories
                  return;
             }
 
@@ -124,7 +124,7 @@ class MakeSite {
             $page['filePath'] = $this->filePath['html'] . $lemma . $this->config['htmlextension']; // TODO fill inn $directoriesName
 
             $page['layout'] = $this->filePath['layout'] . $tmpInfo['layout'] . '.php';
-            $page['name'] = $tmpInfo['title'];
+            $page['name'] = $tmpInfo['title']; // TODO use title in template
             $page['lemma'] = $lemma ;
             $page['sourcepath'] = $sourcepath ;
             $page['comment'] = $tmpInfo['comment'];
@@ -146,7 +146,7 @@ class MakeSite {
 
 			makeHtmlFile( $page['filePath'] , $page['layout'] , $this->tmplData);
 			$this->initTmplData();
-			success('created page: ' . $page['name']);
+			success('created page: ' . $page['filePath']);
     }
 }
 

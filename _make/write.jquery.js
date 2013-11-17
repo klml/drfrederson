@@ -1,4 +1,3 @@
-
 if ( psmpagelemma == "404error" ) {
     
      pagesourcepath = psmpagesourcepath.split('/') ;
@@ -15,39 +14,27 @@ if ( psmpagelemma == "404error" ) {
     pagesourcepathprefill = psmpagesourcepath + '?v=' + Math.random() ; // force reload
 }
 
-
-var formwebeditsrc = '<form accept-charset="ISO-8859-1" class="webedit" ><textarea class="sixteen columns" name="content" ></textarea><br/><button>save</button></form>' ;
-var formwebeditbtn = '<button id="edit" >edit</button>';
-var formwebedit = 'form.webedit'; // redu
-
-
-var sucmsg = '<div id="successmsg" class="notice" >submitted successfully</div>' ;    
-var errmsg = '<div id="errormsg" class="hidden notice" >error occurred while sending</div>' ;
-
+var formwebedit = 'form.webedit'; // to formwebedit.php
 
 
 jQuery(document).ready(function() {
 
-    $('#footer').after( formwebeditbtn );
+    $( "#footer" ).load( "_template/formwebedit.php", function() {
 
-    $('#edit').click( function() {
-        $('#edit').replaceWith( formwebeditsrc ) ;
-        
-        
-        $(formwebedit).find('textarea').load( pagesourcepathprefill );
-        webeditSend( formwebedit ); // init after replaceWith
-     });
+        $('#edit').click( function() {
+            $(this).hide();
+            $('.webedit').show();
+            $(formwebedit).find('textarea').load( pagesourcepathprefill );
+            webeditSend( formwebedit ); // init after replaceWith
+         });
 
-    var intermission ; 
-    $( formwebedit ).find('textarea').keyup( function() {
-        //~ window.clearTimeout( intermission );
-        //~ intermission = window.setTimeout( 'render()' , 3000);
+        var intermission ; 
+        $( formwebedit ).find('textarea').keyup( function() {
+            //~ window.clearTimeout( intermission );
+            //~ intermission = window.setTimeout( 'render()' , 3000);
+        });
     });
-
-
 });
-
-
 
 function webeditSend ( formwebedit ) {
     $( formwebedit ).submit( function(event) {
@@ -57,11 +44,11 @@ function webeditSend ( formwebedit ) {
             type: 'POST',
             data: $(this).serialize() + '&sourcepath=' + pagesourcepathwrite ,
             success: function(){
-                $( formwebedit ).html( sucmsg ) ;
+                $( '#successmsg' ).show() ;
                 location.reload(true);
             },
             error:function(){
-                $( formwebedit ).append( errmsg );
+                $( '#errormsg' ).show();
             }
         });         
     });    

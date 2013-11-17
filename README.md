@@ -29,7 +29,7 @@ There is no extra admininterface, edit existing pages with the edit button or cr
 
 ## Setup
 
-Clone, create config from .example and create first version of site.
+Clone or download, create config from .example and create first version of site.
 
 ```
 git clone git@github.com:klml/php-site-maker.git
@@ -52,6 +52,7 @@ The public site, where ever it is located (other server, CDN, etc), needs only h
 * .htaccess for the whole *_make/*-directory. (Change existing .htaccess to a suitable [Basic access authentication](http://en.wikipedia.org/wiki/Basic_access_authentication))
 * use editing only on secure machines like your desktop or intranet and publish all without *_make/* (e.g. `rsync --exclude=_make/`)
 
+Run [_make/make.php](_make/make.php) for the first run. 
 
 There is no __automatic URL handling__, config URL manually in the main *config.yml* and *.htaccess*.
 
@@ -127,6 +128,14 @@ description
 
 * anti md css handling. Lese dir/lemma
 * render befehl bruacht immer extension. Lemm is blödsinn
+- page sourcepath from head link http://de.selfhtml.org/html/kopfdaten/meta.htm#beschreibung
+- 404 to root
+- [ ] http://klml.lynx.uberspace.de/dev/php-site-maker/_make/config.yml to js serversite
+- source config without passwords etc
+- rename _custom-css etc psm-custom-css
+- [ ] redirects
+- new article field (and include)
+- http://upstatement.com/blog/2013/10/comparing-php-template-languages-for-wordpresss/ but need it JS and 
 - [ ] file_put_contents notebook ??
 - [ ] editor als template
 - [ ] jquery als lib
@@ -136,13 +145,11 @@ description
 - [ ]* index: dir as link include (for pix)
 - [ ] demo
 - [ ] data2css aus meta fill
-- [ ] http://klml.lynx.uberspace.de/dev/php-site-maker/_make/config.yml to js serversite
 - [ ] trailing slash
 - [ ] lib: https://github.com/michelf/php-markdown extra (needs php 5.3)
 - [ ] lib: https://github.com/lepture/editor
-- [ ] redirects
 - [ ] minfy
-- [ ] after pagedurabel creat with all pages
+- [ ] after pagedurable creat with all pages
 - [ ] js var psmpage
 - [ ] https://github.com/blueimp/jQuery-File-Upload
 - [ ] URL builing? root dir : absolute relative only one dir
@@ -153,6 +160,7 @@ description
 - [ ] bloggish posttemplate (date, archivcat) for webedit
 - [ ] tags
 - [ ] lasttest
+- [ ] etherpad
 
 
 
