@@ -127,7 +127,6 @@ description
 ## TODO
 
 * anti md css handling. Lese dir/lemma
-* render befehl bruacht immer extension. Lemm is blödsinn
 - page sourcepath from head link http://de.selfhtml.org/html/kopfdaten/meta.htm#beschreibung
 - 404 to root
 - [ ] http://klml.lynx.uberspace.de/dev/php-site-maker/_make/config.yml to js serversite

@@ -2,7 +2,7 @@
 siteName: psm
 baseurl: http://localhost/php-site-maker/
 disqusId:
-htmlextension: 
+htmlextension: .html
 sourceextension: md
 ymlseparator: '#meta#'
 
