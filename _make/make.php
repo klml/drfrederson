@@ -30,7 +30,7 @@ class MakeSite {
     }
 	// init pages data
 
-	protected function selectPages() {
+	protected function selectPages() { // http and cli routing
         global $argv ;
         $this->pages = array();
 
@@ -62,11 +62,11 @@ class MakeSite {
             }
 		}
 	}
-	public function calledPages($lemmas) { 
+	public function calledPages($lemmas) { // TODO rename 
         foreach( $lemmas as $lemma ) {
             $sourcepath = $this->filePath['source'] . $lemma . '.' . $this->config['sourceextension'];
             if( file_exists( $sourcepath ) ) {
-                $this->createPages( $sourcepath );
+                $this->createPages( $sourcepath ); // TODO rename createPage
             } else {
             error('no files');
             }
@@ -84,7 +84,7 @@ class MakeSite {
 	}
 
 	// create page    
-	public function createPages($sourcepath) { // protected
+	public function createPages($sourcepath) { // protected // e.g. my.page.md
 
             $directoriesName = explode('/', $sourcepath ) ;
             $filename = array_pop($directoriesName) ;               // e.g. my.page.md
