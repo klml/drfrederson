@@ -7,6 +7,7 @@ A simple static site generator powered by PHP & Markdown. Based on [github.com/l
 There are many other and better [ssg](https://github.com/pinceladasdaweb/Static-Site-Generators), but I searched for this fetaures I did not found so far:
 
 * not-ITcrowds have no favourite texteditor or ssh access. Just hit __webeditbutton__ on your browser and get an textarea to change contents.
+* __meta information__ for rendering (template, menue etc) or html metatags are at the *bottom* o the page and optional
 * no indexed, automatic __menu__; just an extra textblob. This is not so IT-sophisticated, but easy to understand. 
 
 Some more small features like titletags from the first heading, etc
@@ -21,6 +22,8 @@ Edit your website in different ways:
 * __normal__ edit source files on filesystem and with your favourite text-editor. After editing call make.php in you CLI
 * __webedit__ with the edit button on the page. After 'save' the single page will be created.
 * receive changes via __git__ (or other __DCVS__) and update the source and call make.php manually or with a hook.
+* there is __no__ file and assethandling, just upload pictures and files in ths target directory. There is no reason why a static-site-generator should copy files around. And if you wish some filehandling like renaming, image resizing and cropping, use a specialized software or this
+
 
 There is no extra admininterface, edit existing pages with the edit button or create new with calling the page you want. More on [admin.md](_source/admin.md)
 
@@ -122,12 +125,13 @@ description
 
 ## TODO
 
-
-
+* anti md css handling. Lese dir/lemma
+* render befehl bruacht immer extension. Lemm is blödsinn
 - [ ] file_put_contents notebook ??
 - [ ] editor als template
 - [ ] jquery als lib
 - [ ] onsite preview
+- [ ] skip meta
 - [ ] include http://www.mediawiki.org/wiki/Transclusion
 - [ ]* index: dir as link include (for pix)
 - [ ] demo
