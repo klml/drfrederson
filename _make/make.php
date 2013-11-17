@@ -36,24 +36,23 @@ class MakeSite {
 
         if ( count($argv) > 1  ) {      // create single pages from cli input
             array_shift($argv);         // remove script name
-            $this->calledPages($argv);  // TODO remove and use full path?
+            $this->createPages( $argv[0] );       // create single pages from webeditor
 
-        } else if ( isset( $_GET["lemma"] ) ) { // recreate single pages from web
-            $this->calledPages( $_GET["lemma"] );
+        } else if (  isset( $_POST["sourcepath"] )  ) { // writes single pages from webeditor
 
-        } else if ( isset( $_POST["sourcepath"], $_POST["content"] ) ) { // create single pages from webeditor
-
-            if (false === strpos($sourcepath, '..')) {
+            if (false === strpos($sourcepath, '..') ) { 
                 $sourcepath = '../' . $_POST["sourcepath"] ; // TODO URL vs dir 
-
-                echo writeFile( $sourcepath, $_POST["content"]  );
-                $this->createPages( $sourcepath );
-                
             } else {
                 echo $msg .= ' contains illegal characters';
                 die();
-
             }
+
+            if ( isset ( $_POST["content"] )  ) { 
+                echo writeFile( $sourcepath, $_POST["content"]  );
+            }
+
+            $this->createPages( $sourcepath );
+
         } else {
             $sourcedirrecursive = new RecursiveDirectoryIterator( $this->filePath['source'] );
             foreach (new RecursiveIteratorIterator($sourcedirrecursive) as $sourcepath => $file) { // ? diffrenc $file  vs $sourcepath
@@ -62,17 +61,6 @@ class MakeSite {
             }
 		}
 	}
-	public function calledPages($lemmas) { // TODO rename 
-        foreach( $lemmas as $lemma ) {
-            $sourcepath = $this->filePath['source'] . $lemma . '.' . $this->config['sourceextension'];
-            if( file_exists( $sourcepath ) ) {
-                $this->createPages( $sourcepath ); // TODO rename createPage
-            } else {
-            error('no files');
-            }
-        }
-    }
-
 
 	// init data for tmpl
 	protected function initTmplData() {
