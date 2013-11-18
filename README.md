@@ -56,6 +56,17 @@ Run [_make/make.php](_make/make.php) for the first run.
 
 There is no __automatic URL handling__, config URL manually in the main *config.yml* and *.htaccess*.
 
+## templates
+
+For [webedit](#Write) add the [HTML metatag](http://www.w3.org/wiki/HTML/Elements/meta) [dcterms.source](http://dublincore.org/documents/dcmi-terms/#terms-source) (Referenced[whatwg.org MetaExtensions](http://wiki.whatwg.org/wiki/MetaExtensions#Registered_Extensions) ).
+
+
+```
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+<meta name="dcterms.source" content=""/>
+```
+
+
 ## Directories
 
 '_make/'
@@ -127,7 +138,7 @@ description
 ## TODO
 
 - rename called Pages
-- mustache
+- mustache https://github.com/bobthecow/mustache.php
 - page sourcepath from head link http://de.selfhtml.org/html/kopfdaten/meta.htm#beschreibung
 - 404 to root
 - [ ] _make/config.yml to js serversite
@@ -137,6 +148,7 @@ description
 - new article field (and include)
 - http://upstatement.com/blog/2013/10/comparing-php-template-languages-for-wordpresss/ but need it JS and 
 - [ ] editor als template
+- [ ] prevent webedit by meta and class
 - [ ] jquery als lib
 - [ ] onsite preview
 - [ ] skip meta
@@ -160,6 +172,8 @@ description
 - [ ] tags
 - [ ] lasttest
 - [ ] etherpad
+- [ ] doku images timestamp
+
 
 
 
