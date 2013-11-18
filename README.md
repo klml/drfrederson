@@ -141,6 +141,7 @@ description
 - mustache https://github.com/bobthecow/mustache.php
 - page sourcepath from head link http://de.selfhtml.org/html/kopfdaten/meta.htm#beschreibung
 - 404 to root
+- source versioning
 - [ ] _make/config.yml to js serversite
 - source config without passwords etc
 - rename _custom-css etc psm-custom-css
