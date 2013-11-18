@@ -36,7 +36,7 @@ class MakeSite {
 
         if ( count($argv) > 1  ) {      // create single pages from cli input
             array_shift($argv);         // remove script name
-            $this->createPages( $argv[0] );       // create single pages from webeditor
+            $this->createPage( $argv[0] );       // create single pages from webeditor
 
         } else if (  isset( $_POST["sourcepath"] )  ) { // writes single pages from webeditor
 
@@ -51,12 +51,12 @@ class MakeSite {
                 echo writeFile( $sourcepath, $_POST["content"]  );
             }
 
-            $this->createPages( $sourcepath );
+            $this->createPage( $sourcepath );
 
         } else {
             $sourcedirrecursive = new RecursiveDirectoryIterator( $this->filePath['source'] );
             foreach (new RecursiveIteratorIterator($sourcedirrecursive) as $sourcepath => $file) { // ? diffrenc $file  vs $sourcepath
-                $this->createPages($sourcepath);
+                $this->createPage($sourcepath);
                 
             }
 		}
@@ -72,7 +72,7 @@ class MakeSite {
 	}
 
 	// create page    
-	public function createPages($sourcepath) { // protected // e.g. my.page.md
+	public function createPage($sourcepath) { // protected // e.g. my.page.md
 
             $directoriesName = explode('/', $sourcepath ) ;
             $filename = array_pop($directoriesName) ;               // e.g. my.page.md
