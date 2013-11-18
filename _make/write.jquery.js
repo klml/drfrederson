@@ -1,6 +1,9 @@
-if ( psmpagelemma == "404error" ) {
-    
-     pagesourcepath = psmpagesourcepath.split('/') ;
+
+var pagesourcepath = $("meta[name='dcterms.source']").attr("content");
+
+if ( $( "body" ).hasClass( "d2c_404error" ) ) {
+
+     pagesourcepath = pagesourcepath.split('/') ;
      pagesourcepath.pop() ;
      lemma = window.location.pathname.split('/').pop().split('.')[0] ;
 
@@ -10,9 +13,11 @@ if ( psmpagelemma == "404error" ) {
      pagesourcepathwrite = pagesourcepath.join('/') + '.md'; // TODO var
 
 } else {
-    pagesourcepathwrite = psmpagesourcepath ;
-    pagesourcepathprefill = psmpagesourcepath + '?v=' + Math.random() ; // force reload
+    pagesourcepathwrite = pagesourcepath ;
+    pagesourcepathprefill = pagesourcepath + '?v=' + Math.random() ; // force reload
 }
+
+
 
 var formwebedit = 'form.webedit'; // to formwebedit.php
 
