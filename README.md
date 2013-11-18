@@ -126,6 +126,7 @@ description
 
 ## TODO
 
+- rename called Pages
 - mustache
 - page sourcepath from head link http://de.selfhtml.org/html/kopfdaten/meta.htm#beschreibung
 - 404 to root
