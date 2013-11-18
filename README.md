@@ -137,9 +137,8 @@ description
 
 ## TODO
 
-- rename called Pages
 - mustache https://github.com/bobthecow/mustache.php
-- page sourcepath from head link http://de.selfhtml.org/html/kopfdaten/meta.htm#beschreibung
+- http://upstatement.com/blog/2013/10/comparing-php-template-languages-for-wordpresss/ but need it JS and 
 - 404 to root
 - source versioning
 - [ ] _make/config.yml to js serversite
@@ -147,8 +146,6 @@ description
 - rename _custom-css etc psm-custom-css
 - [ ] redirects
 - new article field (and include)
-- http://upstatement.com/blog/2013/10/comparing-php-template-languages-for-wordpresss/ but need it JS and 
-- [ ] editor als template
 - [ ] prevent webedit by meta and class
 - [ ] jquery als lib
 - [ ] onsite preview
