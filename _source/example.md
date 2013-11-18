@@ -1,6 +1,6 @@
 # Example
 
-You can use this as template for ne pages
+You can use this as template for new pages.
 
 Use [markdown extra](http://michelf.ca/projects/php-markdown/extra/)
 
