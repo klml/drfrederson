@@ -8,7 +8,6 @@
 
     <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
     <meta name="dcterms.source" content="<?= substr($data['page']['sourcepath'] , 3 ) ?>"/>
-    <meta name="source" content="<?= substr($data['page']['sourcepath'] , 3 ) ?>"/>
 
     <link rel="stylesheet" type="text/css" href="<?=$data['config']['baseurl']?>lib/CSS-Mini-Reset/CSS-Mini-Reset-min.css">
 
