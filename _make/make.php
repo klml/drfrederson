@@ -151,7 +151,7 @@ class MakeSite {
             // use .html instead of .mustache for default template extension
             $mustacheopt =  array('extension' => '.html'); // TODO config
             $mustache = new Mustache_Engine(array(
-                'loader' => new Mustache_Loader_FilesystemLoader( $this->filePath['layout'] , $mustacheopt),
+                'loader' => new Mustache_Loader_FilesystemLoader( $this->filePath['template'] , $mustacheopt),
             ));
 
             $mustachecontent = $mustache->render('skeleton', $this->tmplData ); // TODO config

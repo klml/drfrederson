@@ -156,7 +156,6 @@ Existing templates
 
 - rename $this->config siteconfig
 - rename $tmpInfo pageconfig or pagemeta  and add tpl array 
-- rename $this->filePath['layout']
 - http://php.net/manual/de/function.realpath.php
 - source config without passwords etc
 - 404 to root
