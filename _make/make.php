@@ -18,9 +18,9 @@ class MakeSite {
 	protected $tmplData;	// used for tmpl
 
 	public function __construct() {
-		if( !file_exists( 'config.yml' ) ) { die("missing config.yml\n") ; };
-        $this->config = spyc_load_file('config.yml');
-		$this->filePath = $this->config['path'];
+        if( !file_exists( 'config.yml' ) ) { die("missing config.yml\n") ; };
+        $this->siteconfig = spyc_load_file('config.yml');
+        $this->filePath = $this->siteconfig['path'];
         $this->process() ;
 	}
 
@@ -65,7 +65,7 @@ class MakeSite {
 	// init data for tmpl
 	protected function initTmplData() {
 		$this->tmplData = array(
-			'config' => $this->config,
+			'config' => $this->siteconfig, // needed? TODO
 			'page' => null
 		);
 	}
@@ -87,10 +87,10 @@ class MakeSite {
                  return;
             }
 
-            $ymlMD = splitYamlMD( $sourcepath, $this->config['ymlseparator'] ) ;
+            $ymlMD = splitYamlMD( $sourcepath, $this->siteconfig['ymlseparator'] ) ;
 
             // read page config (template, meta, etc) from file, directory or mainconf
-            $tmpInfo = $this->config ;      // read general config
+            $tmpInfo = $this->siteconfig ;      // read general config
 
             if ( file_exists($directoriesConf = $directoriesName . '/config.yml' ) ) { // overwrite with directory config if exist
                 $tmpInfo = array_merge( $tmpInfo , spyc_load_file( file_get_contents($directoriesConf) ) ) ;
@@ -107,7 +107,7 @@ class MakeSite {
             }
 
             $page = array();
-            $page['filePath'] = $this->filePath['html'] . $lemma . $this->config['htmlextension']; // TODO fill inn $directoriesName
+            $page['filePath'] = $this->filePath['html'] . $lemma . $this->siteconfig['htmlextension']; // TODO fill inn $directoriesName
             $page['lemma'] = $lemma ;
             $page['sourcepath'] = substr( $sourcepath , 3 ) ; // remove leading "../"
 
