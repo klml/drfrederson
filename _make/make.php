@@ -13,7 +13,6 @@ require_once 'lib/mustache/src/Mustache/Autoloader.php';
 
 class MakeSite {
 	protected $config;
-	protected $wwwPath;
 	protected $filePath;
 	protected $pages;	// all pages data
 	protected $tmplData;	// used for tmpl
