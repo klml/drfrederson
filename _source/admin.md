@@ -11,26 +11,17 @@ If you use this site in an public area like your webserver and not in a secure e
 
 Call the wished URL, receive the 404 error page and and click edit. Best: create an hyperlink (e.g. in the [menue](_pagedurable)), click and edit.
 
-## Sidebar and page-durable content
+## Sidebar and menues
 
-Editing sidebar and other page-durable content [pagedurable](_pagedurable) like a ''normal'' page (the concept is well adapted in [Mediawiki Sidebar](https://www.mediawiki.org/wiki/Manual:Interface/Sidebar)).
+Editing sidebar and other page-durable content [pagedurable](_pagedurable) like a ''normal'' page.
 
-## Style and JS
+## Custom Style and Javascript
 
-CSS and Javascript is maintained in `lib/` as [submodule](http://git-scm.com/book/en/Git-Tools-Submodules)
-
-* [CSS-Mini-Reset](https://github.com/vladocar/CSS-Mini-Reset/)
-* [usefulclassroomphrases](https://github.com/klml/usefulclassroomphrases)
-* [skeleton](https://github.com/dhg/Skeleton)
-
-
-### Custom
-
-Edit custom client-sources (css, js) in [_custom-css](_custom-css) and [_custom-js](_custom-js) as "normal" pages
-(the concept is well adapted in [Mediawiki UseSiteCss](https://www.mediawiki.org/wiki/Manual:$wgUseSiteCss) and [SiteJs](https://www.mediawiki.org/wiki/Manual:%24wgUseSiteJs)).
+Edit custom client-sources (css, js) in [_custom-css](_custom-css) and [_custom-js](_custom-js) as "normal" pages.
 
 ## Config
-Edit site wide [config](https://github.com/klml/php-site-maker#configyml) on [config](config).
+Edit site wide [config](config).
+
 
 #meta#
 title: Administration
