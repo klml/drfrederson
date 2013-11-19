@@ -1,5 +1,5 @@
 --- site wide
-siteName: psm
+siteTitle: psm
 baseurl: http://localhost/php-site-maker/
 disqusId:
 htmlextension: .html

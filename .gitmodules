@@ -10,3 +10,6 @@
 [submodule "_make/lib/spyc"]
 	path = _make/lib/spyc
 	url = https://github.com/mustangostang/spyc/
+[submodule "_make/lib/mustache"]
+	path = _make/lib/mustache
+	url = https://github.com/bobthecow/mustache.php

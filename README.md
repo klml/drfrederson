@@ -58,8 +58,10 @@ There is no __automatic URL handling__, config URL manually in the main *config.
 
 ## templates
 
-For [webedit](#Write) add the [HTML metatag](http://www.w3.org/wiki/HTML/Elements/meta) [dcterms.source](http://dublincore.org/documents/dcmi-terms/#terms-source) (Referenced[whatwg.org MetaExtensions](http://wiki.whatwg.org/wiki/MetaExtensions#Registered_Extensions) ).
+Using [mustache](https://github.com/bobthecow/mustache.php), it is [logic-less in a religious way](http://upstatement.com/blog/2013/10/comparing-php-template-languages-for-wordpresss/), but you can use [mustache](http://mustache.github.io/) in JavaScript on your client.(TODO;)
 
+
+For [webedit](#Write) add the [HTML metatag](http://www.w3.org/wiki/HTML/Elements/meta) [dcterms.source](http://dublincore.org/documents/dcmi-terms/#terms-source) (Referenced[whatwg.org MetaExtensions](http://wiki.whatwg.org/wiki/MetaExtensions#Registered_Extensions) ).
 
 ```
 <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
@@ -137,12 +139,12 @@ description
 
 ## TODO
 
-- mustache https://github.com/bobthecow/mustache.php
-- http://upstatement.com/blog/2013/10/comparing-php-template-languages-for-wordpresss/ but need it JS and 
-- 404 to root
-- source versioning
-- [ ] _make/config.yml to js serversite
+- rename $tmpInfo and add tpl array 
+- rename $this->filePath['layout']
 - source config without passwords etc
+- 404 to root
+- [ ] _make/config.yml to js serversite
+- source versioning
 - rename _custom-css etc psm-custom-css
 - [ ] redirects
 - new article field (and include)

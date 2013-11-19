@@ -9,6 +9,7 @@
 require_once 'lib/Markdown.php';
 require_once 'lib/spyc/Spyc.php';
 require_once 'lib/Tools.php';
+require_once 'lib/mustache/src/Mustache/Autoloader.php';
 
 class MakeSite {
 	protected $config;
@@ -68,7 +69,6 @@ class MakeSite {
 			'config' => $this->config,
 			'page' => null
 		);
-		$this->tmplData['config']['siteTitle'] = $this->config['siteName']; // ??
 	}
 
 	// create page    
@@ -92,7 +92,7 @@ class MakeSite {
 
             // read page config (template, meta, etc) from file, directory or mainconf
             $tmpInfo = $this->config ;      // read general config
-            
+
             if ( file_exists($directoriesConf = $directoriesName . '/config.yml' ) ) { // overwrite with directory config if exist
                 $tmpInfo = array_merge( $tmpInfo , spyc_load_file( file_get_contents($directoriesConf) ) ) ;
             }
@@ -100,7 +100,7 @@ class MakeSite {
                 $tmpInfopage = spyc_load_file( $ymlMD[1] ) ;
                 $tmpInfo = array_merge( $tmpInfo , $tmpInfopage ) ;
             }
-            if ( !isset($ymlMD[1], $tmpInfopage['title']) ) {  // use first markdown heading as title if not in pageconfig
+            if ( !isset($ymlMD[1], $tmpInfopage['title']) ) {  // use first markdown heading as title if not in pageconfig // TODO to tools
                 preg_match('/(?m)^#+(.*)/', $ymlMD[0], $titelheading) ;
                 if ( isset( $titelheading[1]) ) {
                     $tmpInfo['title'] = trim( $titelheading[1] ) ;
@@ -108,14 +108,14 @@ class MakeSite {
             }
 
             $page = array();
-            $page['url'] = $this->config['baseurl'] . $lemma ;
             $page['filePath'] = $this->filePath['html'] . $lemma . $this->config['htmlextension']; // TODO fill inn $directoriesName
-
-            $page['layout'] = $this->filePath['layout'] . $tmpInfo['layout'] . '.php';
-            $page['name'] = $tmpInfo['title']; // TODO use title in template
             $page['lemma'] = $lemma ;
-            $page['sourcepath'] = $sourcepath ;
+            $page['sourcepath'] = substr( $sourcepath , 3 ) ; // remove leading "../"
+
+            $page['pagetitle'] = $tmpInfo['title'];
+            $page['description'] = $tmpInfo['description'];
             $page['comment'] = $tmpInfo['comment'];
+
 
             $page['pagedurable'] = Markdown( file_get_contents($tmpInfo['pagedurable']) ); // TODO md switching
 
@@ -128,11 +128,11 @@ class MakeSite {
                 break;
                 default:    // css js yaml txt etc
                     $page['content'] =  nl2br( $ymlMD[0] ) ;
-                    $page['name'] = $lemma ;
+                    $page['pagetitle'] = $lemma ;               // use lemma, there is no meta
                 break;
             }
 
-            $page['description'] = $tmpInfo['description'];
+
 
             // <!-- more --> cutter //~ TODO move to outermarkdown
             //~ $more = explode('<!--more-->', $item['content']);
@@ -142,14 +142,23 @@ class MakeSite {
                 //~ $item['more'] = false;
             //~ }
 
-            //  merge config, template and content
+
+
+            //  merge config, template and content TODO
             $this->tmplData['page'] = $page;
 
-			makeHtmlFile( $page['filePath'] , $page['layout'] , $this->tmplData);
-			$this->initTmplData();
-			success('created page: ' . $page['filePath']);
+            Mustache_Autoloader::register();
+            // use .html instead of .mustache for default template extension
+            $mustacheopt =  array('extension' => '.html'); // TODO config
+            $mustache = new Mustache_Engine(array(
+                'loader' => new Mustache_Loader_FilesystemLoader( $this->filePath['layout'] , $mustacheopt),
+            ));
+
+            $mustachecontent = $mustache->render('skeleton', $this->tmplData ); // TODO config
+            file_put_contents( $page['filePath'], $mustachecontent);
+
+            success('created page: ' . $page['filePath']);
     }
 }
-
 $site = new MakeSite();
 ?>
