@@ -1,7 +1,12 @@
 /* resident overwrites */
 a {
-color: #0645AD;
+    color: #0645AD;
+}
+a:hover {
+    text-decoration: underline;
 }
 a:visited {
-color: #2C49B1;
+    color: #2C49B1;
 }
+a:active,
+a.active { color: #2E6465; }
