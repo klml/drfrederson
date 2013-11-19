@@ -112,14 +112,15 @@ class MakeSite {
             $page['lemma'] = $lemma ;
             $page['sourcepath'] = substr( $sourcepath , 3 ) ; // remove leading "../"
 
-            $page['pagetitle'] = $tmpInfo['title'];
+            $page['pagetitle'] = $tmpInfo['title'];      // needed her to overwrite 
             $page['description'] = $tmpInfo['description'];
             $page['comment'] = $tmpInfo['comment'];
 
 
             $page['pagedurable'] = Markdown( file_get_contents($tmpInfo['pagedurable']) ); // TODO md switching
 
-            switch ( $filenameExtension ) {                     // file parse handling
+            // file parse handling
+            switch ( $filenameExtension ) {
                 case ("md"):
                     $page['content'] = Markdown( $ymlMD[0] ) ;
                 break;

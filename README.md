@@ -160,6 +160,7 @@ description
 - [ ] lib: https://github.com/michelf/php-markdown extra (needs php 5.3)
 - [ ] lib: https://github.com/lepture/editor
 - [ ] minfy
+- [ ] CSS-Mini-Reset realy needed
 - [ ] after pagedurable creat with all pages
 - [ ] js var psmpage
 - [ ] https://github.com/blueimp/jQuery-File-Upload

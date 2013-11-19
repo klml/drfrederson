@@ -25,7 +25,7 @@ function splitYamlMD($filePath, $separator) {
 }
 
 
-// create *.html
+// create *.html  // TODO remove
 function makeHtmlFile($target, $layout, $data) {
 	ob_start();
 	require $layout;
