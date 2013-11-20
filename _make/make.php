@@ -68,7 +68,6 @@ class MakeSite {
 			'config' => $this->siteconfig, // needed? TODO
 			'page' => null
 		);
-var_dump( $this->tmplData ) ;
 	}
 
 	// create page    
