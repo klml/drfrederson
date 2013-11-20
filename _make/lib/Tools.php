@@ -9,12 +9,12 @@
 
 // error log
 function error($value='') {
-	echo "[ERROR] $value NOT written\n";
+	echo "[ERROR] NOT written: $value\n";
 }
 
 // success log
 function success($value='') {
-	echo "[SUCCESS] $value written\n";
+	echo "[SUCCESS] written: $value\n";
 }
 
 // return yaml conf and md seperated from source
