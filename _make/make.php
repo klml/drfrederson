@@ -90,19 +90,19 @@ class MakeSite {
             $ymlMD = splitYamlMD( $sourcepath, $this->makeconfig['ymlseparator'] ) ;
 
             // read page config (template, meta, etc) from file, directory or mainconf
-            $tmpInfo = $this->makeconfig ;      // read general config
+            $pageMeta = $this->makeconfig ;      // read general config
 
             if ( file_exists($directoriesConf = $directoriesName . '/config.yml' ) ) { // overwrite with directory config if exist
-                $tmpInfo = array_merge( $tmpInfo , spyc_load_file( file_get_contents($directoriesConf) ) ) ;
+                $pageMeta = array_merge( $pageMeta , spyc_load_file( file_get_contents($directoriesConf) ) ) ;
             }
             if ( isset($ymlMD[1]) ) {  // overwrite with page config if exist
-                $tmpInfopage = spyc_load_file( $ymlMD[1] ) ;
-                $tmpInfo = array_merge( $tmpInfo , $tmpInfopage ) ;
+                $pageMetaPage = spyc_load_file( $ymlMD[1] ) ;
+                $pageMeta = array_merge( $pageMeta , $pageMetaPage ) ;
             }
-            if ( !isset($ymlMD[1], $tmpInfopage['title']) ) {  // use first markdown heading as title if not in pageconfig // TODO to tools
+            if ( !isset($ymlMD[1], $pageMetapage['title']) ) {  // use first markdown heading as title if not in pageconfig // TODO to tools
                 preg_match('/(?m)^#+(.*)/', $ymlMD[0], $titelheading) ;
                 if ( isset( $titelheading[1]) ) {
-                    $tmpInfo['title'] = trim( $titelheading[1] ) ;
+                    $pageMeta['title'] = trim( $titelheading[1] ) ;
                 }
             }
 
@@ -111,12 +111,12 @@ class MakeSite {
             $page['lemma'] = $lemma ;
             $page['sourcepath'] = substr( $sourcepath , 3 ) ; // remove leading "../"
 
-            $page['pagetitle'] = $tmpInfo['title'];      // needed her to overwrite 
-            $page['description'] = $tmpInfo['description'];
-            $page['comment'] = $tmpInfo['comment'];
+            $page['pagetitle'] = $pageMeta['title'];      // needed her to overwrite 
+            $page['description'] = $pageMeta['description'];
+            $page['comment'] = $pageMeta['comment'];
 
 
-            $page['pagedurable'] = Markdown( file_get_contents($tmpInfo['pagedurable']) ); // TODO md switching
+            $page['pagedurable'] = Markdown( file_get_contents($pageMeta['pagedurable']) ); // TODO md switching
 
             // file parse handling
             switch ( $filenameExtension ) {
