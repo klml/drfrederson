@@ -65,7 +65,7 @@ class MakeSite {
 	// init data for tmpl
 	protected function initTmplData() {
 		$this->tmplData = array(
-			'makeconfig' => $this->makeconfig, // needed? TODO
+			'makeconfig' => $this->makeconfig,
 			'page' => null
 		);
 	}
