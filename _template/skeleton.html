@@ -3,8 +3,8 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, user-scalable=0"/>
-    <title>{{page.pagetitle}} | {{makeconfig.siteTitle}}</title>
-    <meta http-equiv="description" content="{{page.description}}"/>
+    <title>{{meta.pagetitle}} | {{meta.siteTitle}}</title>
+    <meta http-equiv="description" content="{{meta.description}}"/>
 
     <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
     <meta name="dcterms.source" content="{{page.websourcepath}}"/>
@@ -35,9 +35,9 @@
         </section>
     
     
-    {{#page.comment}}
-        {{{page.comment}}}
-    {{/page.comment}}
+    {{#meta.comment}}
+        comment
+    {{/meta.comment}}
     
     </div>
 

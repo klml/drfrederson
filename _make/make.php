@@ -102,21 +102,13 @@ class MakeSite {
             if ( !isset($ymlMD[1], $pageMetapage['title']) ) {  // use first markdown heading as title if not in pageconfig // TODO to tools
                 preg_match('/(?m)^#+(.*)/', $ymlMD[0], $titelheading) ;
                 if ( isset( $titelheading[1]) ) {
-                    $pageMeta['title'] = trim( $titelheading[1] ) ;
+                    $pageMeta['pagetitle'] = trim( $titelheading[1] ) ;
                 }
             }
 
+            $this->tmplData['meta'] = $pageMeta;
+
             $page = array();
-            $page['filePath'] = $this->filePath['html'] . $lemma . $this->makeconfig['htmlextension']; // TODO fill inn $directoriesName
-            $page['lemma'] = $lemma ;
-            $page['sourcepath'] = substr( $sourcepath , 3 ) ; // remove leading "../"
-
-            $page['pagetitle'] = $pageMeta['title'];      // needed her to overwrite 
-            $page['description'] = $pageMeta['description'];
-            $page['comment'] = $pageMeta['comment'];
-
-
-            $page['pagedurable'] = Markdown( file_get_contents($pageMeta['pagedurable']) ); // TODO md switching
 
             // file parse handling
             switch ( $filenameExtension ) {
@@ -128,9 +120,17 @@ class MakeSite {
                 break;
                 default:    // css js yaml txt etc
                     $page['content'] =  nl2br( $ymlMD[0] ) ;
-                    $page['pagetitle'] = $lemma ;               // use lemma, there is no meta
+                    $pageMeta['pagetitle'] = $lemma ;               // use lemma, there is no meta
                 break;
             }
+
+
+            $page['filePath'] = $this->filePath['html'] . $lemma . $this->makeconfig['htmlextension']; // TODO fill inn $directoriesName
+            $page['lemma'] = $lemma ;
+            $page['sourcepath'] = substr( $sourcepath , 3 ) ; // remove leading "../"
+
+            $page['pagedurable'] = Markdown( file_get_contents($pageMeta['pagedurable']) ); // TODO md switching
+
 
 
 
@@ -144,7 +144,7 @@ class MakeSite {
 
 
 
-            //  merge config, template and content TODO
+            // merge config, template and content
             $this->tmplData['page'] = $page;
 
             Mustache_Autoloader::register();
