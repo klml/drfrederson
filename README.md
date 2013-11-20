@@ -154,6 +154,7 @@ Existing templates
 
 ## TODO
 
+- splilt createPage split name, split content, file parse handling
 - http and cli routing rename routing
 - alternative template
 - http://php.net/manual/de/function.realpath.php

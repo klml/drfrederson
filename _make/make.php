@@ -86,6 +86,7 @@ class MakeSite {
                  return;
             }
 
+
             $ymlMD = splitYamlMD( $sourcepath, $this->makeconfig['ymlseparator'] ) ;
 
             // read page config (template, meta, etc) from file, directory or mainconf
@@ -106,6 +107,9 @@ class MakeSite {
             }
 
             $this->tmplData['meta'] = $pageMeta;
+
+
+
 
             $page = array();
 
@@ -146,14 +150,16 @@ class MakeSite {
             // merge config, template and content
             $this->tmplData['page'] = $page;
 
+
+
+
             Mustache_Autoloader::register();
             // use .html instead of .mustache for default template extension
             $mustacheopt =  array('extension' => $pageMeta['htmlextension']);
             $mustache = new Mustache_Engine(array(
                 'loader' => new Mustache_Loader_FilesystemLoader( $this->filePath['template'] , $mustacheopt),
             ));
-var_dump($this->tmplData);
-die();
+
             $mustachecontent = $mustache->render($pageMeta['template'], $this->tmplData );
             $file_put_contentshtml = file_put_contents( $page['filePath'], $mustachecontent);
             if ( $file_put_contentshtml == false ) {
