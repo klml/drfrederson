@@ -154,7 +154,8 @@ Existing templates
 
 ## TODO
 
-- rename $tmpInfo pageconfig or pagemeta  and add tpl array 
+- http and cli routing rename routing
+- alternative template
 - http://php.net/manual/de/function.realpath.php
 - source config without passwords etc
 - 404 to root

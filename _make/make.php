@@ -32,7 +32,6 @@ class MakeSite {
 
 	protected function selectPages() { // http and cli routing
         global $argv ;
-        $this->pages = array();
 
         if ( count($argv) > 1  ) {      // create single pages from cli input
             array_shift($argv);         // remove script name
@@ -149,12 +148,13 @@ class MakeSite {
 
             Mustache_Autoloader::register();
             // use .html instead of .mustache for default template extension
-            $mustacheopt =  array('extension' => '.html'); // TODO config
+            $mustacheopt =  array('extension' => $pageMeta['htmlextension']);
             $mustache = new Mustache_Engine(array(
                 'loader' => new Mustache_Loader_FilesystemLoader( $this->filePath['template'] , $mustacheopt),
             ));
-
-            $mustachecontent = $mustache->render('skeleton', $this->tmplData ); // TODO config
+var_dump($this->tmplData);
+die();
+            $mustachecontent = $mustache->render($pageMeta['template'], $this->tmplData );
             $file_put_contentshtml = file_put_contents( $page['filePath'], $mustachecontent);
             if ( $file_put_contentshtml == false ) {
                 error('not created page: ' . $page['filePath'] );

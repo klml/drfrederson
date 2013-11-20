@@ -12,7 +12,7 @@ path:
     html: ../
 
 --- page specific, optional overwrite in directory or source
-layout: page
+template: skeleton
 pagedurable: ../_source/_pagedurable.md
 title: Title from root-config 
 comment: false
