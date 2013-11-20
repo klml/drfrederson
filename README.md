@@ -7,7 +7,7 @@ A simple static site generator powered by PHP, Markdown and mustache. Based on [
 There are many other and better [staticsitegenerators](http://staticsitegenerators.net), but I searched for this features an did not found:
 
 * edit without texteditor or ssh access. Using __webedit__ on your browser and get an textarea to change contents and create new pages.
-* __meta information__ for rendering (template, menue etc) or html metatags are at the *bottom* o the page and optional
+* __meta information__ for rendering (template, menue etc) or html metatags are at the *bottom* of the page and optional
 * no indexed, automatic __menu__; just an extra textblob. This is not so IT-sophisticated, but easy to understand.
 
 Some more small features like titletags from the first heading, etc
