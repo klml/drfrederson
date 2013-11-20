@@ -9,12 +9,12 @@
 
 // error log
 function error($value='') {
-	echo "[ERROR] $value\n";
+	echo "[ERROR] $value NOT written\n";
 }
 
 // success log
 function success($value='') {
-	echo "[SUCCESS] $value\n";
+	echo "[SUCCESS] $value written\n";
 }
 
 // return yaml conf and md seperated from source
@@ -38,10 +38,9 @@ function makeHtmlFile($target, $layout, $data) {
 	}
 }
 
-// write source file from webeditor
+// write source file from webeditor // TODO rm inline?
 function writeFile( $sourcepath, $content ) { 
-    $msg = $sourcepath ;
-    $msg .= file_put_contents( $sourcepath , $content ) ? ' written' : ' not written';
+    $msg = file_put_contents( $sourcepath , $content ) ? success( $sourcepath ) : error( $sourcepath ) ;
     return $msg ;
 }
 

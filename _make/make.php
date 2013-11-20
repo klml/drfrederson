@@ -161,12 +161,7 @@ class MakeSite {
             ));
 
             $mustachecontent = $mustache->render($pageMeta['template'], $this->tmplData );
-            $file_put_contentshtml = file_put_contents( $page['filePath'], $mustachecontent);
-            if ( $file_put_contentshtml == false ) {
-                error('not created page: ' . $page['filePath'] );
-            } else {
-                success('created page: ' . $page['filePath'] . " with " . $file_put_contentshtml . ' bytes' );
-            }
+            file_put_contents( $page['filePath'], $mustachecontent) ? success( $page['filePath'] ) : error( $page['filePath'] );
     }
 }
 $site = new MakeSite();
