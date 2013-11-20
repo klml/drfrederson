@@ -26,11 +26,11 @@ class MakeSite {
 
     public function process() {
         $this->initTmplData();
-        $this->selectPages();
+        $this->httpandcliRouting();
     }
 	// init pages data
 
-	protected function selectPages() { // http and cli routing
+	protected function httpandcliRouting() {
         global $argv ;
 
         if ( count($argv) > 1  ) {      // create single pages from cli input
