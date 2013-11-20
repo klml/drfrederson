@@ -132,6 +132,8 @@ comment
 pagedurable
 : parts of the page always appear like the menu.
 
+d2c
+: [data2css](http://umija.org/howto:data2css) adds a class to html-body
 
 ## templates
 
@@ -155,7 +157,6 @@ Existing templates
 ## TODO
 
 - splilt createPage split name, split content, file parse handling
-- http and cli routing rename routing
 - alternative template
 - http://php.net/manual/de/function.realpath.php
 - source config without passwords etc
