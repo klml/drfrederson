@@ -68,6 +68,7 @@ class MakeSite {
 			'config' => $this->siteconfig, // needed? TODO
 			'page' => null
 		);
+var_dump( $this->tmplData ) ;
 	}
 
 	// create page    
@@ -155,9 +156,12 @@ class MakeSite {
             ));
 
             $mustachecontent = $mustache->render('skeleton', $this->tmplData ); // TODO config
-            file_put_contents( $page['filePath'], $mustachecontent);
-
-            success('created page: ' . $page['filePath']);
+            $file_put_contentshtml = file_put_contents( $page['filePath'], $mustachecontent);
+            if ( $file_put_contentshtml == false ) {
+                error('not created page: ' . $page['filePath'] );
+            } else {
+                success('created page: ' . $page['filePath'] . " with " . $file_put_contentshtml . ' bytes' );
+            }
     }
 }
 $site = new MakeSite();
