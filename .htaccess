@@ -1,6 +1,6 @@
+DirectoryIndex index.html
+
 RewriteEngine On
-
 RewriteRule ^([^\.]+)$ $1.html [NC,L]
-
 ErrorDocument 404 /php-site-maker/404error.html
-DirectoryIndex index
+
