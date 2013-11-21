@@ -17,6 +17,18 @@ function success($value='') {
 	echo "[SUCCESS] written: $value\n";
 }
 
+// prevent Directory traversal attack
+function preventDirectoryTraversal($sourcepath) {
+    if (false === strpos($sourcepath, '..') ) {  
+        $sourcepath = $_POST["sourcepath"] ; // TODO URL vs dir 
+    } else {
+        echo $msg .= ' contains illegal characters';
+        die();
+    }
+    return $sourcepath ;
+}
+
+
 // return yaml conf and md seperated from source
 function splitYamlMD($filePath, $separator) {
     $ymlMD = array();

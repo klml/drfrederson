@@ -39,12 +39,7 @@ class MakeSite {
 
         } else if (  isset( $_POST["sourcepath"] )  ) { // writes single pages from webeditor
 
-            if (false === strpos($sourcepath, '..') ) { 
-                $sourcepath = '../' . $_POST["sourcepath"] ; // TODO URL vs dir 
-            } else {
-                echo $msg .= ' contains illegal characters';
-                die();
-            }
+            $sourcepath = '../' . preventDirectoryTraversal( $_POST["sourcepath"] );
 
             if ( isset ( $_POST["content"] )  ) { 
                 echo writeFile( $sourcepath, $_POST["content"]  );
