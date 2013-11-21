@@ -20,10 +20,10 @@ function success($value='') {
 // prevent Directory traversal attack
 function preventDirectoryTraversal($sourcepath) {
     if (false === strpos($sourcepath, '..') ) {  
-        $sourcepath = $_POST["sourcepath"] ; // TODO URL vs dir 
+        // TODO http://stackoverflow.com/questions/4205141/preventing-directory-traversal-in-php-but-allowing-paths/4205182#4205182
+        // http://www.phpfreaks.com/tutorial/php-security
     } else {
-        echo $msg .= ' contains illegal characters';
-        die();
+        die( $sourcepath . ' contains illegal characters' );
     }
     return $sourcepath ;
 }
