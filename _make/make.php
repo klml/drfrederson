@@ -87,7 +87,7 @@ class MakeSite {
 
             // collectMeta TODO function
             // read page config (template, meta, etc) from file, directory or mainconf
-            $pageMeta = $this->tmplData['meta'] ;                     // write general config
+            $pageMeta = $this->makeconfig ;                     // write general config
 
             if ( file_exists($directoriesConf = $directoriesName . '/config.yml' ) ) { // overwrite with directory config
                 $pageMeta = array_merge( $pageMeta , spyc_load_file( file_get_contents($directoriesConf) ) ) ;
