@@ -158,7 +158,7 @@ Existing templates
 
 - splilt createPage split name, split content, file parse handling
 - alternative template
-- http://php.net/manual/de/function.realpath.php
+- http://php.net/manual/de/function.realpath.php PHP 5.3
 - source config without passwords etc
 - 404 to root
 - _make/config.yml to js serversite https://github.com/coolaj86/yamltojson.com
@@ -170,11 +170,10 @@ Existing templates
 - [ ] prevent webedit by meta and class
 - [ ] jquery als lib
 - [ ] onsite preview https://github.com/tanakahisateru/js-markdown-extra
-- [ ] skip meta
+- [ ] meta publish: hide noedit 
 - [ ] include http://www.mediawiki.org/wiki/Transclusion
 - [ ]* index: dir as link include (for pix)
 - [ ] demo
-- [ ] data2css aus meta fill
 - [ ] trailing slash
 - [ ] lib: https://github.com/michelf/php-markdown extra (needs php 5.3)
 - [ ] lib: https://github.com/lepture/editor
