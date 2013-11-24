@@ -157,25 +157,23 @@ Existing templates
 ## TODO
 
 - splilt createPage split name, split content, file parse handling
+- onsite preview https://github.com/tanakahisateru/js-markdown-extra
 - http://php.net/manual/de/function.realpath.php PHP 5.3
+- prevent webedit by meta and class
+- meta publish: hide noedit 
 - source config without passwords etc
+- trailing slash
 - 404 to root
 - _make/config.yml to js serversite https://github.com/coolaj86/yamltojson.com
+- lib: https://github.com/lepture/editor
 - source versioning
 - rename project gidig
     - _custom-css etc psm-custom-css
 - redirects
 - new article field (and include)
-- [ ] prevent webedit by meta and class
-- [ ] jquery als lib
-- [ ] onsite preview https://github.com/tanakahisateru/js-markdown-extra
-- [ ] meta publish: hide noedit 
 - [ ] include http://www.mediawiki.org/wiki/Transclusion
 - [ ]* index: dir as link include (for pix)
 - [ ] demo
-- [ ] trailing slash
-- [ ] lib: https://github.com/michelf/php-markdown extra (needs php 5.3)
-- [ ] lib: https://github.com/lepture/editor
 - [ ] minfy
 - [ ] CSS-Mini-Reset realy needed
 - [ ] after pagedurable creat with all pages
