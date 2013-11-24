@@ -14,6 +14,6 @@ path:
 --- page specific, optional overwrite in directory or source
 template: skeleton
 pagedurable: ../_source/_pagedurable.md
-title: Title from root-config 
+pagetitle: Title from root-config 
 comment: false
 description: Some general site wide description

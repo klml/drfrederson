@@ -24,6 +24,6 @@ Edit site wide [config](config).
 
 
 #meta#
-title: Administration
+pagetitle: All Administration
 description: All about editing and admin this site
 comment: false

@@ -85,16 +85,16 @@ class MakeSite {
             $ymlMD = splitYamlMD( $sourcepath, $this->makeconfig['ymlseparator'] ) ;
 
             // read page config (template, meta, etc) from file, directory or mainconf
-            $pageMeta = $this->makeconfig ;      // read general config
+            $pageMeta = $this->makeconfig ;                     // write general config
 
-            if ( file_exists($directoriesConf = $directoriesName . '/config.yml' ) ) { // overwrite with directory config if exist
+            if ( file_exists($directoriesConf = $directoriesName . '/config.yml' ) ) { // overwrite with directory config
                 $pageMeta = array_merge( $pageMeta , spyc_load_file( file_get_contents($directoriesConf) ) ) ;
             }
-            if ( isset($ymlMD[1]) ) {  // overwrite with page config if exist
+            if ( isset($ymlMD[1]) ) {  // overwrite with page config
                 $pageMetaPage = spyc_load_file( $ymlMD[1] ) ;
                 $pageMeta = array_merge( $pageMeta , $pageMetaPage ) ;
             }
-            if ( !isset($ymlMD[1], $pageMetapage['title']) ) {  // use first markdown heading as title if not in pageconfig // TODO to tools
+            if ( !isset( $pageMetaPage['pagetitle'] ) ) {  // use first markdown heading as title if not in pageconfig
                  $pageMeta['pagetitle'] = getHtmltitleMD( $ymlMD[0] );
             }
 
