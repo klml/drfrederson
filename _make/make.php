@@ -95,11 +95,7 @@ class MakeSite {
                 $pageMeta = array_merge( $pageMeta , $pageMetaPage ) ;
             }
             if ( !isset($ymlMD[1], $pageMetapage['title']) ) {  // use first markdown heading as title if not in pageconfig // TODO to tools
-                $pageMeta['pagetitle'] = '' ;
-                preg_match('/(?m)^#+(.*)/', $ymlMD[0], $titelheading) ;
-                if ( isset( $titelheading[1]) ) {
-                    $pageMeta['pagetitle'] = trim( $titelheading[1] ) ;
-                }
+                 $pageMeta['pagetitle'] = getHtmltitleMD( $ymlMD[0] );
             }
 
             $this->tmplData['meta'] = $pageMeta;
