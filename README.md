@@ -1,7 +1,7 @@
 php-site-maker
 =====
 
-A simple static site generator powered by PHP, Markdown and mustache. Based on [github.com/lonescript/php-site-maker](http://github.com/lonescript/php-site-maker)
+A simple static site generator powered by PHP, YAML, Markdown and mustache. Based on [github.com/lonescript/php-site-maker](http://github.com/lonescript/php-site-maker)
 
 
 There are many other and better [staticsitegenerators](http://staticsitegenerators.net), but I searched for this features an did not found:
