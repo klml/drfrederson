@@ -13,7 +13,6 @@ jQuery(document).ready(function() {
         
     });    
 
-
     edit = document.cookie.search(/requestauth=true/); 
     if( edit != -1 ) {
         $.getScript("_make/write.jquery.js?v=q");

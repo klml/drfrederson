@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=0"/>
+    <title>{{meta.pagetitle}} | {{makeconfig.siteTitle}}</title>
+    <meta http-equiv="description" content="{{meta.description}}"/>
+
+    <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+    <meta name="dcterms.source" content="{{page.sourcepath}}"/>
+
+</head>
+<body class="d2c_{{page.lemma}} {{meta.d2c}}" >
+
+
+<div class="container">
+    <header id="header" class="sixteen columns">
+        <nav id="nav">
+            <article>{{{page.pagedurable}}}</article>
+        </nav>
+    </header>
+
+    <div id="main" class="sixteen columns">
+        <section class="page">
+            <article>{{{page.content}}}</article>
+        </section>
+    </div>
+    <footer id="footer"  class="sixteen columns"></footer>
+</div>
+    <script src="{{makeconfig.baseurl}}lib/jquery-1.10.1.min.js"></script>
+    <script src="_template/tpl.js?v=q" type="text/javascript"></script>
+</body>
+</html>

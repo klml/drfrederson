@@ -157,7 +157,6 @@ Existing templates
 ## TODO
 
 - splilt createPage split name, split content, file parse handling
-- alternative template
 - http://php.net/manual/de/function.realpath.php PHP 5.3
 - source config without passwords etc
 - 404 to root

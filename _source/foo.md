@@ -3,8 +3,10 @@
 This page is using 
 
 * alternative sidebar.
+* alternative template 'plain'.
 * first heading as title
 
+back to [example](example).
 
 ### heading
 
@@ -13,3 +15,4 @@ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod 
 
 #meta#
 pagedurable: ../_source/_pagedurablealter.md
+template: plain
