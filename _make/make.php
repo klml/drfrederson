@@ -59,7 +59,7 @@ class MakeSite {
 	// init data for tmpl
 	protected function initTmplData() {
 		$this->tmplData = array(
-			'makeconfig' => $this->makeconfig,
+			'meta' => $this->makeconfig,
 			'page' => null
 		);
 	}
@@ -67,6 +67,7 @@ class MakeSite {
 	// create page    
 	public function createPage($sourcepath) { // protected // e.g. my.page.md
 
+            // splitfilenames TODO function
             $directoriesName = explode('/', $sourcepath ) ;
             $filename = array_pop($directoriesName) ;               // e.g. my.page.md
             $directoriesName = implode('/', $directoriesName) ;     // e.g ../_source/mysubdir/
@@ -84,8 +85,9 @@ class MakeSite {
 
             $ymlMD = splitYamlMD( $sourcepath, $this->makeconfig['ymlseparator'] ) ;
 
+            // collectMeta TODO function
             // read page config (template, meta, etc) from file, directory or mainconf
-            $pageMeta = $this->makeconfig ;                     // write general config
+            $pageMeta = $this->tmplData['meta'] ;                     // write general config
 
             if ( file_exists($directoriesConf = $directoriesName . '/config.yml' ) ) { // overwrite with directory config
                 $pageMeta = array_merge( $pageMeta , spyc_load_file( file_get_contents($directoriesConf) ) ) ;
