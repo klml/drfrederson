@@ -12,23 +12,23 @@ require_once 'lib/Tools.php';
 require_once 'lib/mustache/src/Mustache/Autoloader.php';
 
 class MakeSite {
-	protected $config;
-	protected $filePath;
-	protected $pages;	// all pages data
-
-	public function __construct() {
+    protected $config;
+    protected $filePath;
+    protected $pages;	// all pages data
+    
+    public function __construct() {
         if( !file_exists( 'config.yml' ) ) { die("missing config.yml\n") ; };
         $this->makeconfig = spyc_load_file('config.yml');
         $this->filePath = $this->makeconfig['path'];
         $this->process() ;
-	}
+    }
 
     public function process() {
         $this->httpandcliRouting();
     }
-	// init pages data
+    // init pages data
 
-	protected function httpandcliRouting() {
+    protected function httpandcliRouting() {
         global $argv ;
 
         if ( count($argv) > 1  ) {      // create single pages from cli input
@@ -51,11 +51,11 @@ class MakeSite {
                 $this->createPage($sourcepath);
                 
             }
-		}
-	}
-
-	// create page    
-	public function createPage($sourcepath) { // protected // e.g. my.page.md
+        }
+    }
+    
+    // create page    
+    public function createPage($sourcepath) { // protected // e.g. my.page.md
 
             // splitfilenames TODO function
             $directoriesName = explode('/', $sourcepath ) ;
