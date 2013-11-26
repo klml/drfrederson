@@ -7,10 +7,10 @@ if ( $( "body" ).hasClass( "d2c_404error" ) ) {
      pagesourcepath.pop() ;
      lemma = window.location.pathname.split('/').pop().split('.')[0] ;
 
-     pagesourcepathprefill = pagesourcepath.join('/') + '/example.md'; // TODO var     
+     pagesourcepathprefill = pagesourcepath.join('/') + '/example.md'; // TODO var sourceextension
 
      pagesourcepath.push( lemma ) ;
-     pagesourcepathwrite = pagesourcepath.join('/') + '.md'; // TODO var
+     pagesourcepathwrite = pagesourcepath.join('/') + '.md'; // TODO var sourceextension
 
 } else {
     pagesourcepathwrite = pagesourcepath ;
