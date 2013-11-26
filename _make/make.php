@@ -132,7 +132,9 @@ class MakeSite {
 
             return $page ;
     }
-    public function buildHtml() { // protected // e.g. my.page.md
+    public function buildHtml() {
+
+            $this->tmplData = array_merge( $this->meta, $this->content ) ; // TODO not overwrite?
 
             Mustache_Autoloader::register();
             // use .html instead of .mustache for default template extension
@@ -140,9 +142,6 @@ class MakeSite {
             $mustache = new Mustache_Engine(array(
                 'loader' => new Mustache_Loader_FilesystemLoader( $this->filePath['template'] , $mustacheopt),
             ));
-
-            $this->tmplData = array_merge( $this->meta, $this->content ) ; // TODO not overwrite?
-
             $mustachecontent = $mustache->render($this->meta['template'], $this->tmplData );
             file_put_contents( $this->source['filePath'], $mustachecontent) ? success( $this->source['filePath'] . ' ' . $this->meta['pagetitle'] ) : error( $this->source['filePath'] );
     }
