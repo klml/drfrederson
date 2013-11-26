@@ -85,20 +85,20 @@ class MakeSite {
 
     public function collectMeta() { // read page config (template, meta, etc) from file, directory or mainconf
 
-            $pageMeta = $this->makeconfig ;                     // write general config
+            $meta = $this->makeconfig ;                     // write general config
 
             if ( file_exists($directoriesConf = $this->source['directoriesName'] . '/config.yml' ) ) { // overwrite with directory config
-                $pageMeta = array_merge( $pageMeta , spyc_load_file( file_get_contents($directoriesConf) ) ) ;
+                $meta = array_merge( $meta , spyc_load_file( file_get_contents($directoriesConf) ) ) ;
             }
-            if ( isset($ymlMD[1]) ) {  // overwrite with page config
-                $pageMetaPage = spyc_load_file( $this->source['content'][1] ) ;
-                $pageMeta = array_merge( $pageMeta , $pageMetaPage ) ;
+            if ( isset( $this->source['content'][1]) ) {  // overwrite with page config
+                $metaPage = spyc_load_file( $this->source['content'][1] ) ;
+                $meta = array_merge( $meta , $metaPage ) ;
             }
-            if ( !isset( $pageMetaPage['pagetitle'] ) ) {  // use first markdown heading as title if not in pageconfig
-                 $pageMeta['pagetitle'] = getHtmltitleMD( $this->source['content'][0] );
+            if ( !isset( $metaPage['pagetitle'] ) ) {  // use first markdown heading as title if not in pageconfig
+                 $meta['pagetitle'] = getHtmltitleMD( $this->source['content'][0] );
             }
 
-            return $pageMeta ;
+            return $meta ;
 
     }
     public function buildContent() { // protected // e.g. my.page.md
@@ -145,7 +145,7 @@ class MakeSite {
 
             Mustache_Autoloader::register();
             // use .html instead of .mustache for default template extension
-            $mustacheopt =  array('extension' => $this->meta['htmlextension']);
+            $mustacheopt =  array('extension' => $this->meta['htmlextension']); // TODO Check other array
             $mustache = new Mustache_Engine(array(
                 'loader' => new Mustache_Loader_FilesystemLoader( $this->filePath['template'] , $mustacheopt),
             ));
