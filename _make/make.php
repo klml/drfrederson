@@ -25,7 +25,6 @@ class MakeSite {
 	}
 
     public function process() {
-        $this->initTmplData();
         $this->httpandcliRouting();
     }
 	// init pages data
@@ -54,14 +53,6 @@ class MakeSite {
                 
             }
 		}
-	}
-
-	// init data for tmpl
-	protected function initTmplData() {
-		$this->tmplData = array(
-			'meta' => $this->makeconfig,
-			'page' => null
-		);
 	}
 
 	// create page    
