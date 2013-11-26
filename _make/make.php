@@ -15,7 +15,6 @@ class MakeSite {
 	protected $config;
 	protected $filePath;
 	protected $pages;	// all pages data
-	protected $tmplData;	// used for tmpl
 
 	public function __construct() {
         if( !file_exists( 'config.yml' ) ) { die("missing config.yml\n") ; };
