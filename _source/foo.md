@@ -2,10 +2,10 @@
 ## Foo - Bar
 This page is using 
 
-* alternative sidebar.
+* alternative [sidebar](_pagedurablealter).
 * alternative template 'plain'.
 * different siteTitle
-* but first heading as title
+* but the first heading as title
 
 back to [example](example).
 
