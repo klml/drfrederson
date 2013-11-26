@@ -47,6 +47,16 @@ function getHtmltitleMD($markdown) {
 }
 
 
+// <!-- more --> cutter
+function moreCutter($content) {
+    $more = explode('<!--more-->', $content);
+    if (count($more) >= 2) {
+        $more = $more[0];
+    } else {
+        $more = false;
+    }
+    return $more ;
+}
 
 // create *.html  // TODO remove
 function makeHtmlFile($target, $layout, $data) {

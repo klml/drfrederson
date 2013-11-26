@@ -122,14 +122,6 @@ class MakeSite {
             $page['sourcepath'] = substr( $this->source['path'] , 3 ) ; // remove leading "../"
             $page['pagedurable'] = Markdown( file_get_contents( $this->meta['pagedurable']) ); // TODO md switching
 
-            // <!-- more --> cutter //~ TODO move to outermarkdown
-            //~ $more = explode('<!--more-->', $item['content']);
-            //~ if (count($more) >= 2) {
-                //~ $item['more'] = $more[0];
-            //~ } else {
-                //~ $item['more'] = false;
-            //~ }
-
             return $page ;
     }
     public function buildHtml() {
