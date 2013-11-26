@@ -14,6 +14,7 @@ require_once 'lib/mustache/src/Mustache/Autoloader.php';
 class MakeSite {
     protected $config;
     protected $filePath;
+    protected $source;
     protected $pages;	// all pages data
     
     public function __construct() {
@@ -24,9 +25,9 @@ class MakeSite {
     }
 
     public function createPage($sourcepath) {
-        $this->sourcepath($sourcepath);
-        $this->collectMeta();
-        $this->buildContent();
+        $this->source = $this->sourcepath($sourcepath);
+        $this->meta = $this->collectMeta();
+        $this->content = $this->buildContent();
         $this->buildHtml();
     }
 
@@ -52,8 +53,11 @@ class MakeSite {
         } else {
             $sourcedirrecursive = new RecursiveDirectoryIterator( $this->filePath['source'] );
             foreach (new RecursiveIteratorIterator($sourcedirrecursive) as $sourcepath => $file) { // ? diffrenc $file  vs $sourcepath
-                $this->createPage($sourcepath);
-                
+                if ( is_dir( $sourcepath ) ) {                             // dont parse directories
+                    //~ return ;
+                } else {
+                    $this->createPage($sourcepath);
+                }
             }
         }
     }
@@ -61,40 +65,40 @@ class MakeSite {
     // create page    
     public function sourcepath($sourcepath) { // protected // e.g. my.page.md
 
+            $source['path'] = $sourcepath ;
+
             $directoriesName = explode('/', $sourcepath ) ;
-            $filename = array_pop($directoriesName) ;               // e.g. my.page.md
-            $directoriesName = implode('/', $directoriesName) ;     // e.g ../_source/mysubdir/
+            $source['filename'] = array_pop( $directoriesName ) ;                   // e.g. my.page.md
+            $source['directoriesName'] = implode('/', $directoriesName ) ;          // e.g ../_source/mysubdir/
 
-            $filenamewithExtension = explode('.', $filename ) ;
-            $filenameExtension = end($filenamewithExtension);           //  fileextension e.g. md
-            array_pop( $filenamewithExtension ) ;                       // remove fileextension
+            $filenamewithExtension = explode('.', $source['filename'] ) ;
+            $source['filenameExtension'] = array_pop( $filenamewithExtension ) ;    // remove fileextension e.g. md
 
-            $lemma = implode('.', $filenamewithExtension ) ;            // e.g. my.page
+            $source['lemma'] = implode('.', $filenamewithExtension ) ;              // e.g. my.page
 
-            if ( is_dir( $filename) ) {                             // dont parse directories
-                 return;
-            }
+
+            $source['content'] = splitYamlMD( $source['path'] , $this->makeconfig['ymlseparator'] ) ; // TODO external function readSource
+
+            return $source ;
+
     }
-    public function collectMeta() { // protected // e.g. my.page.md
 
-            $ymlMD = splitYamlMD( $sourcepath, $this->makeconfig['ymlseparator'] ) ;
+    public function collectMeta() { // read page config (template, meta, etc) from file, directory or mainconf
 
-            // collectMeta TODO function
-            // read page config (template, meta, etc) from file, directory or mainconf
             $pageMeta = $this->makeconfig ;                     // write general config
 
-            if ( file_exists($directoriesConf = $directoriesName . '/config.yml' ) ) { // overwrite with directory config
+            if ( file_exists($directoriesConf = $this->source['directoriesName'] . '/config.yml' ) ) { // overwrite with directory config
                 $pageMeta = array_merge( $pageMeta , spyc_load_file( file_get_contents($directoriesConf) ) ) ;
             }
             if ( isset($ymlMD[1]) ) {  // overwrite with page config
-                $pageMetaPage = spyc_load_file( $ymlMD[1] ) ;
+                $pageMetaPage = spyc_load_file( $this->source['content'][1] ) ;
                 $pageMeta = array_merge( $pageMeta , $pageMetaPage ) ;
             }
             if ( !isset( $pageMetaPage['pagetitle'] ) ) {  // use first markdown heading as title if not in pageconfig
-                 $pageMeta['pagetitle'] = getHtmltitleMD( $ymlMD[0] );
+                 $pageMeta['pagetitle'] = getHtmltitleMD( $this->source['content'][0] );
             }
 
-            $this->tmplData['meta'] = $pageMeta;
+            return $pageMeta ;
 
     }
     public function buildContent() { // protected // e.g. my.page.md
@@ -102,26 +106,24 @@ class MakeSite {
             $page = array();
 
             // file parse handling
-            switch ( $filenameExtension ) {
+            switch ( $this->source['filenameExtension'] ) {
                 case ("md"):
-                    $page['content'] = Markdown( $ymlMD[0] ) ;
+                    $page['html'] = Markdown( $this->source['content'][0] ) ;
                 break;
                 case ("html"):
-                    $page['content'] = $ymlMD[0] ;
+                    $page['html'] = $this->source['content'][0] ;
                 break;
                 default:    // css js yaml txt etc
-                    $page['content'] =  nl2br( $ymlMD[0] ) ;
-                    $pageMeta['pagetitle'] = $lemma ;               // use lemma, there is no meta
+                    $page['html'] =  nl2br( $this->source['content'][0] ) ;
+                    $pageMeta['pagetitle'] = $this->source['lemma'] ;               // use lemma, there is no meta
                 break;
             }
 
 
-            $page['filePath'] = $this->filePath['html'] . $lemma . $this->makeconfig['htmlextension']; // TODO fill inn $directoriesName
-            $page['lemma'] = $lemma ;
-            $page['sourcepath'] = substr( $sourcepath , 3 ) ; // remove leading "../"
+            $page['filePath'] = $this->filePath['html'] . $this->source['lemma'] . $this->makeconfig['htmlextension']; // TODO fill inn $directoriesName
+            $page['sourcepath'] = substr( $this->source['path'] , 3 ) ; // remove leading "../"
 
-            $page['pagedurable'] = Markdown( file_get_contents($pageMeta['pagedurable']) ); // TODO md switching
-
+            $page['pagedurable'] = Markdown( file_get_contents( $this->meta['pagedurable']) ); // TODO md switching
 
 
 
@@ -136,22 +138,22 @@ class MakeSite {
 
 
             // merge config, template and content
-            $this->tmplData['page'] = $page;
+            return $page ;
 
     }
     public function buildHtml() { // protected // e.g. my.page.md
 
-
-
             Mustache_Autoloader::register();
             // use .html instead of .mustache for default template extension
-            $mustacheopt =  array('extension' => $pageMeta['htmlextension']);
+            $mustacheopt =  array('extension' => $this->meta['htmlextension']);
             $mustache = new Mustache_Engine(array(
                 'loader' => new Mustache_Loader_FilesystemLoader( $this->filePath['template'] , $mustacheopt),
             ));
 
-            $mustachecontent = $mustache->render($pageMeta['template'], $this->tmplData );
-            file_put_contents( $page['filePath'], $mustachecontent) ? success( $page['filePath'] . ' ' . $pageMeta['pagetitle'] ) : error( $page['filePath'] );
+            $this->tmplData = array_merge( $this->meta, $this->content ) ; // TODO not overwrite?
+
+            $mustachecontent = $mustache->render($this->meta['template'], $this->tmplData );
+            file_put_contents( $this->content['filePath'], $mustachecontent) ? success( $this->content['filePath'] . ' ' . $this->meta['pagetitle'] ) : error( $this->content['filePath'] );
     }
 }
 $site = new MakeSite();
