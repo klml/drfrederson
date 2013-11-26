@@ -38,12 +38,12 @@ function splitYamlMD($filePath, $separator) {
 
 // uses first heading in markdown as page title
 function getHtmltitleMD($markdown) {
-    $titel = '';
-    preg_match('/(?m)^#+(.*)/', $markdown, $titelheading) ;
-    if ( isset( $titelheading[1]) ) {
-        $titel = trim( $titelheading[1] ) ;
+    $title = '';
+    preg_match('/(?m)^#+(.*)/', $markdown, $titleheading) ;
+    if ( isset( $titleheading[1]) ) {
+        $title = trim( $titleheading[1] ) ;
     }
-    return $titel ;
+    return $title ;
 }
 
 
