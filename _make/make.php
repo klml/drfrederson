@@ -79,6 +79,8 @@ class MakeSite {
 
             $source['content'] = splitYamlMD( $source['path'] , $this->makeconfig['ymlseparator'] ) ; // TODO external function readSource
 
+            $source['filePath'] = $this->filePath['html'] . $source['lemma'] . $this->makeconfig['htmlextension']; // TODO fill inn $directoriesName
+
             return $source ;
 
     }
@@ -101,9 +103,7 @@ class MakeSite {
             return $meta ;
 
     }
-    public function buildContent() { // protected // e.g. my.page.md
-
-            $page = array();
+    public function buildContent() {
 
             // file parse handling
             switch ( $this->source['filenameExtension'] ) {
@@ -119,13 +119,8 @@ class MakeSite {
                 break;
             }
 
-
-            $page['filePath'] = $this->filePath['html'] . $this->source['lemma'] . $this->makeconfig['htmlextension']; // TODO fill inn $directoriesName
             $page['sourcepath'] = substr( $this->source['path'] , 3 ) ; // remove leading "../"
-
             $page['pagedurable'] = Markdown( file_get_contents( $this->meta['pagedurable']) ); // TODO md switching
-
-
 
             // <!-- more --> cutter //~ TODO move to outermarkdown
             //~ $more = explode('<!--more-->', $item['content']);
@@ -135,11 +130,7 @@ class MakeSite {
                 //~ $item['more'] = false;
             //~ }
 
-
-
-            // merge config, template and content
             return $page ;
-
     }
     public function buildHtml() { // protected // e.g. my.page.md
 
@@ -153,7 +144,7 @@ class MakeSite {
             $this->tmplData = array_merge( $this->meta, $this->content ) ; // TODO not overwrite?
 
             $mustachecontent = $mustache->render($this->meta['template'], $this->tmplData );
-            file_put_contents( $this->content['filePath'], $mustachecontent) ? success( $this->content['filePath'] . ' ' . $this->meta['pagetitle'] ) : error( $this->content['filePath'] );
+            file_put_contents( $this->source['filePath'], $mustachecontent) ? success( $this->source['filePath'] . ' ' . $this->meta['pagetitle'] ) : error( $this->source['filePath'] );
     }
 }
 $site = new MakeSite();
