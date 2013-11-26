@@ -20,12 +20,16 @@ class MakeSite {
         if( !file_exists( 'config.yml' ) ) { die("missing config.yml\n") ; };
         $this->makeconfig = spyc_load_file('config.yml');
         $this->filePath = $this->makeconfig['path'];
-        $this->process() ;
-    }
-
-    public function process() {
         $this->httpandcliRouting();
     }
+
+    public function createPage($sourcepath) {
+        $this->sourcepath($sourcepath);
+        $this->collectMeta();
+        $this->buildContent();
+        $this->buildHtml();
+    }
+
     // init pages data
 
     protected function httpandcliRouting() {
@@ -55,9 +59,8 @@ class MakeSite {
     }
     
     // create page    
-    public function createPage($sourcepath) { // protected // e.g. my.page.md
+    public function sourcepath($sourcepath) { // protected // e.g. my.page.md
 
-            // splitfilenames TODO function
             $directoriesName = explode('/', $sourcepath ) ;
             $filename = array_pop($directoriesName) ;               // e.g. my.page.md
             $directoriesName = implode('/', $directoriesName) ;     // e.g ../_source/mysubdir/
@@ -71,7 +74,8 @@ class MakeSite {
             if ( is_dir( $filename) ) {                             // dont parse directories
                  return;
             }
-
+    }
+    public function collectMeta() { // protected // e.g. my.page.md
 
             $ymlMD = splitYamlMD( $sourcepath, $this->makeconfig['ymlseparator'] ) ;
 
@@ -92,8 +96,8 @@ class MakeSite {
 
             $this->tmplData['meta'] = $pageMeta;
 
-
-
+    }
+    public function buildContent() { // protected // e.g. my.page.md
 
             $page = array();
 
@@ -134,6 +138,8 @@ class MakeSite {
             // merge config, template and content
             $this->tmplData['page'] = $page;
 
+    }
+    public function buildHtml() { // protected // e.g. my.page.md
 
 
 
