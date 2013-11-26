@@ -111,7 +111,7 @@ class MakeSite {
                 break;
                 default:    // css js yaml txt etc
                     $page['html'] =  nl2br( $this->source['content'][0] ) ;
-                    $pageMeta['pagetitle'] = $this->source['lemma'] ;               // use lemma, there is no meta
+                    $this->meta['pagetitle'] = $this->source['lemma'] ;               // use lemma, there is no meta
                 break;
             }
 
