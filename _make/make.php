@@ -79,7 +79,7 @@ class MakeSite {
 
             $source['content'] = splitYamlMD( $source['path'] , $this->makeconfig['ymlseparator'] ) ; // TODO external function readSource
 
-            $source['filePath'] = $this->filePath['html'] . $source['lemma'] . $this->makeconfig['htmlextension']; // TODO fill inn $directoriesName
+            $source['htmlPath'] = $this->filePath['html'] . $source['lemma'] . $this->makeconfig['htmlextension']; // TODO fill inn $directoriesName
 
             return $source ;
 
@@ -143,7 +143,7 @@ class MakeSite {
                 'loader' => new Mustache_Loader_FilesystemLoader( $this->filePath['template'] , $mustacheopt),
             ));
             $mustachecontent = $mustache->render($this->meta['template'], $this->tmplData );
-            file_put_contents( $this->source['filePath'], $mustachecontent) ? success( $this->source['filePath'] . ' ' . $this->meta['pagetitle'] ) : error( $this->source['filePath'] );
+            file_put_contents( $this->source['htmlPath'], $mustachecontent) ? success( $this->source['htmlPath'] . ' ' . $this->meta['pagetitle'] ) : error( $this->source['htmlPath'] );
     }
 }
 $site = new MakeSite();
