@@ -174,6 +174,7 @@ Existing templates
 - new article field (and include)
 - [ ] include http://www.mediawiki.org/wiki/Transclusion
 - [ ]* index: dir as link include (for pix)
+- more cutter
 - [ ] demo
 - [ ] minfy
 - [ ] CSS-Mini-Reset realy needed
