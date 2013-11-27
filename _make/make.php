@@ -42,7 +42,7 @@ class MakeSite {
             $sourcepath = '../' . preventDirectoryTraversal( $_POST["sourcepath"] );
 
             if ( isset ( $_POST["content"] )  ) { 
-                echo writeFile( $sourcepath, $_POST["content"]  );
+                file_put_contents( $sourcepath , $_POST["content"] ) ? success( $sourcepath ) : error( $sourcepath ) ;
             }
 
             $this->createPage( $sourcepath );

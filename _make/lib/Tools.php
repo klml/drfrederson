@@ -71,10 +71,4 @@ function makeHtmlFile($target, $layout, $data) {
 	}
 }
 
-// write source file from webeditor // TODO rm inline?
-function writeFile( $sourcepath, $content ) { 
-    $msg = file_put_contents( $sourcepath , $content ) ? success( $sourcepath ) : error( $sourcepath ) ;
-    return $msg ;
-}
-
 ?>
