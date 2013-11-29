@@ -6,7 +6,7 @@ htmlextension: .html
 sourceextension: md
 ymlseparator: '#meta#'
 
-path:
+directory:
     template: ../_template/
     source: ../_source/
     html: ../

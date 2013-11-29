@@ -13,13 +13,13 @@ require_once 'lib/mustache/src/Mustache/Autoloader.php';
 
 class MakeSite {
     protected $config; // TODO ?
-    protected $filePath;
+    protected $directories;
     protected $source;
 
     public function __construct() {
         if( !file_exists( 'config.yml' ) ) { die("missing config.yml\n") ; };
         $this->makeconfig = spyc_load_file('config.yml');
-        $this->filePath = $this->makeconfig['path'];
+        $this->directories = $this->makeconfig['directory'];
         $this->httpandcliRouting();
     }
 
@@ -48,7 +48,7 @@ class MakeSite {
             $this->createPage( $sourcepath );
 
         } else {
-            $sourcedirrecursive = new RecursiveDirectoryIterator( $this->filePath['source'] );
+            $sourcedirrecursive = new RecursiveDirectoryIterator( $this->directories['source'] );
             foreach (new RecursiveIteratorIterator($sourcedirrecursive) as $sourcepath => $file) { // ? diffrenc $file  vs $sourcepath
                 if ( is_dir( $sourcepath ) ) {                             // dont parse directories
                     //~ return ;
@@ -66,7 +66,7 @@ class MakeSite {
 
             $source['content'] = splitYamlMD( $source['path'] , $this->makeconfig['ymlseparator'] ) ; // TODO external function readSource
 
-            $source['htmlPath'] = $this->filePath['html'] . $source['pathinfo']['filename'] . $this->makeconfig['htmlextension']; // TODO fill inn $directoriesName
+            $source['htmlPath'] = $this->directories['html'] . $source['pathinfo']['filename'] . $this->makeconfig['htmlextension']; // TODO fill inn $directoriesName
             $source['websourcepath'] = substr( $source['path'] , 3 ) ;        // remove leading "../"
 
             return $source ;
@@ -121,7 +121,7 @@ class MakeSite {
             // use .html instead of .mustache for default template extension
             $mustacheopt =  array('extension' => $this->meta['htmlextension']); // TODO Check other array
             $mustache = new Mustache_Engine(array(
-                'loader' => new Mustache_Loader_FilesystemLoader( $this->filePath['template'] , $mustacheopt),
+                'loader' => new Mustache_Loader_FilesystemLoader( $this->directories['template'] , $mustacheopt),
             ));
             $mustachecontent = $mustache->render($this->meta['template'], $this->tmplData );
             file_put_contents( $this->source['htmlPath'], $mustachecontent) ? success( $this->source['htmlPath'] . ' ' . $this->meta['pagetitle'] ) : error( $this->source['htmlPath'] );
