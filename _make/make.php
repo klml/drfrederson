@@ -85,7 +85,7 @@ class MakeSite {
                 $meta = array_merge( $meta , $metaPage ) ;
             }
             if ( !isset( $metaPage['pagetitle'] ) ) {  // use first markdown heading as title if not in pageconfig
-                 $meta['pagetitle'] = getHtmltitleMD( $this->source['content'][0] );
+                $meta['pagetitle'] = getHtmltitleMD( $this->source['content'][0] );
             }
 
             return $meta ;

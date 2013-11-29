@@ -156,9 +156,7 @@ Existing templates
 
 ## TODO
 
-
 - path:    template: ../_template/ etc rename Directory (computing)
-- splilt createPage split name, split content, file parse handling
 - onsite preview https://github.com/tanakahisateru/js-markdown-extra
 - http://php.net/manual/de/function.realpath.php PHP 5.3
 - http://stackoverflow.com/questions/7447472/how-could-i-display-the-current-git-branch-name-at-the-top-of-the-page-of-my-de
