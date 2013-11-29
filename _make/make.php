@@ -76,6 +76,7 @@ class MakeSite {
             $source['content'] = splitYamlMD( $source['path'] , $this->makeconfig['ymlseparator'] ) ; // TODO external function readSource
 
             $source['htmlPath'] = $this->filePath['html'] . $source['lemma'] . $this->makeconfig['htmlextension']; // TODO fill inn $directoriesName
+            $source['websourcepath'] = substr( $source['path'] , 3 ) ;        // remove leading "../"
 
             return $source ;
 
@@ -115,14 +116,13 @@ class MakeSite {
                 break;
             }
 
-            $page['sourcepath'] = substr( $this->source['path'] , 3 ) ; // remove leading "../"
             $page['pagedurable'] = Markdown( file_get_contents( $this->meta['pagedurable']) ); // TODO md switching
 
             return $page ;
     }
     public function buildHtml() {
 
-            $this->tmplData = array_merge( $this->meta, $this->content ) ; // TODO not overwrite?
+            $this->tmplData = array_merge( $this->source, $this->meta, $this->content ) ; // TODO not overwrite?
 
             Mustache_Autoloader::register();
             // use .html instead of .mustache for default template extension
