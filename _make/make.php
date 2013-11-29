@@ -64,7 +64,7 @@ class MakeSite {
             $source['path'] = $sourcepath ;
             $source['pathinfo'] = pathinfo( $sourcepath );
 
-            $source['content'] = splitYamlMD( $source['path'] , $this->makeconfig['ymlseparator'] ) ; // TODO external function readSource
+            $source['content'] = splitYamlProse( $source['path'] , $this->makeconfig['ymlseparator'] ) ; // TODO external function readSource
 
             $source['htmlPath'] = $this->directories['html'] . $source['pathinfo']['filename'] . $this->makeconfig['htmlextension']; // TODO fill inn $directoriesName
             $source['websourcepath'] = substr( $source['path'] , 3 ) ;        // remove leading "../"
@@ -80,12 +80,12 @@ class MakeSite {
             if ( file_exists($directoriesConf = $this->source['pathinfo']['dirname'] . '/config.yml' ) ) { // overwrite with directory config
                 $meta = array_merge( $meta , spyc_load_file( file_get_contents($directoriesConf) ) ) ;
             }
-            if ( isset( $this->source['content'][1]) ) {  // overwrite with page config
-                $metaPage = spyc_load_file( $this->source['content'][1] ) ;
+            if ( isset( $this->source['content']['yml']) ) {  // overwrite with page config
+                $metaPage = spyc_load_file( $this->source['content']['yml'] ) ;
                 $meta = array_merge( $meta , $metaPage ) ;
             }
             if ( !isset( $metaPage['pagetitle'] ) ) {  // use first markdown heading as title if not in pageconfig
-                $meta['pagetitle'] = getHtmltitleMD( $this->source['content'][0] );
+                $meta['pagetitle'] = getHtmltitleMD( $this->source['content']['prose'] );
             }
 
             return $meta ;
@@ -96,13 +96,13 @@ class MakeSite {
             // file parse handling
             switch ( $this->source['pathinfo']['extension'] ) {
                 case ("md"):
-                    $content['html'] = Markdown( $this->source['content'][0] ) ;
+                    $content['html'] = Markdown( $this->source['content']['prose'] ) ;
                 break;
                 case ("html"):
-                    $content['html'] = $this->source['content'][0] ;
+                    $content['html'] = $this->source['content']['prose'] ;
                 break;
                 default:    // css js yaml txt etc
-                    $content['html'] =  nl2br( $this->source['content'][0] ) ;
+                    $content['html'] =  nl2br( $this->source['content']['prose'] ) ;
                     $this->meta['pagetitle'] = $this->source['pathinfo']['filename'] ;               // use lemma, there is no meta
                 break;
             }

@@ -30,10 +30,11 @@ function preventDirectoryTraversal($sourcepath) {
 
 
 // return yaml conf and md seperated from source
-function splitYamlMD($filePath, $separator) {
-    $ymlMD = array();
-    $ymlMD = explode( $separator , file_get_contents($filePath) ) ;
-    return $ymlMD ; 
+function splitYamlProse($filePath, $separator) {
+    $ymlProse = explode( $separator , file_get_contents($filePath) ); // TODO limit ?
+    if ( count($ymlProse) == 1 ) $ymlProse[1] = '';
+    $ymlProse = array_combine( array('prose', 'yml' ) , $ymlProse );
+    return $ymlProse ; 
 }
 
 // uses first heading in markdown as page title
