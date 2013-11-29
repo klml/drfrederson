@@ -3,35 +3,35 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, user-scalable=0"/>
-    <title>{{pagetitle}} | {{siteTitle}}</title>
-    <meta http-equiv="description" content="{{description}}"/>
+    <title>{{meta.pagetitle}} | {{meta.siteTitle}}</title>
+    <meta http-equiv="description" content="{{meta.description}}"/>
 
     <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
-    <meta name="dcterms.source" content="{{websourcepath}}"/>
+    <meta name="dcterms.source" content="{{source.websourcepath}}"/>
 
-    <link rel="stylesheet" type="text/css" href="{{makeconfig.baseurl}}lib/CSS-Mini-Reset/CSS-Mini-Reset-min.css">
+    <link rel="stylesheet" type="text/css" href="{{meta.baseurl}}lib/CSS-Mini-Reset/CSS-Mini-Reset-min.css">
 
-    <link rel="stylesheet" type="text/css" href="{{makeconfig.baseurl}}lib/skeleton/stylesheets/base.css">
-    <link rel="stylesheet" type="text/css" href="{{makeconfig.baseurl}}lib/skeleton/stylesheets/layout.css">
-    <link rel="stylesheet" type="text/css" href="{{makeconfig.baseurl}}lib/skeleton/stylesheets/skeleton.css">
+    <link rel="stylesheet" type="text/css" href="{{meta.baseurl}}lib/skeleton/stylesheets/base.css">
+    <link rel="stylesheet" type="text/css" href="{{meta.baseurl}}lib/skeleton/stylesheets/layout.css">
+    <link rel="stylesheet" type="text/css" href="{{meta.baseurl}}lib/skeleton/stylesheets/skeleton.css">
 
-    <link rel="stylesheet" type="text/css" href="{{makeconfig.baseurl}}lib/usefulclassroomphrases/ucp.css">
-    <link rel="stylesheet" type="text/css" href="{{makeconfig.baseurl}}_template/tpl.css">
-    <link rel="stylesheet" type="text/css" href="{{makeconfig.baseurl}}_source/_custom-css.css">
+    <link rel="stylesheet" type="text/css" href="{{meta.baseurl}}lib/usefulclassroomphrases/ucp.css">
+    <link rel="stylesheet" type="text/css" href="{{meta.baseurl}}_template/tpl.css">
+    <link rel="stylesheet" type="text/css" href="{{meta.baseurl}}_source/_custom-css.css">
 </head>
-<body class="d2c_{{lemma}} {{meta.d2c}}" >
+<body class="d2c_{{source.lemma}} {{meta.meta.d2c}}" >
 
 
 <div class="container">
     <header id="header" class="sixteen columns">
         <nav id="nav">
-            <article>{{{pagedurable}}}</article>
+            <article>{{{content.pagedurable}}}</article>
         </nav>
     </header>
 
     <div id="main" class="sixteen columns">
         <section class="page">
-            <article>{{{html}}}</article>
+            <article>{{{content.html}}}</article>
         </section>
     
     
@@ -43,8 +43,8 @@
 
     <footer id="footer"  class="sixteen columns"></footer>
 </div>
-    <script src="{{makeconfig.baseurl}}lib/jquery-1.10.1.min.js"></script>
-    <script src="{{makeconfig.baseurl}}lib/usefulclassroomphrases/jquery.js" type="text/javascript"></script>
+    <script src="{{meta.baseurl}}lib/jquery-1.10.1.min.js"></script>
+    <script src="{{meta.baseurl}}lib/usefulclassroomphrases/jquery.js" type="text/javascript"></script>
     <script src="_template/tpl.js?v=q" type="text/javascript"></script>
     <script src="_source/_custom-js.js?v=q" type="text/javascript"></script>
 </body>

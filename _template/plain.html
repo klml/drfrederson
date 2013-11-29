@@ -3,31 +3,31 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, user-scalable=0"/>
-    <title>{{pagetitle}} | {{siteTitle}}</title>
-    <meta http-equiv="description" content="{{description}}"/>
+    <title>{{meta.pagetitle}} | {{meta.siteTitle}}</title>
+    <meta http-equiv="description" content="{{meta.description}}"/>
 
     <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
-    <meta name="dcterms.source" content="{{websourcepath}}"/>
+    <meta name="dcterms.source" content="{{source.websourcepath}}"/>
 
 </head>
-<body class="d2c_{{lemma}} {{d2c}}" >
+<body class="d2c_{{meta.meta.lemma}} {{meta.d2c}}" >
 
 
 <div class="container">
     <header id="header" class="sixteen columns">
         <nav id="nav">
-            <article>{{{pagedurable}}}</article>
+            <article>{{{content.pagedurable}}}</article>
         </nav>
     </header>
 
     <div id="main" class="sixteen columns">
         <section class="page">
-            <article>{{{html}}}</article>
+            <article>{{{content.html}}}</article>
         </section>
     </div>
     <footer id="footer"  class="sixteen columns"></footer>
 </div>
-    <script src="{{baseurl}}lib/jquery-1.10.1.min.js"></script>
+    <script src="{{meta.meta.baseurl}}lib/jquery-1.10.1.min.js"></script>
     <script src="_template/tpl.js?v=q" type="text/javascript"></script>
 </body>
 </html>

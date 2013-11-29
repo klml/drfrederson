@@ -24,7 +24,7 @@ class MakeSite {
     }
 
     public function createPage($sourcepath) {
-        $this->source = $this->sourcepath($sourcepath);
+        $this->source = $this->source($sourcepath);
         $this->meta = $this->collectMeta();
         $this->content = $this->buildContent();
         $this->buildHtml();
@@ -59,7 +59,7 @@ class MakeSite {
         }
     }
     
-    public function sourcepath($sourcepath) { // protected ? TODO
+    public function source($sourcepath) { // processing all sources
 
             $source['path'] = $sourcepath ;
 
@@ -122,8 +122,9 @@ class MakeSite {
     }
     public function buildHtml() {
 
-            $this->tmplData = array_merge( $this->source, $this->meta, $this->content ) ; // TODO not overwrite?
-            //~ var_dump( $this->content );
+            $this->tmplData['source'] = $this->source ;
+            $this->tmplData['meta'] = $this->meta ;
+            $this->tmplData['content'] = $this->content ;
 
             Mustache_Autoloader::register();
             // use .html instead of .mustache for default template extension
