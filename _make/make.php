@@ -105,24 +105,25 @@ class MakeSite {
             // file parse handling
             switch ( $this->source['filenameExtension'] ) {
                 case ("md"):
-                    $page['html'] = Markdown( $this->source['content'][0] ) ;
+                    $content['html'] = Markdown( $this->source['content'][0] ) ;
                 break;
                 case ("html"):
-                    $page['html'] = $this->source['content'][0] ;
+                    $content['html'] = $this->source['content'][0] ;
                 break;
                 default:    // css js yaml txt etc
-                    $page['html'] =  nl2br( $this->source['content'][0] ) ;
+                    $content['html'] =  nl2br( $this->source['content'][0] ) ;
                     $this->meta['pagetitle'] = $this->source['lemma'] ;               // use lemma, there is no meta
                 break;
             }
 
-            $page['pagedurable'] = Markdown( file_get_contents( $this->meta['pagedurable']) ); // TODO md switching
+            $content['pagedurable'] = Markdown( file_get_contents( $this->meta['pagedurable']) ); // TODO md switching
 
-            return $page ;
+            return $content ;
     }
     public function buildHtml() {
 
             $this->tmplData = array_merge( $this->source, $this->meta, $this->content ) ; // TODO not overwrite?
+            //~ var_dump( $this->content );
 
             Mustache_Autoloader::register();
             // use .html instead of .mustache for default template extension
