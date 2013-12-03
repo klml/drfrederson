@@ -156,6 +156,12 @@ Existing templates
 
 ## TODO
 
+- html directory
+- no underscore
+- pagedurabel rename area 
+- pagedurabel multi as in content
+- role="complementary"
+- short md intro heading list bold italic and links and image
 - onsite preview https://github.com/tanakahisateru/js-markdown-extra
 - http://php.net/manual/de/function.realpath.php PHP 5.3
 - http://stackoverflow.com/questions/7447472/how-could-i-display-the-current-git-branch-name-at-the-top-of-the-page-of-my-de

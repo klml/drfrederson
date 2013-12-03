@@ -24,24 +24,23 @@
 
 <div class="container">
     <header id="header" class="sixteen columns">
-        <nav id="nav">
+        <nav id="nav" role="navigation" >
             <article>{{{content.pagedurable}}}</article>
         </nav>
     </header>
 
-    <div id="main" class="sixteen columns">
+    <div id="main" class="sixteen columns" role="main" >
         <section class="page">
             <article>{{{content.html}}}</article>
         </section>
-    
-    
+
     {{#meta.comment}}
         comment
     {{/meta.comment}}
     
     </div>
 
-    <footer id="footer" class="sixteen columns"></footer>
+    <footer id="footer" class="sixteen columns" role="contentinfo" ></footer>
 </div>
     <script src="{{meta.baseurl}}lib/jquery-1.10.1.min.js"></script>
     <script src="{{meta.baseurl}}lib/usefulclassroomphrases/jquery.js" type="text/javascript"></script>

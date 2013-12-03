@@ -14,18 +14,18 @@
 
 
 <div class="container">
-    <header id="header" class="sixteen columns">
+    <header id="header" class="sixteen columns" role="navigation" >
         <nav id="nav">
             <article>{{{content.pagedurable}}}</article>
         </nav>
     </header>
 
-    <div id="main" class="sixteen columns">
+    <div id="main" class="sixteen columns" role="main" >
         <section class="page">
             <article>{{{content.html}}}</article>
         </section>
     </div>
-    <footer id="footer"  class="sixteen columns"></footer>
+    <footer id="footer" class="sixteen columns" role="contentinfo" ></footer>
 </div>
     <script src="{{meta.baseurl}}lib/jquery-1.10.1.min.js"></script>
     <script src="{{meta.baseurl}}_template/tpl.js?v=q" type="text/javascript"></script>
