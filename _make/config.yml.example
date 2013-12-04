@@ -9,7 +9,7 @@ ymlseparator: '#meta#'
 directory:
     template: ../_template/
     source: ../_source/
-    html: ../
+    html: ../html/
 
 --- page specific, optional overwrite in directory or source
 template: skeleton

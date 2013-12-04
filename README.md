@@ -156,7 +156,7 @@ Existing templates
 
 ## TODO
 
-- html directory
+
 - no underscore
 - pagedurabel rename area 
 - pagedurabel multi as in content
