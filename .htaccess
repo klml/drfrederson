@@ -1,4 +1,4 @@
-DirectoryIndex index.html
+DirectoryIndex html/index.html
 
 RewriteEngine On
 RewriteRule ^([^\.]+)$ html/$1.html [NC,L]
