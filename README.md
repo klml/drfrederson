@@ -16,7 +16,7 @@ Some more small features like titletags from the first heading, etc
 ## Write
 
 Write files in [markdown extra](http://michelf.ca/projects/php-markdown/extra/).
-All source code for cont is stored in ''_source/''
+All source code for cont is stored in ''source/''
 
 Edit your website in different ways:
 
@@ -28,7 +28,7 @@ Edit your website in different ways:
 
 ## Administration
 
-There is no extra admininterface, edit existing pages with the edit button or create new pages with the error page. All information for the working admin on [admin.md](_source/admin.md).
+There is no extra admininterface, edit existing pages with the edit button or create new pages with the error page. All information for the working admin on [admin.md](source/admin.md).
 
 Configuration is editable on each page after the `#meta#` and in the [config](config)-page.
 Sidebar, menues and other page-durable content is stored like a ''normal'' page on [pagedurable](_pagedurable) (the concept is well adapted in [Mediawiki Sidebar](https://www.mediawiki.org/wiki/Manual:Interface/Sidebar)).
@@ -79,7 +79,7 @@ Run `./make.sh` or [_make/make.php](_make/make.php) for the first run.
 
 ## make
 
-All processing in [_make/make.php](_make/make.php) to create static html files from `_source/` 'compiled' with all `_template/`
+All processing in [_make/make.php](_make/make.php) to create static html files from `source/` 'compiled' with all `template/`
 
 Now the __webserver__ can deliver pure html files. If you want an URL without the extension .html, [rewrite](http://stackoverflow.com/questions/10245032/url-rewrite-remove-html/10279744#10279744) in [.htaccess](.htaccess).
 
@@ -88,7 +88,7 @@ Now the __webserver__ can deliver pure html files. If you want an URL without th
 Metainformation (template, comments, meta-description, title etc) can be defined in [yaml](http://www.yaml.org/spec/1.2/spec.html)
 
 * for __each page__ at the bottom of sourcefile after the `#meta#` (can be redefined in config 'ymlseparator').
-* or for each __directory__ in `config.yml` or for the whole site in `_source/`.
+* or for each __directory__ in `config.yml` or for the whole site in `source/`.
 * and as fallback and for filepathes in `_make/config.yml`.
 
 #### site wide
@@ -151,13 +151,13 @@ In  `lib/` are some clientside libraries (css, js).
 
 Existing templates
 
-* `_template/skeleton.html` [getskeleton.com](http://www.getskeleton.com)
+* `template/skeleton.html` [getskeleton.com](http://www.getskeleton.com)
 
 
 ## TODO
 
 
-- no underscore
+- mod for no htaccess
 - pagedurabel rename area 
 - pagedurabel multi as in content
 - role="complementary"

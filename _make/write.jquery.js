@@ -24,7 +24,7 @@ var formwebedit = 'form.webedit'; // to formwebedit.php
 
 jQuery(document).ready(function() {
 
-    $( "#footer" ).load( "_template/formwebedit.html", function() {
+    $( "#footer" ).load( "template/formwebedit.html", function() {
 
         $('#edit').click( function() {
             $(this).hide();

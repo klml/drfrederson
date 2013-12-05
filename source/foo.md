@@ -10,6 +10,6 @@ This page is using
 back to [example](example).
 
 #meta#
-pagedurable: ../_source/_pagedurablealter.md
+pagedurable: ../source/_pagedurablealter.md
 template: plain
 siteTitle: And Now for Something Completely Different.

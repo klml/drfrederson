@@ -7,13 +7,13 @@ sourceextension: md
 ymlseparator: '#meta#'
 
 directory:
-    template: ../_template/
-    source: ../_source/
+    template: ../template/
+    source: ../source/
     html: ../html/
 
 --- page specific, optional overwrite in directory or source
 template: skeleton
-pagedurable: ../_source/_pagedurable.md
+pagedurable: ../source/_pagedurable.md
 pagetitle: Title from root-config 
 comment: false
 description: Some general site wide description
