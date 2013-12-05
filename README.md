@@ -158,7 +158,6 @@ Existing templates
 
 - remove class html5 tags
 - mod for no htaccess
-- role="complementary"
 - short md intro heading list bold italic and links and image
 - onsite preview https://github.com/tanakahisateru/js-markdown-extra
 - http://php.net/manual/de/function.realpath.php PHP 5.3
