@@ -1,8 +1,7 @@
-
 ## Foo - Bar
 This page is using 
 
-* alternative [sidebar](_pagedurablealter).
+* alternative [sidebar](sidebar_alter).
 * alternative template 'plain'.
 * different siteTitle
 * but the first heading as title
@@ -10,6 +9,8 @@ This page is using
 back to [example](example).
 
 #meta#
-pagedurable: ../source/_pagedurablealter.md
+area:
+    navigation: ../source/area/navigation.md
+    sidebar: ../source/area/sidebar_alter.md
 template: plain
 siteTitle: And Now for Something Completely Different.

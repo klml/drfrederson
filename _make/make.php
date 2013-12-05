@@ -96,18 +96,20 @@ class MakeSite {
             // file parse handling
             switch ( $this->source['pathinfo']['extension'] ) {
                 case ("md"):
-                    $content['html'] = Markdown( $this->source['content']['prose'] ) ;
+                    $content['main'] = Markdown( $this->source['content']['prose'] ) ;
                 break;
                 case ("html"):
-                    $content['html'] = $this->source['content']['prose'] ;
+                    $content['main'] = $this->source['content']['prose'] ;
                 break;
                 default:    // css js yaml txt etc
-                    $content['html'] =  nl2br( $this->source['content']['prose'] ) ;
+                    $content['main'] =  nl2br( $this->source['content']['prose'] ) ;
                     $this->meta['pagetitle'] = $this->source['pathinfo']['filename'] ;               // use lemma, there is no meta
                 break;
             }
 
-            $content['pagedurable'] = Markdown( file_get_contents( $this->meta['pagedurable']) ); // TODO md switching
+            foreach( $this->meta["area"] as $areaname => $area ) {
+               if ( $area != '' ) $content[ $areaname ] = Markdown( file_get_contents( $area ) ); // TODO md switching
+            }
 
             return $content ;
     }

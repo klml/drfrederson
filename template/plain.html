@@ -12,19 +12,24 @@
 </head>
 <body class="d2c_{{meta.lemma}} {{meta.d2c}}" >
 
-
 <div class="container">
-    <header id="header" class="sixteen columns" role="navigation" >
-        <nav id="nav">
-            <article>{{{content.pagedurable}}}</article>
+    <header id="header" class="sixteen columns">
+        <nav id="nav" role="navigation" >
+            <article>{{{content.navigation}}}</article>
         </nav>
     </header>
 
     <div id="main" class="sixteen columns" role="main" >
         <section class="page">
-            <article>{{{content.html}}}</article>
+            <article>{{{content.main}}}</article>
         </section>
+
     </div>
+
+    <div id="sidebar" class="sixteen columns" >
+        {{{content.sidebar}}}
+    </div>
+
     <footer id="footer" class="sixteen columns" role="contentinfo" ></footer>
 </div>
     <script src="{{meta.baseurl}}lib/jquery-1.10.1.min.js"></script>

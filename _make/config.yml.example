@@ -13,7 +13,10 @@ directory:
 
 --- page specific, optional overwrite in directory or source
 template: skeleton
-pagedurable: ../source/_pagedurable.md
+area:
+    navigation: ../source/area/navigation.md
+    sidebar: ../source/area/sidebar.md 
+    footer: 
 pagetitle: Title from root-config 
 comment: false
 description: Some general site wide description

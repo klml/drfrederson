@@ -21,23 +21,26 @@
 </head>
 <body class="d2c_{{source.pathinfo.filename}} {{meta.d2c}}" >
 
-
 <div class="container">
     <header id="header" class="sixteen columns">
         <nav id="nav" role="navigation" >
-            <article>{{{content.pagedurable}}}</article>
+            <article>{{{content.navigation}}}</article>
         </nav>
     </header>
 
-    <div id="main" class="sixteen columns" role="main" >
+    <div id="main" class="twelve columns" role="main" >
         <section class="page">
-            <article>{{{content.html}}}</article>
+            <article>{{{content.main}}}</article>
         </section>
 
     {{#meta.comment}}
         comment
     {{/meta.comment}}
-    
+
+    </div>
+
+    <div id="sidebar" class="four columns" >
+        {{{content.sidebar}}}
     </div>
 
     <footer id="footer" class="sixteen columns" role="contentinfo" ></footer>
