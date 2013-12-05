@@ -17,10 +17,7 @@ if ( $( "body" ).hasClass( "d2c_404error" ) ) {
     pagesourcepathprefill = pagesourcepath + '?v=' + Math.random() ; // force reload
 }
 
-
-
 var formwebedit = 'form.webedit'; // to formwebedit.php
-
 
 jQuery(document).ready(function() {
 

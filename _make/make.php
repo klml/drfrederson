@@ -12,7 +12,6 @@ require_once 'lib/Tools.php';
 require_once 'lib/mustache/src/Mustache/Autoloader.php';
 
 class MakeSite {
-    protected $config; // TODO ?
     protected $directories;
     protected $source;
 
