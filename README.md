@@ -156,22 +156,19 @@ Existing templates
 
 ## TODO
 
+- rename project gidig
+    - _custom-css etc psm-custom-css
 - remove class html5 tags
 - mod for no htaccess
-- short md intro heading list bold italic and links and image
 - http://php.net/manual/de/function.realpath.php PHP 5.3
+- source versioning
 - http://stackoverflow.com/questions/7447472/how-could-i-display-the-current-git-branch-name-at-the-top-of-the-page-of-my-de
-- prevent webedit by meta and class
-- meta publish: hide noedit 
 - source config without passwords etc
 - trailing slash
 - 404 to root
 - _make/config.yml to js serversite https://github.com/coolaj86/yamltojson.com
 - lib: https://github.com/lepture/editor
-- source versioning
-- rename project gidig
-    - _custom-css etc psm-custom-css
-- redirects
+- redirects htaccess
 - new article field (and include)
 - [ ] include http://www.mediawiki.org/wiki/Transclusion; Mustache ?
 - [ ]* index: dir as link include (for pix)
