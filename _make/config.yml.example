@@ -16,7 +16,7 @@ template: skeleton
 area:
     navigation: ../source/area/navigation.md
     sidebar: ../source/area/sidebar.md 
-    footer: 
+    footer: ../source/area/footer.md
 pagetitle: Title from root-config 
 comment: false
 description: Some general site wide description
