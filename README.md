@@ -21,7 +21,7 @@ All source code for cont is stored in ''source/''
 Edit your website in different ways:
 
 * __normal__ edit source files on filesystem and with your favourite text-editor. After editing call `./make.sh` in you CLI
-* __webedit__ with the edit button on the page. After 'save' the single page will be created.
+* __webedit__ with the edit button on the page. After 'save' the single page will be created.  If data2css (d2c) class `noedit` is set, webedit is veiled, but not prevented,
 * receive changes via __git__ (or other __DCVS__) and update the source and call make.php manually or with a hook.
 * there is __no__ file and assethandling, just upload pictures and files in ths target directory. There is no reason why a static-site-generator should copy files around. And if you wish some filehandling like renaming, image resizing and cropping, use a specialized software.
 

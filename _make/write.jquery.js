@@ -24,10 +24,16 @@ jQuery(document).ready(function() {
     $( "#footer" ).load( "template/formwebedit.html", function() {
 
         $('#edit').click( function() {
+
             $(this).hide();
             $('.webedit').show();
             $(formwebedit).find('textarea').load( pagesourcepathprefill );
-            webeditSend( formwebedit ); // init after replaceWith
+
+            if ( $( "body" ).hasClass( "noedit" ) ) {
+                $( formwebedit ).find('button').replaceWith('edit is veiled');
+            } else {
+                webeditSend( formwebedit ); // init after replaceWith
+            }
          });
 
         var intermission ; 
