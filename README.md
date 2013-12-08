@@ -1,4 +1,4 @@
-php-site-maker
+drfrederson
 =====
 
 A simple static site generator powered by PHP, YAML, Markdown and mustache. Based on [github.com/lonescript/php-site-maker](http://github.com/lonescript/php-site-maker)
@@ -51,20 +51,16 @@ You can edit custom client-sources (css, js) in [_custom-css](_custom-css) and [
 
 ## Setup
 
-Clone or [download](https://github.com/klml/php-site-maker/archive/master.zip), create config from .example and create first version of site.
-
-```
-git clone https://github.com/klml/php-site-maker.git
-cd php-site-maker/
-cp _make/config.yml.example _make/config.yml
-./make.sh
-```
-
+Clone or [download](https://github.com/klml/drfrederson/archive/master.zip), create config from .example and create first version of site.
 Used libraries are included as [submodules](http://git-scm.com/book/en/Git-Tools-Submodules).
 
 ```
+git clone https://github.com/klml/drfrederson.git
+cd drfrederson/
 git submodule init
 git submodule update 
+cp _make/config.yml.example _make/config.yml
+./make.sh
 ```
 
 
