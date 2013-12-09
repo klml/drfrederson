@@ -1,11 +1,10 @@
 --- site wide
-siteTitle: psm
-baseurl: http://localhost/php-site-maker/
+siteTitle: drfrederson
+baseurl: /drfrederson/
 disqusId:
 htmlextension: .html
 sourceextension: md
 ymlseparator: '#meta#'
-
 directory:
     template: ../template/
     source: ../source/

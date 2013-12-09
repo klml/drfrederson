@@ -17,11 +17,10 @@ Edit [navigation](navigation) and [sidebar](sidebar) like a ''normal'' page.
 
 ## Custom Style and Javascript
 
-Edit custom client-sources (css, js) in [_custom-css](_custom-css) and [_custom-js](_custom-js) as "normal" pages.
+Edit custom client-sources (css, js) in [custom-css](drf-custom-css) and [custom-js](drf-custom-js) as "normal" pages.
 
 ## Config
 Edit site wide [config](config).
-
 
 #meta#
 pagetitle: All Administration

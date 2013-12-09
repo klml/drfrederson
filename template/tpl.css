@@ -38,8 +38,11 @@ padding: 0;
 }
 
 
-/* edit funct */
-form.webedit textarea {
+/* drfrederson edit area */
+.drf-webedit {
+    display: none ;
+}
+.drf-webedit textarea {
     background-color: #000000;
     color: #FFFFFF;
     height: 400px;

@@ -36,9 +36,9 @@ class MakeSite {
             array_shift($argv);         // remove script name
             $this->createPage( $argv[0] );       // create single pages from webeditor
 
-        } else if (  isset( $_POST["sourcepath"] )  ) { // writes single pages from webeditor
+        } else if (  isset( $_POST["drf_sourcepath"] )  ) { // writes single pages from webeditor
 
-            $sourcepath = '../' . preventDirectoryTraversal( $_POST["sourcepath"] );
+            $sourcepath = '../' . preventDirectoryTraversal( $_POST["drf_sourcepath"] );
 
             if ( isset ( $_POST["content"] )  ) { 
                 file_put_contents( $sourcepath , $_POST["content"] ) ? success( $sourcepath ) : error( $sourcepath ) ;

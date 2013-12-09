@@ -12,7 +12,6 @@ There are many other and better [staticsitegenerators](http://staticsitegenerato
 
 Some more small features like titletags from the first heading, etc
 
-
 ## Write
 
 Write files in [markdown extra](http://michelf.ca/projects/php-markdown/extra/).
@@ -45,7 +44,7 @@ Additionally you can have css and js in your template directory and local custom
 
 ### Custom
 
-You can edit custom client-sources (css, js) in [_custom-css](_custom-css) and [_custom-js](_custom-js) as "normal" pages
+You can edit custom client-sources (css, js) in [drf-custom-css](source/drf-custom-css.css) and [drf-custom-js](source/drf-custom-js.js) as "normal" pages
 (the concept is well adapted in [Mediawiki UseSiteCss](https://www.mediawiki.org/wiki/Manual:$wgUseSiteCss) and [SiteJs](https://www.mediawiki.org/wiki/Manual:%24wgUseSiteJs)).
 
 
@@ -150,14 +149,17 @@ Existing templates
 * `template/skeleton.html` [getskeleton.com](http://www.getskeleton.com)
 
 
+
 ## TODO
 
-- rename project gidig
-    - _custom-css etc psm-custom-css
+- cssjsversion
+- `template/plain.html` with nothing
+- htaacess setup
 - remove class html5 tags
 - mod for no htaccess
 - http://php.net/manual/de/function.realpath.php PHP 5.3
 - source versioning
+- random 
 - http://stackoverflow.com/questions/7447472/how-could-i-display-the-current-git-branch-name-at-the-top-of-the-page-of-my-de
 - source config without passwords etc
 - trailing slash
