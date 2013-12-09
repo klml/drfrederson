@@ -130,6 +130,10 @@ area
 d2c
 : [data2css](http://umija.org/howto:data2css) adds a class to html-body
 
+cssjsversion
+: versioning css and js
+
+
 ## templates
 
 Using [mustache](https://github.com/bobthecow/mustache.php), it is [logic-less in a religious way](http://upstatement.com/blog/2013/10/comparing-php-template-languages-for-wordpresss/), but you can use [mustache](http://mustache.github.io/) in JavaScript on your client.(TODO;)
@@ -152,7 +156,6 @@ Existing templates
 
 ## TODO
 
-- cssjsversion
 - htaacess setup
 - remove class html5 tags
 - mod for no htaccess

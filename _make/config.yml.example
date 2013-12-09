@@ -19,3 +19,4 @@ area:
 pagetitle: Title from root-config 
 comment: false
 description: Some general site wide description
+cssjsversion: 1
