@@ -161,8 +161,7 @@ Existing templates
 - mod for no htaccess
 - http://php.net/manual/de/function.realpath.php PHP 5.3
 - source versioning
-- random 
-- http://stackoverflow.com/questions/7447472/how-could-i-display-the-current-git-branch-name-at-the-top-of-the-page-of-my-de
+  - http://stackoverflow.com/questions/7447472/how-could-i-display-the-current-git-branch-name-at-the-top-of-the-page-of-my-de
 - source config without passwords etc
 - trailing slash
 - 404 to root
