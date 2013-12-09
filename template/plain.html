@@ -12,25 +12,26 @@
 </head>
 <body class="d2c_{{meta.lemma}} {{meta.d2c}}" >
 
-<div class="container">
-    <header id="header" class="sixteen columns">
+<div>
+    <header id="header" >
         <nav id="nav" role="navigation" >
             <article>{{{content.navigation}}}</article>
         </nav>
     </header>
 
-    <div id="main" class="sixteen columns" role="main" >
+    <div id="main" role="main" >
         <section class="page">
             <article>{{{content.main}}}</article>
         </section>
-
     </div>
 
-    <div id="sidebar" class="sixteen columns" role="complementary" >
+    <div id="sidebar" role="complementary" >
         {{{content.sidebar}}}
     </div>
 
-    <footer id="footer" class="sixteen columns" role="contentinfo" ></footer>
+    <footer id="footer" role="contentinfo" >
+        {{{content.footer}}}
+    </footer>
 </div>
     <script src="{{meta.baseurl}}lib/jquery-1.10.1.min.js"></script>
     <script src="{{meta.baseurl}}template/drf-edit.js?v=q" type="text/javascript"></script>

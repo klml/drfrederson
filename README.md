@@ -147,13 +147,12 @@ In  `lib/` are some clientside libraries (css, js).
 Existing templates
 
 * `template/skeleton.html` [getskeleton.com](http://www.getskeleton.com)
-
+* `template/plain.html` with nothing
 
 
 ## TODO
 
 - cssjsversion
-- `template/plain.html` with nothing
 - htaacess setup
 - remove class html5 tags
 - mod for no htaccess
