@@ -1,2 +1,2 @@
-cd _make
+cd _drf
 php make.php

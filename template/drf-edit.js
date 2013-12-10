@@ -4,7 +4,7 @@ jQuery(document).ready(function() {
 
         if( $(this).is(':checked') ) {
             document.cookie = 'requestauth=true' ;
-            //~ $.getScript("_make/drf-write.jquery.js?v=q");
+            //~ $.getScript("_drf/drf-write.jquery.js?v=q");
         };
         if( !$(this).is(':checked') ) {
             document.cookie = 'requestauth=false';
@@ -15,7 +15,7 @@ jQuery(document).ready(function() {
 
     edit = document.cookie.search(/requestauth=true/); 
     if( edit != -1 ) {
-        $.getScript("_make/drf-write.jquery.js?v=q");
+        $.getScript("_drf/drf-write.jquery.js?v=q");
         $('#requestauth').prop('checked', true);
     };
     // TODO if more cookie useage -- plugin

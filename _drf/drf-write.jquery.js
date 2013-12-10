@@ -44,7 +44,7 @@ function webeditSend ( ) {
     $( '.drf-webedit' ).submit( function(event) {
         event.preventDefault();
         $.ajax({
-            url: '_make/make.php',
+            url: '_drf/make.php',
             type: 'POST',
             data: $(this).serialize() + '&drf_sourcepath=' + drf_sourcepath_write ,
             success: function(){

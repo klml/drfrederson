@@ -58,23 +58,23 @@ git clone https://github.com/klml/drfrederson.git
 cd drfrederson/
 git submodule init
 git submodule update 
-cp _make/config.yml.example _make/config.yml
+cp _drf/config.yml.example _drf/config.yml
 ./make.sh
 ```
 
 
 The public site, where ever it is located (other server, CDN, etc), needs only html and assets (images, css, js) files.
-The `_make/`-directory is needed for changing content. The `make.php` has **no role or user validation**, protect this against violaton:
+The `_drf/`-directory is needed for changing content. The `make.php` has **no role or user validation**, protect this against violaton:
 
-* .htaccess for the whole *_make/*-directory. (Change existing .htaccess to a suitable [Basic access authentication](http://en.wikipedia.org/wiki/Basic_access_authentication))
-* use editing only on secure machines like your desktop or intranet and publish all without *_make/* (e.g. `rsync --exclude=_make/`)
+* .htaccess for the whole *_drf/*-directory. (Change existing .htaccess to a suitable [Basic access authentication](http://en.wikipedia.org/wiki/Basic_access_authentication))
+* use editing only on secure machines like your desktop or intranet and publish all without *_drf/* (e.g. `rsync --exclude=_drf/`)
 
-Run `./make.sh` or [_make/make.php](_make/make.php) for the first run.
+Run `./make.sh` or [_drf/make.php](_drf/make.php) for the first run.
 
 
 ## make
 
-All processing in [_make/make.php](_make/make.php) to create static HTML-files from `source/` 'compiled' with all `template/` to `html/`.
+All processing in [_drf/make.php](_drf/make.php) to create static HTML-files from `source/` 'compiled' with all `template/` to `html/`.
 
 Now the __webserver__ can deliver pure html files. If you want an URL without the extension .html, [rewrite](http://stackoverflow.com/questions/10245032/url-rewrite-remove-html/10279744#10279744) in [.htaccess](.htaccess).
 
@@ -84,11 +84,11 @@ Metainformation (template, comments, meta-description, title etc) can be defined
 
 * for __each page__ at the bottom of sourcefile after the `#meta#` (can be redefined in config 'ymlseparator').
 * or for each __directory__ in `config.yml` or for the whole site in `source/`.
-* and as fallback and for filepathes in `_make/config.yml`.
+* and as fallback and for filepathes in `_drf/config.yml`.
 
 #### site wide
 
-site-wide configurations, only usable in `_make/config.yml`.
+site-wide configurations, only usable in `_drf/config.yml`.
 
 siteName
 : used after  
@@ -113,7 +113,7 @@ path
 
 #### page specific
 
-Are used for every single page, overwrites `_make/config.yml`.
+Are used for every single page, overwrites `_drf/config.yml`.
 
 layout
 : template
@@ -138,8 +138,8 @@ cssjsversion
 
 Using [mustache](https://github.com/bobthecow/mustache.php), it is [logic-less in a religious way](http://upstatement.com/blog/2013/10/comparing-php-template-languages-for-wordpresss/), but you can use [mustache](http://mustache.github.io/) in JavaScript on your client.(TODO;)
 
+For [webedit](#Write) add the [HTML metatag](http://www.w3.org/wiki/HTML/Elements/meta) [dcterms.source](http://dublincore.org/documents/dcmi-terms/#terms-source) (referenced from [whatwg.org MetaExtensions](http://wiki.whatwg.org/wiki/MetaExtensions#Registered_Extensions) ) with the path to source (e.g. markdown) `source.websourcepath`.
 
-For [webedit](#Write) add the [HTML metatag](http://www.w3.org/wiki/HTML/Elements/meta) [dcterms.source](http://dublincore.org/documents/dcmi-terms/#terms-source) (referenced from [whatwg.org MetaExtensions](http://wiki.whatwg.org/wiki/MetaExtensions#Registered_Extensions) ).
 
 ```
 <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
@@ -165,7 +165,7 @@ Existing templates
 - source config without passwords etc
 - trailing slash
 - 404 to root
-- _make/config.yml to js serversite https://github.com/coolaj86/yamltojson.com
+- _drf/config.yml to js serversite https://github.com/coolaj86/yamltojson.com
 - lib: https://github.com/lepture/editor
 - redirects htaccess
 - new article field (and include)
