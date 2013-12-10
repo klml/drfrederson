@@ -138,8 +138,13 @@ cssjsversion
 
 Using [mustache](https://github.com/bobthecow/mustache.php), it is [logic-less in a religious way](http://upstatement.com/blog/2013/10/comparing-php-template-languages-for-wordpresss/), but you can use [mustache](http://mustache.github.io/) in JavaScript on your client.(TODO;)
 
-For [webedit](#Write) add the [HTML metatag](http://www.w3.org/wiki/HTML/Elements/meta) [dcterms.source](http://dublincore.org/documents/dcmi-terms/#terms-source) (referenced from [whatwg.org MetaExtensions](http://wiki.whatwg.org/wiki/MetaExtensions#Registered_Extensions) ) with the path to source (e.g. markdown) `source.websourcepath`.
+There are three bundle of date in the template:
 
+* *source* with raw content (e.g markdown) and [pathinfo](http://php.net/manual/de/function.pathinfo.php) from your sourcefile
+* *meta* with all nested [configuration](#configyml) from source directories and your page
+* *content* contains all html, structured in __areas__, according [wai-aria landmarks](http://www.w3.org/TR/wai-aria/roles#landmark).
+
+For [webedit](#Write) add the [HTML metatag](http://www.w3.org/wiki/HTML/Elements/meta) [dcterms.source](http://dublincore.org/documents/dcmi-terms/#terms-source) (referenced from [whatwg.org MetaExtensions](http://wiki.whatwg.org/wiki/MetaExtensions#Registered_Extensions) ) with the path to source (e.g. markdown) `source.websourcepath`.
 
 ```
 <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
