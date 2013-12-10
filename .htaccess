@@ -2,4 +2,6 @@ DirectoryIndex html/index.html
 
 RewriteEngine On
 RewriteRule ^([^\.]+)$ html/$1.html [NC,L]
+RewriteRule ^(.*)_ver(.*).css$ $1.css [NC,L]
+# http://klml.lynx.uberspace.de/drfrederson/source/drf-custom-css_ver1.css
 ErrorDocument 404 /php-site-maker/404error.html

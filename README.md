@@ -156,8 +156,8 @@ Existing templates
 
 ## TODO
 
+- Request Auth back to button, no need
 - htaacess setup
-- remove class html5 tags
 - mod for no htaccess
 - http://php.net/manual/de/function.realpath.php PHP 5.3
 - source versioning
