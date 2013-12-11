@@ -162,7 +162,8 @@ Existing templates
 ## TODO
 
 - Request Auth back to button, no need
-- htaacess setup
+- after edit area, create with all pages
+- htaccess setup
 - mod for no htaccess
 - http://php.net/manual/de/function.realpath.php PHP 5.3
 - source versioning
@@ -180,8 +181,6 @@ Existing templates
 - [ ] demo
 - [ ] minfy
 - [ ] CSS-Mini-Reset realy needed
-- [ ] after pagedurable creat with all pages
-- [ ] js var psmpage
 - [ ] https://github.com/blueimp/jQuery-File-Upload
 - [ ] URL builing? root dir : absolute relative only one dir
 - [ ]* directory to namespace
