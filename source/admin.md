@@ -2,10 +2,10 @@
 
 ## Editing
 
-You can edit all pages in the ''source/'' directory or with this webeditor.
-If you use this site in an public area like your webserver and not in a secure environment on your computer or intranet, you have to get authorizised via htaccess for the JavaScript based edit functionality. After the request for auth you will find on every page an editbutton.
+You can edit all pages in the ''source/'' directory or with the webeditor.
+If you use this site in an public area like your webserver and not in a secure environment on your computer or intranet, you have to get authorizised via htaccess for the JavaScript based edit functionality. After activate editmode you will find an editbutton on the bottom of every page.
 
-<input type="checkbox" name="requestauth"  id="requestauth" value="requestauth" > Request Auth 
+Editmode <input type="checkbox" name="requestauth"  id="requestauth" value="requestauth" >
 
 ## Create new pages
 

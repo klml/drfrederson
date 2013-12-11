@@ -161,10 +161,11 @@ Existing templates
 
 ## TODO
 
-- Request Auth back to button, no need
 - after edit area, create with all pages
 - htaccess setup
 - mod for no htaccess
+- lib: https://github.com/lepture/editor
+- redirects with page
 - http://php.net/manual/de/function.realpath.php PHP 5.3
 - source versioning
   - http://stackoverflow.com/questions/7447472/how-could-i-display-the-current-git-branch-name-at-the-top-of-the-page-of-my-de
@@ -172,8 +173,6 @@ Existing templates
 - trailing slash
 - 404 to root
 - _drf/config.yml to js serversite https://github.com/coolaj86/yamltojson.com
-- lib: https://github.com/lepture/editor
-- redirects htaccess
 - new article field (and include)
 - [ ] include http://www.mediawiki.org/wiki/Transclusion; Mustache ?
 - [ ]* index: dir as link include (for pix)
