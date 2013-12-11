@@ -43,21 +43,28 @@ class MakeSite {
             if ( isset ( $_POST["content"] )  ) { 
                 file_put_contents( $sourcepath , $_POST["content"] ) ? success( $sourcepath ) : error( $sourcepath ) ;
             }
-
+            if ( in_array( $sourcepath , $this->makeconfig['area'] ) ) { // after webediting an area like navgation or sidebar
+                $this->allPages();
+                return ; 
+            }
             $this->createPage( $sourcepath );
 
         } else {
-            $sourcedirrecursive = new RecursiveDirectoryIterator( $this->directories['source'] );
-            foreach (new RecursiveIteratorIterator($sourcedirrecursive) as $sourcepath => $file) { // ? diffrenc $file  vs $sourcepath
-                if ( is_dir( $sourcepath ) ) {                             // dont parse directories
-                    //~ return ;
-                } else {
-                    $this->createPage($sourcepath);
-                }
+            $this->allPages();
+        }
+
+    }
+    protected function allPages() {
+        $sourcedirrecursive = new RecursiveDirectoryIterator( $this->directories['source'] );
+        foreach (new RecursiveIteratorIterator($sourcedirrecursive) as $sourcepath => $file) { // TODO differece $file  vs $sourcepath
+            if ( is_dir( $sourcepath ) ) {                                                      // dont parse directories
+                //~ return ;
+            } else {
+                $this->createPage($sourcepath);
             }
         }
     }
-    
+
     public function source($sourcepath) { // processing all sources
 
             $source['path'] = $sourcepath ;
