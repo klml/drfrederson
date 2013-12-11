@@ -1,7 +1,7 @@
 
 # Mainpage
 
-[klml/php-site-maker](https://github.com/klml/php-site-maker)
+[github.com/klml/drfrederson](https://github.com/klml/drfrederson)
 
 #meta#
 pagetitle: Main and startpage
