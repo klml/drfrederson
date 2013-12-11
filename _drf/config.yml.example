@@ -1,9 +1,7 @@
 --- site wide
 siteTitle: drfrederson
-baseurl: /drfrederson/
-disqusId:
+baseurl: 
 htmlextension: .html
-sourceextension: md
 ymlseparator: '#meta#'
 directory:
     template: ../template/

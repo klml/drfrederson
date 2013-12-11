@@ -1,4 +1,3 @@
 AuthType Basic
-AuthName "admin user and password: a"
-AuthUserFile /var/www/virtual/klml/html/drfrederson/_drf/.htuser
+AuthName "admin user and password"
 Require valid-user

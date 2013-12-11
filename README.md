@@ -58,6 +58,8 @@ git clone https://github.com/klml/drfrederson.git
 cd drfrederson/
 git submodule init
 git submodule update 
+htpasswd -c _drf/.htpasswd USERNAME
+echo 'AuthUserFile '"$( readlink -f _drf/.htuser  )" >> _drf/.htaccess
 cp _drf/config.yml.example _drf/config.yml
 ./make.sh
 ```
@@ -161,7 +163,6 @@ Existing templates
 
 ## TODO
 
-- after edit area, create with all pages
 - htaccess setup
 - mod for no htaccess
 - lib: https://github.com/lepture/editor
