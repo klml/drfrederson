@@ -53,18 +53,6 @@ You can edit custom client-sources (css, js) in [drf-custom-css](source/drf-cust
 Clone or [download](https://github.com/klml/drfrederson/archive/master.zip), create config from .example and create first version of site.
 Used libraries are included as [submodules](http://git-scm.com/book/en/Git-Tools-Submodules).
 
-```
-git clone https://github.com/klml/drfrederson.git
-cd drfrederson/
-git submodule init
-git submodule update 
-htpasswd -c _drf/.htpasswd USERNAME
-echo 'AuthUserFile '"$( readlink -f _drf/.htuser  )" >> _drf/.htaccess
-cp _drf/config.yml.example _drf/config.yml
-./make.sh
-```
-
-
 The public site, where ever it is located (other server, CDN, etc), needs only html and assets (images, css, js) files.
 The `_drf/`-directory is needed for changing content. The `make.php` has **no role or user validation**, protect this against violaton:
 
@@ -73,6 +61,16 @@ The `_drf/`-directory is needed for changing content. The `make.php` has **no ro
 
 Run `./make.sh` or [_drf/make.php](_drf/make.php) for the first run.
 
+```
+git clone https://github.com/klml/drfrederson.git
+cd drfrederson/
+git submodule init
+git submodule update 
+cp _drf/config.yml.example _drf/config.yml
+./make.sh
+echo 'AuthUserFile '"$( readlink -f _drf/.htpasswd  )" >> _drf/.htaccess
+htpasswd -c _drf/.htpasswd USERNAME
+```
 
 ## make
 
