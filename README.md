@@ -4,23 +4,23 @@ drfrederson
 A simple static site generator powered by PHP, YAML, Markdown and mustache. Based on [github.com/lonescript/php-site-maker](http://github.com/lonescript/php-site-maker)
 
 
-There are many other and better [staticsitegenerators](http://staticsitegenerators.net), but I searched for this features an did not found:
+There are many other and better [staticsitegenerators](http://staticsitegenerators.net), but I searched for this features and did not found:
 
-* edit without texteditor or ssh access. Using __webedit__ on your browser and get an textarea to change contents and create new pages.
-* __meta information__ for rendering (template, menue etc) or html metatags are at the __bottom__ of the page and __optional__
-* no indexed or automatic __menu__; just an extra included __page__ with a (nested) list or more. This is not so IT-sophisticated, but easy to understand.
+* edit without texteditor or ssh access. Using __webedit__ on your browser and get a textarea to change and create pages.
+* __meta information__ for rendering (template, menue etc) or html metatags are at the __bottom__ of the page and only __optional__
+* no indexed or automatic __menu__; just an extra included __page__ with a (nested) list.
 
-Some more small features like titletags from the first heading, etc
+Some more small features like titletags from the first heading, etc.
 
 ## Write
 
 Write files in [markdown extra](http://michelf.ca/projects/php-markdown/extra/).
-All source code for cont is stored in ''source/''
+All source code for content is stored in ''source/''
 
 Edit your website in different ways:
 
-* __normal__ edit source files on filesystem and with your favourite text-editor. After editing call `./make.sh` in you CLI
-* __webedit__ with the edit button on the page. After 'save' the single page will be created.  If data2css (d2c) class `noedit` is set, webedit is veiled, but not prevented,
+* __normal__ edit source files on filesystem and with your favourite text-editor. After editing call `./make.sh` in you CLI.
+* __webedit__ with the edit button on the page. After 'save' the single page will be created. If data2css (d2c) class `noedit` is set, webedit is veiled, but not prevented,
 * receive changes via __git__ (or other __DCVS__) and update the source and call make.php manually or with a hook.
 * there is __no__ file and assethandling, just upload pictures and files in ths target directory. There is no reason why a static-site-generator should copy files around. And if you wish some filehandling like renaming, image resizing and cropping, use a specialized software.
 
@@ -40,11 +40,11 @@ CSS and Javascript libraries are maintained in `lib/` as [submodule](http://git-
 * [usefulclassroomphrases](https://github.com/klml/usefulclassroomphrases)
 * [skeleton](https://github.com/dhg/Skeleton)
 
-Additionally you can have css and js in your template directory and local custom files.
+Additionally you can have css and js in your template directory and local custom files in the `source`.
 
 ### Custom
 
-You can edit custom client-sources (css, js) in [drf-custom-css](source/drf-custom-css.css) and [drf-custom-js](source/drf-custom-js.js) as "normal" pages
+Edit custom client-sources (css, js) in [drf-custom-css](source/drf-custom-css.css) and [drf-custom-js](source/drf-custom-js.js) as "normal" pages
 (the concept is well adapted in [Mediawiki UseSiteCss](https://www.mediawiki.org/wiki/Manual:$wgUseSiteCss) and [SiteJs](https://www.mediawiki.org/wiki/Manual:%24wgUseSiteJs)).
 
 
@@ -91,19 +91,13 @@ Metainformation (template, comments, meta-description, title etc) can be defined
 site-wide configurations, only usable in `_drf/config.yml`.
 
 siteName
-: used after  
+: mostly used in the html title,  
 
 baseurl
 : root url *http://example.com* or *http://example.com/mypage* for absolute URL inside the html. Works also with relative (leave empty).
 
-disqusId
-: if using [disqus.com](http://disqus.com/) for comments
-
 htmlextension
 : filename extension for html output. Mostly '.html'.
-
-sourceextension
-: filename extension for text sourcefiles
 
 ymlseparator
 : tag in pages to seperate content and config (`#meta#`).
@@ -122,7 +116,7 @@ title and description
 : [HTML Title Element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/title) and meta description
 
 comment
-: allow comments
+: allow comments TODO
 
 area
 : defines filepath for navigation, sidebar and footer; parts of the page always appear like the menu.
@@ -142,7 +136,7 @@ There are three bundle of data in the template:
 
 * *source* with raw content (e.g markdown) and [pathinfo](http://php.net/manual/de/function.pathinfo.php) from your sourcefile
 * *meta* with all nested [configuration](#configyml) from source directories and your page
-* *content* contains all html, structured in __areas__, according [wai-aria landmarks](http://www.w3.org/TR/wai-aria/roles#landmark).
+* *content* contains all html, structured in __areas__, according [wai-aria landmarks](http://www.w3.org/TR/wai-aria/roles#landmark). Area sourcefiles are defined in config, only the area 'main' is the page prose itself.
 
 For [webedit](#Write) add the [HTML metatag](http://www.w3.org/wiki/HTML/Elements/meta) [dcterms.source](http://dublincore.org/documents/dcmi-terms/#terms-source) (referenced from [whatwg.org MetaExtensions](http://wiki.whatwg.org/wiki/MetaExtensions#Registered_Extensions) ) with the path to source (e.g. markdown) `source.websourcepath`.
 
@@ -150,8 +144,6 @@ For [webedit](#Write) add the [HTML metatag](http://www.w3.org/wiki/HTML/Element
 <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
 <meta name="dcterms.source" content=""/>
 ```
-
-In  `lib/` are some clientside libraries (css, js).
 
 Existing templates
 
