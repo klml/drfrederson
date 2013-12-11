@@ -138,7 +138,7 @@ cssjsversion
 
 Using [mustache](https://github.com/bobthecow/mustache.php), it is [logic-less in a religious way](http://upstatement.com/blog/2013/10/comparing-php-template-languages-for-wordpresss/), but you can use [mustache](http://mustache.github.io/) in JavaScript on your client.(TODO;)
 
-There are three bundle of date in the template:
+There are three bundle of data in the template:
 
 * *source* with raw content (e.g markdown) and [pathinfo](http://php.net/manual/de/function.pathinfo.php) from your sourcefile
 * *meta* with all nested [configuration](#configyml) from source directories and your page
