@@ -71,6 +71,20 @@ cp _drf/config.yml.example _drf/config.yml
 echo 'AuthUserFile '"$( readlink -f _drf/.htpasswd  )" >> _drf/.htaccess
 htpasswd -c _drf/.htpasswd USERNAME
 ```
+### htaccess
+
+Configure your [.htaccess](.htaccess)
+
+```
+DirectoryIndex html/index.html  # startpage
+
+RewriteEngine On
+RewriteRule ^([^\.]+)$ html/$1.html [NC,L] # get all content from html directory in the webroot without .html extension
+RewriteRule ^(.*)_ver(.*).css$ $1.css [NC,L] # css and js versioning in the filename, not as ?v=1
+
+ErrorDocument 404 /html/404error.html # fancy errorpages, also needed for creating new pages. Add webfolder if not in domainroot /drfrederson/html/404error.html  
+```
+
 
 ### Poor man
 
@@ -161,7 +175,6 @@ Existing templates
 
 ## TODO
 
-- htaccess setup
 - lib: https://github.com/lepture/editor
 - redirects with page
 - http://php.net/manual/de/function.realpath.php PHP 5.3
