@@ -90,8 +90,8 @@ ErrorDocument 404 /html/404error.html # fancy errorpages, also needed for creati
 
 If you have no access or idea about htaccess, all pages deliverd plain in `html` and with extension `.html`, or: 
 
-* set path [`directory` - `html`](#configyml) to `../` to get all pages in the webroot 
-* htmlextension to `` (empty) to having
+* set path [`directory` - `html`](#configyml) to `../` to get all pages in the webroot.
+* htmlextension to ` ` (empty) to remove extension.
 
 
 ## make
