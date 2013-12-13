@@ -72,6 +72,14 @@ echo 'AuthUserFile '"$( readlink -f _drf/.htpasswd  )" >> _drf/.htaccess
 htpasswd -c _drf/.htpasswd USERNAME
 ```
 
+### Poor man
+
+If you have no access or idea about htaccess, all pages deliverd plain in `html` and with extension `.html`, or: 
+
+* set path [`directory` - `html`](#configyml) to `../` to get all pages in the webroot 
+* htmlextension to `` (empty) to having
+
+
 ## make
 
 All processing in [_drf/make.php](_drf/make.php) to create static HTML-files from `source/` 'compiled' with all `template/` to `html/`.
@@ -154,7 +162,6 @@ Existing templates
 ## TODO
 
 - htaccess setup
-- mod for no htaccess
 - lib: https://github.com/lepture/editor
 - redirects with page
 - http://php.net/manual/de/function.realpath.php PHP 5.3

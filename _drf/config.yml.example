@@ -2,6 +2,7 @@
 siteTitle: drfrederson
 baseurl: 
 htmlextension: .html
+tplextension: .html
 ymlseparator: '#meta#'
 directory:
     template: ../template/

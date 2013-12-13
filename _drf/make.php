@@ -127,7 +127,7 @@ class MakeSite {
 
             Mustache_Autoloader::register();
             // use .html instead of .mustache for default template extension
-            $mustacheopt =  array('extension' => $this->meta['htmlextension']); // TODO Check other array
+            $mustacheopt =  array('extension' => $this->meta['tplextension']); // TODO Check other array
             $mustache = new Mustache_Engine(array(
                 'loader' => new Mustache_Loader_FilesystemLoader( $this->directories['template'] , $mustacheopt),
             ));
