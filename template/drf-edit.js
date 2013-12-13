@@ -4,7 +4,7 @@ jQuery(document).ready(function() {
 
         if( $(this).is(':checked') ) {
             document.cookie = 'requestauth=true' ;
-            //~ $.getScript("_drf/drf-write.jquery.js?v=q");
+            $.getScript("_drf/drf-write.jquery.js?v=q");
         };
         if( !$(this).is(':checked') ) {
             document.cookie = 'requestauth=false';
