@@ -176,22 +176,21 @@ Existing templates
 ## TODO
 
 - lib: https://github.com/lepture/editor
+- https://github.com/blueimp/jQuery-File-Upload
 - redirects with page
 - http://php.net/manual/de/function.realpath.php PHP 5.3
 - source versioning
   - http://stackoverflow.com/questions/7447472/how-could-i-display-the-current-git-branch-name-at-the-top-of-the-page-of-my-de
 - source config without passwords etc
 - trailing slash
-- 404 to root
 - _drf/config.yml to js serversite https://github.com/coolaj86/yamltojson.com
-- new article field (and include)
 - [ ] include http://www.mediawiki.org/wiki/Transclusion; Mustache ?
+- new article field (and include)
 - [ ]* index: dir as link include (for pix)
 - more cutter
 - [ ] demo
 - [ ] minfy
 - [ ] CSS-Mini-Reset realy needed
-- [ ] https://github.com/blueimp/jQuery-File-Upload
 - [ ] URL builing? root dir : absolute relative only one dir
 - [ ]* directory to namespace
 - [ ]* directory doubled
