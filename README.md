@@ -62,8 +62,8 @@ The `_drf/`-directory is needed for changing content. The `make.php` has **no ro
 Run `./make.sh` or [_drf/make.php](_drf/make.php) for the first run.
 
 ```
-git clone https://github.com/klml/drfrederson.git
-cd drfrederson/
+cd DIRECTORY/
+git clone https://github.com/klml/drfrederson.git ./
 git submodule init
 git submodule update 
 cp _drf/config.yml.example _drf/config.yml
@@ -175,6 +175,7 @@ Existing templates
 
 ## TODO
 
+- const public
 - lib: https://github.com/lepture/editor
 - https://github.com/blueimp/jQuery-File-Upload
 - redirects with page
