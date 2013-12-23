@@ -175,33 +175,38 @@ Existing templates
 
 ## TODO
 
+- [ ] CSS-Mini-Reset realy needed
+- prevent php etc upload!
+- [ ] minfy als webservice?
+- demo
 - lib: https://github.com/lepture/editor
 - https://github.com/blueimp/jQuery-File-Upload
-- redirects with page
 - http://php.net/manual/de/function.realpath.php PHP 5.3
-- source versioning
-  - http://stackoverflow.com/questions/7447472/how-could-i-display-the-current-git-branch-name-at-the-top-of-the-page-of-my-de
 - source config without passwords etc
-- trailing slash
 - _drf/config.yml to js serversite https://github.com/coolaj86/yamltojson.com
-- [ ] include http://www.mediawiki.org/wiki/Transclusion; Mustache ?
-- new article field (and include)
-- [ ]* index: dir as link include (for pix)
-- more cutter
-- [ ] demo
-- [ ] minfy
-- [ ] CSS-Mini-Reset realy needed
 - [ ] URL builing? root dir : absolute relative only one dir
 - [ ]* directory to namespace
 - [ ]* directory doubled
 - [ ]* global filenamepath
 - [ ] test if yml exists from func
 - [ ] bloggish posttemplate (date, archivcat) for webedit
-- [ ] tags
 - [ ] lasttest
-- [ ] etherpad
 - [ ] doku images timestamp
 
+### 2.0
+- source versioning
+  - http://stackoverflow.com/questions/7447472/how-could-i-display-the-current-git-branch-name-at-the-top-of-the-page-of-my-de
+- tags
+- include http://www.mediawiki.org/wiki/Transclusion; Mustache ?
+    - new article field (and include)
+- listings
+    - more cutter
+- [ ]* index: dir as link include (for pix)
+
+### Nice2Have
+- trailing slash
+- [ ] etherpad
+- redirects with page
 
 ### Refactor
 
