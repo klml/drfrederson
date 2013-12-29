@@ -62,8 +62,8 @@ The `_drf/`-directory is needed for changing content. The `make.php` has **no ro
 Run `./make.sh` or [_drf/make.php](_drf/make.php) for the first run.
 
 ```
-git clone https://github.com/klml/drfrederson.git
-cd drfrederson/
+cd DIRECTORY/
+git clone https://github.com/klml/drfrederson.git ./
 git submodule init
 git submodule update 
 cp _drf/config.yml.example _drf/config.yml
@@ -180,6 +180,7 @@ Existing templates
 - [ ] minfy als webservice?
 - demo
 - lib: https://github.com/lepture/editor or https://stackedit.io/
+- const public
 - https://github.com/blueimp/jQuery-File-Upload
 - http://php.net/manual/de/function.realpath.php PHP 5.3
 - source config without passwords etc
