@@ -179,7 +179,7 @@ Existing templates
 - prevent php etc upload!
 - [ ] minfy als webservice?
 - demo
-- lib: https://github.com/lepture/editor
+- lib: https://github.com/lepture/editor or https://stackedit.io/
 - https://github.com/blueimp/jQuery-File-Upload
 - http://php.net/manual/de/function.realpath.php PHP 5.3
 - source config without passwords etc
