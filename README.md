@@ -16,7 +16,6 @@ All about editing, admin, setup and templates in the [wiki](https://github.com/k
 
 ## TODO
 
-- [ ] CSS-Mini-Reset realy needed
 - prevent php etc upload!
 - [ ] minfy als webservice?
 - demo

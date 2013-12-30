@@ -1,6 +1,3 @@
-[submodule "lib/CSS-Mini-Reset"]
-	path = lib/CSS-Mini-Reset
-	url = https://github.com/vladocar/CSS-Mini-Reset/
 [submodule "lib/usefulclassroomphrases"]
 	path = lib/usefulclassroomphrases
 	url = https://github.com/klml/usefulclassroomphrases
