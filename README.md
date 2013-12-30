@@ -1,8 +1,7 @@
 drfrederson
 =====
 
-A simple static site generator powered by PHP, YAML, Markdown and mustache. Based on [github.com/lonescript/php-site-maker](http://github.com/lonescript/php-site-maker)
-
+A simple static site generator powered by PHP, YAML, Markdown and mustache.
 
 There are many other and better [staticsitegenerators](http://staticsitegenerators.net), but I searched for this features and did not found:
 
@@ -11,6 +10,8 @@ There are many other and better [staticsitegenerators](http://staticsitegenerato
 * no indexed or automatic __menu__; just an extra included __page__ with a (nested) list.
 
 Some more small features like titletags from the first heading, etc.
+
+All about editing, admin, setup and templates in the [wiki](https://github.com/klml/drfrederson/wiki/drfrederson).
 
 
 ## TODO
