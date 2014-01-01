@@ -34,7 +34,7 @@ class MakeSite {
 
         if ( count($argv) > 1  ) {      // create single pages from cli input
             array_shift($argv);         // remove script name
-            $this->createPage( $argv[0] );       // create single pages from webeditor
+            $this->createPage( $argv[0] );
 
         } else if (  isset( $_POST["drf_sourcepath"] )  ) { // writes single pages from webeditor
 
