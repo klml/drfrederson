@@ -40,6 +40,10 @@ class MakeSite {
 
             $sourcepath = '../' . preventDirectoryTraversal( $_POST["drf_sourcepath"] );
 
+            if ( $sourcepath == substr( $sourcepath , 0, strlen( $this->directories['source'] ) ) ) { // sourcepath starts not with sourcedir from config
+                return ;
+            } ;
+
             if ( isset ( $_POST["content"] )  ) { 
                 file_put_contents( $sourcepath , $_POST["content"] ) ? success( $sourcepath ) : error( $sourcepath ) ;
             }
