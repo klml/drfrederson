@@ -14,7 +14,7 @@ Some more small features like titletags from the first heading, etc.
 All about editing, admin, setup and templates in the [wiki](https://github.com/klml/drfrederson/wiki/drfrederson).
 
 
-[Demo](http://drf.grus.uberspace.de/admin) use user `a` and password `a`. There is __no__ further protection, so all changes will be deleted sporadic for cleanup.
+[Demo](http://drf.grus.uberspace.de/admin) (use user `a` and password `a`. There is __no__ further protection, so all changes will be deleted sporadic for cleanup.)
 
 
 ## TODO
