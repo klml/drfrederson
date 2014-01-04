@@ -10,3 +10,6 @@
 [submodule "_drf/lib/mustache"]
 	path = _drf/lib/mustache
 	url = https://github.com/bobthecow/mustache.php
+[submodule "lib/js-markdown-extra"]
+	path = lib/js-markdown-extra
+	url = https://github.com/tanakahisateru/js-markdown-extra.git

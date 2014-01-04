@@ -34,11 +34,13 @@ jQuery(document).ready(function() {
 
         var intermission ; 
         $( '.drf-webedit' ).find('textarea').keyup( function() {
-            //~ window.clearTimeout( intermission );
-            //~ intermission = window.setTimeout( 'render()' , 3000);
+            window.clearTimeout( intermission );
+            intermission = window.setTimeout( 'render()' , 3000);
         });
     });
 });
+
+
 
 function webeditSend ( ) {
     $( '.drf-webedit' ).submit( function(event) {
@@ -59,5 +61,5 @@ function webeditSend ( ) {
     
 }
 function render () {
-    $('#content').html( Markdown( $( '.drf-webedit' ).find('textarea').val() ) );
+    $('#main').html( Markdown( $( '.drf-webedit' ).find('textarea').val() ) );
 };
