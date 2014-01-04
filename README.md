@@ -14,11 +14,13 @@ Some more small features like titletags from the first heading, etc.
 All about editing, admin, setup and templates in the [wiki](https://github.com/klml/drfrederson/wiki/drfrederson).
 
 
+[Demo](http://drf.grus.uberspace.de/admin) use user `a` and password `a`. There is __no__ further protection, so all changes will be deleted sporadic for cleanup.
+
+
 ## TODO
 
-- prevent php etc upload!
+- https://github.com/tanakahisateru/js-markdown-extra
 - [ ] minfy als webservice?
-- demo
 - lib: https://github.com/lepture/editor or https://stackedit.io/
 - const public
 - https://github.com/blueimp/jQuery-File-Upload
