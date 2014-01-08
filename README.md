@@ -3,7 +3,7 @@ drfrederson
 
 A simple static site generator powered by PHP, YAML, Markdown and mustache.
 
-There are many other and better [staticsitegenerators](http://staticsitegenerators.net), but I searched for this features and did not found:
+There are many other and better [staticsitegenerators](http://staticsitegenerators.net), but I searched for these features and did not find:
 
 * edit without texteditor or ssh access. Using __webedit__ on your browser and get a textarea to change and create pages.
 * __meta information__ for rendering (template, menue etc) or html metatags are at the __bottom__ of the page and only __optional__
