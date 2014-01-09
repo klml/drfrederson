@@ -8,8 +8,9 @@
 
 require_once 'lib/Markdown.php';
 require_once 'lib/spyc/Spyc.php';
-require_once 'lib/Tools.php';
 require_once 'lib/mustache/src/Mustache/Autoloader.php';
+
+require_once 'lib/Tools.php';
 
 class MakeSite {
     protected $directories;
