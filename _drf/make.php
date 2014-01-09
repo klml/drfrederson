@@ -87,10 +87,10 @@ class MakeSite {
 
             $meta = array();
 
-            if ( file_exists($sourceDirectoriesConf = $this->directories['source'] . '/config.yml' ) ) { // overwrite with general source config
+            if ( file_exists($sourceDirectoriesConf = $this->directories['source'] . '/meta.yml' ) ) { // overwrite with general source config
                 $meta = array_merge( $meta , spyc_load_file( file_get_contents($sourceDirectoriesConf) ) ) ;
             }
-            if ( file_exists($directoriesConf = $this->source['pathinfo']['dirname'] . '/config.yml' ) ) { // overwrite with directory config
+            if ( file_exists($directoriesConf = $this->source['pathinfo']['dirname'] . '/meta.yml' ) ) { // overwrite with directory config
                 $meta = array_merge( $meta , spyc_load_file( file_get_contents($directoriesConf) ) ) ;
             }
             if ( isset( $this->source['content']['yml']) ) {  // overwrite with page config

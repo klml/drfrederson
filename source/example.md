@@ -13,6 +13,7 @@ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod 
 
 #meta#
 pagetitle: Example page
+siteTitle: another sitetitle from pagemeta
 comment: true
 description: Example page, used as template for new pages
 d2c: 
