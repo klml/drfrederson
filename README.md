@@ -20,7 +20,6 @@ All about editing, admin, setup and templates in the [wiki](https://github.com/k
 ## TODO
 
 - version source
-- source config without passwords etc
 - _drf/config.yml to js serversite https://github.com/coolaj86/yamltojson.com
 - live preview without meta
 - [ ] minfy als webservice?

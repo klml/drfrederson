@@ -1,6 +1,13 @@
 ---
 siteTitle: drFrederson
 pagetitle: Directory wide title 
-comment: true
+baseurl: 
+template: skeleton
+area:
+    navigation: ../source/area/navigation.md
+    sidebar: ../source/area/sidebar.md 
+    footer: ../source/area/footer.md
+cssjsversion: 1
+comment: false
 description: Some general site  wide description
 ---

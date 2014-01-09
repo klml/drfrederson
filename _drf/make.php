@@ -85,8 +85,11 @@ class MakeSite {
 
     public function collectMeta() { // read page config (template, meta, etc) from file, directory or mainconf
 
-            $meta = $this->makeconfig ;                     // write general config
+            $meta = array();
 
+            if ( file_exists($sourceDirectoriesConf = $this->directories['source'] . '/config.yml' ) ) { // overwrite with general source config
+                $meta = array_merge( $meta , spyc_load_file( file_get_contents($sourceDirectoriesConf) ) ) ;
+            }
             if ( file_exists($directoriesConf = $this->source['pathinfo']['dirname'] . '/config.yml' ) ) { // overwrite with directory config
                 $meta = array_merge( $meta , spyc_load_file( file_get_contents($directoriesConf) ) ) ;
             }
@@ -131,7 +134,7 @@ class MakeSite {
 
             Mustache_Autoloader::register();
             // use .html instead of .mustache for default template extension
-            $mustacheopt =  array('extension' => $this->meta['tplextension']); // TODO Check other array
+            $mustacheopt =  array('extension' => $this->makeconfig['tplextension']);
             $mustache = new Mustache_Engine(array(
                 'loader' => new Mustache_Loader_FilesystemLoader( $this->directories['template'] , $mustacheopt),
             ));
