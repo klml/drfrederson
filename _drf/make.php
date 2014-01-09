@@ -74,7 +74,7 @@ class MakeSite {
             $source['path'] = $sourcepath ;
             $source['pathinfo'] = pathinfo( $sourcepath );
 
-            $source['content'] = splitYamlProse( $source['path'] , $this->makeconfig['ymlseparator'] ) ; // TODO external function readSource
+            $source['content'] = splitYamlProse( $source['path'] , $this->makeconfig['metaseparator'] ) ; // TODO external function readSource
 
             $source['htmlPath'] = $this->directories['html'] . $source['pathinfo']['filename'] . $this->makeconfig['htmlextension']; // TODO fill inn $directoriesName
             $source['websourcepath'] = substr( $source['path'] , 3 ) ;        // remove leading "../"
@@ -93,8 +93,8 @@ class MakeSite {
             if ( file_exists($directoriesConf = $this->source['pathinfo']['dirname'] . '/meta.yml' ) ) { // overwrite with directory config
                 $meta = array_merge( $meta , spyc_load_file( file_get_contents($directoriesConf) ) ) ;
             }
-            if ( isset( $this->source['content']['yml']) ) {  // overwrite with page config
-                $metaPage = spyc_load_file( $this->source['content']['yml'] ) ;
+            if ( isset( $this->source['content']['meta']) ) {  // overwrite with page config
+                $metaPage = spyc_load_file( $this->source['content']['meta'] ) ;
                 $meta = array_merge( $meta , $metaPage ) ;
             }
             if ( !isset( $metaPage['pagetitle'] ) ) {  // use first markdown heading as title if not in pageconfig

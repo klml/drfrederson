@@ -1,6 +1,6 @@
 htmlextension: .html
 tplextension: .html
-ymlseparator: '#meta#'
+metaseparator: '#meta#'
 directory:
     template: ../template/
     source: ../source/
