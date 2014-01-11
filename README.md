@@ -20,8 +20,15 @@ All about editing, admin, setup and templates in the [wiki](https://github.com/k
 ## TODO
 
 - version source
-- _drf/config.yml to js serversite https://github.com/coolaj86/yamltojson.com
-- live preview without meta
+- meta to client, need for
+  - for new pages (drf-write.jquery.js)
+    - sourcepath (from config.yml)
+    - prefill
+    - source extension for new
+  - metaseperator for live preview without meta
+  - area, for edit link ?
+  - template ?
+  - use https://github.com/coolaj86/yamltojson.com, dont know 
 - lib: https://github.com/lepture/editor or https://stackedit.io/
 - const public
 - https://github.com/blueimp/jQuery-File-Upload
