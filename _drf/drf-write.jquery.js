@@ -9,7 +9,7 @@ if ( $( "body" ).hasClass( "noedit" ) ) {
 
 if (typeof drf_new != 'undefined' && drf_lemma != '404error' ) {
 
-    drf_sourcepath_prefill = drf_new.sourcepath + drf_new.prefill ;
+    drf_sourcepath_prefill = drf_new.prefillpath ;
     drf_sourcepath_write = drf_new.sourcepath + drf_lemma + drf_new.sourceextension ;
     drf_noedit = false ;
 

@@ -5,7 +5,7 @@ Oh no. This page is missing.
 <script>
 var drf_new = {
     "sourcepath": "source/",
-    "prefill": "/example.md",
+    "prefillpath": "source/example.md",
     "sourceextension": ".md"
 }
 </script>
