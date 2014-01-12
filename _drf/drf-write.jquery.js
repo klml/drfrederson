@@ -1,5 +1,7 @@
 var drf_lemma = window.location.pathname.split('/').pop().split('.')[0] ;
-var drf_sourcepath = $("meta[name='dcterms.source']").attr("content");
+var drf_noedit = false ;
+var drf_sourcepath_write = drf_sourcepath_prefill = $("meta[name='dcterms.source']").attr("content");
+
 
 if ( $( "body" ).hasClass( "noedit" ) ) {
     drf_noedit = true ;
@@ -11,10 +13,7 @@ if (typeof drf_new != 'undefined' && drf_lemma != '404error' ) {
     drf_sourcepath_write = drf_new.sourcepath + drf_lemma + drf_new.sourceextension ;
     drf_noedit = false ;
 
-} else {
-    drf_sourcepath_write = drf_sourcepath ;
-    drf_sourcepath_prefill = drf_sourcepath + '?v=' + Math.random() ; // force reload TODO mv 
-}
+} 
 
 jQuery(document).ready(function() {
 
@@ -24,7 +23,7 @@ jQuery(document).ready(function() {
 
             $(this).hide();
             $('.drf-webedit').show();
-            $('.drf-webedit').find('textarea').load( drf_sourcepath_prefill );
+            $('.drf-webedit').find('textarea').load( drf_sourcepath_prefill  + '?v=' + Math.random() ); // force reload 
 
             if ( drf_noedit ) {
                 $( '.drf-webedit' ).find('button').replaceWith('edit is veiled');
