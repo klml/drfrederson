@@ -5,4 +5,4 @@ RewriteEngine On
 RewriteRule ^([^\.]+)$ html/$1.html [NC,L]
 RewriteRule ^(.*)_ver(.*).css$ $1.css [NC,L]
 
-ErrorDocument 404 /drfrederson/html/404error.html
+ErrorDocument 404 /drfrederson/html/drf:404error.html
