@@ -75,7 +75,7 @@ class MakeSite {
             $source['path'] = $sourcepath ;
             $source['pathinfo'] = pathinfo( $sourcepath );
 
-            $source['content'] = splitYamlProse( $source['path'] , $this->makeconfig['metaseparator'] ) ; // TODO external function readSource
+            $source['content'] = splitYamlProse( $source['path'] , $this->makeconfig['metaseparator'] ) ;
 
             $namespace = substr( $source['pathinfo']['dirname'] , strlen( $this->directories['source'] ) )  ;   // remove source base directory
             $namespace = str_replace("/", $this->makeconfig['namespaceseparator'], $namespace ) ;               //  change slash to namespaceseparator
