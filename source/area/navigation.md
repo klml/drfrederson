@@ -3,6 +3,6 @@
 * [Example](example)
 * [Foo](foo)
 * [New!](new)
-* [about?](about)
+* [about?](./page:about)
 
 * [Admin](admin)

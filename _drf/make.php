@@ -77,7 +77,13 @@ class MakeSite {
 
             $source['content'] = splitYamlProse( $source['path'] , $this->makeconfig['metaseparator'] ) ; // TODO external function readSource
 
-            $source['htmlPath'] = $this->directories['html'] . $source['pathinfo']['filename'] . $this->makeconfig['htmlextension']; // TODO fill inn $directoriesName
+            $namespace = substr( $source['pathinfo']['dirname'] , strlen( $this->directories['source'] ) )  ;   // remove source base directory
+            $namespace = str_replace("/", $this->makeconfig['namespaceseparator'], $namespace ) ;               //  change slash to namespaceseparator
+            if ( $namespace != "" ) {
+                $namespace .= $this->makeconfig['namespaceseparator'] ; // trailing namespaceseparator
+            }
+            $source['htmlPath'] =   $this->directories['html'] . $namespace . $source['pathinfo']['filename'] . $this->makeconfig['htmlextension'];
+
             $source['websourcepath'] = substr( $source['path'] , 3 ) ;        // remove leading "../"
 
             return $source ;
