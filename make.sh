@@ -1,2 +1,2 @@
 cd _drf
-php make.php
+php make.php $1
