@@ -94,6 +94,18 @@ class MakeSite {
 
             $meta = array();
 
+            // use every file in area-dir as area
+            $areadirrecursive = new RecursiveDirectoryIterator( $this->directories['area'] );
+            foreach (new RecursiveIteratorIterator($areadirrecursive) as $areapath => $areaname) {
+
+                if ( is_dir( $areapath ) ) {                                     // dont parse directories
+
+                } else {
+                    $areapathinfo  = pathinfo($areaname) ;
+                    $meta["area"][ $areapathinfo['filename'] ] = $areapath ;
+                }
+            }
+
             if ( file_exists($sourceDirectoriesConf = $this->directories['source'] . '/meta.yml' ) ) { // overwrite with general source config
                 $meta = array_merge( $meta , spyc_load_file( file_get_contents($sourceDirectoriesConf) ) ) ;
             }
