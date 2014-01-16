@@ -19,8 +19,10 @@ All about editing, admin, setup and templates in the [wiki](https://github.com/k
 
 ## TODO
 
+- d2c example
 - version source
 - Hooks
+- template fallback
 - [ ] test if yml exists from func
 - _drf/config.yml to js serversite https://github.com/coolaj86/yamltojson.com
 - live preview without meta
