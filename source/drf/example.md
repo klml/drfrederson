@@ -23,7 +23,7 @@ pagetitle: Example page
 siteTitle: another sitetitle from pagemeta
 comment: true
 description: Example page, used as template for new pages
-d2c: 
+d2c: classes for thebody
 css:
   - url: //cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css
 js:

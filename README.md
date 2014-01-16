@@ -19,7 +19,6 @@ All about editing, admin, setup and templates in the [wiki](https://github.com/k
 
 ## TODO
 
-- d2c example
 - version source
 - Hooks
 - template fallback
