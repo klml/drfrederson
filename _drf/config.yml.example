@@ -1,7 +1,9 @@
 htmlextension: .html
 tplextension: .html
+namespaceseparator: ":"
 metaseparator: '#meta#'
 directory:
     template: ../template/
     source: ../source/
+    area: ../source/area/
     html: ../html/

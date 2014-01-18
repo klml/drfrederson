@@ -1,19 +1,19 @@
+var drf_lemma = window.location.pathname.split('/').pop().split('.')[0] ;
+var drf_noedit = false ;
+var drf_sourcepath_write = drf_sourcepath_prefill = $("meta[name='dcterms.source']").attr("content");
 
-var drf_sourcepath = $("meta[name='dcterms.source']").attr("content");
 
-if ( $( "body" ).hasClass( "d2c_404error" ) ) {
-
-     drf_sourcepath = drf_sourcepath.split('/') ;
-     drf_sourcepath.pop() ;
-     drf_sourcepath.push( window.location.pathname.split('/').pop().split('.')[0] ) ; // get lemma
-
-     drf_sourcepath_prefill = drf_sourcepath.join('/') + '/example.md'; // TODO var sourceextension
-     drf_sourcepath_write = drf_sourcepath.join('/') + '.md'; // TODO var sourceextension
-
-} else {
-    drf_sourcepath_write = drf_sourcepath ;
-    drf_sourcepath_prefill = drf_sourcepath + '?v=' + Math.random() ; // force reload
+if ( $( "body" ).hasClass( "noedit" ) ) {
+    drf_noedit = true ;
 }
+
+if (typeof drf_new != 'undefined' && drf_lemma != '404error' ) {
+
+    drf_sourcepath_prefill = drf_new.prefillpath ;
+    drf_sourcepath_write = drf_new.sourcepath + drf_lemma + drf_new.sourceextension ;
+    drf_noedit = false ;
+
+} 
 
 jQuery(document).ready(function() {
 
@@ -23,9 +23,9 @@ jQuery(document).ready(function() {
 
             $(this).hide();
             $('.drf-webedit').show();
-            $('.drf-webedit').find('textarea').load( drf_sourcepath_prefill );
+            $('.drf-webedit').find('textarea').load( drf_sourcepath_prefill  + '?v=' + Math.random() ); // force reload 
 
-            if ( $( "body" ).hasClass( "noedit" ) ) {
+            if ( drf_noedit ) {
                 $( '.drf-webedit' ).find('button').replaceWith('edit is veiled');
             } else {
                 webeditSend( ); // init after replaceWith

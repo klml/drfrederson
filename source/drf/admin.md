@@ -9,18 +9,18 @@ Editmode <input type="checkbox" name="requestauth"  id="requestauth" value="requ
 
 ## Create new pages
 
-Call the wished URL, receive the 404 error page and and click edit. Best: create an hyperlink (e.g. in the [navigation](navigation)), click and edit.
+Call the wished URL, receive the 404 error page and and click edit. Best: create an hyperlink (e.g. in the [navigation](./area:navigation)), click and edit.
 
 ## Sidebar and menues
 
-Edit [navigation](navigation) and [sidebar](sidebar) like a ''normal'' page.
+Edit [navigation](./area:navigation) and [sidebar](./area:sidebar) like a ''normal'' page.
 
 ## Custom Style and Javascript
 
-Edit custom client-sources (css, js) in [custom-css](drf-custom-css) and [custom-js](drf-custom-js) as "normal" pages.
+Edit custom client-sources (css, js) in [custom-css](./drf:drf-custom-css) and [custom-js](./drf:drf-custom-js) as "normal" pages.
 
-## Config
-Edit site wide [config](config).
+## Meta
+Edit site wide [meta](meta).
 
 #meta#
 pagetitle: All Administration

@@ -1,8 +1,8 @@
 [Home](./) {.three .columns .logo .alpha}
 
-* [Example](example)
+* [Example](./drf:example)
 * [Foo](foo)
 * [New!](new)
 * [about?](about)
 
-* [Admin](admin)
+* [Admin](./drf:admin)

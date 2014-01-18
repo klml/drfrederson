@@ -75,9 +75,15 @@ class MakeSite {
             $source['path'] = $sourcepath ;
             $source['pathinfo'] = pathinfo( $sourcepath );
 
-            $source['content'] = splitYamlProse( $source['path'] , $this->makeconfig['metaseparator'] ) ; // TODO external function readSource
+            $source['content'] = splitYamlProse( $source['path'] , $this->makeconfig['metaseparator'] ) ;
 
-            $source['htmlPath'] = $this->directories['html'] . $source['pathinfo']['filename'] . $this->makeconfig['htmlextension']; // TODO fill inn $directoriesName
+            $namespace = substr( $source['pathinfo']['dirname'] , strlen( $this->directories['source'] ) )  ;   // remove source base directory
+            $namespace = str_replace("/", $this->makeconfig['namespaceseparator'], $namespace ) ;               //  change slash to namespaceseparator
+            if ( $namespace != "" ) {
+                $namespace .= $this->makeconfig['namespaceseparator'] ; // trailing namespaceseparator
+            }
+            $source['htmlPath'] =   $this->directories['html'] . $namespace . $source['pathinfo']['filename'] . $this->makeconfig['htmlextension'];
+
             $source['websourcepath'] = substr( $source['path'] , 3 ) ;        // remove leading "../"
 
             return $source ;
@@ -87,6 +93,18 @@ class MakeSite {
     public function collectMeta() { // read page config (template, meta, etc) from file, directory or mainconf
 
             $meta = array();
+
+            // use every file in area-dir as area
+            $areadirrecursive = new RecursiveDirectoryIterator( $this->directories['area'] );
+            foreach (new RecursiveIteratorIterator($areadirrecursive) as $areapath => $areaname) {
+
+                if ( is_dir( $areapath ) ) {                                     // dont parse directories
+
+                } else {
+                    $areapathinfo  = pathinfo($areaname) ;
+                    $meta["area"][ $areapathinfo['filename'] ] = $areapath ;
+                }
+            }
 
             if ( file_exists($sourceDirectoriesConf = $this->directories['source'] . '/meta.yml' ) ) { // overwrite with general source config
                 $meta = array_merge( $meta , spyc_load_file( file_get_contents($sourceDirectoriesConf) ) ) ;

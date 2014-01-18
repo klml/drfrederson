@@ -29,15 +29,15 @@ All about editing, admin, setup and templates in the [wiki](https://github.com/k
   - area, for edit link ?
   - template ?
   - use https://github.com/coolaj86/yamltojson.com, dont know 
+- Hooks
+- template fallback
+- [ ] test if yml exists from func
+- _drf/config.yml to js serversite https://github.com/coolaj86/yamltojson.com
+- live preview without meta
 - lib: https://github.com/lepture/editor or https://stackedit.io/
 - const public
 - https://github.com/blueimp/jQuery-File-Upload
 - http://php.net/manual/de/function.realpath.php PHP 5.3
-- [ ] URL builing? root dir : absolute relative only one dir
-- [ ]* directory to namespace
-- [ ]* directory doubled
-- [ ]* global filenamepath
-- [ ] test if yml exists from func
 - [ ] bloggish posttemplate (date, archivcat) for webedit
 - [ ] lasttest
 - [ ] doku images timestamp
