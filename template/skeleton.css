@@ -40,19 +40,6 @@ padding: 0;
     padding: 5px 10px 0 0;
 }
 
-
-/* drfrederson edit area */
-.drf-webedit {
-    display: none ;
-}
-.drf-webedit textarea {
-    background-color: #000000;
-    color: #FFFFFF;
-    height: 400px;
-}
-
-
-
 /* #Media Queries
 ================================================== */
  
