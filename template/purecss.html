@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=0"/>
+    <title>{{meta.pagetitle}} | {{meta.siteTitle}}</title>
+    <meta name="description" content="{{meta.description}}" >
+
+    <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+    <meta name="dcterms.source" content="{{source.websourcepath}}"/>
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.3.0/pure-min.css">
+    <link rel="stylesheet" type="text/css" href="{{meta.baseurl}}template/purecss.css?v={{meta.cssjsversion}}">
+    <link rel="stylesheet" type="text/css" href="{{meta.baseurl}}source/drf/drf-custom-css.css?v={{meta.cssjsversion}}">
+{{#meta.css}}
+  {{#url}}
+    <link rel="stylesheet" type="text/css" href="{{{url}}}">
+  {{/url}}
+  {{#inline}}
+    <style>
+        {{{inline}}}
+    </style>
+  {{/inline}}
+{{/meta.css}}
+
+</head>
+<body class="d2c_{{source.pathinfo.filename}} {{meta.d2c}}" >
+
+<div class="panel">
+    <div id="header">
+    <header>
+        <div id="nav" class="pure-menu pure-menu-open pure-menu-horizontal" role="navigation" >
+            {{{content.navigation}}}
+        </div>
+    </header>
+    </div>
+
+    <div class="pure-g">
+        <div class="pure-u-5-6">
+        <section>
+            <article>{{{content.main}}}</article>
+        </section>
+    {{#meta.comment}}
+        comment
+    {{/meta.comment}}
+        </div>
+
+        <div id="sidebar" class="pure-u-1-6" role="complementary" >
+        {{{content.sidebar}}}
+        </div>
+    </div>
+
+    <div id="footer" role="contentinfo" >
+    <footer>
+        {{{content.footer}}}
+    </footer>
+    </div>
+</div>
+    <script src="{{meta.baseurl}}lib/jquery-1.10.1.min.js"></script>
+    <script src="{{meta.baseurl}}lib/usefulclassroomphrases/jquery.js" type="text/javascript"></script>
+    <script src="{{meta.baseurl}}template/drf-edit.js?v={{meta.cssjsversion}}" type="text/javascript"></script>
+    <script src="{{meta.baseurl}}source/drf/drf-custom-js.js?v={{meta.cssjsversion}}" type="text/javascript"></script>
+
+{{#meta.js}}
+  {{#url}}
+    <script src="{{{url}}}" type="text/javascript"></script>
+  {{/url}}
+  {{#inline}}
+    <script type="text/javascript">
+        {{{inline}}}
+    </script>
+  {{/inline}} 
+{{/meta.js}}
+</body>
+</html>

@@ -1,0 +1,19 @@
+/* for purecss.html */
+
+.panel {
+    margin: 0 auto;
+    padding: 0;
+    position: relative;
+    width: 960px;
+}
+
+
+/* drfrederson edit area */
+.drf-webedit {
+    display: none ;
+}
+.drf-webedit textarea {
+    background-color: #000000;
+    color: #FFFFFF;
+    height: 400px;
+}
