@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /_drf/
+Disallow: /.git*
+Disallow: /html/
+Disallow: /lib/
+Disallow: /make.sh
+Disallow: /README.md
+Disallow: /source/
+Disallow: /template/
