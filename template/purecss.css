@@ -4,5 +4,5 @@
     margin: 0 auto;
     padding: 0;
     position: relative;
-    width: 960px;
+    max-width: 960px;
 }
