@@ -20,7 +20,11 @@ Edit [navigation](./area:navigation) and [sidebar](./area:sidebar) like a ''norm
 Edit custom client-sources (css, js) in [custom-css](./drf:drf-custom-css) and [custom-js](./drf:drf-custom-js) as "normal" pages.
 
 ## Meta
-Edit site wide [meta](meta).
+
+Edit meta-date (like template, title, description etc) on each page after the <code> &#35;meta&#35;</code> or for the site on [meta](meta).
+
+
+More documentation on [drfrederson wiki](https://github.com/klml/drfrederson/wiki/drfrederson).
 
 #meta#
 pagetitle: All Administration
