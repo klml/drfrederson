@@ -21,7 +21,7 @@ Edit custom client-sources (css, js) in [custom-css](./drf:drf-custom-css) and [
 
 ## Meta
 
-Edit meta-date (like template, title, description etc) on each page after the <code> &#35;meta&#35;</code> or for the site on [meta](meta).
+Edit meta-date (like template, title, description etc) on each page after the <code>#meta#</code>-line or for the site on [meta](meta).
 
 
 More documentation on [drfrederson wiki](https://github.com/klml/drfrederson/wiki/drfrederson).
