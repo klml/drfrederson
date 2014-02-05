@@ -1,4 +1,3 @@
 AuthType Basic
 AuthName "admin user and password"
 Require valid-user
-AuthUserFile /var/www/virtual/klml/drf.klml.de/_drf/.htpasswd
