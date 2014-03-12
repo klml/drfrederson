@@ -1,7 +1,12 @@
 /* resident overwrites */
+/* main font, color ... */
 body {
 font: 12px sans-serif;
 }
+/* headings */
+h1, h2, h3 {
+}
+/* hyperlinks */
 a {
     color: #0645AD;
 }
