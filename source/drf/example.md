@@ -25,7 +25,7 @@ comment: true
 description: Example page, used as template for new pages
 d2c: classes for thebody
 css:
-  - url: //cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css
+  - url: //cdn.jsdelivr.net/fancybox/2.1.4/jquery.fancybox.css
 js:
-  - url: "//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"
+  - url: "//cdn.jsdelivr.net/fancybox/2.1.4/jquery.fancybox.js"
   - inline: "$(document).ready(function() { $(".fancybox").fancybox(); });" 
