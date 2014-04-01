@@ -29,7 +29,11 @@ THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 ## TODO
 
-- version source
+
+- version source etc
+    - https://github.com/blueimp/jQuery-File-Upload
+    - template fallback or in init
+    - lib: https://github.com/lepture/editor or https://stackedit.io/
 - meta to client, need for
   - for new pages (drf-write.jquery.js)
     - sourcepath (from config.yml)
@@ -38,15 +42,12 @@ THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   - metaseperator for live preview without meta
   - area, for edit link ?
   - template ?
-  - use https://github.com/coolaj86/yamltojson.com, dont know 
+  - use https://github.com/coolaj86/yamltojson.com, or as special page?
+  - secure passwords for upload etc, extra config.secure.yml ?
 - Hooks
-- template fallback
-- [ ] test if yml exists from func
-- _drf/config.yml to js serversite https://github.com/coolaj86/yamltojson.com
 - live preview without meta
-- lib: https://github.com/lepture/editor or https://stackedit.io/
 - const public
-- https://github.com/blueimp/jQuery-File-Upload
+
 - http://php.net/manual/de/function.realpath.php PHP 5.3
 - [ ] bloggish posttemplate (date, archivcat) for webedit
 - [ ] lasttest
