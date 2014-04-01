@@ -17,8 +17,10 @@ class MakeSite {
     protected $source;
 
     public function __construct() {
-        if( !file_exists( 'config.yml' ) ) { die("missing config.yml\n") ; };
-        $this->makeconfig = spyc_load_file('config.yml');
+        $this->makeconfig = spyc_load_file('config.global.yml');
+        if( file_exists( 'config.local.yml' ) ) { 
+            $this->makeconfig = array_merge( $this->makeconfig, spyc_load_file('config.local.yml') );
+        };
         $this->directories = $this->makeconfig['directory'];
         $this->httpandcliRouting();
     }
