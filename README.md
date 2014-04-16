@@ -45,9 +45,10 @@ THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   - use https://github.com/coolaj86/yamltojson.com, or as special page?
   - secure passwords for upload etc, extra config.secure.yml ?
 - Hooks
+- plugins
+  - Drf automatic ID for headimgs
 - live preview without meta
 - const public
-
 - http://php.net/manual/de/function.realpath.php PHP 5.3
 - [ ] bloggish posttemplate (date, archivcat) for webedit
 - [ ] lasttest
