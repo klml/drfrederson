@@ -50,8 +50,9 @@ function webeditSend ( ) {
             type: 'POST',
             data: $(this).serialize() + '&drf_sourcepath=' + drf_sourcepath_write ,
             success: function(){
-                $( '#successmsg' ).show() ;
-                location.reload(true);
+                $( '#successmsg' ).show("slow", function() {
+                    location.reload(true);
+                });
             },
             error:function(){
                 $( '#errormsg' ).show();
