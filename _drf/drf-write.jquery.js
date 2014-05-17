@@ -17,7 +17,7 @@ if (typeof drf_new != 'undefined' && drf_lemma != '404error' ) {
 
 jQuery(document).ready(function() {
 
-    $( "#footer" ).load( "template/drf-formwebedit.html", function() {
+    $( "#editor" ).load( "template/drf-formwebedit.html", function() {
 
         $('#drf-edit').click( function() {
 
