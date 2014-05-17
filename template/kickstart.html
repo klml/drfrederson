@@ -9,9 +9,8 @@
     <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
     <meta name="dcterms.source" content="{{source.websourcepath}}"/>
 
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/g/skeleton@1.2">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/99lime/0.94/css/kickstart.css">
 
-    <link rel="stylesheet" type="text/css" href="{{meta.baseurl}}lib/usefulclassroomphrases/ucp.css">
     <link rel="stylesheet" type="text/css" href="{{meta.baseurl}}template/drf_common.css?v={{meta.cssjsversion}}">
     <link rel="stylesheet" type="text/css" href="{{meta.baseurl}}source/drf/drf-custom-css.css?v={{meta.cssjsversion}}">
 {{#meta.css}}
@@ -28,8 +27,8 @@
 </head>
 <body class="d2c_{{source.pathinfo.filename}} {{meta.d2c}}" >
 
-<div class="container">
-    <div id="header" class="sixteen columns">
+<div class="grid">
+    <div id="header" class="">
     <header>
         <div id="nav" role="navigation" >
         <nav>
@@ -39,7 +38,7 @@
     </header>
     </div>
 
-    <div id="main" class="twelve columns" role="main" >
+    <div id="main" class="col_8" role="main" >
         <section>
             <article>{{{content.main}}}</article>
         </section>
@@ -48,11 +47,11 @@
     {{/meta.comment}}
     </div>
 
-    <div id="sidebar" class="four columns" role="complementary" >
+    <div id="sidebar" class="col_4" role="complementary" >
         {{{content.sidebar}}}
     </div>
 
-    <div id="footer" class="sixteen columns" role="contentinfo" >
+    <div id="footer" class="" role="contentinfo" >
     <footer>
         {{{content.footer}}}
     </footer>

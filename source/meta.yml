@@ -1,7 +1,7 @@
 siteTitle: drFrederson
 pagetitle: Directory wide title 
 baseurl: 
-template: skeleton
+template: kickstart
 cssjsversion: 1
 comment: false
 description: Some general site  wide description
