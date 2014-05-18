@@ -7,13 +7,15 @@ If you use this site in an public area like your webserver and not in a secure e
 
 Editmode <input type="checkbox" name="requestauth"  id="requestauth" value="requestauth" >
 
+http://localhost/drfrederson/_drf/make.php
+
 ## Create new pages
 
 Call the wished URL, receive the 404 error page and and click edit. Best: create an hyperlink (e.g. in the [navigation](./area:navigation)), click and edit.
 
 ## Sidebar and menues
 
-Edit [navigation](./area:navigation) and [sidebar](./area:sidebar) like a ''normal'' page.
+Edit [navigation](./area:navigation), [sidebar](./area:sidebar) or  [footer](./area:footer) like a ''normal'' page.
 
 ## Custom Style and Javascript
 
