@@ -7,7 +7,7 @@ If you use this site in an public area like your webserver and not in a secure e
 
 Editmode <input type="checkbox" name="requestauth"  id="requestauth" value="requestauth" >
 
-http://localhost/drfrederson/_drf/make.php
+You can [Rerender all pages](/_drf/make.php).
 
 ## Create new pages
 
