@@ -1,15 +1,6 @@
-[submodule "lib/usefulclassroomphrases"]
-	path = lib/usefulclassroomphrases
-	url = https://github.com/klml/usefulclassroomphrases
-[submodule "lib/skeleton"]
-	path = lib/skeleton
-	url = https://github.com/dhg/Skeleton.git
 [submodule "_drf/lib/spyc"]
 	path = _drf/lib/spyc
 	url = https://github.com/mustangostang/spyc/
 [submodule "_drf/lib/mustache"]
 	path = _drf/lib/mustache
 	url = https://github.com/bobthecow/mustache.php
-[submodule "lib/js-markdown-extra"]
-	path = lib/js-markdown-extra
-	url = https://github.com/tanakahisateru/js-markdown-extra.git
