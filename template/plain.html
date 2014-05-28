@@ -8,7 +8,7 @@
 
     <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
     <meta name="dcterms.source" content="{{source.websourcepath}}"/>
-
+{{{content.additionalhead}}}
 </head>
 <body class="d2c_{{meta.lemma}} {{meta.d2c}}" >
 
@@ -36,5 +36,6 @@
 </div>
     <script src="//cdn.jsdelivr.net/g/jquery@2.1.0"></script>
     <script src="{{meta.baseurl}}template/drf-edit.js?v={{meta.cssjsversion}}" type="text/javascript"></script>
+{{{content.additionalbody}}}
 </body>
 </html>
