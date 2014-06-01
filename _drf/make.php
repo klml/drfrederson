@@ -64,9 +64,7 @@ class MakeSite {
     protected function allPages() {
         $sourcedirrecursive = new RecursiveDirectoryIterator( $this->directories['source'] );
         foreach (new RecursiveIteratorIterator($sourcedirrecursive) as $sourcepath => $file) { // TODO differece $file  vs $sourcepath
-            if ( is_dir( $sourcepath ) ) {                                                      // dont parse directories
-                //~ return ;
-            } else {
+            if ( !is_dir( $sourcepath ) ) {                                                    // dont parse directories
                 $this->createPage($sourcepath);
             }
         }
