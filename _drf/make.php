@@ -125,6 +125,8 @@ class MakeSite {
     }
     public function buildContent() {
 
+            $content = array();
+
             // file parse handling
             switch ( $this->source['pathinfo']['extension'] ) {
                 case ("md"):
@@ -139,8 +141,10 @@ class MakeSite {
                 break;
             }
 
-            foreach( $this->meta["area"] as $areaname => $area ) {
-               if ( $area != '' ) $content[ $areaname ] = Markdown( file_get_contents( $area ) ); // TODO md switching
+            if( !empty( $this->meta["area"] ) ) {
+                foreach( $this->meta["area"] as $areaname => $area ) {
+                   if ( $area != '' ) $content[ $areaname ] = Markdown( file_get_contents( $area ) ); // TODO md switching
+                }
             }
 
             return $content ;
