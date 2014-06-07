@@ -98,10 +98,7 @@ class MakeSite {
             if ( is_dir($sourceDirectoriesArea = $this->directories['area'] ) ) { 
                 $areadirrecursive = new RecursiveDirectoryIterator( $sourceDirectoriesArea );
                 foreach (new RecursiveIteratorIterator($areadirrecursive) as $areapath => $areaname) {
-
-                    if ( is_dir( $areapath ) ) {                                     // dont parse directories
-
-                    } else {
+                    if ( !is_dir( $areapath ) ) {                                     // dont parse directories
                         $areapathinfo  = pathinfo($areaname) ;
                         $meta["area"][ $areapathinfo['filename'] ] = $areapath ;
                     }
