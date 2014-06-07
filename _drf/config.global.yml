@@ -2,6 +2,7 @@ htmlextension: .html
 tplextension: .html
 namespaceseparator: ":"
 metaseparator: "\n#meta#"
+defaulttemplate: plain
 directory:
     template: ../template/
     source: ../source/
