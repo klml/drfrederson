@@ -95,14 +95,16 @@ class MakeSite {
             $meta = array();
 
             // use every file in area-dir as area
-            $areadirrecursive = new RecursiveDirectoryIterator( $this->directories['area'] );
-            foreach (new RecursiveIteratorIterator($areadirrecursive) as $areapath => $areaname) {
+            if ( is_dir($sourceDirectoriesArea = $this->directories['area'] ) ) { 
+                $areadirrecursive = new RecursiveDirectoryIterator( $sourceDirectoriesArea );
+                foreach (new RecursiveIteratorIterator($areadirrecursive) as $areapath => $areaname) {
 
-                if ( is_dir( $areapath ) ) {                                     // dont parse directories
+                    if ( is_dir( $areapath ) ) {                                     // dont parse directories
 
-                } else {
-                    $areapathinfo  = pathinfo($areaname) ;
-                    $meta["area"][ $areapathinfo['filename'] ] = $areapath ;
+                    } else {
+                        $areapathinfo  = pathinfo($areaname) ;
+                        $meta["area"][ $areapathinfo['filename'] ] = $areapath ;
+                    }
                 }
             }
 
