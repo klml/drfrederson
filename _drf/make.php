@@ -35,22 +35,27 @@ class MakeSite {
     protected function httpandcliRouting() {
         global $argv ;
 
-        if ( count($argv) > 1  ) {      // create single pages from cli input
+        // create single pages from cli input
+        if ( count($argv) > 1  ) {
             array_shift($argv);         // remove script name
             $this->createPage( $argv[0] );
 
-        } else if (  isset( $_POST["drf_sourcepath"] )  ) { // writes single pages from webeditor
+        // writes single pages from webeditor
+        } else if (  isset( $_POST["drf_sourcepath"] )  ) {
 
             $sourcepath = '../' . preventDirectoryTraversal( $_POST["drf_sourcepath"] );
 
-            if ( $sourcepath == substr( $sourcepath , 0, strlen( $this->directories['source'] ) ) ) { // sourcepath starts not with sourcedir from config
+            // sourcepath starts not with sourcedir from config
+            if ( $sourcepath == substr( $sourcepath , 0, strlen( $this->directories['source'] ) ) ) { 
                 return ;
             } ;
 
             if ( isset ( $_POST["content"] )  ) { 
                 file_put_contents( $sourcepath , $_POST["content"] ) ? success( $sourcepath ) : error( $sourcepath ) ;
             }
-            if ( in_array( $sourcepath , $this->makeconfig['area'] ) ) { // after webediting an area like navgation or sidebar
+
+            // after webediting an area like navgation or sidebar
+            if ( in_array( $sourcepath , $this->makeconfig['area'] ) ) {
                 $this->allPages();
                 return ; 
             }
@@ -64,33 +69,43 @@ class MakeSite {
     protected function allPages( $sourcedirrecursive ) {
         $sourcedirrecursive = new RecursiveDirectoryIterator( $sourcedirrecursive );
         foreach (new RecursiveIteratorIterator($sourcedirrecursive) as $sourcepath => $file) { // TODO differece $file  vs $sourcepath
-            if ( !is_dir( $sourcepath ) ) {                                                    // dont parse directories
+
+            // dont parse directories
+            if ( !is_dir( $sourcepath ) ) {
                 $this->createPage($sourcepath);
             }
         }
     }
 
-    public function source($sourcepath) { // processing all sources
+    // processing all sources
+    public function source($sourcepath) {
 
             $source['path'] = $sourcepath ;
             $source['pathinfo'] = pathinfo( $sourcepath );
 
             $source['content'] = splitYamlProse( $source['path'] , $this->makeconfig['metaseparator'] ) ;
 
-            $namespace = substr( $source['pathinfo']['dirname'] , strlen( $this->directories['source'] ) )  ;   // remove source base directory
-            $namespace = str_replace("/", $this->makeconfig['namespaceseparator'], $namespace ) ;               //  change slash to namespaceseparator
+            // remove source base directory
+            $namespace = substr( $source['pathinfo']['dirname'] , strlen( $this->directories['source'] ) ) ;
+
+            // change slash to namespaceseparator
+            $namespace = str_replace("/", $this->makeconfig['namespaceseparator'], $namespace ) ;
+
+            // trailing namespaceseparator
             if ( $namespace != "" ) {
-                $namespace .= $this->makeconfig['namespaceseparator'] ; // trailing namespaceseparator
+                $namespace .= $this->makeconfig['namespaceseparator'] ;
             }
             $source['htmlPath'] =   $this->directories['html'] . $namespace . $source['pathinfo']['filename'] . $this->makeconfig['htmlextension'];
 
-            $source['websourcepath'] = substr( $source['path'] , 3 ) ;        // remove leading "../"
+            // remove leading "../"
+            $source['websourcepath'] = substr( $source['path'] , 3 ) ;
 
             return $source ;
 
     }
 
-    public function collectMeta() { // read page config (template, meta, etc) from file, directory or mainconf
+    // read page config (template, meta, etc) from file, directory or mainconf
+    public function collectMeta() {
 
             $meta = array();
             $meta['template'] = $this->makeconfig['defaulttemplate'] ;
@@ -99,24 +114,33 @@ class MakeSite {
             if ( is_dir($sourceDirectoriesArea = $this->directories['area'] ) ) { 
                 $areadirrecursive = new RecursiveDirectoryIterator( $sourceDirectoriesArea );
                 foreach (new RecursiveIteratorIterator($areadirrecursive) as $areapath => $areaname) {
-                    if ( !is_dir( $areapath ) ) {                                     // dont parse directories
+
+                    // dont parse directories
+                    if ( !is_dir( $areapath ) ) {
                         $areapathinfo  = pathinfo($areaname) ;
                         $meta["area"][ $areapathinfo['filename'] ] = $areapath ;
                     }
                 }
             }
 
-            if ( file_exists($sourceDirectoriesConf = $this->directories['source'] . '/meta.yml' ) ) { // overwrite with general source config
+            // overwrite with general source config
+            if ( file_exists($sourceDirectoriesConf = $this->directories['source'] . '/meta.yml' ) ) { 
                 $meta = array_merge( $meta , spyc_load_file( file_get_contents($sourceDirectoriesConf) ) ) ;
             }
-            if ( file_exists($directoriesConf = $this->source['pathinfo']['dirname'] . '/meta.yml' ) ) { // overwrite with directory config
+
+            // overwrite with directory config
+            if ( file_exists($directoriesConf = $this->source['pathinfo']['dirname'] . '/meta.yml' ) ) {
                 $meta = array_merge( $meta , spyc_load_file( file_get_contents($directoriesConf) ) ) ;
             }
-            if ( isset( $this->source['content']['meta']) ) {  // overwrite with page config
+
+            // overwrite with page config
+            if ( isset( $this->source['content']['meta']) ) {
                 $metaPage = spyc_load_file( $this->source['content']['meta'] ) ;
                 $meta = array_merge( $meta , $metaPage ) ;
             }
-            if ( !isset( $metaPage['pagetitle'] ) ) {  // use first markdown heading as title if not in pageconfig
+
+            // use first markdown heading as title if not in pageconfig
+            if ( !isset( $metaPage['pagetitle'] ) ) { 
                 $meta['pagetitle'] = getHtmltitleMD( $this->source['content']['prose'] );
             }
 
@@ -135,7 +159,8 @@ class MakeSite {
                 case ("html"):
                     $content['main'] = $this->source['content']['prose'] ;
                 break;
-                default:    // css js yaml txt etc
+                // css js yaml txt etc
+                default:
                     $content['main'] =  nl2br( $this->source['content']['prose'] ) ;
                     $this->meta['pagetitle'] = $this->source['pathinfo']['filename'] ;               // use lemma, there is no meta
                 break;
@@ -156,6 +181,7 @@ class MakeSite {
             $this->tmplData['content'] = $this->content ;
 
             Mustache_Autoloader::register();
+
             // use .html instead of .mustache for default template extension
             $mustacheopt =  array('extension' => $this->makeconfig['tplextension']);
             $mustache = new Mustache_Engine(array(
