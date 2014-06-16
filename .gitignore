@@ -1,3 +1,5 @@
 _drf/config.local.yml
 _drf/.htpasswd
 source
+template
+robots.txt
