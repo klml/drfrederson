@@ -45,6 +45,7 @@ All about editing, admin, setup and templates in the [wiki](https://github.com/k
 
 ### 2.0
 - source versioning
+  - [Web_Interfaces](https://git.wiki.kernel.org/index.php/InterfacesFrontendsAndTools#Web_Interfaces)
   - http://stackoverflow.com/questions/7447472/how-could-i-display-the-current-git-branch-name-at-the-top-of-the-page-of-my-de
 - tags
 - include http://www.mediawiki.org/wiki/Transclusion; Mustache ?
