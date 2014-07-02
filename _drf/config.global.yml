@@ -3,6 +3,7 @@ tplextension: .html
 namespaceseparator: ":"
 metaseparator: "\n#meta#"
 defaulttemplate: plain
+sourceexclude: '.git'
 directory:
     template: ../template/
     source: ../source/

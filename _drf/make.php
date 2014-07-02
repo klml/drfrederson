@@ -66,14 +66,28 @@ class MakeSite {
         }
 
     }
-    protected function allPages( $sourcedirrecursive ) {
-        $sourcedirrecursive = new RecursiveDirectoryIterator( $sourcedirrecursive );
-        foreach (new RecursiveIteratorIterator($sourcedirrecursive) as $sourcepath => $file) { // TODO differece $file  vs $sourcepath
+    protected function allPages( $sourcedir ) {
 
-            // dont parse directories
-            if ( !is_dir( $sourcepath ) ) {
-                $this->createPage($sourcepath);
+        $exclude = array();
+        array_push($exclude, $this->makeconfig['sourceexclude'] );
+
+        $filter = function ($file, $key, $iterator) use ($exclude) {
+            if ($iterator->hasChildren() && !in_array($file->getFilename(), $exclude)) {
+                return true;
             }
+            return $file->isFile();
+        };
+
+        $innerIterator = new RecursiveDirectoryIterator(
+            $sourcedir,
+            RecursiveDirectoryIterator::SKIP_DOTS
+        );
+        $iterator = new RecursiveIteratorIterator(
+            new RecursiveCallbackFilterIterator($innerIterator, $filter)
+        );
+
+        foreach ($iterator as $pathname => $fileInfo) {
+                $this->createPage($fileInfo);
         }
     }
 
