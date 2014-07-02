@@ -89,7 +89,7 @@ class MakeSite {
             $namespace = substr( $source['pathinfo']['dirname'] , strlen( $this->directories['source'] ) ) ;
 
             // change slash to namespaceseparator
-            $namespace = str_replace("/", $this->makeconfig['namespaceseparator'], $namespace ) ;
+            $namespace = str_replace( DIRECTORY_SEPARATOR , $this->makeconfig['namespaceseparator'], $namespace ) ;
 
             // trailing namespaceseparator
             if ( $namespace != "" ) {
