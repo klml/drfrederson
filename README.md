@@ -15,6 +15,11 @@ All about editing, admin, setup and templates in the [wiki](https://github.com/k
 
 [Demo](http://drf.grus.uberspace.de/drf:admin) (use user `a` and password `a`. There is __no__ further protection, so all changes will be deleted sporadic for cleanup.)
 
+## drf users 
+Sites made with drfrederson:
+
+* [schuhmacherei-allinger.de](http://schuhmacherei-allinger.de)
+* [accu-rate.de](http://www.accu-rate.de)
 
 ## TODO
 
