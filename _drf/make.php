@@ -186,7 +186,7 @@ class MakeSite {
             if( !empty( $this->meta["area"] ) ) {
 
                 if( !empty( $this->meta["sidebar"] ) ) { // overwrite sidebar TODO generic solution
-                    echo $this->meta["area"]["sidebar"] =  $this->directories["area"] . $this->meta["sidebar"] ;
+                    $this->meta["area"]["sidebar"] =  $this->directories["area"] . $this->meta["sidebar"] ;
                 }
 
                 foreach( $this->meta["area"] as $areaname => $area ) {
