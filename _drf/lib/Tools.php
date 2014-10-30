@@ -48,6 +48,15 @@ function getHtmltitleMD($markdown) {
     return $title ;
 }
 
+// wikistylelinks [[ ]]
+function wikistylelinks($content) {
+    $doublebracket = '/\[\[(.*)\]\]/';
+    $content = preg_replace_callback(   $doublebracket, function ($matches) {
+            return "<a href='/" . iconv("utf-8","ascii//TRANSLIT", str_replace(' ', '_', strtolower($matches[1]) ) ) . "'>" . $matches[1] . "</a>" ;
+        }, $content
+    );
+    return $content ;
+}
 
 // <!-- more --> cutter
 function moreCutter($content) {

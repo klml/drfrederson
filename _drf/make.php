@@ -169,6 +169,8 @@ class MakeSite {
             switch ( $this->source['pathinfo']['extension'] ) {
                 case ("md"):
                     $content['main'] = Markdown( $this->source['content']['prose'] ) ;
+                    // internal wikistyle links [[ ]]
+                    $content['main'] = wikistylelinks($content['main']) ;
                 break;
                 case ("html"):
                     $content['main'] = $this->source['content']['prose'] ;
@@ -180,9 +182,15 @@ class MakeSite {
                 break;
             }
 
+            // get content for area
             if( !empty( $this->meta["area"] ) ) {
+
+                if( !empty( $this->meta["sidebar"] ) ) { // overwrite sidebar TODO generic solution
+                    $this->meta["area"]["sidebar"] =  $this->directories["area"] . $this->meta["sidebar"] ;
+                }
+
                 foreach( $this->meta["area"] as $areaname => $area ) {
-                   if ( $area != '' ) $content[ $areaname ] = Markdown( file_get_contents( $area ) ); // TODO md switching
+                   if ( $area != '' ) $content[ $areaname ] = wikistylelinks( Markdown( file_get_contents( $area ) ) ); // TODO md switching
                 }
             }
 
