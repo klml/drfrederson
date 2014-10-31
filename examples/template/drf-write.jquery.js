@@ -27,6 +27,7 @@ jQuery(document).ready(function() {
                 if ( typeof Editor != "undefined" && editbutton == "drf-edit-editor" ) {
                     var lepeditor = new Editor();
                     lepeditor.render();
+                    $('#drf-render').hide();
                 };
                 if ( drf_noedit ) {
                     $( '.drf-webedit' ).find('button').replaceWith('edit is veiled');
