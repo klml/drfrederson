@@ -22,8 +22,7 @@ jQuery(document).ready(function() {
         $('#drf-edit button').click( function() {
             var editbutton = $(this).attr( 'id' ) ;
             $('#drf-edit').hide();
-            $('.drf-webedit').show();
-            $('.drf-webedit').find('textarea').load( drf_sourcepath_prefill  + '?v=' + Math.random(), function() {  // force reload 
+            $('.drf-webedit').show().find('textarea').load( drf_sourcepath_prefill  + '?v=' + Math.random(), function() {  // force reload 
 
                 if ( typeof Editor != "undefined" && editbutton == "drf-edit-editor" ) {
                     var lepeditor = new Editor();
