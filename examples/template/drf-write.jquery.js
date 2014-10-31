@@ -19,17 +19,22 @@ jQuery(document).ready(function() {
 
     $( "#editor" ).load( "template/drf-formwebedit.html", function() {
 
-        $('#drf-edit').click( function() {
-
-            $(this).hide();
+        $('#drf-edit button').click( function() {
+            var editbutton = $(this).attr( 'id' ) ;
+            $('#drf-edit').hide();
             $('.drf-webedit').show();
-            $('.drf-webedit').find('textarea').load( drf_sourcepath_prefill  + '?v=' + Math.random() ); // force reload 
+            $('.drf-webedit').find('textarea').load( drf_sourcepath_prefill  + '?v=' + Math.random(), function() {  // force reload 
 
-            if ( drf_noedit ) {
-                $( '.drf-webedit' ).find('button').replaceWith('edit is veiled');
-            } else {
-                webeditSend( ); // init after replaceWith
-            }
+                if ( typeof Editor != "undefined" && editbutton == "drf-edit-editor" ) {
+                    var lepeditor = new Editor();
+                    lepeditor.render();
+                };
+                if ( drf_noedit ) {
+                    $( '.drf-webedit' ).find('button').replaceWith('edit is veiled');
+                } else {
+                    webeditSend( ); // init after replaceWith
+                }
+            });
          });
 
         var intermission ; 
@@ -39,8 +44,6 @@ jQuery(document).ready(function() {
         });
     });
 });
-
-
 
 function webeditSend ( ) {
     $( '.drf-webedit' ).submit( function(event) {
