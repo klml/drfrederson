@@ -20,6 +20,7 @@ Sites made with drfrederson:
 
 * [schuhmacherei-allinger.de](http://schuhmacherei-allinger.de)
 * [accu-rate.de](http://www.accu-rate.de)
+* [sailer-grafik-design.de](http://sailer-grafik-design.de)
 
 ## TODO
 
