@@ -9,8 +9,10 @@ if ( $( "body" ).hasClass( "noedit" ) ) {
 
 if (typeof drf_new != 'undefined' && drf_lemma != '404error' ) {
 
+    var drf_lemma = drf_lemma.split(':')
+
     drf_sourcepath_prefill = drf_new.prefillpath ;
-    drf_sourcepath_write = drf_new.sourcepath + drf_lemma + drf_new.sourceextension ;
+    drf_sourcepath_write = drf_new.sourcepath + drf_lemma[0] + '/' + drf_lemma[1] + drf_new.sourceextension ;
     drf_noedit = false ;
 
 } 
