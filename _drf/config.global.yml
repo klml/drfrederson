@@ -9,3 +9,4 @@ directory:
     source: ../source/
     area: ../source/area/
     html: ../html/
+    json: ../json/

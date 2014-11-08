@@ -9,12 +9,17 @@
 
 // error log
 function error($value='') {
-	echo "[ERROR] NOT written: $value\n";
+    $trace=debug_backtrace();
+    $caller=$trace[1];
+    echo "[ERROR] {$caller['function']}: $value\n";
+
 }
 
 // success log
 function success($value='') {
-	echo "[SUCCESS] written: $value\n";
+    $trace=debug_backtrace();
+    $caller=$trace[1];
+    echo "[SUCCESS] {$caller['function']}: $value\n";
 }
 
 // prevent Directory traversal attack

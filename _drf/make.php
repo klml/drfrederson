@@ -30,6 +30,7 @@ class MakeSite {
         $this->meta = $this->collectMeta();
         $this->content = $this->buildContent();
         $this->buildHtml();
+        $this->buildJSON();
     }
 
     protected function httpandcliRouting() {
@@ -109,7 +110,13 @@ class MakeSite {
             if ( $namespace != "" ) {
                 $namespace .= $this->makeconfig['namespaceseparator'] ;
             }
-            $source['htmlPath'] =   $this->directories['html'] . $namespace . $source['pathinfo']['filename'] . $this->makeconfig['htmlextension'];
+            
+            $dirlimb = $namespace . $source['pathinfo']['filename'] ;
+            $source['htmlPath'] =   $this->directories['html'] . $dirlimb . $this->makeconfig['htmlextension'];
+
+            if( isset($this->directories['json']) ) {
+                $source['jsonPath'] =   $this->directories['json'] . $dirlimb . '.json';
+            };
 
             // remove leading "../"
             $source['websourcepath'] = substr( $source['path'] , 3 ) ;
@@ -210,8 +217,20 @@ class MakeSite {
                 'loader' => new Mustache_Loader_FilesystemLoader( $this->directories['template'] , $mustacheopt),
             ));
             $mustachecontent = $mustache->render($this->meta['template'], $this->tmplData );
+
             file_put_contents( $this->source['htmlPath'], $mustachecontent) ? success( $this->source['htmlPath'] . ' ' . $this->meta['pagetitle'] ) : error( $this->source['htmlPath'] );
     }
+    public function buildJSON() {
+
+            if( isset( $this->source['jsonPath'] ) ) {
+                $jsoncontent = $this->meta ;
+                $jsoncontent['prose_html'] =  $this->content  ;
+                $jsoncontent = json_encode( $jsoncontent );
+    
+                file_put_contents( $this->source['jsonPath'], $jsoncontent) ? success( $this->source['jsonPath'] ) : error( $this->source['jsonPath'] );
+            }
+    }
+    
 }
 $site = new MakeSite();
 ?>

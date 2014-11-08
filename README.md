@@ -36,7 +36,6 @@ Sites made with drfrederson:
   - metaseperator for live preview without meta
   - area, for edit link ?
   - template ?
-  - use https://github.com/coolaj86/yamltojson.com, or as special page?
   - secure passwords for upload etc, extra config.secure.yml ?
 - Hooks
 - plugins
