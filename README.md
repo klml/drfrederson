@@ -28,7 +28,6 @@ Sites made with drfrederson:
 - version source etc
     - https://github.com/blueimp/jQuery-File-Upload
     - template fallback or in init
-    - lib: https://github.com/lepture/editor or https://stackedit.io/
 - meta to client, need for
   - for new pages (drf-write.jquery.js)
     - sourcepath (from config.yml)
