@@ -29,7 +29,7 @@ class MakeSite {
         $this->source = $this->source($sourcepath);
         $this->meta = $this->collectMeta();
         $this->content = $this->buildContent();
-        $this->buildHtml();
+        $this->buildHTML();
         $this->buildJSON();
     }
 
@@ -203,7 +203,7 @@ class MakeSite {
 
             return $content ;
     }
-    public function buildHtml() {
+    public function buildHTML() {
 
             $this->tmplData['source'] = $this->source ;
             $this->tmplData['meta'] = $this->meta ;
