@@ -11,19 +11,19 @@ You can [Rerender all pages](/_drf/make.php).
 
 ## Create new pages
 
-Call the wished URL, receive the 404 error page and and click edit. Best: create an hyperlink (e.g. in the [navigation](./area:navigation)), click and edit.
+Call the wished URL, receive the 404 error page and and click edit. Best: create an hyperlink (e.g. in the [[area:navigation]]), click and edit.
 
 ## Sidebar and menues
 
-Edit [navigation](./area:navigation), [sidebar](./area:sidebar) or  [footer](./area:footer) like a ''normal'' page.
+Edit [[area:navigation]], [[area:sidebar]]  [[area:footer]] like a ''normal'' page.
 
 ## Custom Style and Javascript
 
-Edit custom client-sources (css, js) in [custom-css](./drf:drf-custom-css) and [custom-js](./drf:drf-custom-js) as "normal" pages.
+Edit custom client-sources (css, js) in [[drf:drf-custom-css]] and [[drf:drf-custom-js]] as "normal" pages.
 
 ## Meta
 
-Edit meta-date (like template, title, description etc) on each page after the <code>#meta#</code>-line or for the site on [meta](meta).
+Edit meta-date (like template, title, description etc) on each page after the <code>#meta#</code>-line or for the site on [[meta]].
 
 
 More documentation on [drfrederson wiki](https://github.com/klml/drfrederson/wiki/drfrederson).

@@ -55,7 +55,7 @@ function getHtmltitleMD($markdown) {
 
 // wikistylelinks [[ ]]
 function wikistylelinks($content) {
-    $doublebracket = '/\[\[(.*)\]\]/';
+    $doublebracket = '/\[\[(.*)\]\]/U';
     $content = preg_replace_callback(   $doublebracket, function ($matches) {
             return "<a href='/" . iconv("utf-8","ascii//TRANSLIT", str_replace(' ', '_', strtolower($matches[1]) ) ) . "'>" . $matches[1] . "</a>" ;
         }, $content

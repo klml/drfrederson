@@ -1,4 +1,4 @@
 * [Home](./) {.three .columns .logo .alpha}
 * [Example](./drf:example)
-* [New!](new)
+* [[New]]
 * [Admin](./drf:admin)
