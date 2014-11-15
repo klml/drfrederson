@@ -111,7 +111,7 @@ class MakeSite {
                 $namespace .= $this->makeconfig['namespaceseparator'] ;
             }
             
-            $dirlimb = $namespace . $source['pathinfo']['filename'] ;
+            $source['dirlimb'] = $dirlimb = $namespace . $source['pathinfo']['filename'] ;
             $source['htmlPath'] =   $this->directories['html'] . $dirlimb . $this->makeconfig['htmlextension'];
 
             if( isset($this->directories['json']) ) {

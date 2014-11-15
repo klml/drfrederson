@@ -13,6 +13,14 @@
 
     <link rel="stylesheet" type="text/css" href="{{meta.baseurl}}template/drf_common.css?v={{meta.cssjsversion}}">
     <link rel="stylesheet" type="text/css" href="{{meta.baseurl}}source/drf/drf-custom-css.css?v={{meta.cssjsversion}}">
+
+<style type="text/css">
+/* links on this page */
+#nav ul li a[href="./{{source.dirlimb}}"] {
+    color: #4d99e0;
+}
+</style>
+
 {{#meta.css}}
   {{#url}}
     <link rel="stylesheet" type="text/css" href="{{{url}}}">
