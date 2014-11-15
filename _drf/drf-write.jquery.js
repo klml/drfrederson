@@ -55,13 +55,16 @@ function webeditSend ( ) {
             url: '_drf/make.php',
             type: 'POST',
             data: $(this).serialize() + '&drf_sourcepath=' + drf_sourcepath_write ,
-            success: function(){
+            success: function( msg ){
                 $( '#successmsg' ).show("slow", function() {
+                    $(this).find('pre').text( msg );
                     location.reload(true);
                 });
             },
-            error:function(){
-                $( '#errormsg' ).show();
+            error:function( msg ){
+                $( '#errormsg' ).show( function() {
+                     $(this).find('pre').text( msg );
+                });
             }
         });         
     });    
