@@ -20,7 +20,7 @@ if (typeof drf_new != 'undefined' && drf_lemma != '404error' ) {
 
 jQuery(document).ready(function() {
 
-    $( "#editor" ).load( "template/drf-formwebedit.html", function() {
+    $( "#editor" ).load( "_drf/drf-formwebedit.html", function() {
 
         $('#drf-edit button').click( function() {
             var editbutton = $(this).attr( 'id' ) ;
