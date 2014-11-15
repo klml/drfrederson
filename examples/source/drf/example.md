@@ -26,6 +26,6 @@ description: Example page, used as template for new pages
 d2c: classes for thebody
 css:
   - url: //cdn.jsdelivr.net/fancybox/2.1.4/jquery.fancybox.css
-js:
-  - url: "//cdn.jsdelivr.net/fancybox/2.1.4/jquery.fancybox.js"
-  - inline: "$(document).ready(function() { $(".fancybox").fancybox(); });" 
+jsdelivr: ",fancybox"
+jquery: "$('.fancybox').fancybox();"
+

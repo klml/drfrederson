@@ -67,10 +67,17 @@
     </div>
     <div id="editor"></div>
 </div>
-    <script src="{{meta.jsdelivrdomain}}g/jquery@2.1.0"></script>
+    <script src="{{meta.jsdelivrdomain}}g/jquery{{meta.jsdelivr}}"></script>
     <script src="{{meta.baseurl}}template/drf-edit.js?v={{meta.cssjsversion}}" type="text/javascript"></script>
     <script src="{{meta.baseurl}}source/drf/drf-custom-js.js?v={{meta.cssjsversion}}" type="text/javascript"></script>
 
+{{#meta.jquery}}
+    <script type="text/javascript">
+        $(document).ready(function() { 
+            {{meta.jquery}}
+        });
+    </script>
+{{/meta.jquery}}
 {{#meta.js}}
   {{#url}}
     <script src="{{{url}}}" type="text/javascript"></script>
