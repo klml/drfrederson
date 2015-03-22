@@ -2,7 +2,6 @@ var drf_lemma = window.location.pathname.split('/').pop().split('.')[0] ;
 var drf_noedit = false ;
 var drf_sourcepath_write = drf_sourcepath_prefill = $("meta[name='dcterms.source']").attr("content");
 
-
 if ( $( "body" ).hasClass( "noedit" ) ) {
     drf_noedit = true ;
 }
@@ -15,50 +14,50 @@ if (typeof drf_new != 'undefined' && drf_lemma != '404error' ) {
     drf_sourcepath_write = drf_new.sourcepath + drf_lemma + drf_new.sourceextension ;
 
     drf_noedit = false ;
-
-} 
+}
 
 jQuery(document).ready(function() {
 
-    $( "#editor" ).load( "_drf/drf-formwebedit.html", function() {
+    $('input#drf-sourcepath').val( drf_sourcepath_write );
+    $('#drf-webedit').find('textarea').load( drf_sourcepath_prefill  + '?v=' + Math.random() ) ; // force reload 
 
-        $('#drf-edit button').click( function() {
-            var editbutton = $(this).attr( 'id' ) ;
-            $('#drf-edit').hide();
-            $('.drf-webedit').show().find('textarea').load( drf_sourcepath_prefill  + '?v=' + Math.random(), function() {  // force reload 
+    //~ if TODO ( drf_noedit ) {
 
-                if ( typeof Editor != "undefined" && editbutton == "drf-edit-editor" ) {
-                    var lepeditor = new Editor();
-                    lepeditor.render();
-                    $('#drf-render').hide();
-                };
-                if ( drf_noedit ) {
-                    $( '.drf-webedit' ).find('button').replaceWith('edit is veiled');
-                } else {
-                    webeditSend( ); // init after replaceWith
-                }
+
+    if ( window.location.hash == "#drf-markdownwysiwym" ) {
+        $.getScript("//cdn.jsdelivr.net/g/editor(editor.js)", function() { // need to load out of webedit TODO
+            var editor = new Editor({
+                element : $('#drf-webedit textarea').get(0) ,
+                tools: true
             });
-         });
-
-        var intermission ; 
-        $( '.drf-webedit' ).find('textarea').keyup( function() {
-            window.clearTimeout( intermission );
-            intermission = window.setTimeout( 'render()' , 3000);
+            editor.render();
+            webeditSend();
         });
+    } else {
+            webeditSend();
+    }
+
+    var intermission ; 
+    $( '#drf-webedit' ).find('textarea').keyup( function() {
+        window.clearTimeout( intermission );
+        intermission = window.setTimeout( 'render()' , 3000);
     });
 });
 
 function webeditSend ( ) {
-    $( '.drf-webedit' ).submit( function(event) {
+
+    $( '#drf-webedit' ).submit( function(event) {
+
         event.preventDefault();
         $.ajax({
-            url: '_drf/make.php',
-            type: 'POST',
-            data: $(this).serialize() + '&drf_sourcepath=' + drf_sourcepath_write ,
+            url: $(this).context.action ,
+                type: $(this).context.method ,
+            data: $(this).serialize() ,
             success: function( msg ){
                 $( '#successmsg' ).show("slow", function() {
                     $(this).find('pre').text( msg );
-                    location.reload(true);
+                    window.location.hash = "#main"
+                    location.reload();
                 });
             },
             error:function( msg ){
@@ -71,5 +70,5 @@ function webeditSend ( ) {
     
 }
 function render () {
-    $('#main').html( Markdown( $( '.drf-webedit' ).find('textarea').val() ) );
+    $('#main').html( Markdown( $( '#drf-webedit' ).find('textarea').val() ) );
 };

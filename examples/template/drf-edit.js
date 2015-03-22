@@ -1,22 +1,28 @@
 jQuery(document).ready(function() {
 
-    $('#requestauth').click( function() {
-
+    $('#requestauth, #showedit').click( function() {
         if( $(this).is(':checked') ) {
-            document.cookie = 'requestauth=true' ;
-            $.getScript("_drf/drf-write.jquery.js");
+            document.cookie = 'showedit=true' ;
         };
         if( !$(this).is(':checked') ) {
-            document.cookie = 'requestauth=false';
-            $('#edit').remove();
+            document.cookie = 'showedit=false';
+            $('#drf-edit a').hide();
         };
-        
-    });    
+    });
 
-    edit = document.cookie.search(/requestauth=true/); 
+    edit = document.cookie.search(/showedit=true/); 
     if( edit != -1 ) {
-        $.getScript("_drf/drf-write.jquery.js");
-        $('#requestauth').prop('checked', true);
+        $('#drf-edit a').show();
+        $('#requestauth, #showedit').prop('checked', true);
     };
-    // TODO if more cookie useage -- plugin
+    // TODO useage -- plugin http://cdn.jsdelivr.net/jquery.cookie/1.4.1/jquery.cookie.js
+
+
+   (this.hashrouter = function () {
+        var hash = window.location.hash ;
+        if ( hash == "#drf-edit" || hash == "#drf-markdownwysiwym" ) {
+            $( "#drf-edit" ).load( "_drf/drf-formwebedit.html")
+        }
+   })();
+   window.onhashchange = this.hashrouter;
 });

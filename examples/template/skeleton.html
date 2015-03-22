@@ -11,7 +11,7 @@
 
     <link rel="stylesheet" href="//cdn.jsdelivr.net/g/skeleton@1.2">
 
-    <link rel="stylesheet" type="text/css" href="{{meta.baseurl}}template/drf-common.css?v={{meta.cssjsversion}}">
+    <link rel="stylesheet" type="text/css" href="{{meta.baseurl}}template/drf_common.css?v={{meta.cssjsversion}}">
     <link rel="stylesheet" type="text/css" href="{{meta.baseurl}}source/drf/drf-custom-css.css?v={{meta.cssjsversion}}">
 {{#meta.css}}
   {{#url}}
@@ -55,9 +55,11 @@
     <div id="footer" class="sixteen columns" role="contentinfo" >
     <footer>
         {{{content.footer}}}
+        <div id="drf-edit" >
+            <a href="#drf-edit" style="display: none;" >edit</a>
+        </div>
     </footer>
     </div>
-    <div id="editor"></div>
 </div>
     <script src="//cdn.jsdelivr.net/g/jquery@2.1.0"></script>
     <script src="{{meta.baseurl}}template/drf-edit.js?v={{meta.cssjsversion}}" type="text/javascript"></script>
