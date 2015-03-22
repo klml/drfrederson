@@ -19,7 +19,7 @@ Additonal css and js (embedded from [cdnjs.com](http://cdnjs.com)) only on this 
 [![](http://farm4.staticflickr.com/3419/3378131129_bb2123e148_q.jpg)](http://farm4.staticflickr.com/3419/3378131129_bb2123e148.jpg) {.fancybox}
 
 #meta#
-pagetitle: Example page
+pagetitle: "Example page: for exemplary usage"
 siteTitle: another sitetitle from pagemeta
 comment: true
 description: Example page, used as template for new pages
