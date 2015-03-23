@@ -21,6 +21,11 @@ jQuery(document).ready(function() {
     $('input#drf-sourcepath').val( drf_sourcepath_write );
     $('#drf-webedit').find('textarea').load( drf_sourcepath_prefill  + '?v=' + Math.random() ) ; // force reload 
 
+    $('#drf-hide-edit').click( function() {
+        $.cookie('showedit', false);
+        $('#drf-edit').hide();
+    });
+
     //~ if TODO ( drf_noedit ) {
 
 
