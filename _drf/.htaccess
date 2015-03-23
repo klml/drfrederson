@@ -1,3 +1,0 @@
-AuthType Basic
-AuthName "admin user and password"
-Require valid-user
