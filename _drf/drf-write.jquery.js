@@ -33,7 +33,7 @@ jQuery(document).ready(function() {
         $.getScript("//cdn.jsdelivr.net/g/editor(editor.js)", function() { // need to load out of webedit TODO
             var editor = new Editor({
                 element : $('#drf-webedit textarea').get(0) ,
-                tools: true
+                tools: []
             });
             editor.render();
             webeditSend();
