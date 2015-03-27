@@ -1,17 +1,17 @@
+
 <form action="_drf/make.php" accept-charset="ISO-8859-1" id="drf-webedit" method="POST" >
     <textarea id="drf-webedit-textarea" class="sixteen columns col_12" name="content" style="background-color: #131313; color: #FFFFFF;  font-size: 125%;height: 400px;" ></textarea>
     <br/>
     <input id="drf-sourcepath" name="drf_sourcepath" type="hidden" />
-    <button id="drf-save" class="icon-save"> save</button>
+    <button type="submit" id="drf-save" >💾 save</button>
+    <button type="button" id="drf-render" >preview</button>
 </form>
-    <a href="#main" id="drf-render" onclick="javascript:render()" >preview</a>
-    <br />
-    <a href="#main" id="drf-hide-edit" >hide edit button</a>
-
-
+<form>
+    <input type="checkbox" name="drf-markdownwysiwym"  id="drf-markdownwysiwym" value="drf-markdownwysiwym" /> markdownWYSIWG (deactivate on next page)<br />
+    <input type="checkbox" name="drf-showedit"  id="drf-showedit" value="drf-showedit" checked="checked" /> show edit section (will remove this section, reactivate with <code>#drf-edit</code>)
+</form>
     <div id="successmsg" class="hide notice" >submitted successfully:<pre></pre></div>
     <div id="errormsg" class="hide notice" >error occurred while sending:<pre></pre></div>
-
 <h4>most important markdown tags</h4>
 <pre>
 # Heading 1

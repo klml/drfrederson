@@ -18,61 +18,87 @@ if (typeof drf_new != 'undefined' && drf_lemma != '404error' ) {
 
 jQuery(document).ready(function() {
 
+    // set cookie for editlink on other pages
+    $.cookie('drf-showedit', true);
+
+    // get sourcepath from document and fill it in the edit form
     $('input#drf-sourcepath').val( drf_sourcepath_write );
+
+    // fetch existing source file and fill it in textarea
     $('#drf-webedit').find('textarea').load( drf_sourcepath_prefill  + '?v=' + Math.random() ) ; // force reload 
 
-    $('#drf-hide-edit').click( function() {
-        $.cookie('showedit', false);
-        $('#drf-edit').hide();
+    // remove edit link and edit section
+    $('#drf-showedit').click( function() {
+        $.cookie('drf-showedit', false) ;
+        $('#drf-edit').hide('slow') ;
+        window.location.hash = "#main" ;
     });
+
+    // load https://github.com/lepture/editor markdown WYSIWYM
+    $('#drf-markdownwysiwym').click( function() {
+        if( $(this).is(':checked') ) {
+            $.cookie('drf-markdownwysiwym', true);
+            markdownwysiwym();
+        };
+        if( !$(this).is(':checked') ) {
+            $.cookie('drf-markdownwysiwym', false);
+            //~  TODO delete lepture
+        };
+    });
+    if( $.cookie('drf-markdownwysiwym') == "true" ) {
+        $('#drf-markdownwysiwym').prop('checked', true);
+        markdownwysiwym();
+    };
 
     //~ if TODO ( drf_noedit ) {
 
 
-    if ( window.location.hash == "#drf-markdownwysiwym" ) {
-        $.getScript("//cdn.jsdelivr.net/g/editor(editor.js)", function() { // need to load out of webedit TODO
-            var editor = new Editor({
-                element : $('#drf-webedit textarea').get(0) ,
-                tools: []
-            });
-            editor.render();
-            webeditSend();
-        });
-    } else {
-            webeditSend();
-    }
-
+    // redner preview on click and on time
+    $('#drf-render').click( function() {
+        render();
+    });
     var intermission ; 
     $( '#drf-webedit' ).find('textarea').keyup( function() {
         window.clearTimeout( intermission );
         intermission = window.setTimeout( 'render()' , 3000);
     });
+     webeditSend();
 });
 
+function markdownwysiwym ( ) {
+    $.getScript("//cdn.jsdelivr.net/g/editor(editor.js)", function() { // need to load out of webedit TODO
+        var editor = new Editor({
+            element : $('#drf-webedit textarea').get(0) ,
+            tools: []
+        });
+        editor.render();
+        webeditSend();
+    });
+}
 function webeditSend ( ) {
-
-    $( '#drf-webedit' ).submit( function(event) {
-
-        event.preventDefault();
-        $.ajax({
-            url: $(this).context.action ,
-                type: $(this).context.method ,
-            data: $(this).serialize() ,
-            success: function( msg ){
-                $( '#successmsg' ).show("slow", function() {
-                    $(this).find('pre').text( msg );
-                    window.location.hash = "#main"
-                    location.reload();
-                });
-            },
-            error:function( msg ){
-                $( '#errormsg' ).show( function() {
-                     $(this).find('pre').text( msg );
-                });
-            }
-        });         
-    });    
+    $('#drf-save').click( function() { // assign submit after changing the editor by user
+        $( '#drf-webedit' ).submit( function(event) {
     
+            event.preventDefault();
+            $.ajax({
+                url: $(this).context.action ,
+                type: $(this).context.method ,
+                data: $(this).serialize() ,
+                success: function( msg ){
+                    $( '#successmsg' ).show("slow", function() {
+                        $(this).find('pre').text( msg );
+                        window.location.hash = "#main"
+                        location.reload();
+                    });
+                },
+                error:function( msg ){
+                    $( '#errormsg' ).show( function() {
+                         $(this).find('pre').text( msg );
+                    });
+                }
+            });         
+        });    
+    });
 }
 function render () {
     $('#main').html( Markdown( $( '#drf-webedit' ).find('textarea').val() ) );
