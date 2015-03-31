@@ -5,9 +5,9 @@
 You can edit all pages in the ''source/'' directory or with the webeditor.
 If you use this site in an public area like your webserver and not in a secure environment on your computer or intranet, you have to get authorizised via htaccess for the JavaScript based edit functionality. 
 
-With an attached hashtag `#drf-edit` (e.g [/#drf-edit](/#drf-edit)), on every page, you can activating editmode. There you will find an editbutton on the bottom of every page. To see the page without the editsection, you can hide this inside the editsection. 
+With <a href="./drf:admin" onclick="$.cookie('drf-showedit', true);">activate edit</a> or an attached hashtag `#drf-edit` (e.g [/#drf-edit](/#drf-edit)), on every page, you can activating editmode sitewide. There you will find an editbutton on the bottom of every page. To see the page without the editsection, you can hide this inside the editsection.
 
-You can [Rerender all pages](/_drf/make.php).
+You can [rerender all pages](/_drf/make.php).
 
 ## Create new pages
 
