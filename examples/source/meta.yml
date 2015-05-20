@@ -5,4 +5,5 @@ jsdelivrdomain: //cdn.jsdelivr.net/
 template: kickstart
 cssjsversion: 1
 comment: false
+webedit: true
 description: Some general site  wide description

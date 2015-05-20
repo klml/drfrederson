@@ -1,19 +1,11 @@
 var drf_lemma = window.location.pathname.split('/').pop().split('.')[0] ;
-var drf_noedit = false ;
 var drf_sourcepath_write = drf_sourcepath_prefill = $("meta[name='dcterms.source']").attr("content");
 
-if ( $( "body" ).hasClass( "noedit" ) ) {
-    drf_noedit = true ;
-}
-
-if (typeof drf_new != 'undefined' && drf_lemma != '404error' ) {
-
+// to create new pages from a 404
+if (typeof drf_new != 'undefined' && drf_lemma != 'drf:404error' ) {
     var drf_lemma = drf_lemma.split(':').join('/') ;
-
     drf_sourcepath_prefill = drf_new.prefillpath ;
     drf_sourcepath_write = drf_new.sourcepath + drf_lemma + drf_new.sourceextension ;
-
-    drf_noedit = false ;
 }
 
 jQuery(document).ready(function() {
@@ -49,9 +41,6 @@ jQuery(document).ready(function() {
         $('#drf-markdownwysiwym').prop('checked', true);
         markdownwysiwym();
     };
-
-    //~ if TODO ( drf_noedit ) {
-
 
     // redner preview on click and on time
     $('#drf-render').click( function() {
