@@ -16,7 +16,8 @@ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod 
 Additonal css and js (embedded from [cdnjs.com](http://cdnjs.com)) only on this page for [fancybox](http://fancyapps.com/fancybox/).
 
 
-[![](http://farm4.staticflickr.com/3419/3378131129_bb2123e148_q.jpg)](http://farm4.staticflickr.com/3419/3378131129_bb2123e148.jpg) {.fancybox}
+[![](//lorempixel.com/200/200/nature/10/)](//lorempixel.com/1200/600/nature/10/) {.fancybox}
+
 
 #meta#
 pagetitle: "Example page: for exemplary usage"
@@ -27,5 +28,4 @@ d2c: classes for thebody
 css:
   - url: //cdn.jsdelivr.net/fancybox/2.1.4/jquery.fancybox.css
 jsdelivr: ",fancybox"
-jquery: "$('.fancybox').fancybox();"
-
+jquery: "$('.fancybox').fancybox({ type : 'image' });"
