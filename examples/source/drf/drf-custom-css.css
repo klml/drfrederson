@@ -1,20 +1,21 @@
 /* resident overwrites */
 /* main font, color ... */
 body {
-font: 12px sans-serif;
 }
 /* headings */
 h1, h2, h3 {
 }
+h2 {
+    font-size: 3.2rem;
+}
 /* hyperlinks */
 a {
-    color: #0645AD;
 }
 a:hover {
     text-decoration: underline;
 }
 a:visited {
-    color: #2C49B1;
 }
 a:active,
-a.active { color: #2E6465; }
+a.active { 
+}
