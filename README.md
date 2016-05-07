@@ -55,8 +55,8 @@ Sites made with drfrederson:
 - include http://www.mediawiki.org/wiki/Transclusion; Mustache ?
     - new article field (and include)
 - listings
-    - more cutter
-- [ ]* index: dir as link include (for pix)
+    - [More Tag](https://en.support.wordpress.com/more-tag/)
+- [ ] index: dir as link include (for pix)
 
 ### Nice2Have
 - [ ] minfy als webservice?
