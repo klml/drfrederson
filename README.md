@@ -6,7 +6,7 @@ A simple static site generator powered by PHP, YAML, Markdown and mustache. Lice
 There are many other and better [staticsitegenerators](http://staticsitegenerators.net), but I searched for these features and did not find:
 
 * edit without texteditor or ssh access. Using __webedit__ on your browser and get a textarea or [markdown-WYSIWM](https://github.com/lepture/editor) to change and create pages.
-* __meta information__ for rendering (template, menue etc) or html metatags are at the __bottom__ of the page and only __optional__
+* __meta information__ for rendering (template, menue etc) or html metatags are at the __bottom__ of the page and only __optional__ (tried to use my own standard [PROSErial](https://github.com/klml/PROSErial)
 * no indexed or automatic __menu__; just an extra included __page__ with a (nested) list.
 
 Some more small features like titletags from the first heading, etc.
