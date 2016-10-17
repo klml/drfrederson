@@ -26,19 +26,13 @@ jQuery(document).ready(function() {
         window.location.hash = "#main" ;
     });
 
-    // load https://github.com/lepture/editor markdown WYSIWYM
-    $('#drf-markdownwysiwym').click( function() {
-        if( $(this).is(':checked') ) {
-            $.cookie('drf-markdownwysiwym', true);
-            markdownwysiwym();
-        };
-        if( !$(this).is(':checked') ) {
-            $.cookie('drf-markdownwysiwym', false);
-            //~  TODO delete lepture
-        };
+    // load https://simplemde.com
+    $('#drf-markdownwysiwym').click( function( event ) {
+        event.preventDefault();
+        $.cookie('drf-markdownwysiwym', true);
+        markdownwysiwym();
     });
     if( $.cookie('drf-markdownwysiwym') == "true" ) {
-        $('#drf-markdownwysiwym').prop('checked', true);
         markdownwysiwym();
     };
 
@@ -55,15 +49,26 @@ jQuery(document).ready(function() {
 });
 
 function markdownwysiwym ( ) {
-    $.getScript("//cdn.jsdelivr.net/g/editor(editor.js)", function() { // need to load out of webedit TODO
-        var editor = new Editor({
-            element : $('#drf-webedit textarea').get(0) ,
-            tools: []
+    $.getScript("//cdn.jsdelivr.net/simplemde/latest/simplemde.min.js", function() { // need to load out of webedit TODO
+        var simplemde = new SimpleMDE({
+            element: document.getElementById("drf-webedit-textarea"),
+            toolbar: [ "bold", "italic", "strikethrough", "heading-2", "heading-3", "code", "quote", "unordered-list", "ordered-list",  "link", "image", "table", "horizontal-rule", "|",
+            "clean-block", "preview", "side-by-side", "fullscreen", "|", {
+                    name: "close",
+                    action: function customFunction(editor){
+                        $.cookie('drf-markdownwysiwym', false);
+                        simplemde.toTextArea();
+                        simplemde = null;
+                    },
+                    className: "fa fa-close right",
+                    title: "close editor and get back",
+                }
+            ],
         });
-        editor.render();
-        webeditSend();
     });
 }
+
+
 function webeditSend ( ) {
     $('#drf-save').click( function() { // assign submit after changing the editor by user
         $( '#drf-webedit' ).submit( function(event) {

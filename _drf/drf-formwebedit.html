@@ -1,14 +1,13 @@
-
+<form>
+    <button id="drf-markdownwysiwym" >use Simple Markdown Editor</button>
+    <input type="checkbox" name="drf-showedit"  id="drf-showedit" value="drf-showedit" checked="checked" /> show edit section (will remove this section, reactivate with <code>#drf-edit</code>)
+</form>
 <form action="_drf/make.php" accept-charset="ISO-8859-1" id="drf-webedit" method="POST" >
     <textarea id="drf-webedit-textarea" class="sixteen columns col_12" name="content" style="background-color: #131313; color: #FFFFFF;  font-size: 125%;height: 400px;" ></textarea>
     <br/>
     <input id="drf-sourcepath" name="drf_sourcepath" type="hidden" />
     <button type="submit" id="drf-save" >save</button>
     <button type="button" id="drf-render" >preview</button>
-</form>
-<form>
-    <input type="checkbox" name="drf-markdownwysiwym"  id="drf-markdownwysiwym" value="drf-markdownwysiwym" /> markdownWYSIWG (deactivate on next page)<br />
-    <input type="checkbox" name="drf-showedit"  id="drf-showedit" value="drf-showedit" checked="checked" /> show edit section (will remove this section, reactivate with <code>#drf-edit</code>)
 </form>
     <div id="successmsg" class="hide notice" >submitted successfully:<pre></pre></div>
     <div id="errormsg" class="hide notice" >error occurred while sending:<pre></pre></div>
@@ -39,11 +38,11 @@ email &lt;address@example.com&gt;
 .CodeMirror pre {
 box-shadow: none;
 }
+.right {
+    float: right;
+}
 </style>
 <script src="//cdn.jsdelivr.net/g/js-markdown-extra" type="text/javascript"></script>
-<!-- need for editor.js -->
-<link  href="//cdn.jsdelivr.net/editor/0.1.0/editor.css" type="text/css" rel="stylesheet" />
-<script src="//cdn.jsdelivr.net/g/marked(marked.min.js)" type="text/javascript"></script>
-
+<link rel="stylesheet" href="//cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
 
 <script src="_drf/drf-write.jquery.js" type="text/javascript"></script>
