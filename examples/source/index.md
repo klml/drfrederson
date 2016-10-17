@@ -4,7 +4,7 @@
 
 You can edit all pages without file access, using the browser webedit-function on [[drf:admin]].
 
-For more read the [drf-wiki](https://github.com/klml/drfrederson/wiki/drfrederson) or try the [demo](http://drf.grus.uberspace.de/drf:admin).
+For more read the [drf-wiki](https://github.com/klml/drfrederson/wiki/drfrederson) or try the [demo](http://drfrederson.klml.org).
 
 <!--
 You can remove this text on your own installation
