@@ -20,7 +20,7 @@ jQuery(document).ready(function() {
     $('#drf-webedit').find('textarea').load( drf_sourcepath_prefill  + '?v=' + Math.random() ) ; // force reload 
 
     // remove edit link and edit section
-    $('#drf-showedit').click( function() {
+    $('#drf-cancel').click( function() {
         $.cookie('drf-showedit', false) ;
         $('#drf-edit').hide('slow') ;
         window.location.hash = "#main" ;
@@ -29,6 +29,7 @@ jQuery(document).ready(function() {
     // load https://simplemde.com
     $('#drf-markdownwysiwym').click( function( event ) {
         event.preventDefault();
+        $(this).hide();
         $.cookie('drf-markdownwysiwym', true);
         markdownwysiwym();
     });
@@ -57,6 +58,7 @@ function markdownwysiwym ( ) {
                     name: "close",
                     action: function customFunction(editor){
                         $.cookie('drf-markdownwysiwym', false);
+                        $('#drf-markdownwysiwym').show();
                         simplemde.toTextArea();
                         simplemde = null;
                     },

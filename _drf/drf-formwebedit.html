@@ -1,13 +1,12 @@
-<form>
-    <button id="drf-markdownwysiwym" >use Simple Markdown Editor</button>
-    <input type="checkbox" name="drf-showedit"  id="drf-showedit" value="drf-showedit" checked="checked" /> show edit section (will remove this section, reactivate with <code>#drf-edit</code>)
-</form>
+<hr style="clear:both;"/>
+<button id="drf-markdownwysiwym" >Simple Markdown Editor</button>
 <form action="_drf/make.php" accept-charset="ISO-8859-1" id="drf-webedit" method="POST" >
     <textarea id="drf-webedit-textarea" class="sixteen columns col_12" name="content" style="background-color: #131313; color: #FFFFFF;  font-size: 125%;height: 400px;" ></textarea>
     <br/>
     <input id="drf-sourcepath" name="drf_sourcepath" type="hidden" />
     <button type="submit" id="drf-save" >save</button>
     <button type="button" id="drf-render" >preview</button>
+    <button type="button" id="drf-cancel" >cancel and remove edit link</button>
 </form>
     <div id="successmsg" class="hide notice" >submitted successfully:<pre></pre></div>
     <div id="errormsg" class="hide notice" >error occurred while sending:<pre></pre></div>
