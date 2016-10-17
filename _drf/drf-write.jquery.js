@@ -34,6 +34,7 @@ jQuery(document).ready(function() {
         markdownwysiwym();
     });
     if( $.cookie('drf-markdownwysiwym') == "true" ) {
+        $('#drf-markdownwysiwym').hide();
         markdownwysiwym();
     };
 
