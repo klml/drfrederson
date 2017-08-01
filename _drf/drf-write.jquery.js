@@ -17,7 +17,10 @@ jQuery(document).ready(function() {
     $('input#drf-sourcepath').val( drf_sourcepath_write );
 
     // fetch existing source file and fill it in textarea
-    $('#drf-webedit').find('textarea').load( drf_sourcepath_prefill  + '?v=' + Math.random() ) ; // force reload 
+    // random to force reload
+    $('#drf-webedit').find('textarea').load( drf_sourcepath_prefill  + '?v=' + Math.random() , function() {
+        $(this).focus();
+    });
 
     // remove edit link and edit section
     $('#drf-cancel').click( function() {
