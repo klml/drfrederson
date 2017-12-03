@@ -2,7 +2,7 @@ siteTitle: drFrederson
 pagetitle: Directory wide title 
 baseurl: 
 jsdelivrdomain: //cdn.jsdelivr.net/
-template: skeleton
+template: plain
 cssjsversion: 1
 comment: false
 webedit: true
