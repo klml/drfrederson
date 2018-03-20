@@ -44,6 +44,7 @@ jQuery(document).ready(function() {
     // redner preview on click and on time
     $('#drf-render').click( function() {
         render();
+        $('#drf-webedit').find('textarea').focus();
     });
     var intermission ; 
     $( '#drf-webedit' ).find('textarea').keyup( function() {
