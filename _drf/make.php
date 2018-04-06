@@ -101,14 +101,15 @@ class MakeSite {
             $source['content'] = splitYamlProse( $source['path'] , $this->makeconfig['metaseparator'] ) ;
 
             // remove source base directory
-            $namespace = substr( $source['pathinfo']['dirname'] , strlen( $this->directories['source'] ) ) ;
+            $source['namespaceslash'] = $namespace = substr( $source['pathinfo']['dirname'] , strlen( $this->directories['source'] ) ) ;
 
             // change slash to namespaceseparator
             $namespace = str_replace( DIRECTORY_SEPARATOR , $this->makeconfig['namespaceseparator'], $namespace ) ;
 
-            // trailing namespaceseparator
+            // add trailing namespaceseparator
             if ( $namespace != "" ) {
                 $namespace .= $this->makeconfig['namespaceseparator'] ;
+                $source['namespaceslash'] .= DIRECTORY_SEPARATOR ;
             }
             
             $source['dirlimb'] = $dirlimb = $namespace . $source['pathinfo']['filename'] ;
