@@ -28,9 +28,16 @@ class MakeSite {
     public function createPage($sourcepath) {
         $this->source = $this->source($sourcepath);
         $this->meta = $this->collectMeta();
+
+        // check whether file should be published
+        if ( !$this->meta['publish'] ) {
+            return ;
+        }
+
         $this->content = $this->buildContent();
         $this->buildHTML();
         $this->buildJSON();
+
     }
 
     protected function httpandcliRouting() {
