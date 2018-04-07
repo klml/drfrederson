@@ -61,6 +61,13 @@ class MakeSite {
                 die( $_POST["drf_sourcepath"] . ' contains illegal characters ..' );
             }
 
+            // prevent source file to other directory than form config
+            if ( 0 === strpos( $sourcepath, $this->makeconfig['directory']['source'] ) ) {
+                $sourcepath = '../' . $_POST["drf_sourcepath"] ;
+            } else {
+                die( $_POST["drf_sourcepath"] . ' is a illegal source directory' );
+            }
+
             // sourcepath starts not with sourcedir from config
             if ( $sourcepath == substr( $sourcepath , 0, strlen( $this->directories['source'] ) ) ) { 
                 return ;
