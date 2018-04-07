@@ -5,6 +5,5 @@ baseurl:
 jsdelivrdomain: //cdn.jsdelivr.net/
 template: plain
 cssjsversion: 1
-comment: false
 webedit: true
 description: Some general site  wide description
