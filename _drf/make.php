@@ -63,8 +63,10 @@ class MakeSite {
             }
 
             // after webediting an area like navgation or sidebar
-            if ( in_array( $sourcepath , $this->makeconfig['area'] ) ) {
-                $this->allPages();
+
+            if ( $this->makeconfig['directory']['area'] == substr( $sourcepath, 0 , strlen( $this->makeconfig['directory']['area'] ) ) ) {
+
+                $this->allPages( $this->directories['source'] );
                 return ; 
             }
             $this->createPage( $sourcepath );
