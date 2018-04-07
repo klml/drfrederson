@@ -51,7 +51,15 @@ class MakeSite {
         // writes single pages from webeditor
         } else if (  isset( $_POST["drf_sourcepath"] )  ) {
 
-            $sourcepath = '../' . preventDirectoryTraversal( $_POST["drf_sourcepath"] );
+            // prevent Directory traversal attack
+            // TODO http://stackoverflow.com/questions/4205141/preventing-directory-traversal-in-php-but-allowing-paths/4205182#4205182
+            // http://www.phpfreaks.com/tutorial/php-security
+
+            if ( false === strpos( $_POST["drf_sourcepath"] , '..') ) {
+                $sourcepath = '../' . $_POST["drf_sourcepath"] ;
+            } else {
+                die( $_POST["drf_sourcepath"] . ' contains illegal characters ..' );
+            }
 
             // sourcepath starts not with sourcedir from config
             if ( $sourcepath == substr( $sourcepath , 0, strlen( $this->directories['source'] ) ) ) { 

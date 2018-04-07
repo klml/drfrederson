@@ -22,18 +22,6 @@ function success($value='') {
     echo "[SUCCESS] {$caller['function']}: $value\n";
 }
 
-// prevent Directory traversal attack
-function preventDirectoryTraversal($sourcepath) {
-    if (false === strpos($sourcepath, '..') ) {  
-        // TODO http://stackoverflow.com/questions/4205141/preventing-directory-traversal-in-php-but-allowing-paths/4205182#4205182
-        // http://www.phpfreaks.com/tutorial/php-security
-    } else {
-        die( $sourcepath . ' contains illegal characters' );
-    }
-    return $sourcepath ;
-}
-
-
 // return yaml conf and md seperated from source
 function splitYamlProse($fileContent, $separator) {
     $ymlProse = explode( $separator , $fileContent ); // TODO limit ?
