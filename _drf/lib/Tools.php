@@ -3,7 +3,7 @@
  * @name Tools.php
  * @description some function tools
  * @author klml based on https://github.com/lonescript/php-site-maker
- * @date 2013-09-27
+ * @date 2018-04-07
  */
 
 
