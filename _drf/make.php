@@ -62,9 +62,9 @@ class MakeSite {
                 file_put_contents( $sourcepath , $_POST["content"] ) ? success( $sourcepath ) : error( $sourcepath ) ;
             }
 
+            // check if edited page is a area 
             // after webediting an area like navgation or sidebar
-
-            if ( $this->makeconfig['directory']['area'] == substr( $sourcepath, 0 , strlen( $this->makeconfig['directory']['area'] ) ) ) {
+            if ( strpos($sourcepath, $this->makeconfig['directory']['area']) === 0  ) {
 
                 $this->allPages();
                 return ; 
