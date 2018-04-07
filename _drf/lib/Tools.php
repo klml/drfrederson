@@ -35,8 +35,8 @@ function preventDirectoryTraversal($sourcepath) {
 
 
 // return yaml conf and md seperated from source
-function splitYamlProse($filePath, $separator) {
-    $ymlProse = explode( $separator , file_get_contents($filePath) ); // TODO limit ?
+function splitYamlProse($fileContent, $separator) {
+    $ymlProse = explode( $separator , $fileContent ); // TODO limit ?
     if ( count($ymlProse) == 1 ) $ymlProse[1] = '';
     $ymlProse = array_slice( $ymlProse, 0, 2 );
     $ymlProse = array_combine( array('prose', 'meta' ) , $ymlProse );
