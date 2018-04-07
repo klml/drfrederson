@@ -66,18 +66,19 @@ class MakeSite {
 
             if ( $this->makeconfig['directory']['area'] == substr( $sourcepath, 0 , strlen( $this->makeconfig['directory']['area'] ) ) ) {
 
-                $this->allPages( $this->directories['source'] );
+                $this->allPages();
                 return ; 
             }
             $this->createPage( $sourcepath );
 
         } else {
-            $this->allPages( $this->directories['source'] );
+            $this->allPages();
         }
 
     }
-    protected function allPages( $sourcedir ) {
+    protected function allPages( ) {
 
+        $sourcedir = $this->directories['source'] ;
         $exclude = array();
         array_push($exclude, $this->makeconfig['sourceexclude'] );
 
