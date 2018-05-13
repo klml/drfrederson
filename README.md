@@ -41,7 +41,6 @@ Sites made with drfrederson:
   - Drf automatic ID for headimgs
 - live preview without meta
 - const public
-- http://php.net/manual/de/function.realpath.php PHP 5.3
 - [ ] bloggish posttemplate (date, archivcat) for webedit
 - [ ] lasttest
 - [ ] doku images timestamp

@@ -1,2 +1,2 @@
-cd _drf
-php make.php $1
+#!/bin/bash
+php _drf/make.php $1

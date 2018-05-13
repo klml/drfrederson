@@ -5,8 +5,8 @@ metaseparator: "\n#meta#"
 defaulttemplate: plain
 sourceexclude: '.git'
 directory:
-    template: ../template/
-    source: ../source/
-    area: ../source/area/
-    html: ../html/
-    json: ../json/
+    template: template
+    source: source
+    area: source/area
+    html: html
+    json: json

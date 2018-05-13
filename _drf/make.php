@@ -17,11 +17,14 @@ class MakeSite {
     protected $source;
 
     public function __construct() {
-        $this->makeconfig = spyc_load_file('config.global.yml');
-        if( file_exists( 'config.local.yml' ) ) { 
-            $this->makeconfig = array_merge( $this->makeconfig, spyc_load_file('config.local.yml') );
+        $globalconfig = realpath( dirname( __FILE__ ) . DIRECTORY_SEPARATOR . 'config.global.yml' ) ;
+        $localconfig  = realpath( dirname( __FILE__ ) . DIRECTORY_SEPARATOR . 'config.local.yml'  ) ;
+
+        $this->makeconfig = spyc_load_file( $globalconfig ) ;
+        if( file_exists( $localconfig ) ) {
+            $this->makeconfig = array_merge( $this->makeconfig, spyc_load_file( $localconfig ) );
         };
-        $this->directories = $this->makeconfig['directory'];
+        $this->defineDirectories();
         $this->httpandcliRouting();
     }
 
@@ -37,7 +40,16 @@ class MakeSite {
         $this->content = $this->buildContent();
         $this->buildHTML();
         $this->buildJSON();
+    }
 
+    public function defineDirectories() {
+
+        // define webroot
+        $this->directories['webroot'] = $webroot  = chop( realpath('./') ,  dirname($_SERVER['PHP_SELF']) ) . DIRECTORY_SEPARATOR ;
+
+        foreach( $this->makeconfig['directory'] as $makeconfigdirectorykey => $makeconfigdirectoryvalue ) {
+            $this->directories[$makeconfigdirectorykey] = $webroot . $makeconfigdirectoryvalue . DIRECTORY_SEPARATOR ;
+        }
     }
 
     protected function httpandcliRouting() {
@@ -46,51 +58,49 @@ class MakeSite {
         // create single pages from cli input
         if ( count($argv) > 1  ) {
             array_shift($argv);         // remove script name
-            $this->createPage( $argv[0] );
+            $this->buildSourcepath( $argv[0] ) ;
 
         // writes single pages from webeditor
         } else if (  isset( $_POST["drf_sourcepath"] )  ) {
 
-            // prevent Directory traversal attack
-            // TODO http://stackoverflow.com/questions/4205141/preventing-directory-traversal-in-php-but-allowing-paths/4205182#4205182
-            // http://www.phpfreaks.com/tutorial/php-security
-
-            if ( false === strpos( $_POST["drf_sourcepath"] , '..') ) {
-                $sourcepath = '../' . $_POST["drf_sourcepath"] ;
-            } else {
-                die( $_POST["drf_sourcepath"] . ' contains illegal characters ..' );
+            // TODO deprecated
+            if ( isset ( $_POST["content"] )  ) {
+                file_put_contents( realpath( $this->directories['webroot'] . $_POST["drf_sourcepath"] ) , $_POST["content"] ) ? success( $_POST["drf_sourcepath"] ) : error( $_POST["drf_sourcepath"] ) ;
             }
-
-            // prevent source file to other directory than form config
-            if ( 0 === strpos( $sourcepath, $this->makeconfig['directory']['source'] ) ) {
-                $sourcepath = '../' . $_POST["drf_sourcepath"] ;
-            } else {
-                die( $_POST["drf_sourcepath"] . ' is a illegal source directory' );
-            }
-
-            // sourcepath starts not with sourcedir from config
-            if ( $sourcepath == substr( $sourcepath , 0, strlen( $this->directories['source'] ) ) ) { 
-                return ;
-            } ;
-
-            if ( isset ( $_POST["content"] )  ) { 
-                file_put_contents( $sourcepath , $_POST["content"] ) ? success( $sourcepath ) : error( $sourcepath ) ;
-            }
-
-            // check if edited page is a area 
-            // after webediting an area like navgation or sidebar
-            if ( strpos($sourcepath, $this->makeconfig['directory']['area']) === 0  ) {
-
-                $this->allPages();
-                return ; 
-            }
-            $this->createPage( $sourcepath );
+            $this->buildSourcepath( $_POST["drf_sourcepath"] );
 
         } else {
             $this->allPages();
         }
 
     }
+
+    protected function buildSourcepath( $sourcepath ) {
+
+            // add webroot to sourcepath coming from GET or cli e.g. source/foobarpage.md
+            $sourcepath = realpath( $this->directories['webroot'] . $sourcepath ) ;
+
+            // if file does not exit, realpath gives false
+            // and prevent Directory traversal attack
+            // from http://stackoverflow.com/questions/4205141/preventing-directory-traversal-in-php-but-allowing-paths/4205182#4205182
+            // and sourcepath has to start with sourcedirectory from config
+            // like /_drf/make.php?drf_sourcepath=source/../_drf/make.php
+
+            if ($sourcepath === false || strpos( $sourcepath, $this->directories['source'] ) !== 0) {
+                // illegal directory or directory traversal
+                die( $sourcepath . ' is a illegal source directory' );
+            }
+
+            // check if edited page is a area 
+            // after webediting an area like navgation or sidebar
+            if ( strpos($sourcepath, $this->directories['area']) === 0  ) {
+
+                $this->allPages();
+                return ; 
+            }
+            $this->createPage( $sourcepath );
+    }
+
     protected function allPages( ) {
 
         $sourcedir = $this->directories['source'] ;
@@ -125,8 +135,8 @@ class MakeSite {
 
             $source['content'] = splitYamlProse( file_get_contents($source['path']) , $this->makeconfig['metaseparator'] ) ;
 
-            // remove source base directory
-            $source['namespaceslash'] = $namespace = substr( $source['pathinfo']['dirname'] , strlen( $this->directories['source'] ) ) ;
+            // remove source base directory eg 'source/'
+            $source['namespaceslash'] = $namespace = substr( dirname( $sourcepath ) , strlen( $this->directories['source'] ) ) ;
 
             // change slash to namespaceseparator
             $namespace = str_replace( DIRECTORY_SEPARATOR , $this->makeconfig['namespaceseparator'], $namespace ) ;
@@ -136,7 +146,7 @@ class MakeSite {
                 $namespace .= $this->makeconfig['namespaceseparator'] ;
                 $source['namespaceslash'] .= DIRECTORY_SEPARATOR ;
             }
-            
+
             $source['dirlimb'] = $dirlimb = $namespace . $source['pathinfo']['filename'] ;
             $source['htmlPath'] =   $this->directories['html'] . $dirlimb . $this->makeconfig['htmlextension'];
 
@@ -144,8 +154,9 @@ class MakeSite {
                 $source['jsonPath'] =   $this->directories['json'] . $dirlimb . '.json';
             };
 
-            // remove leading "../"
-            $source['websourcepath'] = substr( $source['path'] , 3 ) ;
+
+            // remove webroot from sourcepath for frontend usage
+            $source['websourcepath'] =  explode( $this->directories['webroot'] , $sourcepath )[1] ;
 
             return $source ;
 
@@ -244,7 +255,7 @@ class MakeSite {
             ));
             $mustachecontent = $mustache->render($this->meta['template'], $this->tmplData );
 
-            file_put_contents( $this->source['htmlPath'], $mustachecontent) ? success( $this->source['htmlPath'] . ' ' . $this->meta['pagetitle'] ) : error( $this->source['htmlPath'] );
+            file_put_contents( $this->source['htmlPath'], $mustachecontent) ? success( $this->source['websourcepath'] . ' ' . $this->meta['pagetitle'] ) : error( $this->source['websourcepath'] );
     }
     public function buildJSON() {
 
@@ -253,7 +264,7 @@ class MakeSite {
                 $jsoncontent['prose_html'] =  $this->content  ;
                 $jsoncontent = json_encode( $jsoncontent );
     
-                file_put_contents( $this->source['jsonPath'], $jsoncontent) ? success( $this->source['jsonPath'] ) : error( $this->source['jsonPath'] );
+                file_put_contents( $this->source['jsonPath'], $jsoncontent) ? success( $this->source['websourcepath'] ) : error( $this->source['websourcepath'] );
             }
     }
     
