@@ -32,7 +32,7 @@ class MakeSite {
     }
 
     public function createPage($sourcepath) {
-        $this->source = $this->source($sourcepath);
+        $this->source = $this->contentMetaPathFromSource($sourcepath);
         $this->meta = $this->collectMeta();
 
         // check whether file should be published
@@ -133,7 +133,7 @@ class MakeSite {
 
     // get content and meta from sourcefile
     // and prepare filepath for web (namespace, seperator, fileextension)
-    public function source($sourcepath) {
+    public function contentMetaPathFromSource($sourcepath) {
 
             $source['path'] = $sourcepath ;
             $source['pathinfo'] = pathinfo( $sourcepath );
