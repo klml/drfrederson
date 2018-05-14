@@ -79,10 +79,10 @@ class MakeSite {
         }
     }
 
-    protected function buildSourcepath( $sourcepath ) {
+    protected function buildSourcepath( $sourcepathrelative ) {
 
             // add webroot to sourcepath coming from GET or cli e.g. source/foobarpage.md
-            $sourcepath = realpath( $this->directories['webroot'] . $sourcepath ) ;
+            $sourcepathabsolute = realpath( $this->directories['webroot'] . $sourcepathrelative ) ;
 
             // if file does not exit, realpath gives false
             // and prevent Directory traversal attack
@@ -90,19 +90,19 @@ class MakeSite {
             // and sourcepath has to start with sourcedirectory from config
             // like /_drf/make.php?drf_sourcepath=source/../_drf/make.php
 
-            if ($sourcepath === false || strpos( $sourcepath, $this->directories['source'] ) !== 0) {
+            if ($sourcepathabsolute === false || strpos( $sourcepathabsolute, $this->directories['source'] ) !== 0) {
                 // illegal directory or directory traversal
-                die( $sourcepath . ' is a illegal source directory' );
+                die( $sourcepathrelative . ' is a illegal source directory' );
             }
 
             // check if edited page is a area 
             // after webediting an area like navgation or sidebar
-            if ( strpos($sourcepath, $this->directories['area']) === 0  ) {
+            if ( strpos($sourcepathabsolute, $this->directories['area']) === 0  ) {
 
                 $this->allPages();
                 return ; 
             }
-            $this->createPage( $sourcepath );
+            $this->createPage( $sourcepathabsolute );
     }
 
     protected function allPages( ) {
