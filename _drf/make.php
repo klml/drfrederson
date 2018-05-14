@@ -17,6 +17,8 @@ class MakeSite {
     protected $source;
 
     public function __construct() {
+
+        // concat global and local configuration
         $globalconfig = realpath( dirname( __FILE__ ) . DIRECTORY_SEPARATOR . 'config.global.yml' ) ;
         $localconfig  = realpath( dirname( __FILE__ ) . DIRECTORY_SEPARATOR . 'config.local.yml'  ) ;
 
@@ -24,6 +26,7 @@ class MakeSite {
         if( file_exists( $localconfig ) ) {
             $this->makeconfig = array_merge( $this->makeconfig, spyc_load_file( $localconfig ) );
         };
+
         $this->defineDirectories();
         $this->httpandcliRouting();
     }
@@ -47,6 +50,7 @@ class MakeSite {
         // define webroot
         $this->directories['webroot'] = $webroot  = chop( realpath('./') ,  dirname($_SERVER['PHP_SELF']) ) . DIRECTORY_SEPARATOR ;
 
+        // add webroot to each directory from configuration
         foreach( $this->makeconfig['directory'] as $makeconfigdirectorykey => $makeconfigdirectoryvalue ) {
             $this->directories[$makeconfigdirectorykey] = $webroot . $makeconfigdirectoryvalue . DIRECTORY_SEPARATOR ;
         }
@@ -69,10 +73,10 @@ class MakeSite {
             }
             $this->buildSourcepath( $_POST["drf_sourcepath"] );
 
+        // create all pages, if no dedicated page is named be url or cli
         } else {
             $this->allPages();
         }
-
     }
 
     protected function buildSourcepath( $sourcepath ) {
@@ -127,7 +131,8 @@ class MakeSite {
         }
     }
 
-    // processing all sources
+    // get content and meta from sourcefile
+    // and prepare filepath for web (namespace, seperator, fileextension)
     public function source($sourcepath) {
 
             $source['path'] = $sourcepath ;
@@ -209,7 +214,7 @@ class MakeSite {
 
             $content = array();
 
-            // file parse handling
+            // parse content depending on fileextension
             switch ( $this->source['pathinfo']['extension'] ) {
                 case ("md"):
                     $content['main'] = Markdown( $this->source['content']['prose'] ) ;
@@ -226,13 +231,14 @@ class MakeSite {
                 break;
             }
 
-            // get content for area
+            // get content for all areas to use it in template
             if( !empty( $this->meta["area"] ) ) {
 
                 if( !empty( $this->meta["sidebar"] ) ) { // overwrite sidebar TODO generic solution
                     $this->meta["area"]["sidebar"] =  $this->directories["area"] . $this->meta["sidebar"] ;
                 }
 
+                // render area source with markdown und wikilinks [[page]]
                 foreach( $this->meta["area"] as $areaname => $area ) {
                    if ( $area != '' ) $content[ $areaname ] = wikistylelinks( Markdown( file_get_contents( $area ) ) ); // TODO md switching
                 }
