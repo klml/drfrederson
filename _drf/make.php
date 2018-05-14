@@ -234,7 +234,10 @@ class MakeSite {
             // get content for all areas to use it in template
             if( !empty( $this->meta["area"] ) ) {
 
-                if( !empty( $this->meta["sidebar"] ) ) { // overwrite sidebar TODO generic solution
+                // overwrite meta area/sidebar with sidebar (without)
+                // to overwrite sidebar in every page or namespace (aka directory)
+                // TODO generic solution
+                if( !empty( $this->meta["sidebar"] ) ) {
                     $this->meta["area"]["sidebar"] =  $this->directories["area"] . $this->meta["sidebar"] ;
                 }
 
