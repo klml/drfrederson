@@ -69,7 +69,7 @@ class MakeSite {
 
             // TODO deprecated
             if ( isset ( $_POST["content"] )  ) {
-                file_put_contents( realpath( $this->directories['webroot'] . $_POST["drf_sourcepath"] ) , $_POST["content"] ) ? success( $_POST["drf_sourcepath"] ) : error( $_POST["drf_sourcepath"] ) ;
+                file_put_contents( $this->directories['webroot'] . $_POST["drf_sourcepath"]  , $_POST["content"] ) ? success( $_POST["drf_sourcepath"] ) : error( $_POST["drf_sourcepath"] ) ;
             }
             $this->buildSourcepath( $_POST["drf_sourcepath"] );
 
