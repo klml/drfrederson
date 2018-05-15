@@ -173,6 +173,7 @@ class MakeSite {
             $meta = array();
             $meta['template'] = $this->makeconfig['defaulttemplate'] ;
             $meta['sourceextension'] = $this->makeconfig['sourceextension'] ;
+            $meta['sourcepath'] = $this->makeconfig['directory']['source'] . DIRECTORY_SEPARATOR ;
 
             // use every file in area-dir as area
             if ( is_dir($sourceDirectoriesArea = $this->directories['area'] ) ) { 
