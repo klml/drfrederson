@@ -23,6 +23,9 @@ function prepareWebEdit ( ) {
     // set cookie for editlink on other pages
     $.cookie('drf-showedit', true);
 
+    // indicate editmode in title tag
+    $(document).prop('title', '✎ ' +  document.title );
+
     // get sourcepath from document and fill it in the edit form
     $('input#drf-sourcepath').val( drf_sourcepath_write );
 
