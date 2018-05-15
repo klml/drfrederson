@@ -6,5 +6,3 @@ To add new content: [edit](#drf-edit).
 
 #meta#
 title: Error Page 404
-js:
-  - inline: "var drf_new = { 'sourcepath': 'source/', 'prefillpath': 'source/drf/example.md', 'sourceextension': '.md' }" 
