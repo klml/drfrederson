@@ -1,6 +1,7 @@
 htmlextension: .html
 tplextension: .html
 sourceextension: .md
+webwrite: true
 namespaceseparator: ":"
 metaseparator: "\n#meta#"
 defaulttemplate: plain

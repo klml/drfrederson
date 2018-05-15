@@ -65,13 +65,8 @@ class MakeSite {
             $this->buildSourcepath( $argv[0] ) ;
 
         // writes single pages from webeditor
-        } else if (  isset( $_POST["drf_sourcepath"] )  ) {
-
-            // TODO deprecated
-            if ( isset ( $_POST["content"] )  ) {
-                file_put_contents( $this->directories['webroot'] . $_POST["drf_sourcepath"]  , $_POST["content"] ) ? success( $_POST["drf_sourcepath"] ) : error( $_POST["drf_sourcepath"] ) ;
-            }
-            $this->buildSourcepath( $_POST["drf_sourcepath"] );
+        } else if (  isset( $_GET["drf_sourcepath"] )  ) {
+            $this->buildSourcepath( $_GET["drf_sourcepath"] );
 
         // create all pages, if no dedicated page is named be url or cli
         } else {

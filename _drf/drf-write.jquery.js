@@ -56,13 +56,13 @@ function prepareWebEdit ( ) {
 
     // redner preview on click and on time
     $('#drf-render').click( function() {
-        render();
+        clientRender();
         $('#drf-webedit').find('textarea').focus();
     });
     var intermission ; 
     $( '#drf-webedit' ).find('textarea').keyup( function() {
         window.clearTimeout( intermission );
-        intermission = window.setTimeout( 'render()' , 3000);
+        intermission = window.setTimeout( 'clientRender()' , 3000);
     });
      webeditSend();
 }
@@ -99,10 +99,9 @@ function webeditSend ( ) {
                 type: $(this).context.method ,
                 data: $(this).serialize() ,
                 success: function( msg ){
-                    $( '#successmsg' ).show("slow", function() {
+                    $( '#successmsg' ).show("slow", function(msg) {
                         $(this).find('pre').text( msg );
-                        window.location.hash = "#main"
-                        location.reload();
+                        serverRender( );
                     });
                 },
                 error:function( msg ){
@@ -110,10 +109,18 @@ function webeditSend ( ) {
                          $(this).find('pre').text( msg );
                     });
                 }
-            });         
-        });    
+            });
+        });
     });
 }
-function render () {
+
+function serverRender ( ) {
+    $.get( "/_drf/make.php", { drf_sourcepath: $( '#drf-sourcepath' ).val()  } , function( data ) {
+        window.location.hash = "#main" ;
+        location.reload();
+    });
+}
+
+function clientRender () {
     $('#main').html( Markdown( $( '#drf-webedit' ).find('textarea').val() ) );
 };
