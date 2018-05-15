@@ -4,6 +4,7 @@ pagetitle: Directory wide title
 baseurl: 
 jsdelivrdomain: //cdn.jsdelivr.net/
 template: plain
+prefillpath: source/drf/example.md
 cssjsversion: 1
 webedit: true
 description: Some general site  wide description

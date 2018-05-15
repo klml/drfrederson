@@ -1,14 +1,24 @@
-var drf_lemma = window.location.pathname.split('/').pop().split('.')[0] ;
-var drf_sourcepath_write = drf_sourcepath_prefill = $("meta[name='dcterms.source']").attr("content");
-
-// to create new pages from a 404
-if (typeof drf_new != 'undefined' && drf_lemma != 'drf:404error' ) {
-    var drf_lemma = drf_lemma.split(':').join('/') ;
-    drf_sourcepath_prefill = drf_new.prefillpath ;
-    drf_sourcepath_write = drf_new.sourcepath + drf_lemma + drf_new.sourceextension ;
-}
-
 jQuery(document).ready(function() {
+
+    var drf_lemma = window.location.pathname.split('/').pop().split('.')[0] ;
+    var dcterms_source = $("meta[name='dcterms.source']").attr("content");
+
+    // to create new pages from a 404
+    if ( dcterms_source == 'source/drf/404error.md' && drf_lemma != 'drf:404error' ) {
+        var drf_lemma = drf_lemma.split(':').join('/') ;
+
+        $.getJSON( "json/meta.json", function( metadata ) {
+            drf_sourcepath_prefill = metadata.prefillpath ;
+            drf_sourcepath_write = metadata.sourcepath + drf_lemma + metadata.sourceextension ;
+            prepareWebEdit();
+        });
+    } else {
+        drf_sourcepath_write = drf_sourcepath_prefill = dcterms_source ;
+        prepareWebEdit();
+    }
+});
+
+function prepareWebEdit ( ) {
 
     // set cookie for editlink on other pages
     $.cookie('drf-showedit', true);
@@ -52,7 +62,7 @@ jQuery(document).ready(function() {
         intermission = window.setTimeout( 'render()' , 3000);
     });
      webeditSend();
-});
+}
 
 function markdownwysiwym ( ) {
     $.getScript("//cdn.jsdelivr.net/simplemde/latest/simplemde.min.js", function() { // need to load out of webedit TODO

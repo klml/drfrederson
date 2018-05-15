@@ -1,5 +1,6 @@
 htmlextension: .html
 tplextension: .html
+sourceextension: .md
 namespaceseparator: ":"
 metaseparator: "\n#meta#"
 defaulttemplate: plain

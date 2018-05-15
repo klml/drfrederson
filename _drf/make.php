@@ -172,6 +172,7 @@ class MakeSite {
 
             $meta = array();
             $meta['template'] = $this->makeconfig['defaulttemplate'] ;
+            $meta['sourceextension'] = $this->makeconfig['sourceextension'] ;
 
             // use every file in area-dir as area
             if ( is_dir($sourceDirectoriesArea = $this->directories['area'] ) ) { 
