@@ -1,23 +1,17 @@
 <?php
 /*
- * @name make.php
- * @class WriteFile
- * @description generate a static site
- * @author klml based on https://github.com/lonescript/php-site-maker
+ * @name writesource.php
+ * @class WriteSource
+ * @description write content from POST to file on server
+ * @author klml
  */
 
 require_once 'lib/spyc/Spyc.php';
 
-
-// needede ??? TODo
-require_once 'lib/Tools.php';
-
 class WriteSource {
-    protected $directories;
-    protected $source;
 
     public function __construct() {
-        // Dublicate TODO
+        // Duplicate TODO
         
         // concat global and local configuration
         $globalconfig = realpath( dirname( __FILE__ ) . DIRECTORY_SEPARATOR . 'config.global.yml' ) ;
