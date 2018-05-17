@@ -243,6 +243,9 @@ class MakeSite {
                 foreach( $content["areapath"] as $areaname => $areapath ) {
                    if ( $areapath != '' ) $content[ $areaname ] = wikistylelinks( Markdown( file_get_contents( $areapath ) ) ); // TODO md switching
                 }
+                // avoid exposing filesystempath to json 
+                unset( $content["areapath"] ) ; 
+
             }
 
             return $content ;
