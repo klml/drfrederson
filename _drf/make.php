@@ -171,19 +171,6 @@ class MakeSite {
             $meta['sourcepath'] = $this->makeconfig['directory']['source'] . DIRECTORY_SEPARATOR ;
             $meta['webwrite'] = $this->makeconfig['webwrite'] ;
 
-            // use every file in area-dir as area
-            if ( is_dir($sourceDirectoriesArea = $this->directories['area'] ) ) { 
-                $areadirrecursive = new RecursiveDirectoryIterator( $sourceDirectoriesArea );
-                foreach (new RecursiveIteratorIterator($areadirrecursive) as $areapath => $areaname) {
-
-                    // dont parse directories
-                    if ( !is_dir( $areapath ) ) {
-                        $areapathinfo  = pathinfo($areaname) ;
-                        $meta["area"][ $areapathinfo['filename'] ] = $areapath ;
-                    }
-                }
-            }
-
             // overwrite with general source config
             if ( file_exists($sourceDirectoriesConf = $this->directories['source'] . '/meta.yml' ) ) { 
                 $meta = array_merge( $meta , spyc_load_file( file_get_contents($sourceDirectoriesConf) ) ) ;
@@ -212,6 +199,19 @@ class MakeSite {
 
             $content = array();
 
+            // use every file in area-dir as area
+            if ( is_dir($sourceDirectoriesArea = $this->directories['area'] ) ) {
+                $areadirrecursive = new RecursiveDirectoryIterator( $sourceDirectoriesArea );
+                foreach (new RecursiveIteratorIterator($areadirrecursive) as $areapath => $areaname) {
+
+                    // dont parse directories
+                    if ( !is_dir( $areapath ) ) {
+                        $areapathinfo  = pathinfo($areaname) ;
+                        $content["areapath"][ $areapathinfo['filename'] ] = $areapath ;
+                    }
+                }
+            }
+
             // parse content depending on fileextension
             switch ( $this->source['pathinfo']['extension'] ) {
                 case ("md"):
@@ -230,18 +230,18 @@ class MakeSite {
             }
 
             // get content for all areas to use it in template
-            if( !empty( $this->meta["area"] ) ) {
 
+            if( !empty( $content["areapath"] ) ) {
                 // overwrite meta area/sidebar with sidebar (without)
                 // to overwrite sidebar in every page or namespace (aka directory)
                 // TODO generic solution
                 if( !empty( $this->meta["sidebar"] ) ) {
-                    $this->meta["area"]["sidebar"] =  $this->directories["area"] . $this->meta["sidebar"] ;
+                    $content["areapath"]["sidebar"] =  $this->directories["area"] . $this->meta["sidebar"] ;
                 }
 
                 // render area source with markdown und wikilinks [[page]]
-                foreach( $this->meta["area"] as $areaname => $area ) {
-                   if ( $area != '' ) $content[ $areaname ] = wikistylelinks( Markdown( file_get_contents( $area ) ) ); // TODO md switching
+                foreach( $content["areapath"] as $areaname => $areapath ) {
+                   if ( $areapath != '' ) $content[ $areaname ] = wikistylelinks( Markdown( file_get_contents( $areapath ) ) ); // TODO md switching
                 }
             }
 
