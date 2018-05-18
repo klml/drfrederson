@@ -2,11 +2,11 @@ User-agent: *
 Disallow: /_drf/
 Disallow: /.git*
 Disallow: /html/
-Disallow: /lib/
-Disallow: /make.sh
-Disallow: /README.md
+Disallow: /json/
 Disallow: /source/
 Disallow: /template/
-Disallow: /drf:admin‎
+Disallow: /drf:
 Disallow: /area:
-Disallow: /meta
+Disallow: /README.md
+Disallow: /make.sh
+
