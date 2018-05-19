@@ -31,9 +31,10 @@ class WriteSource {
 
     }
     protected function WriteFile() {
-            $sourcepath = $_POST["drf_sourcepath"] ;
-            if ( isset ( $_POST["content"] )  ) {
-                file_put_contents( $this->directories['webroot'] . $sourcepath , $_POST["content"] ) ;
+            if ( isset ( $_POST["content"] ) &&  isset( $_POST["drf_sourcepath"] ) ) {
+                file_put_contents( $this->directories['webroot'] . $_POST["drf_sourcepath"] , $_POST["content"] ) ;
+            } else {
+                die( "no POST-Value 'content' or/and 'drf_sourcepath' given." );
             }
     }
 }
