@@ -154,6 +154,8 @@ class MakeSite {
                 $source['jsonPath'] =   $this->directories['json'] . $dirlimb . '.json';
             };
 
+            // timestamp last change source
+            $source['modificationtime'] = date ( $this->makeconfig['dateformat'], filemtime( $sourcepath ));
 
             // remove webroot from sourcepath for frontend usage
             $source['websourcepath'] =  explode( $this->directories['webroot'] , $sourcepath )[1] ;
