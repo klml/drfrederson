@@ -6,6 +6,7 @@ namespaceseparator: ":"
 metaseparator: "\n#meta#"
 defaulttemplate: plain
 sourceexclude: '.git'
+dateformat: 'Y-m-d H:i'
 directory:
     template: template
     source: source
