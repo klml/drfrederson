@@ -59,11 +59,6 @@ function prepareWebEdit ( ) {
         clientRender();
         $('#drf-webedit').find('textarea').focus();
     });
-    var intermission ; 
-    $( '#drf-webedit' ).find('textarea').keyup( function() {
-        window.clearTimeout( intermission );
-        intermission = window.setTimeout( 'clientRender()' , 3000);
-    });
      webeditSend();
 }
 
