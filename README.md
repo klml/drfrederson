@@ -21,6 +21,11 @@ Sites made with drfrederson:
 * [schuhmacherei-allinger.de](http://schuhmacherei-allinger.de)
 * [sailer-grafik-design.de](http://sailer-grafik-design.de)
 
+
+## similar projects
+
+* to my knowledge [Hacker CMS](//github.com/kentonv/ssjekyll/) is the only other staticsitegenerator with a webinterface. The filetree, is a feature, drfrederson is missing at all. But it uses the common ssg jekyll, so users have to deal with frontmatter and not [PROSErial](//github.com/klml/PROSErial).
+
 ## TODO
 
 
