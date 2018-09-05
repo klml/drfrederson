@@ -4,6 +4,8 @@ Disallow: /.git*
 Disallow: /html/
 Disallow: /json/
 Disallow: /source/
+Allow: /source/*.css
+Allow: /source/*.js
 Disallow: /template/
 Disallow: /drf:
 Disallow: /area:
