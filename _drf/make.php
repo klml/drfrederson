@@ -68,6 +68,21 @@ class MakeSite {
         } else if (  isset( $_GET["drf_sourcepath"] )  ) {
             $this->buildSourcepath( $_GET["drf_sourcepath"] );
 
+        // create pages from git repo in source dir
+        } else if ( $this->makeconfig['gitsource'] ) {
+
+            chdir( $this->directories['source'] );
+            // read current commit version, BEFORE updating
+            // to diff between new (HEAD) and current
+            $current_git_commit = file_get_contents('.git/refs/heads/master');
+
+            exec("git pull");
+            exec("git diff --name-only HEAD $current_git_commit", $updatedFiles);
+
+            foreach ($updatedFiles as $updatedFile) {
+                $this->buildSourcepath( $this->makeconfig['directory']['source'] . DIRECTORY_SEPARATOR . $updatedFile );
+            }
+
         // create all pages, if no dedicated page is named be url or cli
         } else {
             $this->allPages();
