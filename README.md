@@ -1,15 +1,27 @@
 drfrederson
 =====
 
-A simple static site generator powered by PHP, YAML, Markdown and mustache. Licensed under [MIT License](LICENSE.md)
+A simple static site generator powered by PHP, YAML, [markdown extra](https://michelf.ca/projects/php-markdown/extra/) and mustache. Licensed under [MIT License](LICENSE.md)
 
-There are many other and better [staticsitegenerators](http://staticsitegenerators.net), but I searched for these features and did not find:
+## features
 
-* edit without texteditor or ssh access. Using __webedit__ on your browser and get a textarea or [markdown-WYSIWM](https://github.com/lepture/editor) to change and create pages.
-* __meta information__ for rendering (template, menue etc) or html metatags are at the __bottom__ of the page and only __optional__ (tried to use my own standard [PROSErial](https://github.com/klml/PROSErial)). 
-* no indexed or automatic __menu__; just an extra included __page__ with a (nested) list.
+There are many other and better [staticsitegenerators](http://staticsitegenerators.net), but I missed these:
 
-Some more small features like titletags from the first heading, etc.
+
+### writesource.php
+
+* edit without texteditor or ssh access. Using __webedit__ on your browser and get a textarea or [markdown-WYSIWM](https://simplemde.com/) to change and create pages.
+
+### make.php
+
+* __meta information__ for rendering (template, menue etc) or html metatags are at the __bottom__ of the page and only __optional__ (tried to use my own standard [PROSErial](https://github.com/klml/PROSErial)).
+* use source directories as __namespace__, with customizing namespaceseperators (```namespace:pagetitle```).
+* include sourcefiles as __areas__ in templates (for menus, sidebars, trackingpixels).
+* if there is no ```<title>``` set in meta, drfrederson uses the first heading as pagetitle.
+* wikistyle internal links (```[[MyPage]]```).
+* txt-files get rendered with newlines as breaks (```<br>```).
+* render markdown to html pages and json.
+
 
 All about editing, admin, setup and templates in the [wiki](https://github.com/klml/drfrederson/wiki/drfrederson).
 
