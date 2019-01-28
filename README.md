@@ -34,9 +34,12 @@ Sites made with drfrederson:
 * [sailer-grafik-design.de](http://sailer-grafik-design.de)
 
 
-## similar projects
+## similar projects 
 
-* to my knowledge [Hacker CMS](//github.com/kentonv/ssjekyll/) is the only other staticsitegenerator with a webinterface. The filetree, is a feature, drfrederson is missing at all. But it uses the common ssg jekyll, so users have to deal with frontmatter and not [PROSErial](//github.com/klml/PROSErial).
+* [Hacker CMS](//github.com/kentonv/ssjekyll/) has a webinterface. The filetree, is a feature, drfrederson is missing at all. But it uses the common ssg jekyll, so users have to deal with frontmatter and not [PROSErial](//github.com/klml/PROSErial).
+* [prose.io](https://prose.io) is a writing orientated webinterface for github
+
+
 
 ## TODO
 
